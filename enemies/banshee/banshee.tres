@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="EnemyStats" load_steps=3 format=3 uid="uid://dq1dpmrio8kw7"]
+
+[ext_resource type="Texture2D" uid="uid://bnoq2pyaoqmyn" path="res://assets/sprites/banshee.png" id="1_qgfhq"]
+[ext_resource type="Script" uid="uid://41i0vfynwjfy" path="res://resources/enemy_stats.gd" id="2_wa5ir"]
+
+[resource]
+script = ExtResource("2_wa5ir")
+art = ExtResource("1_qgfhq")
+metadata/_custom_type_script = "uid://41i0vfynwjfy"
