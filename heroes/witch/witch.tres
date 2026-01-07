@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="HeroStats" load_steps=4 format=3 uid="uid://c2ohd717m4u8e"]
+
+[ext_resource type="Texture2D" uid="uid://dt5n3evgosldc" path="res://assets/sprites/izzy lizzy.png" id="1_uep5i"]
+[ext_resource type="Script" uid="uid://b3mwvvavgkbgr" path="res://resources/hero_stats.gd" id="1_v0b0a"]
+[ext_resource type="Resource" uid="uid://ckyykkay0p7es" path="res://heroes/witch/witch_starting_deck.tres" id="3_crg50"]
+
+[resource]
+script = ExtResource("1_v0b0a")
+starting_deck = ExtResource("3_crg50")
+cards_per_turn = 4
+max_mana = 3
+art = ExtResource("1_uep5i")
+metadata/_custom_type_script = "uid://b3mwvvavgkbgr"

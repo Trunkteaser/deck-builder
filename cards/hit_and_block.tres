@@ -1,0 +1,21 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://cyw4233ngdw8l"]
+
+[ext_resource type="Texture2D" uid="uid://dc2y3fms2vr26" path="res://assets/sprites/hero hat.png" id="1_mbemw"]
+
+[sub_resource type="GDScript" id="GDScript_nmtgx"]
+script/source = "extends CardData
+
+func apply_effects(targets: Array[Node]) -> void:
+	var damage_effect := DamageEffect.new()
+	damage_effect.apply(targets, 10)
+	var block_effect := BlockEffect.new()
+	block_effect.apply(get_self(targets), 10)
+"
+
+[resource]
+script = SubResource("GDScript_nmtgx")
+name = "Hit and Block"
+art = ExtResource("1_mbemw")
+description = "Deal 10 damage.
+Gain 10 block."
+cost = 2

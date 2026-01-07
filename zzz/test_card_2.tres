@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="CardData" load_steps=3 format=3 uid="uid://l4n7uc7rfhsq"]
+
+[ext_resource type="Script" uid="uid://cf748lyegyqg3" path="res://resources/card_data.gd" id="1_1xicm"]
+[ext_resource type="Texture2D" uid="uid://cwhwjxerhw8g1" path="res://assets/sprites/sludge lord boss.png" id="1_mhgrg"]
+
+[resource]
+script = ExtResource("1_1xicm")
+name = "Testing testing"
+art = ExtResource("1_mhgrg")
+description = "Gain 5 block.
+Deal 3 damage to ALL enemies."
+cost = 2
+target = 0
+metadata/_custom_type_script = "uid://cf748lyegyqg3"

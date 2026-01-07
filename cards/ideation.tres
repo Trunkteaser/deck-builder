@@ -1,0 +1,19 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://c7vptttl1jh8t"]
+
+[ext_resource type="Texture2D" uid="uid://chnvdhxerx4nc" path="res://assets/sprites/book.png" id="1_qwnmg"]
+
+[sub_resource type="GDScript" id="GDScript_ry2qb"]
+script/source = "extends CardData
+
+func apply_effects(targets: Array[Node]) -> void:
+	var draw_effect := DrawEffect.new()
+	draw_effect.apply(targets, 2)
+"
+
+[resource]
+script = SubResource("GDScript_ry2qb")
+name = "Ideation"
+art = ExtResource("1_qwnmg")
+description = "Draw 2 cards."
+cost = 0
+target = 1

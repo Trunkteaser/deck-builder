@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="UnitStats" load_steps=3 format=3 uid="uid://wv6cwmpba8dv"]
+
+[ext_resource type="Texture2D" uid="uid://calh6m8dogwnh" path="res://assets/sprites/claw ghost.png" id="1_j5t4s"]
+[ext_resource type="Script" uid="uid://hqw4yxyjmgay" path="res://resources/unit_stats.gd" id="1_tvddr"]
+
+[resource]
+script = ExtResource("1_tvddr")
+art = ExtResource("1_j5t4s")
+metadata/_custom_type_script = "uid://hqw4yxyjmgay"

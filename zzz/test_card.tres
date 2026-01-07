@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="CardData" load_steps=3 format=3 uid="uid://pmgfp2srnnnw"]
+
+[ext_resource type="Texture2D" uid="uid://dt5n3evgosldc" path="res://assets/sprites/izzy lizzy.png" id="1_8ttoi"]
+[ext_resource type="Script" uid="uid://cf748lyegyqg3" path="res://resources/card_data.gd" id="1_mqgl0"]
+
+[resource]
+script = ExtResource("1_mqgl0")
+name = "Card of Testing"
+art = ExtResource("1_8ttoi")
+description = "Deal 7 damage. 
+Apply 3 poison."
+cost = 1
+target = 0
+metadata/_custom_type_script = "uid://cf748lyegyqg3"

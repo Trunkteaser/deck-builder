@@ -1,0 +1,157 @@
+[gd_scene load_steps=19 format=3 uid="uid://0qyqwumjfu4w"]
+
+[ext_resource type="Script" uid="uid://djb2fi8pii4a6" path="res://scenes/battle/battle.gd" id="1_agsc7"]
+[ext_resource type="Resource" uid="uid://d0o466qgbput5" path="res://heroes/shrike/shrike.tres" id="2_kd6yx"]
+[ext_resource type="PackedScene" uid="uid://de56m233tgjmc" path="res://scenes/card_target_selector/card_target_selector.tscn" id="3_agsc7"]
+[ext_resource type="PackedScene" uid="uid://boxd06bs072ot" path="res://scenes/enemy/enemy.tscn" id="3_oiw7q"]
+[ext_resource type="PackedScene" uid="uid://df3oxo87hqvpc" path="res://scenes/hero/hero.tscn" id="4_agsc7"]
+[ext_resource type="Script" uid="uid://dlsy0cg3anwyu" path="res://scenes/battle/debug.gd" id="5_h0kxc"]
+[ext_resource type="Resource" uid="uid://blpmomhimxbc1" path="res://enemies/claw_ghost/claw_ghost.tres" id="5_kd6yx"]
+[ext_resource type="Resource" uid="uid://c2ohd717m4u8e" path="res://heroes/witch/witch.tres" id="5_oiw7q"]
+[ext_resource type="PackedScene" uid="uid://6yf24kgcbxr7" path="res://scenes/card/card.tscn" id="6_pll4o"]
+[ext_resource type="Texture2D" uid="uid://b7rvi8vesm3ij" path="res://assets/sprites/grass terrain.png" id="8_t1kk3"]
+[ext_resource type="Script" uid="uid://c112cpa8gx1r3" path="res://scenes/hero/hero_handler.gd" id="9_mxe8n"]
+[ext_resource type="Script" uid="uid://bbrxnjjjpeer0" path="res://scenes/battle/hand.gd" id="9_oiw7q"]
+[ext_resource type="Script" uid="uid://7pnhyxscs0ns" path="res://scenes/ui/battle_ui.gd" id="9_t1kk3"]
+[ext_resource type="PackedScene" uid="uid://b60f30g8yopyw" path="res://scenes/ui/mana_ui.tscn" id="12_mxe8n"]
+[ext_resource type="Theme" uid="uid://dh870meh4j8a1" path="res://assets/other/main_theme.tres" id="13_icoan"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_py4tk"]
+size = Vector2(640, 253)
+
+[sub_resource type="Curve" id="Curve_agsc7"]
+_data = [Vector2(0, 0), 0.0, 6.0, 0, 0, Vector2(0.5, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -6.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Curve" id="Curve_oiw7q"]
+_limits = [-1.0, 1.0, 0.0, 1.0]
+_data = [Vector2(0, -1), 0.0, 6.0, 0, 0, Vector2(0.5, 1.49012e-08), 0.0, 0.0, 0, 0, Vector2(1, 1), 6.0, 0.0, 0, 0]
+point_count = 3
+
+[node name="Battle" type="Node2D"]
+script = ExtResource("1_agsc7")
+hero_stats = ExtResource("2_kd6yx")
+metadata/_edit_lock_ = true
+
+[node name="CardTargetSelector" parent="." instance=ExtResource("3_agsc7")]
+
+[node name="Enemy" parent="." instance=ExtResource("3_oiw7q")]
+position = Vector2(521, 130)
+stats = ExtResource("5_kd6yx")
+
+[node name="CardDropArea" type="Area2D" parent="."]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CardDropArea"]
+position = Vector2(320, 126.5)
+shape = SubResource("RectangleShape2D_py4tk")
+debug_color = Color(0, 0.6, 0.69803923, 0.02745098)
+
+[node name="Hero" parent="." instance=ExtResource("4_agsc7")]
+position = Vector2(91, 129)
+stats = ExtResource("5_oiw7q")
+
+[node name="Visuals" type="Node2D" parent="."]
+
+[node name="TempBackground" type="ColorRect" parent="Visuals"]
+z_index = -2
+offset_right = 640.0
+offset_bottom = 360.0
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+metadata/_edit_lock_ = true
+
+[node name="Terrain" type="Sprite2D" parent="Visuals"]
+z_index = -1
+texture = ExtResource("8_t1kk3")
+offset = Vector2(320, 180)
+
+[node name="Debug" type="Node" parent="."]
+script = ExtResource("5_h0kxc")
+
+[node name="TestButton" type="Button" parent="Debug"]
+visible = false
+offset_left = 56.0
+offset_top = 42.0
+offset_right = 170.0
+offset_bottom = 82.0
+text = "Test"
+
+[node name="TestButton2" type="Button" parent="Debug"]
+visible = false
+offset_left = 193.0
+offset_top = 44.0
+offset_right = 307.0
+offset_bottom = 84.0
+text = "Test2"
+
+[node name="Card" parent="Debug" instance=ExtResource("6_pll4o")]
+visible = false
+offset_left = -305.0
+offset_top = -87.0
+offset_right = -230.0
+offset_bottom = 19.0
+
+[node name="DrawCardButton" type="Button" parent="Debug"]
+offset_left = 422.0
+offset_top = 18.0
+offset_right = 472.0
+offset_bottom = 49.0
+text = "Draw"
+
+[node name="DiscardCardButton" type="Button" parent="Debug"]
+offset_left = 523.0
+offset_top = 12.0
+offset_right = 590.0
+offset_bottom = 43.0
+text = "Discard"
+
+[node name="HeroHandler" type="Node" parent="." node_paths=PackedStringArray("hand")]
+script = ExtResource("9_mxe8n")
+hand = NodePath("../BattleUI/Hand")
+
+[node name="BattleUI" type="CanvasLayer" parent="." groups=["ui_layer"]]
+script = ExtResource("9_t1kk3")
+
+[node name="Hand" type="Container" parent="BattleUI"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(400, 80)
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 74.0
+offset_top = -80.0
+offset_right = -64.0
+grow_horizontal = 2
+grow_vertical = 0
+script = ExtResource("9_oiw7q")
+hero_stats = ExtResource("5_oiw7q")
+hand_curve = SubResource("Curve_agsc7")
+rotation_curve = SubResource("Curve_oiw7q")
+
+[node name="ManaUI" parent="BattleUI" instance=ExtResource("12_mxe8n")]
+hero_stats = ExtResource("5_oiw7q")
+
+[node name="EndTurnButton" type="Button" parent="BattleUI"]
+unique_name_in_owner = true
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -88.0
+offset_top = -41.0
+offset_right = -10.0
+offset_bottom = -10.0
+grow_horizontal = 0
+grow_vertical = 0
+theme = ExtResource("13_icoan")
+text = "End Turn"
+
+[connection signal="pressed" from="Debug/TestButton" to="Debug" method="_on_test_button_pressed"]
+[connection signal="pressed" from="Debug/TestButton2" to="Debug" method="_on_test_button_2_pressed"]
+[connection signal="pressed" from="Debug/DrawCardButton" to="HeroHandler" method="draw_card"]
+[connection signal="pressed" from="Debug/DiscardCardButton" to="." method="_on_discard_card_button_pressed"]
+[connection signal="child_order_changed" from="BattleUI/Hand" to="BattleUI/Hand" method="_on_child_order_changed"]
+[connection signal="pressed" from="BattleUI/EndTurnButton" to="BattleUI" method="_on_end_turn_button_pressed"]
