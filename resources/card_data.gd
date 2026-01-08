@@ -14,6 +14,8 @@ enum Type {ATTACK, SKILL, POWER}
 @export var cost: int = 1
 @export var target: Target
 
+var hero: Array[Node] # For secondary self-targeting purposes.
+
 func is_single_targeted() -> bool:
 	return target == Target.SINGLE_ENEMY
 
@@ -36,6 +38,9 @@ func _get_targets(targets: Array[Node]) -> Array[Node]:
 func play(targets: Array[Node], hero_stats: HeroStats) -> void:
 	Events.card_played.emit(self)
 	hero_stats.mana -= cost
+	
+	hero = get_self(targets)
+	
 	if is_single_targeted():
 		apply_effects(targets)
 	else:

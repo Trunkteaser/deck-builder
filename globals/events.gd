@@ -12,6 +12,8 @@ signal player_hand_drawn # To be emitted after having finished drawing.
 signal player_hand_discarded
 signal player_turn_ended
 
-
+# Enemy.
+signal enemy_action_completed(enemy: Enemy)
+signal enemy_turn_ended # Emit after ALL enemies have finished their turns.
 
 signal request_card_draw()

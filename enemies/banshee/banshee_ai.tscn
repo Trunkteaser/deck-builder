@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://475jpls7j6x2"]
+
+[ext_resource type="Script" uid="uid://rk0knfs7teh6" path="res://scenes/enemy/ai.gd" id="1_ly0m6"]
+[ext_resource type="Script" uid="uid://1pva7npymrg2" path="res://enemies/banshee/banshee_attack.gd" id="2_ic4x3"]
+[ext_resource type="Script" uid="uid://bjvsfawatmmtj" path="res://enemies/banshee/banshee_defend.gd" id="3_0oqni"]
+[ext_resource type="Script" uid="uid://bqb6n10ksb8ox" path="res://enemies/banshee/banshee_mega_attack.gd" id="4_32tbt"]
+
+[node name="BansheeAI" type="Node"]
+script = ExtResource("1_ly0m6")
+
+[node name="Attack" type="Node" parent="."]
+script = ExtResource("2_ic4x3")
+chance_weight = 1.0
+
+[node name="Defend" type="Node" parent="."]
+script = ExtResource("3_0oqni")
+chance_weight = 1.0
+
+[node name="MegaAttack" type="Node" parent="."]
+script = ExtResource("4_32tbt")
