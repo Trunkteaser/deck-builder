@@ -18,6 +18,7 @@ func perform_action() -> void:
 	
 	var damage_effect := DamageEffect.new()
 	var target_array: Array[Node] = [target]
+	damage_effect.sfx = sfx
 	
 	var tween := create_tween()
 	var start := enemy.global_position

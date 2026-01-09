@@ -15,9 +15,16 @@ run/main_scene="uid://0qyqwumjfu4w"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="uid://dblwri7jh6k0v"
 
+[audio]
+
+buses/default_bus_layout="res://assets/other/default_bus_layout.tres"
+
 [autoload]
 
 Events="*res://globals/events.gd"
+Shaker="*res://globals/shaker.gd"
+MusicPlayer="*res://globals/music_player.tscn"
+SFXPlayer="*res://globals/sfx_player.tscn"
 
 [debug]
 

@@ -1,12 +1,14 @@
-[gd_resource type="Resource" load_steps=3 format=3 uid="uid://8a5heru6nhu"]
+[gd_resource type="Resource" load_steps=4 format=3 uid="uid://8a5heru6nhu"]
 
 [ext_resource type="Texture2D" uid="uid://bhhlyb84sna3p" path="res://assets/sprites/sword_1.png" id="1_eb56g"]
+[ext_resource type="AudioStream" uid="uid://ts423b3gvpso" path="res://assets/sound/axe.ogg" id="2_eb56g"]
 
 [sub_resource type="GDScript" id="GDScript_gi6ei"]
 script/source = "extends CardData
 
 func apply_effects(targets: Array[Node]) -> void:
 	var damage_effect := DamageEffect.new()
+	damage_effect.sfx = sfx
 	damage_effect.apply(targets, 6)
 "
 
@@ -15,4 +17,5 @@ script = SubResource("GDScript_gi6ei")
 name = "Strike"
 art = ExtResource("1_eb56g")
 description = "Deal 6 damage."
+sfx = ExtResource("2_eb56g")
 metadata/_custom_type_script = "uid://cf748lyegyqg3"

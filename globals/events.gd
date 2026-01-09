@@ -11,6 +11,7 @@ signal card_played(card_data: CardData)
 signal player_hand_drawn # To be emitted after having finished drawing.
 signal player_hand_discarded
 signal player_turn_ended
+signal player_damaged # Emitted when damage goes past block.
 signal player_died
 
 # Enemy.

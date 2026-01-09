@@ -7,6 +7,7 @@ func perform_action() -> void:
 		return
 	
 	var block_effect := BlockEffect.new()
+	block_effect.sfx = sfx
 	block_effect.apply([enemy], block)
 	
 	get_tree().create_timer(0.6, false).timeout.connect(

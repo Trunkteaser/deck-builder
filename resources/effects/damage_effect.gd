@@ -7,3 +7,4 @@ func apply(targets: Array[Node], amount: int) -> void:
 			continue
 		if target is Hero or target is Enemy:
 			target.take_damage(amount)
+			SFXPlayer.play(sfx)

@@ -3,6 +3,7 @@ class_name HeroHandler
 
 const HAND_DRAW_INTERVAL := 0.1
 const HAND_DISCARD_INTERVAL := 0.1
+const DRAW_SFX := preload("uid://bwonltvbchlj")
 
 @export var hand: Hand
 
@@ -31,6 +32,7 @@ func end_turn() -> void:
 func draw_card() -> void:
 	reshuffle_deck_from_discard()
 	hand.add_card(hero.draw_pile.draw_card())
+	SFXPlayer.play(DRAW_SFX)
 	reshuffle_deck_from_discard() # I don't necessarily mind hand being empty after draw?
 
 func draw_cards(amount: int) -> void:

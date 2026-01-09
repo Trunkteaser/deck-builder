@@ -4,6 +4,7 @@ class_name Enemy
 # TODO Script enemy so it will adapt collision shape, stats_ui and arrow to different sizes.
 
 const ARROW_OFFSET := 5
+const WHITE_SPRITE_MATERIAL = preload("uid://ceemqhtjalmbl")
 
 @export var stats: EnemyStats : set = set_enemy_stats
 
@@ -69,9 +70,19 @@ func take_turn() -> void:
 func take_damage(damage: int) -> void:
 	if stats.health <= 0:
 		return
-	stats.take_damage(damage)
-	if stats.health <= 0:
-		queue_free()
+	
+	sprite_2d.material = WHITE_SPRITE_MATERIAL
+	
+	var tween := create_tween()
+	tween.tween_callback(Shaker.shake.bind(self, 32, 0.15))
+	tween.tween_callback(stats.take_damage.bind(damage))
+	tween.tween_interval(0.17)
+	
+	tween.finished.connect(
+		func():
+			sprite_2d.material = null
+			if stats.health <= 0:
+				queue_free())
 
 func _on_area_entered(_area: Area2D) -> void:
 	arrow.show()

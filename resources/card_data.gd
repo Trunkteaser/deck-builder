@@ -9,6 +9,7 @@ enum Type {ATTACK, SKILL, POWER}
 @export var name: String
 @export var art: Texture2D
 @export_multiline var description: String
+@export var sfx: AudioStream
 
 @export_category("Attributes")
 @export var cost: int = 1

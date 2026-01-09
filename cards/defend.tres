@@ -1,12 +1,14 @@
-[gd_resource type="Resource" load_steps=3 format=3 uid="uid://brmlfia7nvxi0"]
+[gd_resource type="Resource" load_steps=4 format=3 uid="uid://brmlfia7nvxi0"]
 
 [ext_resource type="Texture2D" uid="uid://byka3vp1hlkvu" path="res://assets/sprites/shield_2.png" id="1_npllq"]
+[ext_resource type="AudioStream" uid="uid://d0cq6s264xrlr" path="res://assets/sound/block.ogg" id="2_npllq"]
 
 [sub_resource type="GDScript" id="GDScript_g0r6m"]
 script/source = "extends CardData
 
 func apply_effects(_targets: Array[Node]) -> void:
 	var block_effect := BlockEffect.new()
+	block_effect.sfx = sfx
 	block_effect.apply(_targets, 5)
 "
 
@@ -15,5 +17,6 @@ script = SubResource("GDScript_g0r6m")
 name = "Defend"
 art = ExtResource("1_npllq")
 description = "Gain 5 block."
+sfx = ExtResource("2_npllq")
 target = 1
 metadata/_custom_type_script = "uid://cf748lyegyqg3"

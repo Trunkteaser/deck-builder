@@ -1,0 +1,26 @@
+[gd_resource type="Resource" load_steps=4 format=3 uid="uid://dg4yrlb0jkdpu"]
+
+[ext_resource type="Texture2D" uid="uid://hyk7fa8h7yhy" path="res://assets/sprites/fist.png" id="1_em0ht"]
+[ext_resource type="AudioStream" uid="uid://ts423b3gvpso" path="res://assets/sound/axe.ogg" id="2_nbqwd"]
+
+[sub_resource type="GDScript" id="GDScript_jpmgi"]
+script/source = "extends CardData
+
+@export var damage: int = 15
+
+func apply_effects(targets: Array[Node]) -> void:
+	var damage_effect := DamageEffect.new()
+	damage_effect.sfx = sfx
+	damage_effect.apply(targets, damage)
+	var draw_effect := DrawEffect.new()
+	draw_effect.apply(hero, 1)
+"
+
+[resource]
+script = SubResource("GDScript_jpmgi")
+damage = 17
+name = "Pursue"
+art = ExtResource("1_em0ht")
+description = "Deal 17 damage and draw a card."
+sfx = ExtResource("2_nbqwd")
+cost = 2
