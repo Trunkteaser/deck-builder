@@ -11,6 +11,7 @@ signal card_played(card_data: CardData)
 signal player_hand_drawn # To be emitted after having finished drawing.
 signal player_hand_discarded
 signal player_turn_ended
+signal player_died
 
 # Enemy.
 signal enemy_action_completed(enemy: Enemy)

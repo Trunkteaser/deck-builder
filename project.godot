@@ -45,6 +45,10 @@ folder_colors={
 "res://zzz/": "gray"
 }
 
+[gui]
+
+theme/custom_font="uid://c1hiyfel7mr0l"
+
 [input]
 
 left_mouse={

@@ -16,10 +16,7 @@ const CARD =  preload("res://scenes/card/card.tscn")
 @export var y_max := -15
 #endregion
 
-var cards_played_this_turn := 0
-
 func _ready() -> void:
-	Events.card_played.connect(_on_card_played)
 	#Events.request_card_draw.connect(draw) # Experimental.
 	
 	update_card_fanning()
@@ -45,25 +42,26 @@ func disable_hand() -> void: # Stops interaction with cards being discarded.
 		card.disabled = true
 
 func _on_card_reparent_requested(child: Card) -> void:
+	child.disabled = true
 	child.reparent(self)
-	var new_index := clampi(child.original_index - cards_played_this_turn, 0, get_child_count())
+	var new_index := clampi(child.original_index, 0, get_child_count())
 	move_child.call_deferred(child, new_index)
+	child.set_deferred("disabled", false)
 	#can this call update card fanning?
-	pass
 
-func draw() -> void: # Obsolete? Comment out.
-	var new_card = CARD.instantiate()
-	new_card.set_card_visuals()
-	add_child(new_card)
-	new_card.parent = self
-	update_card_fanning()
-	for child: Card in get_children():
-		child.check_playability()
-	
-	# Temporary code to connect to drawn cards.
-	for child: Card in get_children():
-		if not child.reparent_requested.is_connected(_on_card_reparent_requested):
-			child.reparent_requested.connect(_on_card_reparent_requested)
+#func draw() -> void: # Obsolete? Comment out.
+	#var new_card = CARD.instantiate()
+	#new_card.set_card_visuals()
+	#add_child(new_card)
+	#new_card.parent = self
+	#update_card_fanning()
+	#for child: Card in get_children():
+		#child.check_playability()
+	#
+	## Temporary code to connect to drawn cards.
+	#for child: Card in get_children():
+		#if not child.reparent_requested.is_connected(_on_card_reparent_requested):
+			#child.reparent_requested.connect(_on_card_reparent_requested)
 
 func discard() -> void: # Still hooked up to the button.
 	if get_child_count() < 1:
@@ -101,6 +99,3 @@ func update_card_fanning() -> void:
 
 func _on_child_order_changed() -> void:
 	update_card_fanning()
-
-func _on_card_played(_card_data: CardData) -> void:
-	cards_played_this_turn += 1

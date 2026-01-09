@@ -10,6 +10,7 @@ const ARROW_OFFSET := 5
 @onready var sprite_2d: Sprite2D = $Sprite2D
 @onready var arrow: Sprite2D = $Arrow
 @onready var stats_ui: StatsUI = $StatsUI
+@onready var intent_ui: IntentUI = $IntentUI
 
 var enemy_ai: EnemyAI
 var current_action: EnemyAction : set = set_current_action
@@ -23,6 +24,8 @@ func set_enemy_stats(new_enemy_stats: EnemyStats) -> void:
 
 func set_current_action(new_action: EnemyAction) -> void:
 	current_action = new_action
+	if current_action:
+		intent_ui.update_intent(current_action.intent)
 
 func setup_ai() -> void:
 	if enemy_ai:

@@ -17,11 +17,11 @@ const DRAG_STYLE := preload("uid://c336ntkuwrp1m")
 @onready var drop_point_detector: Area2D = $DropPointDetector
 @onready var card_state_machine: CardStateMachine = $CardStateMachine
 @onready var targets: Array[Node] = []
-@onready var original_index := self.get_index()
 
 @export var card_data: CardData : set = _set_card_data
 @export var hero_stats: HeroStats : set = _set_hero_stats
 
+var original_index := 0
 var parent: Control
 var tween: Tween
 var playable = true : set = _set_playable
@@ -76,7 +76,6 @@ func set_card_visuals() -> void:
 	card_name.text = card_data.name
 	cost.text = str(card_data.cost)
 	description.text = "[center]" + card_data.description + "[/center]"
-	# TODO Consider generating description.
 
 func animate_to_position(new_position: Vector2, duration: float) -> void:
 	tween = create_tween().set_trans(Tween.TRANS_CIRC).set_ease(Tween.EASE_OUT)
