@@ -1,4 +1,4 @@
-@icon("res://assets/sprites/skill class icon.png")
+@icon("res://assets/sprites/axe.png")
 extends Resource
 class_name CardData
 

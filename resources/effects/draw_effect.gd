@@ -6,5 +6,4 @@ func apply(targets: Array[Node], amount: int = 1) -> void:
 		if not target:
 			continue
 		if target is Hero or target is Enemy:
-			for i in amount:
-				Events.request_card_draw.emit()
+			Events.request_card_draw.emit(amount)

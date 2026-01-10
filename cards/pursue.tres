@@ -13,14 +13,13 @@ func apply_effects(targets: Array[Node]) -> void:
 	damage_effect.sfx = sfx
 	damage_effect.apply(targets, damage)
 	var draw_effect := DrawEffect.new()
-	draw_effect.apply(hero, 1)
+	draw_effect.apply(hero, 2)
 "
 
 [resource]
 script = SubResource("GDScript_jpmgi")
-damage = 17
 name = "Pursue"
 art = ExtResource("1_em0ht")
-description = "Deal 17 damage and draw a card."
+description = "Deal 15 damage and draw 2 cards."
 sfx = ExtResource("2_nbqwd")
 cost = 2

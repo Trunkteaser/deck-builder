@@ -10,7 +10,7 @@ const DRAW_SFX := preload("uid://bwonltvbchlj")
 var hero: HeroStats
 
 func _ready() -> void:
-	Events.request_card_draw.connect(draw_card) # Experimental.
+	Events.request_card_draw.connect(draw_cards) # Experimental.
 	Events.card_played.connect(_on_card_played)
 
 func start_battle(hero_stats: HeroStats) -> void:
