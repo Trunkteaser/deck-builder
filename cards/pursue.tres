@@ -20,6 +20,7 @@ func apply_effects(targets: Array[Node]) -> void:
 script = SubResource("GDScript_jpmgi")
 name = "Pursue"
 art = ExtResource("1_em0ht")
-description = "Deal 15 damage and draw 2 cards."
+description = "Deal 15 damage.
+Draw 2 cards."
 sfx = ExtResource("2_nbqwd")
 cost = 2
