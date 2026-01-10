@@ -2,6 +2,7 @@ extends Container
 class_name Hand
 
 const CARD =  preload("res://scenes/card/card.tscn")
+const DISCARD_SFX = preload("uid://bwonltvbchlj")
 
 @export var hero_stats: HeroStats
 
@@ -36,6 +37,7 @@ func add_card(card_data: CardData) -> void:
 
 func discard_card(card: Card) -> void:
 	card.queue_free()
+	SFXPlayer.play(DISCARD_SFX)
 
 func disable_hand() -> void: # Stops interaction with cards being discarded.
 	for card: Card in get_children():
