@@ -9,11 +9,14 @@ script/source = "extends CardData
 @export var damage: int = 15
 
 func apply_effects(targets: Array[Node]) -> void:
-	var damage_effect := DamageEffect.new()
-	damage_effect.sfx = sfx
-	damage_effect.apply(targets, damage)
-	var draw_effect := DrawEffect.new()
-	draw_effect.apply(hero, 2)
+	#var damage_effect := DamageEffect.new()
+	#damage_effect.sfx = sfx
+	#damage_effect.apply(targets, damage)
+	#var draw_effect := DrawEffect.new()
+	#draw_effect.apply(hero, 2)
+	Apply.damage(targets, damage)
+	Apply.draw(2)
+	SFXPlayer.play(sfx)
 "
 
 [resource]
