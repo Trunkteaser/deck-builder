@@ -1,0 +1,20 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://ucoipe7k8gjl"]
+
+[ext_resource type="Texture2D" uid="uid://bcftmmvef1jcd" path="res://assets/sprites/axe.png" id="1_gahjk"]
+
+[sub_resource type="GDScript" id="GDScript_mfk8n"]
+script/source = "extends CardData
+
+@export var damage: int = 25
+
+func apply_effects(targets: Array[Node]) -> void:
+	var damage_effect := DamageEffect.new()
+	damage_effect.apply(targets, damage)
+"
+
+[resource]
+script = SubResource("GDScript_mfk8n")
+name = "Big Chonkin Bonkin"
+art = ExtResource("1_gahjk")
+description = "Deal 25 damage."
+cost = 3

@@ -25,7 +25,7 @@ func _ready() -> void:
 	start_battle(new_stats)
 	
 func start_battle(stats: HeroStats) -> void:
-	MusicPlayer.play(music, true)
+	#MusicPlayer.play(music, true)
 	enemy_handler.reset_enemy_actions()
 	hero_handler.start_battle(stats)
 

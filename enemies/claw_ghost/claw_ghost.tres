@@ -1,10 +1,12 @@
-[gd_resource type="Resource" script_class="EnemyStats" load_steps=3 format=3 uid="uid://blpmomhimxbc1"]
+[gd_resource type="Resource" script_class="EnemyStats" load_steps=4 format=3 uid="uid://blpmomhimxbc1"]
 
+[ext_resource type="PackedScene" uid="uid://dlps4k7ukounq" path="res://enemies/claw_ghost/claw_ghost_ai.tscn" id="1_8ys2s"]
 [ext_resource type="Script" uid="uid://41i0vfynwjfy" path="res://resources/enemy_stats.gd" id="1_knxwo"]
 [ext_resource type="Texture2D" uid="uid://calh6m8dogwnh" path="res://assets/sprites/claw ghost.png" id="1_s70y4"]
 
 [resource]
 script = ExtResource("1_knxwo")
+ai = ExtResource("1_8ys2s")
 max_health = 10
 art = ExtResource("1_s70y4")
 metadata/_custom_type_script = "uid://41i0vfynwjfy"
