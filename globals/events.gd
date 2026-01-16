@@ -19,3 +19,4 @@ signal enemy_action_completed(enemy: Enemy)
 signal enemy_turn_ended # Emit after ALL enemies have finished their turns.
 
 signal request_card_draw(amount: int)
+signal request_discard(amount: int)

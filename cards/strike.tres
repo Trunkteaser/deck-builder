@@ -6,10 +6,18 @@
 [sub_resource type="GDScript" id="GDScript_gi6ei"]
 script/source = "extends CardData
 
+@export var damage := 6
+
 func apply_effects(targets: Array[Node]) -> void:
-	var damage_effect := DamageEffect.new()
-	damage_effect.sfx = sfx
-	damage_effect.apply(targets, 6)
+	
+	# EFFECT BASED
+	#var damage_effect := DamageEffect.new()
+	#damage_effect.sfx = sfx
+	#damage_effect.apply(targets, damage)
+	
+	# GLOBAL SCRIPT BASED
+	Apply.damage(targets, damage)
+	SFXPlayer.play(sfx)
 "
 
 [resource]
