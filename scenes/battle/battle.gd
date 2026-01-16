@@ -25,7 +25,7 @@ func _ready() -> void:
 	start_battle(new_stats)
 	
 func start_battle(stats: HeroStats) -> void:
-	#MusicPlayer.play(music, true)
+	MusicPlayer.play(music, true)
 	enemy_handler.reset_enemy_actions()
 	hero_handler.start_battle(stats)
 
@@ -41,6 +41,7 @@ func _on_enemy_turn_ended() -> void:
 func _on_enemy_handler_child_order_changed() -> void:
 	if enemy_handler.get_child_count() == 0:
 		print("Victory!")
+		Events.battle_won.emit()
 
 func _on_player_died() -> void:
 	print("You died...")

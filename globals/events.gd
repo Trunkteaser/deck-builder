@@ -18,5 +18,30 @@ signal player_died
 signal enemy_action_completed(enemy: Enemy)
 signal enemy_turn_ended # Emit after ALL enemies have finished their turns.
 
+# Effect.
 signal request_card_draw(amount: int)
 signal request_discard(amount: int)
+
+# Battle.
+signal battle_won
+
+# Map.
+signal map_exited
+
+# Shop.
+signal shop_exited
+
+# Campfire?
+signal campfire_exited
+
+# Treasure room?
+signal treasure_room_exited
+
+# Event?
+signal event_exited
+
+# Hermit?
+signal hermit_exited
+
+# Battle rewards.
+signal battle_reward_exited
