@@ -16,6 +16,7 @@ func apply_effects(targets: Array[Node]) -> void:
 [resource]
 script = SubResource("GDScript_mfk8n")
 name = "Big Chonkin Bonkin"
+rarity = 2
 art = ExtResource("1_gahjk")
 description = "Deal 25 damage."
 sfx = ExtResource("2_flukm")

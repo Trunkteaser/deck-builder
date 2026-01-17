@@ -1,6 +1,6 @@
 [gd_resource type="Resource" load_steps=4 format=3 uid="uid://cyw4233ngdw8l"]
 
-[ext_resource type="Texture2D" uid="uid://dc2y3fms2vr26" path="res://assets/sprites/hero hat.png" id="1_mbemw"]
+[ext_resource type="Texture2D" uid="uid://be3i4x1w3enkn" path="res://assets/sprites/test card art.png" id="1_a6y4x"]
 [ext_resource type="AudioStream" uid="uid://dnknwy741q2l0" path="res://assets/sound/slash.ogg" id="2_a6y4x"]
 
 [sub_resource type="GDScript" id="GDScript_nmtgx"]
@@ -24,7 +24,8 @@ func apply_effects(targets: Array[Node]) -> void:
 [resource]
 script = SubResource("GDScript_nmtgx")
 name = "Hit and Block"
-art = ExtResource("1_mbemw")
+rarity = 1
+art = ExtResource("1_a6y4x")
 description = "Deal 10 damage.
 Gain 10 block."
 sfx = ExtResource("2_a6y4x")

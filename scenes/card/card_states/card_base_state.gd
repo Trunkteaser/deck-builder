@@ -9,7 +9,7 @@ func enter() -> void:
 	if card.tween and card.tween.is_running():
 		card.tween.kill()
 	
-	card.panel.set("theme_override_styles/panel", card.BASE_STYLE)
+	card.visuals.panel.set("theme_override_styles/panel", card.BASE_STYLE)
 	card.reparent_requested.emit(card)
 	# When dragging, pivot offset must change.
 	# In base state (hand), I want it in the middle to work with fanning.
@@ -31,10 +31,10 @@ func on_mouse_entered() -> void:
 	if not card.playable or card.disabled:
 		return
 	
-	card.panel.set("theme_override_styles/panel", card.HOVER_STYLE)
+	card.visuals.panel.set("theme_override_styles/panel", card.HOVER_STYLE)
 
 func on_mouse_exited() -> void:
 	if not card.playable or card.disabled:
 		return
 	
-	card.panel.set("theme_override_styles/panel", card.BASE_STYLE)
+	card.visuals.panel.set("theme_override_styles/panel", card.BASE_STYLE)

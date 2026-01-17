@@ -1,4 +1,3 @@
-@tool
 extends Control
 class_name Card
 
@@ -9,14 +8,10 @@ const BASE_STYLE := preload("uid://1ca5n2amt2on")
 const HOVER_STYLE := preload("uid://cg3od0rql0v1o")
 const DRAG_STYLE := preload("uid://c336ntkuwrp1m")
 
-@onready var panel: Panel = %Panel
-@onready var cost: Label = %Cost
-@onready var card_name: Label = %Name
-@onready var art: TextureRect = %Art
-@onready var description: RichTextLabel = %Description
 @onready var drop_point_detector: Area2D = $DropPointDetector
 @onready var card_state_machine: CardStateMachine = $CardStateMachine
 @onready var targets: Array[Node] = []
+@onready var visuals: CardVisuals = $Visuals
 
 @export var card_data: CardData : set = _set_card_data
 @export var hero_stats: HeroStats : set = _set_hero_stats
@@ -53,7 +48,7 @@ func _set_card_data(new_card: CardData) -> void:
 	if not is_node_ready():
 		await ready
 	card_data = new_card
-	set_card_visuals()
+	visuals.card_data = card_data
 
 func _set_hero_stats(value: HeroStats) -> void:
 	hero_stats = value
@@ -63,19 +58,11 @@ func _set_hero_stats(value: HeroStats) -> void:
 func _set_playable(value: bool) -> void:
 	playable = value
 	if not playable:
-		cost.add_theme_color_override("font_color", Color.RED)
-		panel.modulate.a = 0.5
+		visuals.cost.add_theme_color_override("font_color", Color.RED)
+		visuals.panel.modulate.a = 0.5
 	else:
-		cost.remove_theme_color_override("font_color")
-		panel.modulate.a = 1
-
-func set_card_visuals() -> void:
-	if not card_data:
-		return
-	art.texture = card_data.art
-	card_name.text = card_data.name
-	cost.text = str(card_data.cost)
-	description.text = "[center]" + card_data.description + "[/center]"
+		visuals.cost.remove_theme_color_override("font_color")
+		visuals.panel.modulate.a = 1
 
 func animate_to_position(new_position: Vector2, duration: float) -> void:
 	tween = create_tween().set_trans(Tween.TRANS_CIRC).set_ease(Tween.EASE_OUT)

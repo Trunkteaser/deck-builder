@@ -9,7 +9,7 @@ func enter() -> void:
 	if ui_layer:
 		card.reparent(ui_layer) # No longer attached to hand.
 		card.rotation_degrees = 0
-	card.panel.set("theme_override_styles/panel", card.DRAG_STYLE)
+	card.visuals.panel.set("theme_override_styles/panel", card.DRAG_STYLE)
 	Events.card_drag_started.emit(card)
 	
 	minimum_drag_time_elapsed = false
