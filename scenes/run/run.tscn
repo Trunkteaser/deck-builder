@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://c1bl06amugvjo"]
+[gd_scene load_steps=9 format=3 uid="uid://c1bl06amugvjo"]
 
 [ext_resource type="PackedScene" uid="uid://bm215cpa3pkhe" path="res://scenes/map/map.tscn" id="1_8rlou"]
 [ext_resource type="Script" uid="uid://cfqoy5tjx0ooc" path="res://scenes/run/run.gd" id="1_wdonh"]
 [ext_resource type="Resource" uid="uid://bysipgdtnrcl2" path="res://scenes/run/run_startup.tres" id="2_o4jfg"]
 [ext_resource type="Theme" uid="uid://dh870meh4j8a1" path="res://assets/other/main_theme.tres" id="3_o4jfg"]
 [ext_resource type="PackedScene" uid="uid://dp8473jexowur" path="res://scenes/ui/card_pile_opener.tscn" id="5_gqbdr"]
+[ext_resource type="PackedScene" uid="uid://bj7yjpf32b6qg" path="res://scenes/ui/inspiration_ui.tscn" id="5_wo0nw"]
 [ext_resource type="Texture2D" uid="uid://bkpsw2exngvu" path="res://assets/sprites/deck.png" id="6_5o40y"]
 [ext_resource type="PackedScene" uid="uid://bc5sy7kmyvlpa" path="res://scenes/ui/card_pile_view.tscn" id="7_0tt4g"]
 
@@ -74,6 +75,14 @@ custom_minimum_size = Vector2(0, 40)
 anchors_preset = 10
 anchor_right = 1.0
 grow_horizontal = 2
+
+[node name="Spacer2" type="Control" parent="TopBar/BarItems"]
+custom_minimum_size = Vector2(4, 0)
+layout_mode = 2
+
+[node name="InspirationUI" parent="TopBar/BarItems" instance=ExtResource("5_wo0nw")]
+unique_name_in_owner = true
+layout_mode = 2
 
 [node name="Placeholder" type="Control" parent="TopBar/BarItems"]
 layout_mode = 2

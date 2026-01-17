@@ -20,8 +20,10 @@ const TREASURE_SCENE := preload("uid://djbb0v375o0fq")
 @onready var campfire_button: Button = %CampfireButton
 @onready var deck_button: CardPileOpener = %DeckButton
 @onready var deck_view: CardPileView = %DeckView
+@onready var inspiration_ui: InspirationUI = %InspirationUI
 
 var hero: HeroStats
+var stats: RunStats
 
 func _ready() -> void:
 	if not run_startup:
@@ -35,6 +37,7 @@ func _ready() -> void:
 			pass
 
 func _start_run() -> void:
+	stats = RunStats.new() # Temp, different post save/load.
 	_setup_event_connections()
 	_setup_top_bar()
 	# TODO Generate map.
@@ -67,6 +70,7 @@ func _setup_event_connections() -> void:
 	treasure_button.pressed.connect(_change_view.bind(TREASURE_SCENE))
 
 func _setup_top_bar() -> void:
+	inspiration_ui.run_stats = stats
 	deck_button.card_pile = hero.deck
 	deck_view.card_pile = hero.deck
 	deck_button.pressed.connect(deck_view.show_current_view.bind("Deck"))

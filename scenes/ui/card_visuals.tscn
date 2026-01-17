@@ -2,10 +2,10 @@
 
 [ext_resource type="Script" uid="uid://d3vdw2umlku23" path="res://scenes/ui/card_visuals.gd" id="1_jxbv6"]
 [ext_resource type="StyleBox" uid="uid://1ca5n2amt2on" path="res://assets/other/card_base_stylebox.tres" id="1_x0ouv"]
-[ext_resource type="Resource" uid="uid://cyw4233ngdw8l" path="res://cards/hit_and_block.tres" id="2_imfec"]
+[ext_resource type="Resource" uid="uid://cwcml2stsyhy5" path="res://cards/heal.tres" id="2_imfec"]
 [ext_resource type="FontFile" uid="uid://c1hiyfel7mr0l" path="res://assets/other/Jersey15-Regular.ttf" id="2_jxbv6"]
 [ext_resource type="FontFile" uid="uid://xloy1dm05a8w" path="res://assets/other/Jersey10-Regular.ttf" id="4_m3e03"]
-[ext_resource type="Texture2D" uid="uid://be3i4x1w3enkn" path="res://assets/sprites/test card art.png" id="5_m3e03"]
+[ext_resource type="Texture2D" uid="uid://b7rvi8vesm3ij" path="res://assets/sprites/grass terrain.png" id="5_m3e03"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_i43yy"]
 font_size = 9
@@ -37,7 +37,7 @@ offset_right = 14.0
 offset_bottom = 16.3125
 theme_override_fonts/font = ExtResource("2_jxbv6")
 theme_override_font_sizes/font_size = 15
-text = "2"
+text = "1"
 vertical_alignment = 1
 
 [node name="Name" type="Label" parent="."]
@@ -53,7 +53,7 @@ offset_bottom = 14.0
 grow_horizontal = 0
 theme_override_fonts/font = ExtResource("2_jxbv6")
 theme_override_font_sizes/font_size = 9
-text = "Hit and Block"
+text = "Heal"
 label_settings = SubResource("LabelSettings_i43yy")
 horizontal_alignment = 2
 
@@ -80,8 +80,7 @@ mouse_filter = 2
 theme_override_fonts/normal_font = ExtResource("4_m3e03")
 theme_override_font_sizes/normal_font_size = 8
 bbcode_enabled = true
-text = "[center]Deal 10 damage.
-Gain 10 block.[/center]"
+text = "[center]Heal 10 health.[/center]"
 
 [node name="Rarity" type="Label" parent="."]
 unique_name_in_owner = true

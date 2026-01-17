@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://bj7yjpf32b6qg"]
+
+[ext_resource type="Script" uid="uid://b0gm2tn7blfb3" path="res://scenes/ui/inspiration_ui.gd" id="1_1thno"]
+[ext_resource type="Texture2D" uid="uid://bpfavoc513j3m" path="res://assets/sprites/brain.png" id="1_8khi5"]
+
+[node name="InspirationUI" type="HBoxContainer"]
+offset_right = 46.0
+offset_bottom = 20.0
+size_flags_vertical = 4
+theme_override_constants/separation = 0
+script = ExtResource("1_1thno")
+
+[node name="Icon" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+texture = ExtResource("1_8khi5")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+size_flags_vertical = 1
+text = "999"
+vertical_alignment = 1
