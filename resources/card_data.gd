@@ -3,10 +3,17 @@ extends Resource
 class_name CardData
 
 enum Target {SINGLE_ENEMY, SELF, ALL_ENEMIES, EVERYONE}
+enum Rarity {ORDINARY, REMARKABLE, VISIONARY}
 enum Type {ATTACK, SKILL, POWER}
+
+const RARITY_COLORS := {
+	CardData.Rarity.ORDINARY: Color.GRAY,
+	CardData.Rarity.REMARKABLE: Color.CORNFLOWER_BLUE,
+	CardData.Rarity.VISIONARY: Color.GOLD}
 
 @export_group("Visual")
 @export var name: String
+@export var rarity: Rarity
 @export var art: Texture2D
 @export_multiline var description: String
 @export var sfx: AudioStream

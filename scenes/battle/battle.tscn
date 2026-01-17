@@ -148,7 +148,7 @@ rotation_curve = SubResource("Curve_oiw7q")
 
 [node name="ManaUI" parent="BattleUI" instance=ExtResource("12_mxe8n")]
 offset_top = -86.0
-offset_bottom = -46.0
+offset_bottom = -54.0
 hero_stats = ExtResource("5_oiw7q")
 
 [node name="EndTurnButton" type="Button" parent="BattleUI"]
