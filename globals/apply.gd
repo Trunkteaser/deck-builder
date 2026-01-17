@@ -1,6 +1,7 @@
 extends Node
 
 const BLOCK_SFX: AudioStream = preload("uid://d0cq6s264xrlr")
+# TODO Implement heal sfx here.
 
 # TODO Decide if giving block and taking dmg have sound effects.
 
@@ -25,4 +26,11 @@ func draw(amount: int) -> void:
 func discard(_amount: int) -> void:
 	# Implement in a post discard pile world.
 	pass
+
+func heal(targets: Array[Node], amount: int) -> void:
+	for target in targets:
+		if not target:
+			continue
+		if target is Hero or target is Enemy:
+			target.stats.heal(amount)
  

@@ -1,0 +1,20 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://cwcml2stsyhy5"]
+
+[ext_resource type="Texture2D" uid="uid://b7rvi8vesm3ij" path="res://assets/sprites/grass terrain.png" id="1_fokd8"]
+
+[sub_resource type="GDScript" id="GDScript_a3gd1"]
+script/source = "extends CardData
+
+@export var healing := 10
+
+func apply_effects(targets: Array[Node]) -> void:
+	Apply.heal(targets, healing)
+"
+
+[resource]
+script = SubResource("GDScript_a3gd1")
+name = "Heal"
+rarity = 1
+art = ExtResource("1_fokd8")
+description = "Heal 10 health."
+target = 1
