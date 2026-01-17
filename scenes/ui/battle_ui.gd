@@ -6,9 +6,21 @@ class_name BattleUI
 @onready var hand: Hand = %Hand
 @onready var mana_ui: ManaUI = $ManaUI
 @onready var end_turn_button: Button = %EndTurnButton
+@onready var draw_pile_button: CardPileOpener = %DrawPileButton
+@onready var discard_pile_button: CardPileOpener = %DiscardPileButton
+@onready var draw_pile_view: CardPileView = %DrawPileView
+@onready var discard_pile_view: CardPileView = %DiscardPileView
 
 func _ready() -> void:
 	Events.player_hand_drawn.connect(_on_player_hand_drawn)
+	draw_pile_button.pressed.connect(draw_pile_view.show_current_view.bind("Draw Pile", true))
+	discard_pile_button.pressed.connect(discard_pile_view.show_current_view.bind("Discard Pile"))
+
+func initialize_card_pile_ui() -> void: # Called by battle.
+	draw_pile_button.card_pile = hero_stats.draw_pile
+	draw_pile_view.card_pile = hero_stats.draw_pile
+	discard_pile_button.card_pile = hero_stats.discard_pile
+	discard_pile_view.card_pile = hero_stats.discard_pile
 
 func _set_hero_stats(value: HeroStats) -> void:
 	hero_stats = value
