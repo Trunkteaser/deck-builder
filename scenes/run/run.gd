@@ -42,7 +42,7 @@ func _start_run() -> void:
 	_setup_top_bar()
 	# TODO Generate map.
 
-func _change_view(scene: PackedScene) -> void:
+func _change_view(scene: PackedScene) -> Node:
 	if current_view.get_child_count() > 0:
 		current_view.get_child(0).queue_free()
 	#get_tree().paused = false # In case BattleOver screen or other has paused.
@@ -53,9 +53,12 @@ func _change_view(scene: PackedScene) -> void:
 		map.show()
 	else:
 		map.hide()
+	
+	return new_view
 
 func _setup_event_connections() -> void:
-	Events.battle_won.connect(_change_view.bind(BATTLE_REWARD_SCENE))
+	Events.battle_won.connect(_on_battle_won)
+	
 	Events.battle_reward_exited.connect(_change_view.bind(MAP_SCENE))
 	Events.campfire_exited.connect(_change_view.bind(MAP_SCENE))
 	Events.map_exited.connect(_on_map_exited)
@@ -74,6 +77,15 @@ func _setup_top_bar() -> void:
 	deck_button.card_pile = hero.deck
 	deck_view.card_pile = hero.deck
 	deck_button.pressed.connect(deck_view.show_current_view.bind("Deck"))
+
+func _on_battle_won() -> void:
+	var reward_scene: BattleRewards = _change_view(BATTLE_REWARD_SCENE)
+	reward_scene.run_stats = stats
+	reward_scene.hero_stats = hero
+	
+	# Temp code, will live in encounter data.
+	reward_scene.add_inspiration_reward(1337)
+	reward_scene.add_card_reward()
 
 func _on_map_exited() -> void:
 	# TODO Change view based on room type.

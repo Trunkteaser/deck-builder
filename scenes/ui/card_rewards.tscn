@@ -1,0 +1,56 @@
+[gd_scene load_steps=8 format=3 uid="uid://xivd0tm3vqwy"]
+
+[ext_resource type="Script" uid="uid://dhl2gfic5uhe1" path="res://scenes/ui/card_rewards.gd" id="1_chmpv"]
+[ext_resource type="PackedScene" uid="uid://dshlk5gudostl" path="res://scenes/ui/card_reward.tscn" id="1_mywnl"]
+[ext_resource type="Theme" uid="uid://dh870meh4j8a1" path="res://assets/other/main_theme.tres" id="2_chmpv"]
+[ext_resource type="Script" uid="uid://cf748lyegyqg3" path="res://resources/card_data.gd" id="2_rssxt"]
+[ext_resource type="Resource" uid="uid://cwcml2stsyhy5" path="res://cards/heal.tres" id="3_gx0x2"]
+[ext_resource type="Resource" uid="uid://cyw4233ngdw8l" path="res://cards/hit_and_block.tres" id="4_14wmn"]
+[ext_resource type="Resource" uid="uid://ucoipe7k8gjl" path="res://cards/big_chonkin_bonkin.tres" id="5_27adq"]
+
+[node name="CardRewards" type="ColorRect"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.76862746)
+script = ExtResource("1_chmpv")
+rewards = Array[ExtResource("2_rssxt")]([ExtResource("3_gx0x2"), ExtResource("4_14wmn"), ExtResource("5_27adq")])
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -116.5
+offset_top = -65.0
+offset_right = 116.5
+offset_bottom = 65.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 15
+
+[node name="Cards" type="HBoxContainer" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="CardReward" parent="VBoxContainer/Cards" instance=ExtResource("1_mywnl")]
+layout_mode = 2
+
+[node name="CardReward2" parent="VBoxContainer/Cards" instance=ExtResource("1_mywnl")]
+layout_mode = 2
+
+[node name="CardReward3" parent="VBoxContainer/Cards" instance=ExtResource("1_mywnl")]
+layout_mode = 2
+
+[node name="SkipRewardButton" type="Button" parent="VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(70, 20)
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("2_chmpv")
+text = "Skip"

@@ -1,0 +1,44 @@
+[gd_scene load_steps=4 format=3 uid="uid://yu10wywl2s4m"]
+
+[ext_resource type="Theme" uid="uid://dh870meh4j8a1" path="res://assets/other/main_theme.tres" id="1_8fbqs"]
+[ext_resource type="Script" uid="uid://rskvsdvbniap" path="res://scenes/ui/reward_button.gd" id="2_x4nin"]
+[ext_resource type="Texture2D" uid="uid://bpfavoc513j3m" path="res://assets/sprites/brain.png" id="3_wraws"]
+
+[node name="RewardButton" type="Button"]
+custom_minimum_size = Vector2(0, 32)
+offset_right = 150.0
+offset_bottom = 32.0
+theme = ExtResource("1_8fbqs")
+script = ExtResource("2_x4nin")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 4
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Icon" type="TextureRect" parent="MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+texture = ExtResource("3_wraws")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 1
+text = "37 inspiration"
+vertical_alignment = 1
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

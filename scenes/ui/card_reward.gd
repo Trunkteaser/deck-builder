@@ -1,5 +1,7 @@
 extends CenterContainer
-class_name CardDisplay
+class_name CardReward
+
+#signal card_reward_selected(card_data: CardData)
 
 const BASE_STYLEBOX := preload("uid://1ca5n2amt2on")
 const HOVER_STYLEBOX := preload("uid://cg3od0rql0v1o")
@@ -22,4 +24,5 @@ func _on_visuals_mouse_exited() -> void:
 
 func _on_visuals_gui_input(event: InputEvent) -> void:
 	if event.is_action_pressed("left_mouse"):
-		pass # Here we can pick if in a card reward scene?
+		#card_reward_selected.emit(card_data)
+		Events.card_reward_selected.emit(card_data)

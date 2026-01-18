@@ -45,3 +45,4 @@ signal hermit_exited
 
 # Battle rewards.
 signal battle_reward_exited
+signal card_reward_selected(card_data: CardData)

@@ -3,6 +3,7 @@ extends UnitStats
 class_name HeroStats
 
 @export var starting_deck: CardPile
+@export var draftable_cards: CardPile
 @export var cards_per_turn: int
 @export var max_mana: int
 
