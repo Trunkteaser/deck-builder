@@ -9,7 +9,7 @@ const MAP_WIDTH := 7
 const PATHS := 6
 const MONSTER_ROOM_WEIGHT := 10.0
 const SHOP_ROOM_WEIGHT := 2.0
-const ELITE_ROOM_WEIGHT := 3.0
+const ELITE_ROOM_WEIGHT := 2.0
 
 # TODO Add in other rooms here.
 var random_room_type_weights := {
@@ -18,9 +18,6 @@ var random_room_type_weights := {
 	Room.Type.SHOP: 0.0,}
 var random_room_type_total_weight := 0
 var map_data: Array[Array] # Outer is floors, inner is rooms on floors.
-
-func _ready() -> void:
-	generate_map() # Testing.
 
 func generate_map() -> Array[Array]:
 	map_data = _generate_initial_grid()
@@ -33,15 +30,14 @@ func generate_map() -> Array[Array]:
 	_setup_random_room_weights()
 	_setup_room_types()
 	
-	
-	var i := 0
-	for flooor in map_data:
-		print("floor %s" % i)
-		var used_rooms = flooor.filter(
-			func(room: Room): return room.next_rooms.size() > 0
-		)
-		print(used_rooms)
-		i += 1
+	#var i := 0
+	#for flooor in map_data:
+		#print("floor %s" % i)
+		#var used_rooms = flooor.filter(
+			#func(room: Room): return room.next_rooms.size() > 0
+		#)
+		#print(used_rooms)
+		#i += 1
 	
 	return map_data
 
@@ -110,7 +106,7 @@ func _setup_boss_room() -> void:
 	var boss_room: Room = map_data[FLOORS - 1][middle]
 	for j in MAP_WIDTH: # Connecting to the boss room.
 		var before_boss: Room = map_data[FLOORS - 2][j]
-		if before_boss.next_rooms: # Has next rooms, ie is being used.
+		if before_boss.next_rooms: # Has next rooms, ie is being used. Shouldnt it check size > 0?
 			before_boss.next_rooms = []
 			before_boss.next_rooms.append(boss_room)
 	boss_room.type = Room.Type.BOSS
@@ -123,4 +119,60 @@ func _setup_random_room_weights() -> void:
 	random_room_type_total_weight = random_room_type_weights[Room.Type.SHOP]
 
 func _setup_room_types() -> void:
-	pass
+	# First floor is always a battle.
+	for room: Room in map_data[0]:
+		if room.next_rooms.size() > 0:
+			room.type = Room.Type.MONSTER
+	# Can add other guaranteed floors here, like above.
+	for flooor in map_data:
+		for room: Room in flooor:
+			for next_room: Room in room.next_rooms:
+				if next_room.type == Room.Type.NOT_ASSIGNED:
+					_set_room_randomly(next_room)
+
+func _set_room_randomly(room: Room) -> void:
+	var elite_below_4 := true
+	var consecutive_elite := true
+	var consecutive_shop := true
+	# Can add other flags.
+	var type_candidate: Room.Type
+	while elite_below_4 or consecutive_elite or consecutive_shop:
+		type_candidate = _get_random_room_type_by_weight()
+		var is_elite := type_candidate == Room.Type.ELITE
+		var has_elite_parent := _room_has_parent_of_type(room, Room.Type.CAMPFIRE)
+		var is_shop := type_candidate == Room.Type.SHOP
+		var has_shop_parent := _room_has_parent_of_type(room, Room.Type.SHOP)
+		elite_below_4 = is_elite and room.row < 3
+		consecutive_elite = is_elite and has_elite_parent
+		consecutive_shop = is_shop and has_shop_parent
+	room.type = type_candidate
+
+func _room_has_parent_of_type(room: Room, type: Room.Type) -> bool:
+	var parents: Array[Room] = []
+	# Left parent.
+	if room.column > 0 and room.row > 0:
+		var parent_candidate: Room = map_data[room.row - 1][room.column - 1]
+		if parent_candidate.next_rooms.has(room):
+			parents.append(parent_candidate)
+	# Middle parent.
+	if room.row > 0:
+		var parent_candidate: Room = map_data[room.row - 1][room.column]
+		if parent_candidate.next_rooms.has(room):
+			parents.append(parent_candidate)
+	# Right parent.
+	if room.column < MAP_WIDTH-1 and room.row > 0:
+		var parent_candidate: Room = map_data[room.row - 1][room.column + 1]
+		if parent_candidate.next_rooms.has(room):
+			parents.append(parent_candidate)
+	for parent: Room in parents:
+		if parent.type == type:
+			return true
+	return false
+	
+func _get_random_room_type_by_weight() -> Room.Type:
+	var roll := randf_range(0.0, random_room_type_total_weight)
+	for type: Room.Type in random_room_type_weights:
+		if random_room_type_weights[type] > roll:
+			return type
+	return Room.Type.MONSTER
+	
