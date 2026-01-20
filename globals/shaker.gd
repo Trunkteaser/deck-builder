@@ -13,5 +13,6 @@ func shake(shakee: Node2D, intensity: float = 32, duration: float = 0.2) -> void
 			target = orig_pos
 		tween.tween_property(shakee, "position", target, duration/float(shake_count))
 		intensity *= 0.75
-	tween.finished.connect(func(): shakee.position = orig_pos)
+	if shakee: # Idk bro got errors.
+		tween.finished.connect(func(): shakee.position = orig_pos)
 	

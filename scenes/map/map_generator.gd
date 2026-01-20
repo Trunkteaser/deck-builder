@@ -1,10 +1,10 @@
 extends Node
 class_name MapGenerator
 
-const X_DIST := 30 # Gap between nodes on x-axis.
-const Y_DIST := 25 # Gap between nodes on y-axis (between floors).
-const PLACEMENT_RANDOMNESS := 5
-const FLOORS := 15
+const X_DIST := 50 # 50 is good with 10 floors.
+const Y_DIST := 35 # 
+const PLACEMENT_RANDOMNESS := 8
+const FLOORS := 10
 const MAP_WIDTH := 7
 const PATHS := 6
 const MONSTER_ROOM_WEIGHT := 10.0
@@ -48,14 +48,14 @@ func _generate_initial_grid() -> Array[Array]:
 		for j in MAP_WIDTH: # By default 7.
 			var room := Room.new()
 			var offset := Vector2(randf(), randf()) * PLACEMENT_RANDOMNESS
-			# TODO Simply swap X_DIST and -Y_DIST here for horizontal map.
-			room.position = Vector2(j * X_DIST, i * -Y_DIST) + offset
+			# Original is (j * X_DIST, i * -Y_DIST).
+			room.position = Vector2(i * X_DIST, j * Y_DIST) + offset
 			room.row = i
 			room.column = j
 			room.next_rooms = []
 			# Boss room.
 			if i == FLOORS - 1:
-				room.position.y = (i + 1) * -Y_DIST # TODO This as well. +1 is extra big gap.
+				room.position.x = (i + 1) * X_DIST # +1 is extra big gap.
 			flooor.append(room)
 		grid.append(flooor)
 	return grid

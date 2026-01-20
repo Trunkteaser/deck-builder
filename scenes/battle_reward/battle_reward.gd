@@ -30,14 +30,16 @@ func add_inspiration_reward(amount: int) -> void:
 	inspiration_reward.reward_icon = INSPIRATION_ICON
 	inspiration_reward.reward_text = INSPIRATION_TEXT % amount
 	inspiration_reward.pressed.connect(_on_inspiration_reward_taken.bind(amount))
-	rewards.add_child.call_deferred(inspiration_reward)
+	if rewards: # Idk bro got crashes.
+		rewards.add_child.call_deferred(inspiration_reward)
 
 func add_card_reward() -> void:
 	var card_reward: RewardButton = REWARD_BUTTON.instantiate()
 	card_reward.reward_icon = CARD_ICON
 	card_reward.reward_text = CARD_TEXT
 	card_reward.pressed.connect(_show_card_rewards)
-	rewards.add_child.call_deferred(card_reward)
+	if rewards: # Idk bro got crashes.
+		rewards.add_child.call_deferred(card_reward)
 
 func _show_card_rewards() -> void:
 	if not run_stats or not hero_stats:
