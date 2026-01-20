@@ -27,7 +27,7 @@ signal battle_won
 signal damage_taken(value: int, position: Vector2) # For dmg popup tween.
 
 # Map.
-signal map_exited
+signal map_exited(room: Room) # More like room entered.
 
 # Shop.
 signal shop_exited
