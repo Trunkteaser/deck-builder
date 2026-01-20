@@ -100,3 +100,10 @@ func _on_map_exited(room: Room) -> void:
 			_change_view(BATTLE_SCENE)
 		Room.Type.SHOP:
 			_change_view(SHOP_SCENE)
+
+
+func _on_map_button_pressed() -> void: # Testing?
+	if not map.visible:
+		map.show()
+	else:
+		map.hide()

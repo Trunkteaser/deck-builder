@@ -89,6 +89,17 @@ layout_mode = 2
 layout_mode = 2
 size_flags_horizontal = 3
 
+[node name="MapButton" type="Button" parent="TopBar/BarItems"]
+custom_minimum_size = Vector2(70, 20)
+layout_mode = 2
+size_flags_vertical = 4
+theme = ExtResource("3_o4jfg")
+text = "MapDebug"
+
+[node name="Spacer3" type="Control" parent="TopBar/BarItems"]
+custom_minimum_size = Vector2(15, 0)
+layout_mode = 2
+
 [node name="DeckButton" parent="TopBar/BarItems" node_paths=PackedStringArray("counter") instance=ExtResource("5_gqbdr")]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(32, 32)
@@ -112,3 +123,5 @@ layout_mode = 2
 [node name="DeckView" parent="TopBar" instance=ExtResource("7_0tt4g")]
 unique_name_in_owner = true
 visible = false
+
+[connection signal="pressed" from="TopBar/BarItems/MapButton" to="." method="_on_map_button_pressed"]
