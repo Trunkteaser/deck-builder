@@ -10,6 +10,7 @@ const WHITE_SPRITE_MATERIAL := preload("uid://ceemqhtjalmbl")
 
 func set_hero_stats(value: HeroStats) -> void:
 	stats = value
+	stats.position = position
 	
 	if not stats.stats_changed.is_connected(update_stats):
 		stats.stats_changed.connect(update_stats)

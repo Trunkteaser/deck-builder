@@ -24,6 +24,7 @@ signal request_discard(amount: int)
 
 # Battle.
 signal battle_won
+signal damage_taken(value: int, position: Vector2) # For dmg popup tween.
 
 # Map.
 signal map_exited

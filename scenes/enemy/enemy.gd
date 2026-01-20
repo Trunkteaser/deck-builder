@@ -18,6 +18,7 @@ var current_action: EnemyAction : set = set_current_action
 
 func set_enemy_stats(new_enemy_stats: EnemyStats) -> void:
 	stats = new_enemy_stats.create_instance()
+	stats.position = position
 	if not stats.stats_changed.is_connected(update_stats):
 		stats.stats_changed.connect(update_stats)
 		stats.stats_changed.connect(update_action)
