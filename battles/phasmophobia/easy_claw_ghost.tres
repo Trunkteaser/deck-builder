@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="BattleStats" load_steps=3 format=3 uid="uid://7eayqp6bs1vs"]
+
+[ext_resource type="Script" uid="uid://tidjs5xpdc83" path="res://resources/battle_stats.gd" id="1_s86cp"]
+[ext_resource type="PackedScene" uid="uid://dfoi2j1k6ockl" path="res://battles/phasmophobia/easy_claw_ghost.tscn" id="1_sgu0y"]
+
+[resource]
+script = ExtResource("1_s86cp")
+gold_reward_min = 53
+gold_reward_max = 72
+enemies = ExtResource("1_sgu0y")
+metadata/_custom_type_script = "uid://tidjs5xpdc83"

@@ -81,6 +81,12 @@ func _setup_top_bar() -> void:
 	deck_view.card_pile = hero.deck
 	deck_button.pressed.connect(deck_view.show_current_view.bind("Deck"))
 
+func _on_battle_room_entered(_room: Room) -> void:
+	var battle_scene: Battle = _change_view(BATTLE_SCENE)
+	battle_scene.hero_stats = hero
+	battle_scene.battle_stats = preload("uid://b1cc7ll4mg4jv")
+	battle_scene.start_battle()
+
 func _on_battle_won() -> void:
 	var reward_scene: BattleRewards = _change_view(BATTLE_REWARD_SCENE)
 	reward_scene.run_stats = stats
@@ -93,11 +99,11 @@ func _on_battle_won() -> void:
 func _on_map_exited(room: Room) -> void:
 	match room.type:
 		Room.Type.MONSTER:
-			_change_view(BATTLE_SCENE)
+			_on_battle_room_entered(room)
 		Room.Type.ELITE:
-			_change_view(BATTLE_SCENE)
+			_on_battle_room_entered(room)
 		Room.Type.BOSS:
-			_change_view(BATTLE_SCENE)
+			_on_battle_room_entered(room)
 		Room.Type.SHOP:
 			_change_view(SHOP_SCENE)
 

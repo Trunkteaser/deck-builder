@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="BattleStats" load_steps=3 format=3 uid="uid://f3o1l3t6cr3u"]
+
+[ext_resource type="Script" uid="uid://tidjs5xpdc83" path="res://resources/battle_stats.gd" id="1_m0xjo"]
+[ext_resource type="PackedScene" uid="uid://cqdm0h5qw5lfu" path="res://battles/phasmophobia/normal_ghost_swarm.tscn" id="1_qiuwx"]
+
+[resource]
+script = ExtResource("1_m0xjo")
+tier = 1
+gold_reward_min = 88
+gold_reward_max = 99
+enemies = ExtResource("1_qiuwx")
+metadata/_custom_type_script = "uid://tidjs5xpdc83"

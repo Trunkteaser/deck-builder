@@ -1,0 +1,29 @@
+[gd_resource type="Resource" load_steps=4 format=3 uid="uid://cxsu15sch2v6i"]
+
+[ext_resource type="Texture2D" uid="uid://0ugwlkehhsvv" path="res://assets/sprites/skull.png" id="1_5qrfw"]
+[ext_resource type="AudioStream" uid="uid://ts423b3gvpso" path="res://assets/sound/axe.ogg" id="2_0rmpg"]
+
+[sub_resource type="GDScript" id="GDScript_u5x80"]
+script/source = "extends CardData
+
+@export var damage := 1
+@export var repeats := 9
+
+func apply_effects(targets: Array[Node]) -> void:
+	Apply.damage(targets, damage)
+	SFXPlayer.play(sfx)
+	for repeat: int in repeats:
+		await wait(0.05)
+		Apply.damage(targets, damage)
+		SFXPlayer.play(sfx)
+"
+
+[resource]
+script = SubResource("GDScript_u5x80")
+name = "Giga Repeator"
+rarity = 1
+art = ExtResource("1_5qrfw")
+description = "Deal 1 damage. 
+Repeat 9 times."
+sfx = ExtResource("2_0rmpg")
+cost = 2

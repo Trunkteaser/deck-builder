@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://vujjsv4vneqj"]
+
+[ext_resource type="PackedScene" uid="uid://boxd06bs072ot" path="res://scenes/enemy/enemy.tscn" id="1_me76j"]
+[ext_resource type="Resource" uid="uid://blpmomhimxbc1" path="res://enemies/claw_ghost/claw_ghost.tres" id="2_743vw"]
+[ext_resource type="Resource" uid="uid://bn85h5f88kxqa" path="res://enemies/ghost/ghost.tres" id="3_l4qhi"]
+
+[node name="NormalClawGhostAndLilBro" type="Node2D"]
+
+[node name="Enemy" parent="." instance=ExtResource("1_me76j")]
+position = Vector2(432, 171)
+stats = ExtResource("2_743vw")
+
+[node name="Enemy2" parent="." instance=ExtResource("1_me76j")]
+position = Vector2(536, 204)
+stats = ExtResource("3_l4qhi")

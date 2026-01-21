@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://dfoi2j1k6ockl"]
+
+[ext_resource type="PackedScene" uid="uid://boxd06bs072ot" path="res://scenes/enemy/enemy.tscn" id="1_03qnu"]
+[ext_resource type="Resource" uid="uid://blpmomhimxbc1" path="res://enemies/claw_ghost/claw_ghost.tres" id="2_ve1tb"]
+
+[node name="EasyClawGhost" type="Node2D"]
+
+[node name="Enemy" parent="." instance=ExtResource("1_03qnu")]
+position = Vector2(500, 180)
+stats = ExtResource("2_ve1tb")
