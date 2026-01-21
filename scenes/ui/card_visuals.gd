@@ -11,6 +11,8 @@ class_name CardVisuals
 @onready var description: RichTextLabel = %Description
 @onready var rarity: Label = %Rarity
 
+# TODO Add a dictionary with rarities + heroes as keys, and colors as values.
+
 func set_card_data(new_card: CardData) -> void:
 	if not is_node_ready():
 		await ready

@@ -23,6 +23,7 @@ const RARITY_COLORS := {
 @export var target: Target
 
 var hero: Array[Node] # For secondary self-targeting purposes.
+var tree: SceneTree
 
 func is_single_targeted() -> bool:
 	return target == Target.SINGLE_ENEMY
@@ -31,7 +32,7 @@ func _get_targets(targets: Array[Node]) -> Array[Node]:
 	if not targets: # Empty array.
 		return []
 	
-	var tree := targets[0].get_tree()
+	tree = targets[0].get_tree()
 	
 	match target:
 		Target.SELF:
@@ -47,7 +48,9 @@ func play(targets: Array[Node], hero_stats: HeroStats) -> void:
 	Events.card_played.emit(self)
 	hero_stats.mana -= cost
 	
+	tree = targets[0].get_tree()
 	hero = get_self(targets)
+	
 	
 	if is_single_targeted():
 		apply_effects(targets)
@@ -57,9 +60,11 @@ func play(targets: Array[Node], hero_stats: HeroStats) -> void:
 func apply_effects(_targets: Array[Node]) -> void:
 	pass
 
-func get_self(targets: Array[Node]) -> Array[Node]: # Experimental, so I can hit enemy and then myself.
+func get_self(_targets: Array[Node]) -> Array[Node]: # Experimental, so I can hit enemy and then myself.
 	# Could make the play function save self as a variable.
 	# Then I won't have to call this method, but can simply access the hero.
 	# like var hero: Array[Node] = [] <- set by play func.
-	var tree := targets[0].get_tree()
 	return tree.get_nodes_in_group("hero")
+
+func wait(duration: float) -> Signal:
+	return tree.create_timer(duration).timeout

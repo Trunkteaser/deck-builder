@@ -59,10 +59,10 @@ func _set_playable(value: bool) -> void:
 	playable = value
 	if not playable:
 		visuals.cost.add_theme_color_override("font_color", Color.RED)
-		visuals.panel.modulate.a = 0.5
+		visuals.modulate.a = 0.3
 	else:
 		visuals.cost.remove_theme_color_override("font_color")
-		visuals.panel.modulate.a = 1
+		visuals.modulate.a = 1
 
 func animate_to_position(new_position: Vector2, duration: float) -> void:
 	tween = create_tween().set_trans(Tween.TRANS_CIRC).set_ease(Tween.EASE_OUT)
