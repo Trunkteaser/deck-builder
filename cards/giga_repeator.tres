@@ -20,10 +20,11 @@ func apply_effects(targets: Array[Node]) -> void:
 
 [resource]
 script = SubResource("GDScript_u5x80")
+damage = 2
 name = "Giga Repeator"
 rarity = 1
 art = ExtResource("1_5qrfw")
-description = "Deal 1 damage. 
+description = "Deal 2 damage. 
 Repeat 9 times."
 sfx = ExtResource("2_0rmpg")
 cost = 2

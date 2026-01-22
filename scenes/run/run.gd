@@ -8,6 +8,8 @@ const CAMPFIRE_SCENE := preload("uid://b5td37dfj5iau")
 const SHOP_SCENE := preload("uid://cha87b6ju17jw")
 const TREASURE_SCENE := preload("uid://djbb0v375o0fq")
 
+# TODO Hand the correct BattleStatsPool to MapGenerator.
+
 @export var run_startup: RunStartup
 
 @onready var current_view: Node = $CurrentView
@@ -81,10 +83,10 @@ func _setup_top_bar() -> void:
 	deck_view.card_pile = hero.deck
 	deck_button.pressed.connect(deck_view.show_current_view.bind("Deck"))
 
-func _on_battle_room_entered(_room: Room) -> void:
+func _on_battle_room_entered(room: Room) -> void:
 	var battle_scene: Battle = _change_view(BATTLE_SCENE)
 	battle_scene.hero_stats = hero
-	battle_scene.battle_stats = preload("uid://b1cc7ll4mg4jv")
+	battle_scene.battle_stats = room.battle_stats
 	battle_scene.start_battle()
 
 func _on_battle_won() -> void:
@@ -92,8 +94,7 @@ func _on_battle_won() -> void:
 	reward_scene.run_stats = stats
 	reward_scene.hero_stats = hero
 	
-	# Temp code, will live in encounter data.
-	reward_scene.add_inspiration_reward(1337)
+	reward_scene.add_inspiration_reward(map.last_room.battle_stats.roll_gold_reward())
 	reward_scene.add_card_reward()
 
 func _on_map_exited(room: Room) -> void:
