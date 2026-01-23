@@ -2,12 +2,12 @@
 
 [ext_resource type="Script" uid="uid://d3vdw2umlku23" path="res://scenes/ui/card_visuals.gd" id="1_jxbv6"]
 [ext_resource type="StyleBox" uid="uid://1ca5n2amt2on" path="res://assets/other/card_base_stylebox.tres" id="1_x0ouv"]
+[ext_resource type="Resource" uid="uid://cxsu15sch2v6i" path="res://cards/giga_repeator.tres" id="2_bp74k"]
 [ext_resource type="FontFile" uid="uid://c1hiyfel7mr0l" path="res://assets/other/Jersey15-Regular.ttf" id="2_jxbv6"]
-[ext_resource type="Resource" uid="uid://dg4yrlb0jkdpu" path="res://cards/pursue.tres" id="2_m3e03"]
 [ext_resource type="Texture2D" uid="uid://cpway0y8y3ola" path="res://assets/sprites/card art background v1.png" id="4_bp74k"]
 [ext_resource type="FontFile" uid="uid://xloy1dm05a8w" path="res://assets/other/Jersey10-Regular.ttf" id="4_m3e03"]
 [ext_resource type="Texture2D" uid="uid://c56m356imfa1q" path="res://assets/sprites/card frame v1.png" id="4_njcf5"]
-[ext_resource type="Texture2D" uid="uid://hyk7fa8h7yhy" path="res://assets/sprites/fist.png" id="5_bp74k"]
+[ext_resource type="Texture2D" uid="uid://0ugwlkehhsvv" path="res://assets/sprites/skull.png" id="5_njcf5"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_i43yy"]
 font_size = 9
@@ -20,7 +20,7 @@ custom_minimum_size = Vector2(75, 106)
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_jxbv6")
-card_data = ExtResource("2_m3e03")
+card_data = ExtResource("2_bp74k")
 
 [node name="Panel" type="Panel" parent="."]
 unique_name_in_owner = true
@@ -46,7 +46,7 @@ offset_top = 18.0
 offset_right = 69.0
 offset_bottom = 59.0
 mouse_filter = 2
-texture = ExtResource("5_bp74k")
+texture = ExtResource("5_njcf5")
 expand_mode = 1
 stretch_mode = 5
 
@@ -75,7 +75,7 @@ offset_bottom = 15.1875
 grow_horizontal = 0
 theme_override_fonts/font = ExtResource("2_jxbv6")
 theme_override_font_sizes/font_size = 9
-text = "Pursue"
+text = "Giga Repeator"
 label_settings = SubResource("LabelSettings_i43yy")
 horizontal_alignment = 1
 
@@ -99,13 +99,13 @@ mouse_filter = 2
 theme_override_fonts/normal_font = ExtResource("4_m3e03")
 theme_override_font_sizes/normal_font_size = 8
 bbcode_enabled = true
-text = "[center]Deal 15 damage.
-Draw 2 cards.[/center]"
+text = "[center]Deal 2 damage.
+Repeat 9 times.[/center]"
 vertical_alignment = 1
 
 [node name="Rarity" type="Label" parent="."]
 unique_name_in_owner = true
-modulate = Color(0.74509805, 0.74509805, 0.74509805, 1)
+modulate = Color(0.39215687, 0.58431375, 0.92941177, 1)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -118,7 +118,7 @@ offset_right = 7.5
 offset_bottom = 13.104164
 grow_horizontal = 2
 grow_vertical = 2
-text = "Ordinary"
+text = "Remarkable"
 label_settings = SubResource("LabelSettings_lj463")
 horizontal_alignment = 1
 vertical_alignment = 1

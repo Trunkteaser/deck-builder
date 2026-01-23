@@ -25,3 +25,6 @@ func attack_tween(damage):
 	tween.set_ease(Tween.EASE_OUT)
 	tween.tween_property(enemy, "global_position", start, 0.1)
 	tween.finished.connect(func(): Events.enemy_action_completed.emit(enemy))
+
+func wait(duration: float) -> Signal:
+	return get_tree().create_timer(duration).timeout

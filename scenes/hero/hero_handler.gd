@@ -33,7 +33,7 @@ func draw_card() -> void:
 	reshuffle_deck_from_discard()
 	hand.add_card(hero.draw_pile.draw_card())
 	SFXPlayer.play(DRAW_SFX)
-	reshuffle_deck_from_discard() # I don't necessarily mind hand being empty after draw?
+	#reshuffle_deck_from_discard() # I don't necessarily mind hand being empty after draw?
 
 func draw_cards(amount: int) -> void:
 	var tween := create_tween()
@@ -43,6 +43,9 @@ func draw_cards(amount: int) -> void:
 	tween.finished.connect(func(): Events.player_hand_drawn.emit())
 
 func discard_cards() -> void:
+	if hand.get_child_count() == 0:
+		Events.player_hand_discarded.emit()
+		return
 	var tween := create_tween()
 	for card in hand.get_children():
 		tween.tween_callback(hero.discard_pile.add_card.bind(card.card_data)) # Adding to discard pile.

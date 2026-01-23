@@ -17,6 +17,7 @@ func apply_effects(targets: Array[Node]) -> void:
 	#block_effect.apply(hero, 10)
 	Apply.damage(targets, damage)
 	SFXPlayer.play(sfx)
+	await wait(0.2)
 	Apply.block(hero, block)
 	
 "

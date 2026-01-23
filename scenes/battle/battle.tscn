@@ -111,6 +111,7 @@ offset_right = -230.0
 offset_bottom = 19.0
 
 [node name="DrawCardButton" type="Button" parent="Debug"]
+visible = false
 offset_left = 576.0
 offset_top = 40.0
 offset_right = 626.0
@@ -118,6 +119,7 @@ offset_bottom = 71.0
 text = "Draw"
 
 [node name="DiscardCardButton" type="Button" parent="Debug"]
+visible = false
 offset_left = 566.0
 offset_top = 76.0
 offset_right = 633.0

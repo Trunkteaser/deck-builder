@@ -154,7 +154,7 @@ func _set_room_randomly(room: Room) -> void:
 	
 	if type_candidate == Room.Type.MONSTER:
 		var tier_for_monster_rooms := BattleStats.Tier.EASY
-		if room.row > 2:
+		if room.row > 1:
 			tier_for_monster_rooms = BattleStats.Tier.NORMAL
 		room.battle_stats = battle_stats_pool.get_random_battle_for_tier(tier_for_monster_rooms)
 	elif type_candidate == Room.Type.ELITE:

@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="EnemyStats" load_steps=4 format=3 uid="uid://c77w3sr48vgw1"]
+
+[ext_resource type="PackedScene" uid="uid://b1c435tcq0q5k" path="res://enemies/octopus/octopus_ai.tscn" id="1_ki2wn"]
+[ext_resource type="Texture2D" uid="uid://p04x1sgikb4i" path="res://assets/sprites/octopus.png" id="1_p15ar"]
+[ext_resource type="Script" uid="uid://41i0vfynwjfy" path="res://resources/enemy_stats.gd" id="1_r1m0b"]
+
+[resource]
+script = ExtResource("1_r1m0b")
+ai = ExtResource("1_ki2wn")
+max_health = 88
+art = ExtResource("1_p15ar")
+metadata/_custom_type_script = "uid://41i0vfynwjfy"
