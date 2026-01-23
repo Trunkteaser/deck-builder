@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="CardPile" load_steps=12 format=3 uid="uid://ckyykkay0p7es"]
+[gd_resource type="Resource" script_class="CardPile" load_steps=13 format=3 uid="uid://ckyykkay0p7es"]
 
 [ext_resource type="Script" uid="uid://cf748lyegyqg3" path="res://resources/card_data.gd" id="1_uos7g"]
 [ext_resource type="Script" uid="uid://d24n6gxynx1ny" path="res://resources/card_pile.gd" id="2_dqeu1"]
@@ -11,8 +11,9 @@
 [ext_resource type="Resource" uid="uid://cwcml2stsyhy5" path="res://cards/heal.tres" id="4_jtwy3"]
 [ext_resource type="Resource" uid="uid://cxsu15sch2v6i" path="res://cards/giga_repeator.tres" id="5_k4x8q"]
 [ext_resource type="Resource" uid="uid://brmlfia7nvxi0" path="res://cards/defend.tres" id="6_a1ag3"]
+[ext_resource type="Resource" path="res://cards/swinger.tres" id="8_a1ag3"]
 
 [resource]
 script = ExtResource("2_dqeu1")
-cards = Array[ExtResource("1_uos7g")]([ExtResource("2_q3kus"), ExtResource("3_jtwy3"), ExtResource("3_w84wp"), ExtResource("3_w84wp"), ExtResource("5_k4x8q"), ExtResource("4_01l7p"), ExtResource("6_a1ag3"), ExtResource("4_ja3xc"), ExtResource("4_a1ag3"), ExtResource("4_jtwy3")])
+cards = Array[ExtResource("1_uos7g")]([ExtResource("2_q3kus"), ExtResource("3_jtwy3"), ExtResource("3_w84wp"), ExtResource("3_w84wp"), ExtResource("5_k4x8q"), ExtResource("4_01l7p"), ExtResource("6_a1ag3"), ExtResource("4_ja3xc"), ExtResource("4_a1ag3"), ExtResource("4_jtwy3"), ExtResource("8_a1ag3")])
 metadata/_custom_type_script = "uid://d24n6gxynx1ny"

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c8m5bkkrrxidd"
-path="res://.godot/imported/icon.svg-00a55f41757400f7387d4069be498893.ctex"
+uid="uid://cy0j7el8oikfq"
+path="res://.godot/imported/boom_11.png-8cd7a64c8b4d6396d7f0941972eef72d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/icon.svg"
-dest_files=["res://.godot/imported/icon.svg-00a55f41757400f7387d4069be498893.ctex"]
+source_file="res://assets/sprites/boom/boom_11.png"
+dest_files=["res://.godot/imported/boom_11.png-8cd7a64c8b4d6396d7f0941972eef72d.ctex"]
 
 [params]
 
@@ -38,6 +38,3 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
-svg/scale=1.0
-editor/scale_with_editor_scale=false
-editor/convert_colors_with_editor_theme=false
