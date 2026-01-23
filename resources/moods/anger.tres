@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Mood" load_steps=3 format=3 uid="uid://bl7yry7rm0qru"]
+
+[ext_resource type="Texture2D" uid="uid://xjuuf412tko8" path="res://assets/sprites/anger fist.png" id="1_kppac"]
+[ext_resource type="Script" uid="uid://cv5d6rh4bndpq" path="res://resources/mood.gd" id="1_n4hpq"]
+
+[resource]
+script = ExtResource("1_n4hpq")
+name = "Anger"
+trigger_type = 2
+stack_type = 1
+stacks = 1
+icon = ExtResource("1_kppac")
+metadata/_custom_type_script = "uid://cv5d6rh4bndpq"
