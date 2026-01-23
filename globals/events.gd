@@ -17,6 +17,7 @@ signal player_died
 # Enemy.
 signal enemy_action_completed(enemy: Enemy)
 signal enemy_turn_ended # Emit after ALL enemies have finished their turns.
+signal enemy_died(enemy: Enemy)
 
 # Effect.
 signal request_card_draw(amount: int)

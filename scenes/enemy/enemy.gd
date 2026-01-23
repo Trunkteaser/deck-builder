@@ -12,6 +12,7 @@ const WHITE_SPRITE_MATERIAL = preload("uid://ceemqhtjalmbl")
 @onready var arrow: Sprite2D = $Arrow
 @onready var stats_ui: StatsUI = $StatsUI
 @onready var intent_ui: IntentUI = $IntentUI
+@onready var mood_handler: MoodHandler = $MoodHandler
 
 var enemy_ai: EnemyAI
 var current_action: EnemyAction : set = set_current_action
@@ -83,6 +84,7 @@ func take_damage(damage: int) -> void:
 		func():
 			sprite_2d.material = null
 			if stats.health <= 0:
+				Events.enemy_died.emit(self)
 				queue_free())
 
 func _on_area_entered(_area: Area2D) -> void:
