@@ -20,6 +20,15 @@ func block(targets: Array[Node], amount: int) -> void:
 			target.stats.block += amount
 			SFXPlayer.play(BLOCK_SFX)
 
+func mood(targets: Array[Node], moood: Mood, stacks: int = 0) -> void:
+	var mood_copy := moood.duplicate()
+	mood_copy.stacks = stacks
+	for target in targets:
+		if not target:
+			continue
+		if target is Enemy or target is Hero:
+			target.mood_handler.add_mood(mood_copy)
+
 func draw(amount: int) -> void:
 	Events.request_card_draw.emit(amount)
 

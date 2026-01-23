@@ -1,13 +1,12 @@
-[gd_resource type="Resource" script_class="Mood" load_steps=3 format=3 uid="uid://dqaxhwdb7ob7g"]
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://dqaxhwdb7ob7g"]
 
 [ext_resource type="Texture2D" uid="uid://b41snjbgnhia8" path="res://assets/sprites/mirror.png" id="1_ldus8"]
-[ext_resource type="Script" uid="uid://cv5d6rh4bndpq" path="res://resources/mood.gd" id="2_iyn3c"]
+[ext_resource type="Script" uid="uid://drddipi3p6t51" path="res://resources/moods/fragility.gd" id="2_ldus8"]
 
 [resource]
-script = ExtResource("2_iyn3c")
+script = ExtResource("2_ldus8")
 name = "Fragility"
 stack_type = 2
-can_expire = true
 stacks = 1
 icon = ExtResource("1_ldus8")
 metadata/_custom_type_script = "uid://cv5d6rh4bndpq"
