@@ -23,6 +23,7 @@ const TREASURE_SCENE := preload("uid://djbb0v375o0fq")
 @onready var deck_button: CardPileOpener = %DeckButton
 @onready var deck_view: CardPileView = %DeckView
 @onready var inspiration_ui: InspirationUI = %InspirationUI
+@onready var health_ui: HealthUI = %HealthUI
 
 var hero: HeroStats
 var stats: RunStats
@@ -78,6 +79,8 @@ func _setup_event_connections() -> void:
 	treasure_button.pressed.connect(_change_view.bind(TREASURE_SCENE))
 
 func _setup_top_bar() -> void:
+	hero.stats_changed.connect(health_ui.update_stats.bind(hero))
+	health_ui.update_stats(hero)
 	inspiration_ui.run_stats = stats
 	deck_button.card_pile = hero.deck
 	deck_view.card_pile = hero.deck
@@ -94,7 +97,7 @@ func _on_battle_won() -> void:
 	reward_scene.run_stats = stats
 	reward_scene.hero_stats = hero
 	
-	reward_scene.add_inspiration_reward(map.last_room.battle_stats.roll_gold_reward())
+	reward_scene.add_inspiration_reward(map.last_room.battle_stats.roll_inspiration_reward())
 	reward_scene.add_card_reward()
 
 func _on_map_exited(room: Room) -> void:

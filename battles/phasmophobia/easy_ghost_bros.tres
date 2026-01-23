@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource("1_obgp4")
-gold_reward_min = 60
-gold_reward_max = 76
+insp_reward_min = 50
+insp_reward_max = 60
 enemies = ExtResource("1_4sikq")
 metadata/_custom_type_script = "uid://tidjs5xpdc83"

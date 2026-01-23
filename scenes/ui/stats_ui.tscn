@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://c1hdyrjqo502b" path="res://scenes/ui/stats_ui.gd" id="1_3ktwi"]
 [ext_resource type="Texture2D" uid="uid://bvxgooanycqn0" path="res://assets/sprites/shield.png" id="1_08kyh"]
 [ext_resource type="FontFile" uid="uid://xloy1dm05a8w" path="res://assets/other/Jersey10-Regular.ttf" id="2_3ktwi"]
-[ext_resource type="Texture2D" uid="uid://dshcmea87wqi7" path="res://assets/sprites/heart.png" id="3_7klq2"]
+[ext_resource type="PackedScene" uid="uid://dqtd2egq6hyr7" path="res://scenes/ui/health_ui.tscn" id="4_3ktwi"]
 
 [node name="StatsUI" type="HBoxContainer"]
 anchors_preset = 5
@@ -32,18 +32,5 @@ size_flags_vertical = 1
 theme_override_fonts/font = ExtResource("2_3ktwi")
 text = "6"
 
-[node name="Health" type="HBoxContainer" parent="."]
+[node name="Health" parent="." instance=ExtResource("4_3ktwi")]
 layout_mode = 2
-theme_override_constants/separation = 2
-
-[node name="HealthImage" type="TextureRect" parent="Health"]
-layout_mode = 2
-texture = ExtResource("3_7klq2")
-stretch_mode = 5
-
-[node name="HealthLabel" type="Label" parent="Health"]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_vertical = 1
-theme_override_fonts/font = ExtResource("2_3ktwi")
-text = "23"
