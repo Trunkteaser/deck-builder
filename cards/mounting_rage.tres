@@ -16,6 +16,6 @@ script = SubResource("GDScript_o3enw")
 name = "Mounting Rage"
 rarity = 2
 art = ExtResource("1_jhh8x")
-description = "On start of turn, gain 2 anger."
+description = "At the start of your turn, gain 2 Anger."
 cost = 3
 target = 1
