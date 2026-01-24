@@ -66,7 +66,7 @@ func _generate_initial_grid() -> Array[Array]:
 func _get_random_starting_points() -> Array[int]:
 	var y_coordinates: Array[int] # Why is this called y_coordinates??
 	var unique_points: int = 0
-	while unique_points < 2:
+	while unique_points < 3:
 		unique_points = 0
 		y_coordinates = []
 		for i in PATHS:
@@ -144,7 +144,7 @@ func _set_room_randomly(room: Room) -> void:
 	while elite_below_4 or consecutive_elite or consecutive_shop:
 		type_candidate = _get_random_room_type_by_weight()
 		var is_elite := type_candidate == Room.Type.ELITE
-		var has_elite_parent := _room_has_parent_of_type(room, Room.Type.CAMPFIRE)
+		var has_elite_parent := _room_has_parent_of_type(room, Room.Type.ELITE)
 		var is_shop := type_candidate == Room.Type.SHOP
 		var has_shop_parent := _room_has_parent_of_type(room, Room.Type.SHOP)
 		elite_below_4 = is_elite and room.row < 3

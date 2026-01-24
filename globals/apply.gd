@@ -1,6 +1,7 @@
 extends Node
 
 const BLOCK_SFX: AudioStream = preload("uid://d0cq6s264xrlr")
+const HEAL_SFX: AudioStream = preload("uid://bshhf0d1gfjiu")
 # TODO Implement heal sfx here.
 
 # TODO Decide if giving block and taking dmg have sound effects.
@@ -42,4 +43,5 @@ func heal(targets: Array[Node], amount: int) -> void:
 			continue
 		if target is Hero or target is Enemy:
 			target.stats.heal(amount)
+			SFXPlayer.play(HEAL_SFX)
  

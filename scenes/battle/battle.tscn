@@ -126,8 +126,9 @@ offset_right = 633.0
 offset_bottom = 107.0
 text = "Discard"
 
-[node name="HeroHandler" type="Node" parent="." node_paths=PackedStringArray("hand")]
+[node name="HeroHandler" type="Node" parent="." node_paths=PackedStringArray("hero_node", "hand")]
 script = ExtResource("9_mxe8n")
+hero_node = NodePath("../Hero")
 hand = NodePath("../BattleUI/Hand")
 
 [node name="BattleUI" type="CanvasLayer" parent="." groups=["ui_layer"]]

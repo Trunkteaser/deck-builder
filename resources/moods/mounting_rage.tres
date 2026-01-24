@@ -1,10 +1,10 @@
-[gd_resource type="Resource" script_class="Mood" load_steps=3 format=3 uid="uid://ckyvrpqsl4g2b"]
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://ckyvrpqsl4g2b"]
 
 [ext_resource type="Texture2D" uid="uid://gqdrmr4rris6" path="res://assets/sprites/mounting rage.png" id="1_ebvaa"]
-[ext_resource type="Script" uid="uid://cv5d6rh4bndpq" path="res://resources/mood.gd" id="1_koc8v"]
+[ext_resource type="Script" uid="uid://d3fmu8xaek3r5" path="res://resources/moods/mounting_rage.gd" id="2_ebvaa"]
 
 [resource]
-script = ExtResource("1_koc8v")
+script = ExtResource("2_ebvaa")
 name = "Mounting Rage"
 icon = ExtResource("1_ebvaa")
 metadata/_custom_type_script = "uid://cv5d6rh4bndpq"

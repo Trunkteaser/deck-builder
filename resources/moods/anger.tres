@@ -1,10 +1,10 @@
-[gd_resource type="Resource" script_class="Mood" load_steps=3 format=3 uid="uid://bl7yry7rm0qru"]
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://bl7yry7rm0qru"]
 
 [ext_resource type="Texture2D" uid="uid://xjuuf412tko8" path="res://assets/sprites/anger fist.png" id="1_kppac"]
-[ext_resource type="Script" uid="uid://cv5d6rh4bndpq" path="res://resources/mood.gd" id="1_n4hpq"]
+[ext_resource type="Script" uid="uid://bdv6qc868cgkp" path="res://resources/moods/anger.gd" id="2_kppac"]
 
 [resource]
-script = ExtResource("1_n4hpq")
+script = ExtResource("2_kppac")
 name = "Anger"
 trigger_type = 2
 stack_type = 1

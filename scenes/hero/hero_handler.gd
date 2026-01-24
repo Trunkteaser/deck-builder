@@ -5,6 +5,7 @@ const HAND_DRAW_INTERVAL := 0.1
 const HAND_DISCARD_INTERVAL := 0.1
 const DRAW_SFX := preload("uid://bwonltvbchlj")
 
+@export var hero_node: Hero
 @export var hand: Hand
 
 var hero: HeroStats
@@ -18,16 +19,19 @@ func start_battle(hero_stats: HeroStats) -> void:
 	hero.draw_pile = hero.deck.duplicate(true)
 	hero.draw_pile.shuffle()
 	hero.discard_pile = CardPile.new()
+	hero_node.mood_handler.moods_triggered.connect(_on_moods_triggered)
 	start_turn()
 
 func start_turn() -> void:
 	hero.block = 0
 	hero.reset_mana()
-	draw_cards(hero.cards_per_turn)
+	if not hero_node:
+		return
+	hero_node.mood_handler.trigger_moods_by_type(Mood.TriggerType.START_OF_TURN)
 
 func end_turn() -> void:
 	hand.disable_hand()
-	discard_cards()
+	hero_node.mood_handler.trigger_moods_by_type(Mood.TriggerType.END_OF_TURN)
 
 func draw_card() -> void:
 	reshuffle_deck_from_discard()
@@ -62,3 +66,10 @@ func reshuffle_deck_from_discard() -> void:
 
 func _on_card_played(card_data: CardData) -> void:
 	hero.discard_pile.add_card(card_data)
+
+func _on_moods_triggered(trigger_type: Mood.TriggerType) -> void:
+	match trigger_type:
+		Mood.TriggerType.START_OF_TURN:
+			draw_cards(hero.cards_per_turn)
+		Mood.TriggerType.END_OF_TURN:
+			discard_cards()
