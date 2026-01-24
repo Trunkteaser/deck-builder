@@ -4,7 +4,7 @@ class_name CardData
 
 enum Target {SINGLE_ENEMY, SELF, ALL_ENEMIES, EVERYONE}
 enum Rarity {ORDINARY, REMARKABLE, VISIONARY}
-enum Type {VIOLENCE, CONTROL, OBSESSION}
+enum Type {VIOLENCE, RESTRAINT, OBSESSION}
 
 const RARITY_COLORS := {
 	CardData.Rarity.ORDINARY: Color.GRAY,
@@ -22,7 +22,7 @@ const RARITY_COLORS := {
 @export var type: Type
 @export var cost: int = 1
 @export var target: Target
-@export var exhausts: bool = false
+@export var forget: bool = false
 
 var hero: Array[Node] # For secondary self-targeting purposes.
 var tree: SceneTree

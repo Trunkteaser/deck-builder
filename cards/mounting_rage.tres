@@ -17,5 +17,6 @@ name = "Mounting Rage"
 rarity = 2
 art = ExtResource("1_jhh8x")
 description = "At the start of your turn, gain 2 Anger."
+type = 2
 cost = 3
 target = 1

@@ -65,6 +65,9 @@ func reshuffle_deck_from_discard() -> void:
 	hero.draw_pile.shuffle()
 
 func _on_card_played(card_data: CardData) -> void:
+	if card_data.forget or card_data.type == CardData.Type.OBSESSION:
+		return
+	# TODO Add to erase pile instead.
 	hero.discard_pile.add_card(card_data)
 
 func _on_moods_triggered(trigger_type: Mood.TriggerType) -> void:
