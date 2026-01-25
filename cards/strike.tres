@@ -8,7 +8,7 @@ script/source = "extends CardData
 
 @export var damage := 6
 
-func apply_effects(targets: Array[Node]) -> void:
+func apply_effects(targets: Array[Node], modifiers: ModifierHandler) -> void:
 	
 	# EFFECT BASED
 	#var damage_effect := DamageEffect.new()
@@ -16,6 +16,7 @@ func apply_effects(targets: Array[Node]) -> void:
 	#damage_effect.apply(targets, damage)
 	
 	# GLOBAL SCRIPT BASED
+	damage = modifiers.get_modified_value(damage, Modifier.Type.DMG_DEALT)
 	Apply.damage(targets, damage)
 	SFXPlayer.play(sfx)
 "

@@ -134,7 +134,7 @@ hand = NodePath("../BattleUI/Hand")
 [node name="BattleUI" type="CanvasLayer" parent="." groups=["ui_layer"]]
 script = ExtResource("9_t1kk3")
 
-[node name="Hand" type="Container" parent="BattleUI"]
+[node name="Hand" type="Container" parent="BattleUI" node_paths=PackedStringArray("hero")]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(400, 80)
 anchors_preset = 12
@@ -147,6 +147,7 @@ offset_right = -64.0
 grow_horizontal = 2
 grow_vertical = 0
 script = ExtResource("9_oiw7q")
+hero = NodePath("../../Hero")
 hero_stats = ExtResource("5_oiw7q")
 hand_curve = SubResource("Curve_agsc7")
 rotation_curve = SubResource("Curve_oiw7q")

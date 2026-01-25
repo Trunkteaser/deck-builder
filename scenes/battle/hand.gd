@@ -4,6 +4,7 @@ class_name Hand
 const CARD =  preload("res://scenes/card/card.tscn")
 const DISCARD_SFX = preload("uid://bwonltvbchlj")
 
+@export var hero: Hero
 @export var hero_stats: HeroStats
 
 
@@ -30,6 +31,7 @@ func add_card(card_data: CardData) -> void:
 	new_card.parent = self
 	new_card.hero_stats = hero_stats
 	new_card.visuals.set_card_visuals()
+	new_card.hero_modifiers = hero.modifier_handler
 	
 	update_card_fanning()
 	for child: Card in get_children():

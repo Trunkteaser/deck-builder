@@ -8,6 +8,7 @@ const WHITE_SPRITE_MATERIAL := preload("uid://ceemqhtjalmbl")
 @onready var sprite_2d: Sprite2D = $Sprite2D
 @onready var stats_ui: StatsUI = $StatsUI
 @onready var mood_handler: MoodHandler = $MoodHandler
+@onready var modifier_handler: ModifierHandler = $ModifierHandler
 
 # Does it need to assign itself as the owner of MoodHandler in ready?
 

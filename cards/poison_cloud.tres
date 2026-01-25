@@ -9,7 +9,7 @@ script/source = "extends CardData
 const POISON = preload(\"uid://dnb4xyjdtlxqf\")
 @export var poison_stacks := 7
 
-func apply_effects(targets: Array[Node]) -> void:
+func apply_effects(targets: Array[Node], _modifiers: ModifierHandler) -> void:
 	Apply.mood(targets, POISON, poison_stacks)
 	SFXPlayer.play(sfx)
 "

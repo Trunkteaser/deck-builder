@@ -46,20 +46,20 @@ func _get_targets(targets: Array[Node]) -> Array[Node]:
 		_:
 			return []
 
-func play(targets: Array[Node], hero_stats: HeroStats) -> void:
+func play(targets: Array[Node], hero_stats: HeroStats, modifiers: ModifierHandler) -> void:
 	Events.card_played.emit(self)
 	hero_stats.mana -= cost
 	
 	tree = targets[0].get_tree()
 	hero = get_self(targets)
-	
+	# Modifiers could be var in CardData instead of passed as argument.
 	
 	if is_single_targeted():
-		apply_effects(targets)
+		apply_effects(targets, modifiers)
 	else:
-		apply_effects(_get_targets(targets))
+		apply_effects(_get_targets(targets), modifiers)
 
-func apply_effects(_targets: Array[Node]) -> void:
+func apply_effects(_targets: Array[Node], _modifiers: ModifierHandler) -> void:
 	pass
 
 func get_self(_targets: Array[Node]) -> Array[Node]: # Experimental, so I can hit enemy and then myself.

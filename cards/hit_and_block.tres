@@ -9,12 +9,9 @@ script/source = "extends CardData
 @export var damage := 10
 @export var block := 10
 
-func apply_effects(targets: Array[Node]) -> void:
-	#var damage_effect := DamageEffect.new()
-	#damage_effect.sfx = sfx
-	#damage_effect.apply(targets, 10)
-	#var block_effect := BlockEffect.new()
-	#block_effect.apply(hero, 10)
+func apply_effects(targets: Array[Node], modifiers: ModifierHandler) -> void:
+	damage = modifiers.get_modified_value(damage, Modifier.Type.DMG_DEALT)
+	block = modifiers.get_modified_value(block, Modifier.Type.BLOCK_GAINED)
 	Apply.damage(targets, damage)
 	SFXPlayer.play(sfx)
 	await wait(0.2)

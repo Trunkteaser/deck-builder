@@ -57,8 +57,8 @@ script/source = "extends CardData
 
 @export var damage := 3
 
-
-func apply_effects(targets: Array[Node]) -> void:
+func apply_effects(targets: Array[Node], modifiers: ModifierHandler) -> void:
+	damage = modifiers.get_modified_value(damage, Modifier.Type.DMG_DEALT)
 	Apply.damage(targets, damage)
 	SFXPlayer.play(sfx)
 	

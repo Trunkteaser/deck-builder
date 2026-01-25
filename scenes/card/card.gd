@@ -13,6 +13,7 @@ const DRAG_STYLE := preload("uid://c336ntkuwrp1m")
 @onready var targets: Array[Node] = []
 @onready var visuals: CardVisuals = $Visuals
 
+@export var hero_modifiers: ModifierHandler
 @export var card_data: CardData : set = _set_card_data
 @export var hero_stats: HeroStats : set = _set_hero_stats
 
@@ -71,7 +72,7 @@ func animate_to_position(new_position: Vector2, duration: float) -> void:
 func play() -> void:
 	if not card_data:
 		return
-	card_data.play(targets, hero_stats)
+	card_data.play(targets, hero_stats, hero_modifiers)
 	queue_free()
 
 func _on_drop_point_detector_area_entered(area: Area2D) -> void:

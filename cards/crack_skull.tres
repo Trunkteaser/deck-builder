@@ -10,7 +10,8 @@ const FRAGILITY = preload(\"uid://dqaxhwdb7ob7g\")
 
 @export var damage := 5
 
-func apply_effects(targets: Array[Node]) -> void:
+func apply_effects(targets: Array[Node], modifiers: ModifierHandler) -> void:
+	damage = modifiers.get_modified_value(damage, Modifier.Type.DMG_DEALT)
 	Apply.damage(targets, damage)
 	Apply.mood(targets, FRAGILITY, 2)
 	SFXPlayer.play(sfx)

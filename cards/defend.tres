@@ -8,10 +8,8 @@ script/source = "extends CardData
 
 @export var block := 5
 
-func apply_effects(targets: Array[Node]) -> void:
-	#var block_effect := BlockEffect.new()
-	#block_effect.sfx = sfx
-	#block_effect.apply(targets, 5)
+func apply_effects(targets: Array[Node], modifiers: ModifierHandler) -> void:
+	block = modifiers.get_modified_value(block, Modifier.Type.BLOCK_GAINED)
 	Apply.block(targets, block)
 	
 

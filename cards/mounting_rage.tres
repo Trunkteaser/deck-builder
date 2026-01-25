@@ -7,7 +7,7 @@ script/source = "extends CardData
 
 const mounting_rage: Mood = preload(\"uid://ckyvrpqsl4g2b\")
 
-func apply_effects(targets: Array[Node]) -> void:
+func apply_effects(targets: Array[Node], _modifiers: ModifierHandler) -> void:
 	Apply.mood(targets, mounting_rage)
 "
 
