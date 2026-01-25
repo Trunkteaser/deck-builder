@@ -6,6 +6,7 @@ var acting_enemies: Array[Enemy] = []
 func _ready() -> void:
 	Events.enemy_action_completed.connect(_on_enemy_action_completed)
 	Events.enemy_died.connect(_on_enemy_died)
+	Events.player_hand_drawn.connect(_on_player_hand_drawn)
 
 func setup_enemies(battle_stats: BattleStats) -> void:
 	if not battle_stats:
@@ -55,3 +56,7 @@ func _on_enemy_died(enemy: Enemy) -> void:
 
 func _on_enemy_action_completed(enemy: Enemy) -> void:
 	enemy.mood_handler.trigger_moods_by_type(Mood.TriggerType.END_OF_TURN)
+
+func _on_player_hand_drawn() -> void:
+	for enemy: Enemy in get_children():
+		enemy.update_intent()

@@ -16,7 +16,7 @@
 
 [sub_resource type="Resource" id="Resource_txtj5"]
 script = ExtResource("4_quli0")
-number = "7"
+base_text = "%s"
 icon = ExtResource("3_yl71o")
 metadata/_custom_type_script = "uid://dw3bracpphktf"
 
@@ -27,7 +27,7 @@ metadata/_custom_type_script = "uid://dw3bracpphktf"
 
 [sub_resource type="Resource" id="Resource_7ydm4"]
 script = ExtResource("4_quli0")
-number = "15"
+base_text = "%s"
 icon = ExtResource("10_egrb2")
 metadata/_custom_type_script = "uid://dw3bracpphktf"
 
@@ -36,7 +36,7 @@ script = ExtResource("4_quli0")
 icon = ExtResource("13_yl71o")
 metadata/_custom_type_script = "uid://dw3bracpphktf"
 
-[node name="BansheeAI" type="Node"]
+[node name="ClawGhostAI" type="Node"]
 script = ExtResource("1_7qo78")
 
 [node name="Attack" type="Node" parent="."]

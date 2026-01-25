@@ -12,6 +12,10 @@ const WHITE_SPRITE_MATERIAL := preload("uid://ceemqhtjalmbl")
 
 # Does it need to assign itself as the owner of MoodHandler in ready?
 
+func _ready() -> void:
+	var fragility = preload("uid://dqaxhwdb7ob7g")
+	Apply.mood([self], fragility, 5)
+
 func set_hero_stats(value: HeroStats) -> void:
 	stats = value
 	stats.position = position

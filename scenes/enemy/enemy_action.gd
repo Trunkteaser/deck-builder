@@ -28,3 +28,6 @@ func attack_tween(damage):
 
 func wait(duration: float) -> Signal:
 	return get_tree().create_timer(duration).timeout
+
+func update_intent_text() -> void:
+	intent.current_text = intent.base_text

@@ -18,6 +18,10 @@ const WHITE_SPRITE_MATERIAL = preload("uid://ceemqhtjalmbl")
 var enemy_ai: EnemyAI
 var current_action: EnemyAction : set = set_current_action
 
+func _ready() -> void:
+	var anger = preload("uid://bl7yry7rm0qru")
+	Apply.mood([self], anger, 2)
+
 func set_enemy_stats(new_enemy_stats: EnemyStats) -> void:
 	stats = new_enemy_stats.create_instance()
 	stats.position = position
@@ -28,8 +32,7 @@ func set_enemy_stats(new_enemy_stats: EnemyStats) -> void:
 
 func set_current_action(new_action: EnemyAction) -> void:
 	current_action = new_action
-	if current_action:
-		intent_ui.update_intent(current_action.intent)
+	update_intent()
 
 func setup_ai() -> void:
 	if enemy_ai:
@@ -63,6 +66,12 @@ func update_enemy() -> void:
 	arrow.position = Vector2.RIGHT * (sprite_2d.get_rect().size.x/2 + ARROW_OFFSET)
 	setup_ai()
 	update_stats()
+
+func update_intent() -> void:
+	if current_action:
+		print(current_action)
+		current_action.update_intent_text()
+		intent_ui.update_intent(current_action.intent)
 
 func take_turn() -> void:
 	stats.block = 0

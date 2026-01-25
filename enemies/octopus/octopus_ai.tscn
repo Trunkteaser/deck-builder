@@ -10,7 +10,7 @@
 
 [sub_resource type="Resource" id="Resource_35ph4"]
 script = ExtResource("4_uc4tw")
-number = "2x8"
+base_text = "8x%s"
 icon = ExtResource("3_4c8rv")
 metadata/_custom_type_script = "uid://dw3bracpphktf"
 

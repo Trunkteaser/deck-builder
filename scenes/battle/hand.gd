@@ -31,7 +31,8 @@ func add_card(card_data: CardData) -> void:
 	new_card.parent = self
 	new_card.hero_stats = hero_stats
 	new_card.visuals.set_card_visuals()
-	new_card.hero_modifiers = hero.modifier_handler
+	if hero:
+		new_card.hero_modifiers = hero.modifier_handler
 	
 	update_card_fanning()
 	for child: Card in get_children():
