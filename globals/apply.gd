@@ -2,16 +2,15 @@ extends Node
 
 const BLOCK_SFX: AudioStream = preload("uid://d0cq6s264xrlr")
 const HEAL_SFX: AudioStream = preload("uid://bshhf0d1gfjiu")
-# TODO Implement heal sfx here.
 
 # TODO Decide if giving block and taking dmg have sound effects.
 
-func damage(targets: Array[Node], amount: int) -> void: # Type of dmg?
+func damage(targets: Array[Node], amount: int, receiver_mod_type := Modifier.Type.DMG_TAKEN) -> void:
 	for target in targets:
 		if not target:
 			continue
 		if target is Hero or target is Enemy:
-			target.take_damage(amount)
+			target.take_damage(amount, receiver_mod_type)
 
 func block(targets: Array[Node], amount: int) -> void:
 	for target in targets:

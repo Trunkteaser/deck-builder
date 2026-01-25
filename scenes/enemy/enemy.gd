@@ -13,6 +13,7 @@ const WHITE_SPRITE_MATERIAL = preload("uid://ceemqhtjalmbl")
 @onready var stats_ui: StatsUI = $StatsUI
 @onready var intent_ui: IntentUI = $IntentUI
 @onready var mood_handler: MoodHandler = $MoodHandler
+@onready var modifier_handler: ModifierHandler = $ModifierHandler
 
 var enemy_ai: EnemyAI
 var current_action: EnemyAction : set = set_current_action
@@ -69,15 +70,16 @@ func take_turn() -> void:
 		return
 	current_action.perform_action()
 
-func take_damage(damage: int) -> void:
+func take_damage(damage: int, which_modifier: Modifier.Type) -> void:
 	if stats.health <= 0:
 		return
 	
 	sprite_2d.material = WHITE_SPRITE_MATERIAL
+	var modified_damage := modifier_handler.get_modified_value(damage, which_modifier)
 	
 	var tween := create_tween()
 	tween.tween_callback(Shaker.shake.bind(self, 32, 0.15))
-	tween.tween_callback(stats.take_damage.bind(damage))
+	tween.tween_callback(stats.take_damage.bind(modified_damage))
 	tween.tween_interval(0.17)
 	
 	tween.finished.connect(

@@ -53,6 +53,7 @@ func play(targets: Array[Node], hero_stats: HeroStats, modifiers: ModifierHandle
 	tree = targets[0].get_tree()
 	hero = get_self(targets)
 	# Modifiers could be var in CardData instead of passed as argument.
+	# Nah argument is good, then you remember to use it.
 	
 	if is_single_targeted():
 		apply_effects(targets, modifiers)
