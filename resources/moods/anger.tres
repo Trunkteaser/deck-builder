@@ -10,5 +10,5 @@ trigger_type = 2
 stack_type = 1
 stacks = 1
 icon = ExtResource("1_kppac")
-tooltip = "+1 damage to all attacks, per stack."
+tooltip = "Anger: %s damage to all attacks."
 metadata/_custom_type_script = "uid://cv5d6rh4bndpq"

@@ -12,3 +12,6 @@ func _on_mood_changed(target: Node) -> void:
 		anger_modified_value = ModifierValue.create_new_modifier("anger", ModifierValue.Type.FLAT)
 	anger_modified_value.flat_value = stacks
 	dmg_dealt_modifier.add_new_value(anger_modified_value)
+
+func get_tooltip() -> String:
+	return tooltip % stacks

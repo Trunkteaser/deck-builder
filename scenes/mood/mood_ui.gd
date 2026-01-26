@@ -10,7 +10,7 @@ func set_mood(new_mood: Mood) -> void:
 	if not is_node_ready():
 		await ready
 	mood = new_mood
-	tooltip_text = mood.tooltip
+	tooltip_text = mood.get_tooltip()
 	icon.texture = mood.icon
 	stacks.visible = mood.stack_type != Mood.StackType.NONE
 	custom_minimum_size = icon.size
@@ -28,3 +28,7 @@ func _on_mood_changed() -> void:
 	elif mood.stack_type == Mood.StackType.INTENSITY and mood.stacks == 0:
 		queue_free()
 	stacks.text = str(mood.stacks)
+
+
+func _on_mouse_entered() -> void:
+	tooltip_text = mood.get_tooltip()

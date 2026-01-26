@@ -25,3 +25,5 @@ offset_bottom = 24.333334
 text = "5"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
