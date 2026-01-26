@@ -70,6 +70,8 @@ func update_enemy() -> void:
 func update_intent() -> void:
 	if current_action:
 		print(current_action)
+		await get_tree().process_frame
+		# Avoids bug in update_intent_text with % modified_dmg.
 		current_action.update_intent_text()
 		intent_ui.update_intent(current_action.intent)
 

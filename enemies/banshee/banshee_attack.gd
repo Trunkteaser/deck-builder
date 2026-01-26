@@ -36,9 +36,16 @@ func update_intent_text() -> void:
 	if not hero:
 		return
 	var modified_dmg := enemy.modifier_handler.get_modified_value(damage, Modifier.Type.DMG_DEALT)
-	print(modified_dmg)
 	modified_dmg = hero.modifier_handler.get_modified_value(modified_dmg, Modifier.Type.DMG_TAKEN)
-	print(modified_dmg)
 	#await get_tree().process_frame
+	#await get_tree().create_timer(0.05).timeout
+	print(modified_dmg)
 	intent.current_text = intent.base_text % modified_dmg
 	# BUG If attack declared on first turn by first enemy, error happens.
+	# Not always though.
+	# This function 4 times. IF first is attack = ERROR!!
+	# Something not ready in the scene tree?
+	# Issue is the % modified_dmg. But why?
+	# Reload?
+	# Sharing scripts issue?
+	# The _ready debuffs? Doesnt seem like it.
