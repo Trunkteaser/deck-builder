@@ -41,3 +41,4 @@ func _on_enemy_handler_child_order_changed() -> void:
 
 func _on_player_died() -> void:
 	print("You died...")
+	get_tree().quit()
