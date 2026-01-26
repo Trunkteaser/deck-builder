@@ -10,6 +10,7 @@ func set_mood(new_mood: Mood) -> void:
 	if not is_node_ready():
 		await ready
 	mood = new_mood
+	tooltip_text = mood.tooltip
 	icon.texture = mood.icon
 	stacks.visible = mood.stack_type != Mood.StackType.NONE
 	custom_minimum_size = icon.size

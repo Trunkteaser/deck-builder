@@ -7,4 +7,5 @@
 script = ExtResource("2_ebvaa")
 name = "Mounting Rage"
 icon = ExtResource("1_ebvaa")
+tooltip = "2 Anger on start of turn."
 metadata/_custom_type_script = "uid://cv5d6rh4bndpq"

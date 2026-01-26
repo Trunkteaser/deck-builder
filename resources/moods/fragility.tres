@@ -9,4 +9,5 @@ name = "Fragility"
 stack_type = 2
 stacks = 1
 icon = ExtResource("1_ldus8")
+tooltip = "Take 50% increased damage."
 metadata/_custom_type_script = "uid://cv5d6rh4bndpq"

@@ -9,3 +9,4 @@ name = "Poison"
 stack_type = 2
 stacks = 1
 icon = ExtResource("1_0yt8c")
+tooltip = "On start of turn, take damage equal to stacks."
