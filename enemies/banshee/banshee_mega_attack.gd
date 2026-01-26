@@ -31,8 +31,8 @@ func perform_action() -> void:
 	tween.finished.connect(func(): Events.enemy_action_completed.emit(enemy))
 	
 func update_intent_text() -> void:
-	var hero: Hero = target
-	if not hero:
+	if not target:
 		return
+	var hero: Hero = target
 	var modified_dmg := hero.modifier_handler.get_modified_value(damage, Modifier.Type.DMG_TAKEN)
 	intent.current_text = intent.base_text % modified_dmg
