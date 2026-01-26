@@ -32,6 +32,7 @@ func on_mouse_entered() -> void:
 		return
 	
 	card.visuals.panel.set("theme_override_styles/panel", card.HOVER_STYLE)
+	card.update_description()
 
 func on_mouse_exited() -> void:
 	if not card.playable or card.disabled:

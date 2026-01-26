@@ -18,6 +18,7 @@ func set_card_data(new_card: CardData) -> void:
 		await ready
 	card_data = new_card 
 	set_card_visuals()
+	set_card_description()
 
 func set_card_visuals() -> void:
 	if not card_data:
@@ -25,7 +26,6 @@ func set_card_visuals() -> void:
 	art.texture = card_data.art
 	card_name.text = card_data.name
 	cost.text = str(card_data.cost)
-	description.text = "[center]" + card_data.description + "[/center]"
 	match card_data.rarity:
 		CardData.Rarity.ORDINARY:
 			rarity.text = "Ordinary"
@@ -34,3 +34,6 @@ func set_card_visuals() -> void:
 		CardData.Rarity.VISIONARY:
 			rarity.text = "Visionary"
 	rarity.modulate = CardData.RARITY_COLORS[card_data.rarity]
+
+func set_card_description() -> void:
+	description.text = "[center]" + card_data.get_default_description() + "[/center]"

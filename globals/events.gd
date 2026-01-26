@@ -6,6 +6,7 @@ signal card_drag_ended(card: Card)
 signal card_aim_started(card: Card)
 signal card_aim_ended(card: Card)
 signal card_played(card_data: CardData)
+signal update_card_descriptions() # Emitted when ModifierValues altered.
 
 # Player.
 signal player_hand_drawn # To be emitted after having finished drawing.

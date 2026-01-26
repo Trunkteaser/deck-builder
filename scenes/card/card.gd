@@ -29,7 +29,9 @@ func _ready() -> void:
 	Events.card_drag_started.connect(_on_card_drag_or_aiming_started)
 	Events.card_aim_ended.connect(_on_card_drag_or_aiming_ended)
 	Events.card_drag_ended.connect(_on_card_drag_or_aiming_ended)
+	#Events.update_card_descriptions.connect(update_description)
 	card_state_machine.init(self) # Initializes, and gives reference to self.
+	#print(hero_modifiers)
 
 #region Passing all input and mouse events to the state machine.
 func _input(event: InputEvent) -> void:
@@ -74,6 +76,17 @@ func play() -> void:
 		return
 	card_data.play(targets, hero_stats, hero_modifiers)
 	queue_free()
+
+func get_active_enemy_modifiers() -> ModifierHandler:
+	if targets.is_empty() or targets.size() > 1 or not targets[0] is Enemy:
+		return null
+	return targets[0].modifier_handler
+
+func update_description() -> void:
+	var enemy_modifiers := get_active_enemy_modifiers()
+	var updated_description := card_data.get_updated_description(hero_modifiers, enemy_modifiers)
+	# Why the fuck was hero_modifiers null when signal was connected to this function?
+	visuals.description.text = updated_description
 
 func _on_drop_point_detector_area_entered(area: Area2D) -> void:
 	if not targets.has(area):

@@ -9,18 +9,22 @@ script/source = "extends CardData
 @export var block := 5
 
 func apply_effects(targets: Array[Node], modifiers: ModifierHandler) -> void:
-	block = modifiers.get_modified_value(block, Modifier.Type.BLOCK_GAINED)
-	Apply.block(targets, block)
+	var modified_block := modifiers.get_modified_value(block, Modifier.Type.BLOCK_GAINED)
+	Apply.block(targets, modified_block)
 	
+func get_default_description() -> String:
+	return description % block
 
-	
+func get_updated_description(hero_modifiers: ModifierHandler, _enemy_modifiers: ModifierHandler) -> String:
+	var modified_block := hero_modifiers.get_modified_value(block, Modifier.Type.BLOCK_GAINED)
+	return description % modified_block
 "
 
 [resource]
 script = SubResource("GDScript_g0r6m")
 name = "Defend"
 art = ExtResource("1_npllq")
-description = "Gain 5 block."
+description = "Gain %s block."
 sfx = ExtResource("2_npllq")
 target = 1
 metadata/_custom_type_script = "uid://cf748lyegyqg3"

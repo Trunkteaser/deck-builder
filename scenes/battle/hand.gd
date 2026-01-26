@@ -6,6 +6,7 @@ const DISCARD_SFX = preload("uid://bwonltvbchlj")
 
 @export var hero: Hero
 @export var hero_stats: HeroStats
+var hero_modifier_handler: ModifierHandler
 
 
 #region Fanning variables.
@@ -20,8 +21,13 @@ const DISCARD_SFX = preload("uid://bwonltvbchlj")
 
 func _ready() -> void:
 	#Events.request_card_draw.connect(draw) # Experimental.
-	
+	#hero_modifier_handler = hero.modifier_handler
+	Events.update_card_descriptions.connect(_on_update_card_descriptions)
 	update_card_fanning()
+
+func _on_update_card_descriptions() -> void:
+	for card: Card in get_children():
+		card.update_description()
 
 func add_card(card_data: CardData) -> void:
 	var new_card := CARD.instantiate()
@@ -31,8 +37,9 @@ func add_card(card_data: CardData) -> void:
 	new_card.parent = self
 	new_card.hero_stats = hero_stats
 	new_card.visuals.set_card_visuals()
-	if hero:
-		new_card.hero_modifiers = hero.modifier_handler
+	#print(hero_modifier_handler)
+	new_card.hero_modifiers = hero.modifier_handler
+	#print(new_card.hero_modifiers)
 	
 	update_card_fanning()
 	for child: Card in get_children():

@@ -34,6 +34,8 @@ func _on_end_turn_button_pressed() -> void:
 
 func _on_player_hand_drawn() -> void:
 	end_turn_button.disabled = false
+	#await get_tree().create_timer(2).timeout
+	Events.update_card_descriptions.emit()
 
 func _damage_popup(value: int, pos: Vector2) -> void:
 	var number = Label.new()

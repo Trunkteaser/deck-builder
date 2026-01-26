@@ -14,17 +14,26 @@ func apply_effects(targets: Array[Node], modifiers: ModifierHandler) -> void:
 	#damage_effect.apply(targets, damage)
 	#var draw_effect := DrawEffect.new()
 	#draw_effect.apply(hero, 2)
-	damage = modifiers.get_modified_value(damage, Modifier.Type.DMG_DEALT)
-	Apply.damage(targets, damage)
+	var modified_damage := modifiers.get_modified_value(damage, Modifier.Type.DMG_DEALT)
+	Apply.damage(targets, modified_damage)
 	Apply.draw(2)
 	SFXPlayer.play(sfx)
+
+func get_default_description() -> String:
+	return description % damage
+
+func get_updated_description(hero_modifiers: ModifierHandler, enemy_modifiers: ModifierHandler) -> String:
+	var modified_damage := hero_modifiers.get_modified_value(damage, Modifier.Type.DMG_DEALT)
+	if enemy_modifiers:
+		modified_damage = enemy_modifiers.get_modified_value(modified_damage, Modifier.Type.DMG_TAKEN)
+	return description % modified_damage
 "
 
 [resource]
 script = SubResource("GDScript_jpmgi")
 name = "Pursue"
 art = ExtResource("1_em0ht")
-description = "Deal 15 damage.
+description = "Deal %s damage.
 Draw 2 cards."
 sfx = ExtResource("2_nbqwd")
 cost = 2

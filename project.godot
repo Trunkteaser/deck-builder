@@ -49,6 +49,7 @@ folder_colors={
 "res://globals/": "purple",
 "res://heroes/": "green",
 "res://resources/": "blue",
+"res://resources/moods/": "teal",
 "res://scenes/": "blue",
 "res://script_templates/": "blue",
 "res://zzz/": "gray"

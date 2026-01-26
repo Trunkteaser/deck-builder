@@ -18,9 +18,10 @@ const WHITE_SPRITE_MATERIAL = preload("uid://ceemqhtjalmbl")
 var enemy_ai: EnemyAI
 var current_action: EnemyAction : set = set_current_action
 
-func _ready() -> void:
-	var anger = preload("uid://bl7yry7rm0qru")
-	Apply.mood([self], anger, 2)
+#func _ready() -> void:
+	#await get_tree().create_timer(3).timeout
+	#var anger = preload("uid://bl7yry7rm0qru")
+	#Apply.mood([self], anger, 2)
 
 func set_enemy_stats(new_enemy_stats: EnemyStats) -> void:
 	stats = new_enemy_stats.create_instance()

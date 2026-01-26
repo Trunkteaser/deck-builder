@@ -71,3 +71,9 @@ func get_self(_targets: Array[Node]) -> Array[Node]: # Experimental, so I can hi
 
 func wait(duration: float) -> Signal:
 	return tree.create_timer(duration).timeout
+
+func get_default_description() -> String:
+	return description
+
+func get_updated_description(_hero_modifiers: ModifierHandler, _enemy_modifiers: ModifierHandler) -> String:
+	return description

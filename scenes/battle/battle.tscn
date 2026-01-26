@@ -68,6 +68,10 @@ position = Vector2(320, 126.5)
 shape = SubResource("RectangleShape2D_py4tk")
 debug_color = Color(0, 0.6, 0.69803923, 0.02745098)
 
+[node name="Hero" parent="." instance=ExtResource("4_agsc7")]
+position = Vector2(91, 129)
+stats = ExtResource("5_oiw7q")
+
 [node name="EnemyHandler" type="Node2D" parent="."]
 script = ExtResource("4_n6gaa")
 
@@ -78,10 +82,6 @@ stats = ExtResource("6_n6gaa")
 [node name="Enemy2" parent="EnemyHandler" instance=ExtResource("3_oiw7q")]
 position = Vector2(544, 198)
 stats = ExtResource("8_w40i5")
-
-[node name="Hero" parent="." instance=ExtResource("4_agsc7")]
-position = Vector2(91, 129)
-stats = ExtResource("5_oiw7q")
 
 [node name="Debug" type="Node" parent="." node_paths=PackedStringArray("card")]
 script = ExtResource("5_h0kxc")
