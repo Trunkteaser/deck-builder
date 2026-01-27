@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://cco15uvdcdbyy"]
+
+[ext_resource type="Script" uid="uid://byf1cxbl8u5ql" path="res://scenes/mantras/mantra_handler.gd" id="1_kdw8u"]
+
+[node name="MantraHandler" type="HBoxContainer"]
+custom_minimum_size = Vector2(0, 32)
+offset_right = 240.0
+offset_bottom = 32.0
+theme_override_constants/separation = -4
+script = ExtResource("1_kdw8u")
+
+[connection signal="child_exiting_tree" from="." to="." method="_on_child_exiting_tree"]

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Mantra" load_steps=3 format=3 uid="uid://ci6mgf0ys0du4"]
+
+[ext_resource type="Texture2D" uid="uid://bvxgooanycqn0" path="res://assets/sprites/shield.png" id="1_kcbwd"]
+[ext_resource type="Script" uid="uid://b534avfd3a80j" path="res://resources/mantra.gd" id="1_t74v3"]
+
+[resource]
+script = ExtResource("1_t74v3")
+name = "I Am Sturdy"
+type = 2
+icon = ExtResource("1_kcbwd")
+tooltip = "I Am Sturdy
+At the end of your turn, gain 3 block."
+metadata/_custom_type_script = "uid://b534avfd3a80j"

@@ -48,6 +48,7 @@ folder_colors={
 "res://enemies/": "red",
 "res://globals/": "purple",
 "res://heroes/": "green",
+"res://mantras/": "blue",
 "res://resources/": "blue",
 "res://resources/moods/": "teal",
 "res://scenes/": "blue",

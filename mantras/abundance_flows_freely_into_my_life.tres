@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Mantra" load_steps=2 format=3 uid="uid://cjq0uvg5btj03"]
+
+[ext_resource type="Script" uid="uid://b534avfd3a80j" path="res://resources/mantra.gd" id="1_ntmwb"]
+
+[resource]
+script = ExtResource("1_ntmwb")
+name = "Abundance Flows Freely Into My Life"
+type = 4
+tooltip = "Abundance Flows Freely Into My Life
+All items in the shop are discounted by 50%."
+metadata/_custom_type_script = "uid://b534avfd3a80j"
