@@ -4,16 +4,21 @@
 [ext_resource type="Script" uid="uid://tp3cbamstkbc" path="res://scenes/map/map_generator.gd" id="3_a2pkv"]
 [ext_resource type="Resource" uid="uid://kj8bf28y1723" path="res://battles/phasmophobia/phasmophobia_battle_pool.tres" id="3_ph54e"]
 
-[node name="Map" type="Node2D"]
+[node name="Map" type="Control"]
+layout_mode = 3
+anchors_preset = 0
 script = ExtResource("1_tqkkf")
 
-[node name="Visuals" type="Node2D" parent="."]
+[node name="Visuals" type="Control" parent="."]
+anchors_preset = 0
 
-[node name="Lines" type="Node2D" parent="Visuals"]
+[node name="Lines" type="Control" parent="Visuals"]
 unique_name_in_owner = true
+anchors_preset = 0
 
-[node name="Rooms" type="Node2D" parent="Visuals"]
+[node name="Rooms" type="Control" parent="Visuals"]
 unique_name_in_owner = true
+anchors_preset = 0
 
 [node name="MapGenerator" type="Node" parent="."]
 script = ExtResource("3_a2pkv")
@@ -29,4 +34,4 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-color = Color(0, 0, 0, 0.8352941)
+color = Color(0, 0, 0, 1)

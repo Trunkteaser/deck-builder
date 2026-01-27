@@ -14,7 +14,21 @@
 script = ExtResource("1_wdonh")
 run_startup = ExtResource("2_o4jfg")
 
-[node name="Map" parent="." instance=ExtResource("1_8rlou")]
+[node name="MapLayer" type="CanvasLayer" parent="."]
+layer = 3
+
+[node name="Dimmer" type="ColorRect" parent="MapLayer"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0.7921569)
+
+[node name="Map" parent="MapLayer" instance=ExtResource("1_8rlou")]
+unique_name_in_owner = true
 
 [node name="CurrentView" type="Node" parent="."]
 

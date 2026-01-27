@@ -13,7 +13,7 @@ const TREASURE_SCENE := preload("uid://djbb0v375o0fq")
 @export var run_startup: RunStartup
 
 @onready var current_view: Node = $CurrentView
-@onready var map: Map = $Map
+@onready var map: Map = %Map
 @onready var map_button: Button = %MapButton
 @onready var battle_button: Button = %BattleButton
 @onready var shop_button: Button = %ShopButton
@@ -115,5 +115,7 @@ func _on_map_exited(room: Room) -> void:
 func _on_map_button_pressed() -> void: # Testing?
 	if not map.visible:
 		map.show()
+		$MapLayer/Dimmer.show()
 	else:
 		map.hide()
+		$MapLayer/Dimmer.hide()

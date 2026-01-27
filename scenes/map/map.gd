@@ -1,13 +1,13 @@
-extends Node2D
+extends Control
 class_name Map
 
 const MAP_ROOM = preload("uid://bdy0nbcn0a2s1")
 const MAP_LINE = preload("uid://d0mxwcdup8hlw")
 
 @onready var map_generator: MapGenerator = $MapGenerator
-@onready var lines: Node2D = %Lines
-@onready var rooms: Node2D = %Rooms
-@onready var visuals: Node2D = $Visuals
+@onready var visuals: Control = $Visuals
+@onready var lines: Control = %Lines
+@onready var rooms: Control = %Rooms
 
 var map_data: Array[Array]
 var floors_climbed: int
