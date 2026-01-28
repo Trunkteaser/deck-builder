@@ -4,6 +4,7 @@ const BLOCK_SFX: AudioStream = preload("uid://d0cq6s264xrlr")
 const HEAL_SFX: AudioStream = preload("uid://bshhf0d1gfjiu")
 
 # TODO Decide if giving block and taking dmg have sound effects.
+# TODO Apply mana, with sfx?
 
 func damage(targets: Array[Node], amount: int, receiver_mod_type := Modifier.Type.DMG_TAKEN) -> void:
 	for target in targets:

@@ -10,6 +10,7 @@ signal update_card_descriptions() # Emitted when ModifierValues altered.
 
 # Player.
 signal player_hand_drawn # To be emitted after having finished drawing.
+signal post_mana_reset
 signal player_hand_discarded
 signal player_turn_ended
 signal player_damaged # Emitted when damage goes past block.

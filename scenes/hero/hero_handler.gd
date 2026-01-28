@@ -1,10 +1,20 @@
 extends Node
 class_name HeroHandler
 
+# Hero turn order.
+# 1. SOT Mantras
+# 2. SOT Moods
+# 3. Draw
+# 4. End Turn
+# 5. EOT Mantras
+# 6. EOT Moods
+# 7. Discard
+
 const HAND_DRAW_INTERVAL := 0.1
 const HAND_DISCARD_INTERVAL := 0.1
 const DRAW_SFX := preload("uid://bwonltvbchlj")
 
+@export var mantras: MantraHandler
 @export var hero_node: Hero
 @export var hand: Hand
 
@@ -19,19 +29,19 @@ func start_battle(hero_stats: HeroStats) -> void:
 	hero.draw_pile = hero.deck.duplicate(true)
 	hero.draw_pile.shuffle()
 	hero.discard_pile = CardPile.new()
+	mantras.mantras_activated.connect(_on_mantras_activated)
 	hero_node.mood_handler.moods_triggered.connect(_on_moods_triggered)
 	start_turn()
 
 func start_turn() -> void:
 	hero.block = 0
 	hero.reset_mana()
-	if not hero_node:
-		return
-	hero_node.mood_handler.trigger_moods_by_type(Mood.TriggerType.START_OF_TURN)
+	Events.post_mana_reset.emit()
+	mantras.activate_mantras_by_type(Mantra.Type.START_OF_TURN)
 
 func end_turn() -> void:
 	hand.disable_hand()
-	hero_node.mood_handler.trigger_moods_by_type(Mood.TriggerType.END_OF_TURN)
+	mantras.activate_mantras_by_type(Mantra.Type.END_OF_TURN)
 
 func draw_card() -> void:
 	reshuffle_deck_from_discard()
@@ -76,3 +86,10 @@ func _on_moods_triggered(trigger_type: Mood.TriggerType) -> void:
 			draw_cards(hero.cards_per_turn)
 		Mood.TriggerType.END_OF_TURN:
 			discard_cards()
+
+func _on_mantras_activated(type: Mantra.Type) -> void:
+	match type:
+		Mantra.Type.START_OF_TURN:
+			hero_node.mood_handler.trigger_moods_by_type(Mood.TriggerType.START_OF_TURN)
+		Mantra.Type.END_OF_TURN:
+			hero_node.mood_handler.trigger_moods_by_type(Mood.TriggerType.END_OF_TURN)

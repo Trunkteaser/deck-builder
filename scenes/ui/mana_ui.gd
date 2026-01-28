@@ -6,9 +6,9 @@ class_name ManaUI
 @onready var mana_label: Label = $ManaLabel
 
 # TODO Set mana in a different script.
-func _ready() -> void:
-	await get_tree().create_timer(1).timeout
-	hero_stats.mana = 3
+#func _ready() -> void:
+	#await get_tree().create_timer(1).timeout
+	#hero_stats.mana = 3
 
 func _set_hero_stats(value: HeroStats) -> void:
 	hero_stats = value

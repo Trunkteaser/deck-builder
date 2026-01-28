@@ -24,6 +24,7 @@ const TREASURE_SCENE := preload("uid://djbb0v375o0fq")
 @onready var deck_view: CardPileView = %DeckView
 @onready var inspiration_ui: InspirationUI = %InspirationUI
 @onready var health_ui: HealthUI = %HealthUI
+@onready var mantra_handler: MantraHandler = %MantraHandler
 
 var hero: HeroStats
 var stats: RunStats
@@ -82,6 +83,7 @@ func _setup_top_bar() -> void:
 	hero.stats_changed.connect(health_ui.update_stats.bind(hero))
 	health_ui.update_stats(hero)
 	inspiration_ui.run_stats = stats
+	mantra_handler.add_mantra(hero.innate_mantra)
 	deck_button.card_pile = hero.deck
 	deck_view.card_pile = hero.deck
 	deck_button.pressed.connect(deck_view.show_current_view.bind("Deck"))
@@ -90,6 +92,7 @@ func _on_battle_room_entered(room: Room) -> void:
 	var battle_scene: Battle = _change_view(BATTLE_SCENE)
 	battle_scene.hero_stats = hero
 	battle_scene.battle_stats = room.battle_stats
+	battle_scene.mantras = mantra_handler
 	battle_scene.start_battle()
 
 func _on_battle_won() -> void:

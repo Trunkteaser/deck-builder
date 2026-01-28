@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://byf1cxbl8u5ql" path="res://scenes/mantras/mantra_handler.gd" id="1_kdw8u"]
 
 [node name="MantraHandler" type="HBoxContainer"]
-custom_minimum_size = Vector2(0, 32)
+custom_minimum_size = Vector2(0, 40)
 offset_right = 240.0
 offset_bottom = 32.0
 theme_override_constants/separation = -4

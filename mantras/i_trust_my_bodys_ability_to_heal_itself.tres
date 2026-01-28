@@ -1,10 +1,10 @@
-[gd_resource type="Resource" script_class="Mantra" load_steps=3 format=3 uid="uid://c2xbdwebhwvy0"]
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://c2xbdwebhwvy0"]
 
 [ext_resource type="Texture2D" uid="uid://dshcmea87wqi7" path="res://assets/sprites/heart.png" id="1_777f3"]
-[ext_resource type="Script" uid="uid://b534avfd3a80j" path="res://resources/mantra.gd" id="2_d6ok5"]
+[ext_resource type="Script" uid="uid://clvaggtokjyj0" path="res://mantras/i_trust_my_bodys_ability_to_heal_itself.gd" id="2_777f3"]
 
 [resource]
-script = ExtResource("2_d6ok5")
+script = ExtResource("2_777f3")
 name = "I Trust My Body's Ability To Heal Itself"
 type = 3
 icon = ExtResource("1_777f3")

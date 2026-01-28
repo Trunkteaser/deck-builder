@@ -20,6 +20,7 @@ func set_mana(value: int) -> void:
 
 func reset_mana() -> void:
 	mana = max_mana
+	
 
 func take_damage(damage: int) -> void:
 	var initial_health := health

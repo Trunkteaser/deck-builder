@@ -1,10 +1,10 @@
-[gd_resource type="Resource" script_class="Mantra" load_steps=3 format=3 uid="uid://ck6jh0585ob6a"]
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://ck6jh0585ob6a"]
 
 [ext_resource type="Texture2D" uid="uid://bvxw83y3npn70" path="res://assets/sprites/fancy gun.png" id="1_pik2b"]
-[ext_resource type="Script" uid="uid://b534avfd3a80j" path="res://resources/mantra.gd" id="1_sp455"]
+[ext_resource type="Script" uid="uid://dcdbg13qmmhow" path="res://mantras/han_shot_first.gd" id="2_pik2b"]
 
 [resource]
-script = ExtResource("1_sp455")
+script = ExtResource("2_pik2b")
 name = "Han Shot First"
 icon = ExtResource("1_pik2b")
 tooltip = "Han Shot First
