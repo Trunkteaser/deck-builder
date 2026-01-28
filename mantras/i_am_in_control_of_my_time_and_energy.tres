@@ -1,0 +1,12 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://ds0qu6gqf6vr0"]
+
+[ext_resource type="Texture2D" uid="uid://dhrmsrn6y0ot8" path="res://assets/sprites/mana circle.png" id="1_jal5l"]
+[ext_resource type="Script" uid="uid://b8mrreabqnu7p" path="res://mantras/i_am_in_control_of_my_time_and_energy.gd" id="2_5bkne"]
+
+[resource]
+script = ExtResource("2_5bkne")
+name = "I Am In Control Of My Time And Energy"
+icon = ExtResource("1_jal5l")
+tooltip = "I Am In Control Of My Time And Energy
+Gain one mana every third turn."
+metadata/_custom_type_script = "uid://b534avfd3a80j"

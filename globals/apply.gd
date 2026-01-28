@@ -2,6 +2,7 @@ extends Node
 
 const BLOCK_SFX: AudioStream = preload("uid://d0cq6s264xrlr")
 const HEAL_SFX: AudioStream = preload("uid://bshhf0d1gfjiu")
+const MANA_SFX: AudioStream = preload("uid://dudqlp1mly8lt")
 
 # TODO Decide if giving block and taking dmg have sound effects.
 # TODO Apply mana, with sfx?
@@ -45,3 +46,10 @@ func heal(targets: Array[Node], amount: int) -> void:
 			target.stats.heal(amount)
 			SFXPlayer.play(HEAL_SFX)
  
+func mana(targets: Array[Node], amount: int) -> void:
+	for target in targets:
+		if not target:
+			continue
+		if target is Hero:
+			target.stats.mana += amount
+			SFXPlayer.play(MANA_SFX)

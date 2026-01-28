@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://b3mwvvavgkbgr" path="res://resources/hero_stats.gd" id="1_1jis4"]
 [ext_resource type="Texture2D" uid="uid://bo5lwhncmnjrs" path="res://assets/sprites/izzy v2.png" id="1_tuv0d"]
 [ext_resource type="Resource" uid="uid://xqqb35uy3ei0" path="res://heroes/shrike/shrike_draftable.tres" id="2_onbfi"]
-[ext_resource type="Resource" uid="uid://ci6mgf0ys0du4" path="res://mantras/i_am_sturdy.tres" id="3_2cdmq"]
+[ext_resource type="Resource" uid="uid://ds0qu6gqf6vr0" path="res://mantras/i_am_in_control_of_my_time_and_energy.tres" id="3_2cdmq"]
 [ext_resource type="Resource" uid="uid://ckyykkay0p7es" path="res://heroes/witch/witch_starting_deck.tres" id="3_onbfi"]
 
 [resource]

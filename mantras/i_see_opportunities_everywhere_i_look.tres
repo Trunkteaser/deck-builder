@@ -1,0 +1,13 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://cotha0l5sdftt"]
+
+[ext_resource type="Texture2D" uid="uid://d3hxorv3utoot" path="res://assets/sprites/evil smile.png" id="1_ggxq3"]
+[ext_resource type="Script" uid="uid://b3wm7df2kj6x5" path="res://mantras/i_see_opportunities_everywhere_i_look.gd" id="1_h204i"]
+
+[resource]
+script = ExtResource("1_h204i")
+name = "I See Opportunities Everywhere I Look"
+type = 4
+icon = ExtResource("1_ggxq3")
+tooltip = "I See Opportunities Everywhere I Look
+When an enemy dies, gain one mana and draw one card."
+metadata/_custom_type_script = "uid://b534avfd3a80j"
