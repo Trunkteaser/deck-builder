@@ -34,6 +34,8 @@ func add_mantras(mantras_array: Array[Mantra]) -> void:
 		# Can be used for loading a game with many mantras.
 
 func add_mantra(mantra: Mantra) -> void:
+	if not mantra:
+		return
 	if has_mantra(mantra.name):
 		return
 	var new_mantra_ui: MantraUI = MANTRA_UI.instantiate()

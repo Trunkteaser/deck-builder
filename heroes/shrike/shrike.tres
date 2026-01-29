@@ -1,19 +1,17 @@
-[gd_resource type="Resource" script_class="HeroStats" load_steps=6 format=3 uid="uid://d0o466qgbput5"]
+[gd_resource type="Resource" script_class="HeroStats" load_steps=5 format=3 uid="uid://d0o466qgbput5"]
 
 [ext_resource type="Script" uid="uid://b3mwvvavgkbgr" path="res://resources/hero_stats.gd" id="1_1jis4"]
 [ext_resource type="Texture2D" uid="uid://bo5lwhncmnjrs" path="res://assets/sprites/izzy v2.png" id="1_tuv0d"]
 [ext_resource type="Resource" uid="uid://xqqb35uy3ei0" path="res://heroes/shrike/shrike_draftable.tres" id="2_onbfi"]
-[ext_resource type="Resource" uid="uid://ds0qu6gqf6vr0" path="res://mantras/i_am_in_control_of_my_time_and_energy.tres" id="3_2cdmq"]
-[ext_resource type="Resource" uid="uid://ckyykkay0p7es" path="res://heroes/witch/witch_starting_deck.tres" id="3_onbfi"]
+[ext_resource type="Resource" uid="uid://yv8otwwh3bat" path="res://heroes/shrike/shrike_starting_deck.tres" id="5_2cdmq"]
 
 [resource]
 script = ExtResource("1_1jis4")
 name = "Shrike"
-starting_deck = ExtResource("3_onbfi")
+starting_deck = ExtResource("5_2cdmq")
 draftable_cards = ExtResource("2_onbfi")
 cards_per_turn = 4
 max_mana = 3
-innate_mantra = ExtResource("3_2cdmq")
 max_health = 30
 art = ExtResource("1_tuv0d")
 metadata/_custom_type_script = "uid://b3mwvvavgkbgr"

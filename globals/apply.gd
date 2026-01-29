@@ -7,7 +7,10 @@ const MANA_SFX: AudioStream = preload("uid://dudqlp1mly8lt")
 # TODO Decide if giving block and taking dmg have sound effects.
 # TODO Apply mana, with sfx?
 
+var fatality_candidates := []
+
 func damage(targets: Array[Node], amount: int, receiver_mod_type := Modifier.Type.DMG_TAKEN) -> void:
+	fatality_candidates.clear()
 	for target in targets:
 		if not target:
 			continue
