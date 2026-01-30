@@ -26,6 +26,7 @@ const RARITY_COLORS := {
 
 var hero: Array[Node] # For secondary self-targeting purposes.
 var tree: SceneTree
+var enemies: Array[Node]
 
 func is_single_targeted() -> bool:
 	return target == Target.SINGLE_ENEMY
@@ -52,6 +53,7 @@ func play(targets: Array[Node], hero_stats: HeroStats, modifiers: ModifierHandle
 	
 	tree = targets[0].get_tree()
 	hero = get_self(targets)
+	enemies = tree.get_nodes_in_group("enemies")
 	# Modifiers could be var in CardData instead of passed as argument.
 	# Nah argument is good, then you remember to use it.
 	

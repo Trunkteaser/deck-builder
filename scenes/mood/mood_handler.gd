@@ -32,12 +32,14 @@ func add_mood(mood: Mood) -> void:
 		new_mood_ui.mood = mood
 		new_mood_ui.mood.mood_triggered.connect(_on_mood_triggered)
 		new_mood_ui.mood.initialize_mood(mood_owner)
+		Events.mood_changed.emit()
 	# If we already have it, and it doesn't stack, return.
 	elif not stackable:
 		return
 	# If we already have it, and it can stack...
 	elif stackable:
 		_get_mood(mood.name).stacks += mood.stacks # Add the stacks to the former instance.
+		Events.mood_changed.emit()
 
 func _has_mood(mood_name: String) -> bool:
 	for mood_ui: MoodUI in get_children():
@@ -58,5 +60,6 @@ func _get_all_moods() -> Array[Mood]:
 	return moods
 
 func _on_mood_triggered(mood: Mood) -> void:
+	Events.mood_changed.emit()
 	if mood.stack_type == Mood.StackType.DURATION: # Can expire.
 		mood.stacks -= 1
