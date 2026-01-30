@@ -1,4 +1,4 @@
-[gd_resource type="Resource" load_steps=4 format=3 uid="uid://dvsl2y154h17f"]
+[gd_resource type="Resource" load_steps=4 format=3 uid="uid://df48prjxgqto1"]
 
 [ext_resource type="Texture2D" uid="uid://dw0wtiicqn6gw" path="res://assets/sprites/dagger.png" id="1_vm2jp"]
 [ext_resource type="AudioStream" uid="uid://ts423b3gvpso" path="res://assets/sound/axe.ogg" id="2_gc8t4"]

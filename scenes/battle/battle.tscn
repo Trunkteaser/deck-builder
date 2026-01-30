@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://0qyqwumjfu4w"]
+[gd_scene load_steps=28 format=3 uid="uid://0qyqwumjfu4w"]
 
 [ext_resource type="Script" uid="uid://djb2fi8pii4a6" path="res://scenes/battle/battle.gd" id="1_agsc7"]
 [ext_resource type="Resource" uid="uid://d0o466qgbput5" path="res://heroes/shrike/shrike.tres" id="2_kd6yx"]
@@ -12,6 +12,7 @@
 [ext_resource type="Resource" uid="uid://c2ohd717m4u8e" path="res://heroes/witch/witch.tres" id="5_oiw7q"]
 [ext_resource type="Resource" uid="uid://dq1dpmrio8kw7" path="res://enemies/banshee/banshee.tres" id="6_n6gaa"]
 [ext_resource type="PackedScene" uid="uid://6yf24kgcbxr7" path="res://scenes/card/card.tscn" id="6_pll4o"]
+[ext_resource type="Texture2D" uid="uid://tja2y227uuv2" path="res://assets/sprites/background/Space-Background-Images.jpg" id="6_pyfix"]
 [ext_resource type="Texture2D" uid="uid://b7rvi8vesm3ij" path="res://assets/sprites/grass terrain.png" id="8_t1kk3"]
 [ext_resource type="Resource" uid="uid://blpmomhimxbc1" path="res://enemies/claw_ghost/claw_ghost.tres" id="8_w40i5"]
 [ext_resource type="Script" uid="uid://c112cpa8gx1r3" path="res://scenes/hero/hero_handler.gd" id="9_mxe8n"]
@@ -46,6 +47,7 @@ metadata/_edit_lock_ = true
 [node name="Visuals" type="Node2D" parent="."]
 
 [node name="TempBackground" type="ColorRect" parent="Visuals"]
+visible = false
 z_index = -2
 offset_right = 640.0
 offset_bottom = 360.0
@@ -57,6 +59,17 @@ metadata/_edit_lock_ = true
 z_index = -1
 texture = ExtResource("8_t1kk3")
 offset = Vector2(320, 180)
+
+[node name="TextureRect" type="TextureRect" parent="Visuals"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 640.0
+offset_bottom = 360.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_pyfix")
+expand_mode = 1
 
 [node name="CardTargetSelector" parent="." instance=ExtResource("3_agsc7")]
 
