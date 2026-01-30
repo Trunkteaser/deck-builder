@@ -9,8 +9,8 @@
 [ext_resource type="Resource" uid="uid://ucoipe7k8gjl" path="res://cards/big_chonkin_bonkin.tres" id="6_ylg3e"]
 [ext_resource type="Resource" uid="uid://cxsu15sch2v6i" path="res://cards/giga_repeator.tres" id="7_hihqi"]
 [ext_resource type="Resource" uid="uid://oo7vhl51iyjb" path="res://cards/poison_cloud.tres" id="8_05lsk"]
-[ext_resource type="Resource" uid="uid://ysod80vse2la" path="res://heroes/shrike/cards/fatal_testing.tres" id="9_hihqi"]
-[ext_resource type="Resource" path="res://heroes/shrike/cards/impale.tres" id="10_05lsk"]
+[ext_resource type="Resource" uid="uid://ysod80vse2la" path="res://heroes/test_heroson/fatal_testing.tres" id="9_hihqi"]
+[ext_resource type="Resource" uid="uid://df48prjxgqto1" path="res://heroes/shrike/cards/impale.tres" id="10_05lsk"]
 
 [resource]
 script = ExtResource("6_05lsk")

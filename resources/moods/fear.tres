@@ -1,0 +1,14 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://t28wluftr7m"]
+
+[ext_resource type="Texture2D" uid="uid://dggvgav3t6ddu" path="res://assets/sprites/pumpkin.png" id="1_nbf34"]
+[ext_resource type="Script" uid="uid://caouv18eg50ym" path="res://resources/moods/fear.gd" id="1_xubwx"]
+
+[resource]
+script = ExtResource("1_xubwx")
+name = "Fear"
+trigger_type = 1
+stack_type = 2
+stacks = 1
+icon = ExtResource("1_nbf34")
+tooltip = "Fear: Deal 33% less damage."
+metadata/_custom_type_script = "uid://cv5d6rh4bndpq"

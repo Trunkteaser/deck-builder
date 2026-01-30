@@ -5,6 +5,7 @@
 
 [resource]
 script = ExtResource("1_0rxbj")
+weight = 0.0
 insp_reward_min = 50
 insp_reward_max = 100
 enemies = ExtResource("1_5xwlf")
