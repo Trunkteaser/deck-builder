@@ -5,7 +5,6 @@ const HEAL_SFX: AudioStream = preload("uid://bshhf0d1gfjiu")
 const MANA_SFX: AudioStream = preload("uid://dudqlp1mly8lt")
 
 # TODO Decide if giving block and taking dmg have sound effects.
-# TODO Apply mana, with sfx?
 
 var fatality_candidates := []
 

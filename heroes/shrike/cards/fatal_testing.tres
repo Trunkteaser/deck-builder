@@ -6,17 +6,16 @@
 script/source = "extends CardData
 
 func apply_effects(targets: Array[Node], modifiers: ModifierHandler) -> void:
-	Events.enemy_died.connect(_on_enemy_died, CONNECT_ONE_SHOT)
+	if not Events.enemy_died.is_connected(_on_enemy_died):
+		Events.enemy_died.connect(_on_enemy_died, CONNECT_ONE_SHOT)
 
 	var modified_damage := modifiers.get_modified_value(10, Modifier.Type.DMG_DEALT)
 	Apply.damage(targets, modified_damage)
 
 	Apply.fatality_candidates = [targets[0], self]
-	print(Apply.fatality_candidates)
 
 func _on_enemy_died(enemy: Enemy) -> void:
 	if Apply.fatality_candidates.has(enemy) and Apply.fatality_candidates.has(self):
-		print(\"FATALITY\")
 		Apply.mana(hero, 1)
 "
 
@@ -26,4 +25,4 @@ name = "Test Fatal"
 rarity = 2
 art = ExtResource("1_tuca1")
 description = "Deal 10 damage.
-If fatal, heal 5."
+If fatal, gain 1 mana."

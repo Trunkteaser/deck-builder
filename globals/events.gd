@@ -28,6 +28,7 @@ signal request_discard(amount: int)
 # Battle.
 signal battle_won
 signal damage_taken(value: int, position: Vector2) # For dmg popup tween.
+signal mood_changed
 
 # Map.
 signal map_exited(room: Room) # More like room entered.
