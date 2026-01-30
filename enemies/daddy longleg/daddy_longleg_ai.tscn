@@ -1,0 +1,36 @@
+[gd_scene load_steps=11 format=3 uid="uid://dqx0rm1vpccyh"]
+
+[ext_resource type="Script" uid="uid://rk0knfs7teh6" path="res://scenes/enemy/ai.gd" id="1_p5w2u"]
+[ext_resource type="Script" uid="uid://1pva7npymrg2" path="res://enemies/banshee/banshee_attack.gd" id="2_7a024"]
+[ext_resource type="Texture2D" uid="uid://dw0wtiicqn6gw" path="res://assets/sprites/dagger.png" id="3_ky41o"]
+[ext_resource type="Script" uid="uid://dw3bracpphktf" path="res://resources/intent.gd" id="4_egetv"]
+[ext_resource type="AudioStream" uid="uid://bvw3gan04kfqa" path="res://assets/sound/enemy_attack.ogg" id="5_d6np2"]
+[ext_resource type="Script" uid="uid://bqb6n10ksb8ox" path="res://enemies/banshee/banshee_mega_attack.gd" id="9_kjfds"]
+[ext_resource type="Texture2D" uid="uid://bcftmmvef1jcd" path="res://assets/sprites/axe.png" id="10_arrr4"]
+[ext_resource type="AudioStream" uid="uid://dnknwy741q2l0" path="res://assets/sound/slash.ogg" id="11_242eg"]
+
+[sub_resource type="Resource" id="Resource_2hbi2"]
+script = ExtResource("4_egetv")
+base_text = "%s"
+icon = ExtResource("3_ky41o")
+metadata/_custom_type_script = "uid://dw3bracpphktf"
+
+[sub_resource type="Resource" id="Resource_dmoa8"]
+script = ExtResource("4_egetv")
+base_text = "%s"
+icon = ExtResource("10_arrr4")
+metadata/_custom_type_script = "uid://dw3bracpphktf"
+
+[node name="DaddyLonglegsAI" type="Node"]
+script = ExtResource("1_p5w2u")
+
+[node name="Attack2" type="Node" parent="."]
+script = ExtResource("2_7a024")
+chance_weight = 1.0
+intent = SubResource("Resource_2hbi2")
+sfx = ExtResource("5_d6np2")
+
+[node name="MegaAttack" type="Node" parent="."]
+script = ExtResource("9_kjfds")
+intent = SubResource("Resource_dmoa8")
+sfx = ExtResource("11_242eg")

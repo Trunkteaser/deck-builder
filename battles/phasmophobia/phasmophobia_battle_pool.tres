@@ -1,15 +1,16 @@
-[gd_resource type="Resource" script_class="BattleStatsPool" load_steps=9 format=3 uid="uid://kj8bf28y1723"]
+[gd_resource type="Resource" script_class="BattleStatsPool" load_steps=10 format=3 uid="uid://kj8bf28y1723"]
 
 [ext_resource type="Script" uid="uid://tidjs5xpdc83" path="res://resources/battle_stats.gd" id="1_4mw6l"]
-[ext_resource type="Script" uid="uid://n4kakjqxfnc4" path="res://resources/battle_stats_pool.gd" id="2_kr6xm"]
+[ext_resource type="Script" path="res://resources/battle_stats_pool.gd" id="2_kr6xm"]
 [ext_resource type="Resource" uid="uid://7eayqp6bs1vs" path="res://battles/phasmophobia/easy_claw_ghost.tres" id="2_m4e8c"]
 [ext_resource type="Resource" uid="uid://b1cc7ll4mg4jv" path="res://battles/phasmophobia/easy_ghost_bros.tres" id="3_cewke"]
 [ext_resource type="Resource" uid="uid://vr4k8w46hw8r" path="res://battles/phasmophobia/normal_claw_ghost_and_lil_bro.tres" id="4_xf42k"]
 [ext_resource type="Resource" uid="uid://f3o1l3t6cr3u" path="res://battles/phasmophobia/normal_ghost_swarm.tres" id="5_30kjt"]
 [ext_resource type="Resource" uid="uid://b3cokwlq7cgcw" path="res://battles/phasmophobia/elite_banshee.tres" id="6_hlb3n"]
 [ext_resource type="Resource" uid="uid://c665is87owisf" path="res://battles/phasmophobia/elite_octopus.tres" id="7_cewke"]
+[ext_resource type="Resource" uid="uid://b345qd770bx0q" path="res://enemies/daddy longleg/daddy_longleg_stats.tres" id="8_xf42k"]
 
 [resource]
 script = ExtResource("2_kr6xm")
-pool = Array[ExtResource("1_4mw6l")]([ExtResource("2_m4e8c"), ExtResource("3_cewke"), ExtResource("4_xf42k"), ExtResource("5_30kjt"), ExtResource("6_hlb3n"), ExtResource("7_cewke")])
+pool = Array[ExtResource("1_4mw6l")]([ExtResource("2_m4e8c"), ExtResource("3_cewke"), ExtResource("4_xf42k"), ExtResource("5_30kjt"), ExtResource("6_hlb3n"), ExtResource("7_cewke"), ExtResource("8_xf42k")])
 metadata/_custom_type_script = "uid://tidjs5xpdc83"
