@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dcpbffft5s7lo" path="res://scenes/map/map.gd" id="1_tqkkf"]
 [ext_resource type="Script" uid="uid://tp3cbamstkbc" path="res://scenes/map/map_generator.gd" id="3_a2pkv"]
-[ext_resource type="Resource" uid="uid://kj8bf28y1723" path="res://battles/phasmophobia/phasmophobia_battle_pool.tres" id="3_ph54e"]
+[ext_resource type="Resource" uid="uid://kj8bf28y1723" path="res://phobias/phasmophobia/phasmophobia_battle_pool.tres" id="3_ph54e"]
 
 [node name="Map" type="Control"]
 layout_mode = 3

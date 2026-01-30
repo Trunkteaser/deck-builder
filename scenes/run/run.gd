@@ -8,9 +8,8 @@ const CAMPFIRE_SCENE := preload("uid://b5td37dfj5iau")
 const SHOP_SCENE := preload("uid://cha87b6ju17jw")
 const TREASURE_SCENE := preload("uid://djbb0v375o0fq")
 
-# TODO Hand the correct BattleStatsPool to MapGenerator.
-
 @export var run_startup: RunStartup
+@export var phobia: Phobia
 
 @onready var current_view: Node = $CurrentView
 @onready var map: Map = %Map
@@ -44,6 +43,9 @@ func _start_run() -> void:
 	stats = RunStats.new() # Temp, different post save/load.
 	_setup_event_connections()
 	_setup_top_bar()
+	map.battle_stats_pool = phobia.battle_stats_pool
+	map.map_node_icons = phobia.map_node_icons
+	map.line_sprite = phobia.line_sprite
 	map.generate_new_map()
 	map.unlock_floor(0)
 
@@ -93,6 +95,7 @@ func _on_battle_room_entered(room: Room) -> void:
 	battle_scene.hero_stats = hero
 	battle_scene.battle_stats = room.battle_stats
 	battle_scene.mantras = mantra_handler
+	battle_scene.background.texture = phobia.battle_background
 	battle_scene.start_battle()
 
 func _on_battle_won() -> void:

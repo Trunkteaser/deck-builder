@@ -11,6 +11,7 @@ class_name Battle
 @onready var hero_handler: HeroHandler = $HeroHandler
 @onready var enemy_handler: EnemyHandler = $EnemyHandler
 @onready var hero: Hero = $Hero
+@onready var background: TextureRect = $Visuals/Background
 
 func _ready() -> void:
 	Events.enemy_turn_ended.connect(_on_enemy_turn_ended)

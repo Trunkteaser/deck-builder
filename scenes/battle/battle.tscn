@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://de56m233tgjmc" path="res://scenes/card_target_selector/card_target_selector.tscn" id="3_agsc7"]
 [ext_resource type="AudioStream" uid="uid://cdvjxbdnv5np0" path="res://assets/sound/The Redeemer MP3.mp3" id="3_mvulk"]
 [ext_resource type="PackedScene" uid="uid://boxd06bs072ot" path="res://scenes/enemy/enemy.tscn" id="3_oiw7q"]
-[ext_resource type="Resource" uid="uid://b1cc7ll4mg4jv" path="res://battles/phasmophobia/easy_ghost_bros.tres" id="4_156m4"]
+[ext_resource type="Resource" uid="uid://b1cc7ll4mg4jv" path="res://phobias/phasmophobia/easy_ghost_bros.tres" id="4_156m4"]
 [ext_resource type="PackedScene" uid="uid://df3oxo87hqvpc" path="res://scenes/hero/hero.tscn" id="4_agsc7"]
 [ext_resource type="Script" uid="uid://dv8inyajhneml" path="res://scenes/enemy/enemy_handler.gd" id="4_n6gaa"]
 [ext_resource type="Script" uid="uid://dlsy0cg3anwyu" path="res://scenes/battle/debug.gd" id="5_h0kxc"]
@@ -60,7 +60,7 @@ z_index = -1
 texture = ExtResource("8_t1kk3")
 offset = Vector2(320, 180)
 
-[node name="TextureRect" type="TextureRect" parent="Visuals"]
+[node name="Background" type="TextureRect" parent="Visuals"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0

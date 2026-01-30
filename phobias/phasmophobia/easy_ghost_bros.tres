@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="BattleStats" load_steps=3 format=3 uid="uid://b1cc7ll4mg4jv"]
+
+[ext_resource type="PackedScene" uid="uid://bqy51k17c27td" path="res://phobias/phasmophobia/easy_ghost_bros.tscn" id="1_u5tmp"]
+[ext_resource type="Script" uid="uid://tidjs5xpdc83" path="res://resources/battle_stats.gd" id="2_iyea2"]
+
+[resource]
+script = ExtResource("2_iyea2")
+insp_reward_min = 50
+insp_reward_max = 60
+enemies = ExtResource("1_u5tmp")
+metadata/_custom_type_script = "uid://tidjs5xpdc83"

@@ -43,12 +43,12 @@ window/stretch/mode="canvas_items"
 
 folder_colors={
 "res://assets/": "yellow",
-"res://battles/": "red",
 "res://cards/": "green",
 "res://enemies/": "red",
 "res://globals/": "purple",
 "res://heroes/": "green",
 "res://mantras/": "blue",
+"res://phobias/": "red",
 "res://resources/": "blue",
 "res://resources/moods/": "teal",
 "res://scenes/": "blue",

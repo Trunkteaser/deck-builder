@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="BattleStats" load_steps=3 format=3 uid="uid://c665is87owisf"]
 
 [ext_resource type="Script" uid="uid://tidjs5xpdc83" path="res://resources/battle_stats.gd" id="1_pvv1g"]
-[ext_resource type="PackedScene" uid="uid://c1y1p66rqlapp" path="res://battles/phasmophobia/elite_octopus.tscn" id="1_yxmjp"]
+[ext_resource type="PackedScene" uid="uid://c1y1p66rqlapp" path="res://phobias/phasmophobia/elite_octopus.tscn" id="1_yxmjp"]
 
 [resource]
 script = ExtResource("1_pvv1g")

@@ -9,12 +9,18 @@ const MAP_LINE = preload("uid://d0mxwcdup8hlw")
 @onready var lines: Control = %Lines
 @onready var rooms: Control = %Rooms
 
+# Set by Run, from Phobia resource.
+var battle_stats_pool: BattleStatsPool
+var line_sprite: Texture2D
+var map_node_icons: Dictionary
+
 var map_data: Array[Array]
 var floors_climbed: int
 var last_room: Room
 
 func generate_new_map() -> void:
 	floors_climbed = 0
+	map_generator.battle_stats_pool = battle_stats_pool
 	map_data = map_generator.generate_map()
 	create_map_visuals()
 
@@ -44,6 +50,7 @@ func unlock_next_rooms() -> void:
 func _spawn_room(room: Room) -> void:
 	var new_map_room: MapRoom = MAP_ROOM.instantiate()
 	rooms.add_child(new_map_room)
+	new_map_room.icons = map_node_icons
 	new_map_room.room = room
 	new_map_room.selected.connect(_on_map_room_selected)
 	_connect_lines(room)
@@ -55,6 +62,7 @@ func _connect_lines(room: Room) -> void:
 		return
 	for next: Room in room.next_rooms:
 		var new_map_line: Line2D = MAP_LINE.instantiate()
+		new_map_line.texture = line_sprite
 		new_map_line.add_point(room.position)
 		new_map_line.add_point(next.position)
 		lines.add_child(new_map_line)

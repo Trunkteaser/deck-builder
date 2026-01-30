@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="BattleStats" load_steps=3 format=3 uid="uid://b3cokwlq7cgcw"]
 
-[ext_resource type="PackedScene" uid="uid://du5pt2a6kuw5g" path="res://battles/phasmophobia/elite_banshee.tscn" id="1_a70c7"]
+[ext_resource type="PackedScene" uid="uid://du5pt2a6kuw5g" path="res://phobias/phasmophobia/elite_banshee.tscn" id="1_a70c7"]
 [ext_resource type="Script" uid="uid://tidjs5xpdc83" path="res://resources/battle_stats.gd" id="1_ekcls"]
 
 [resource]

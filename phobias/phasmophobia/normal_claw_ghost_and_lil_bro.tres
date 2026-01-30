@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="BattleStats" load_steps=3 format=3 uid="uid://vr4k8w46hw8r"]
 
-[ext_resource type="PackedScene" uid="uid://vujjsv4vneqj" path="res://battles/phasmophobia/normal_claw_ghost_and_lil_bro.tscn" id="1_la38j"]
+[ext_resource type="PackedScene" uid="uid://vujjsv4vneqj" path="res://phobias/phasmophobia/normal_claw_ghost_and_lil_bro.tscn" id="1_la38j"]
 [ext_resource type="Script" uid="uid://tidjs5xpdc83" path="res://resources/battle_stats.gd" id="1_s50eq"]
 
 [resource]

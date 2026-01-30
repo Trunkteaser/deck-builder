@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://cf748lyegyqg3" path="res://resources/card_data.gd" id="1_kh75b"]
 [ext_resource type="Script" uid="uid://d24n6gxynx1ny" path="res://resources/card_pile.gd" id="2_f2glr"]
 [ext_resource type="Resource" uid="uid://y4k1nqtlhx5h" path="res://cards/double_strike.tres" id="2_samn4"]
-[ext_resource type="Resource" uid="uid://dg4yrlb0jkdpu" path="res://cards/pursue.tres" id="4_ltfuh"]
+[ext_resource type="Resource" uid="uid://dg4yrlb0jkdpu" path="res://heroes/shrike/cards/pursue.tres" id="4_ltfuh"]
 [ext_resource type="Resource" uid="uid://c7vptttl1jh8t" path="res://cards/ideation.tres" id="5_pw8sg"]
 [ext_resource type="Resource" uid="uid://cyw4233ngdw8l" path="res://cards/hit_and_block.tres" id="6_brn5f"]
 [ext_resource type="Resource" uid="uid://cwcml2stsyhy5" path="res://cards/heal.tres" id="7_1a6fl"]

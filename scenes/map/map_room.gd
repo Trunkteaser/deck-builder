@@ -3,7 +3,7 @@ class_name MapRoom
 
 # TODO Add phobia icons as constants too. One dictionary per phobia?
 signal selected(room: Room)
-const ICONS := {
+var icons := {
 	Room.Type.NOT_ASSIGNED: null,
 	Room.Type.MONSTER: preload("uid://0ugwlkehhsvv"),
 	Room.Type.ELITE: preload("uid://brbvmboehsopp"),
@@ -37,7 +37,7 @@ func set_room(new_room: Room) -> void:
 	room = new_room
 	position = room.position
 	#line_2d.rotation_degrees = randi_range(0, 360)
-	sprite_2d.texture = ICONS[room.type] # Need to add [0]?
+	sprite_2d.texture = icons[room.type] # Need to add [0]?
 
 func show_selected() -> void:
 	line_2d.modulate = Color.WHITE
