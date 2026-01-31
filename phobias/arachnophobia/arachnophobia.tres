@@ -4,9 +4,9 @@
 [ext_resource type="Script" uid="uid://c3t3e2sq4bx3k" path="res://resources/phobia.gd" id="1_jlt5a"]
 [ext_resource type="Resource" uid="uid://e88lrgwfgen0" path="res://phobias/arachnophobia/battles/arachnophobia_monster_pool.tres" id="2_47vve"]
 [ext_resource type="Texture2D" uid="uid://2qpp5f13uowg" path="res://assets/sprites/webline.png" id="3_diyac"]
-[ext_resource type="Texture2D" uid="uid://bxto0mvo5vnju" path="res://assets/sprites/fish bones.png" id="4_gvnml"]
-[ext_resource type="Texture2D" uid="uid://p04x1sgikb4i" path="res://assets/sprites/octopus.png" id="6_o5v36"]
-[ext_resource type="Texture2D" uid="uid://ciloqb5micr74" path="res://assets/sprites/coin.png" id="7_kjhwh"]
+[ext_resource type="Texture2D" uid="uid://0ugwlkehhsvv" path="res://assets/sprites/skull.png" id="4_gvnml"]
+[ext_resource type="Texture2D" uid="uid://brbvmboehsopp" path="res://assets/sprites/flaming skull.png" id="5_cvj47"]
+[ext_resource type="Texture2D" uid="uid://caqikhe70mcjw" path="res://assets/sprites/small vortex.png" id="6_gvnml"]
 [ext_resource type="Texture2D" uid="uid://d3hxorv3utoot" path="res://assets/sprites/evil smile.png" id="8_ncg6a"]
 
 [resource]
@@ -17,8 +17,8 @@ line_sprite = ExtResource("3_diyac")
 map_node_icons = {
 0: null,
 1: ExtResource("4_gvnml"),
-2: ExtResource("6_o5v36"),
-3: ExtResource("7_kjhwh"),
+2: ExtResource("5_cvj47"),
+3: ExtResource("6_gvnml"),
 7: ExtResource("8_ncg6a")
 }
 battle_background = ExtResource("1_47vve")

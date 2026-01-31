@@ -12,6 +12,6 @@ class_name Phobia
 	Room.Type.NOT_ASSIGNED: null,
 	Room.Type.MONSTER: preload("uid://0ugwlkehhsvv"),
 	Room.Type.ELITE: preload("uid://brbvmboehsopp"),
-	Room.Type.SHOP: preload("uid://ciloqb5micr74"),
+	Room.Type.SHOP: preload("uid://caqikhe70mcjw"),
 	Room.Type.BOSS: preload("uid://d3hxorv3utoot")}
 @export var battle_background: Texture2D

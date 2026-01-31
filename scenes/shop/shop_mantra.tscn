@@ -24,11 +24,10 @@ layout_mode = 2
 theme_override_constants/separation = -5
 alignment = 1
 
-[node name="PriceLabel" type="RichTextLabel" parent="Price"]
+[node name="PriceLabel" type="Label" parent="Price"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(30, 0)
 layout_mode = 2
-bbcode_enabled = true
 text = "123"
 horizontal_alignment = 1
 vertical_alignment = 1

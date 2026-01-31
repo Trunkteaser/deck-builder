@@ -105,6 +105,14 @@ func _on_battle_won() -> void:
 	
 	reward_scene.add_inspiration_reward(map.last_room.battle_stats.roll_inspiration_reward())
 	reward_scene.add_card_reward()
+	
+func _on_shop_entered() -> void:
+	var shop: Shop = _change_view(SHOP_SCENE)
+	shop.hero_stats = hero
+	shop.draftable_cards = hero.draftable_cards
+	shop.run_stats = stats
+	shop.mantra_handler = mantra_handler
+	shop.populate_shop()
 
 func _on_map_exited(room: Room) -> void:
 	match room.type:
@@ -115,8 +123,7 @@ func _on_map_exited(room: Room) -> void:
 		Room.Type.BOSS:
 			_on_battle_room_entered(room)
 		Room.Type.SHOP:
-			_change_view(SHOP_SCENE)
-
+			_on_shop_entered()
 
 func _on_map_button_pressed() -> void: # Testing?
 	if not map.visible:

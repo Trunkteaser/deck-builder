@@ -35,6 +35,8 @@ signal map_exited(room: Room) # More like room entered.
 
 # Shop.
 signal shop_exited
+signal shop_card_bought(card_data: CardData, inspiration_cost: int)
+signal shop_mantra_bought(mantra: Mantra, inspiration_cost: int)
 
 # Campfire?
 signal campfire_exited
