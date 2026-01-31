@@ -1,0 +1,13 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://e3y8blx55fdt"]
+
+[ext_resource type="Script" uid="uid://w6pvvh1wdlbj" path="res://resources/moods/raw.gd" id="1_l4bu3"]
+[ext_resource type="Texture2D" uid="uid://bb8bnbk565mmb" path="res://assets/sprites/raw meat.png" id="1_qno44"]
+
+[resource]
+script = ExtResource("1_l4bu3")
+name = "Raw"
+trigger_type = 2
+stack_type = 1
+stacks = 1
+icon = ExtResource("1_qno44")
+tooltip = "Raw: Take %s additional damage."

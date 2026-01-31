@@ -3,11 +3,11 @@
 [ext_resource type="Script" uid="uid://d3vdw2umlku23" path="res://scenes/ui/card_visuals.gd" id="1_jxbv6"]
 [ext_resource type="StyleBox" uid="uid://1ca5n2amt2on" path="res://assets/other/card_base_stylebox.tres" id="1_x0ouv"]
 [ext_resource type="FontFile" uid="uid://c1hiyfel7mr0l" path="res://assets/other/Jersey15-Regular.ttf" id="2_jxbv6"]
-[ext_resource type="Resource" uid="uid://brmlfia7nvxi0" path="res://cards/defend.tres" id="2_njcf5"]
+[ext_resource type="Resource" uid="uid://df3v2bogmodbi" path="res://heroes/shrike/cards/rend.tres" id="2_njcf5"]
 [ext_resource type="Texture2D" uid="uid://cpway0y8y3ola" path="res://assets/sprites/card art background v1.png" id="4_bp74k"]
 [ext_resource type="FontFile" uid="uid://xloy1dm05a8w" path="res://assets/other/Jersey10-Regular.ttf" id="4_m3e03"]
 [ext_resource type="Texture2D" uid="uid://c56m356imfa1q" path="res://assets/sprites/card frame v1.png" id="4_njcf5"]
-[ext_resource type="Texture2D" uid="uid://byka3vp1hlkvu" path="res://assets/sprites/shield_2.png" id="6_b8ve4"]
+[ext_resource type="Texture2D" uid="uid://djhncihuufa3l" path="res://assets/sprites/bloody blade.png" id="6_b8ve4"]
 [ext_resource type="Texture2D" uid="uid://dhrmsrn6y0ot8" path="res://assets/sprites/mana circle.png" id="7_njcf5"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_b8ve4"]
@@ -99,7 +99,7 @@ offset_bottom = 15.1875
 grow_horizontal = 0
 theme_override_fonts/font = ExtResource("2_jxbv6")
 theme_override_font_sizes/font_size = 9
-text = "Defend"
+text = "Rend"
 label_settings = SubResource("LabelSettings_i43yy")
 horizontal_alignment = 1
 
@@ -123,7 +123,8 @@ mouse_filter = 2
 theme_override_fonts/normal_font = ExtResource("4_m3e03")
 theme_override_font_sizes/normal_font_size = 8
 bbcode_enabled = true
-text = "[center]Deal %s damage 10 times.[/center]"
+text = "Deal %s damage.
+Apply 2 Raw."
 horizontal_alignment = 1
 vertical_alignment = 1
 

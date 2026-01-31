@@ -36,4 +36,6 @@ func set_card_visuals() -> void:
 	rarity.modulate = CardData.RARITY_COLORS[card_data.rarity]
 
 func set_card_description() -> void:
+	if Engine.is_editor_hint():
+		description.text = card_data.description
 	description.text = "[center]" + card_data.get_default_description() + "[/center]"
