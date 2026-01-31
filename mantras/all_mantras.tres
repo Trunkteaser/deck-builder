@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="MantraPile" load_steps=9 format=3 uid="uid://y4vtns8bid66"]
+
+[ext_resource type="Script" uid="uid://b534avfd3a80j" path="res://resources/mantra.gd" id="1_kvplp"]
+[ext_resource type="Resource" uid="uid://ck6jh0585ob6a" path="res://mantras/han_shot_first.tres" id="2_l1l5q"]
+[ext_resource type="Script" uid="uid://dnor8tnkvlpmt" path="res://resources/mantra_pile.gd" id="2_xpt3g"]
+[ext_resource type="Resource" uid="uid://ds0qu6gqf6vr0" path="res://mantras/i_am_in_control_of_my_time_and_energy.tres" id="3_8b4hh"]
+[ext_resource type="Resource" uid="uid://ci6mgf0ys0du4" path="res://mantras/i_am_sturdy.tres" id="4_pwvqp"]
+[ext_resource type="Resource" uid="uid://de85tcg14gxi4" path="res://mantras/i_feel_energized.tres" id="5_qffpm"]
+[ext_resource type="Resource" uid="uid://cotha0l5sdftt" path="res://mantras/i_see_opportunities_everywhere_i_look.tres" id="6_ecu4k"]
+[ext_resource type="Resource" uid="uid://c2xbdwebhwvy0" path="res://mantras/i_trust_my_bodys_ability_to_heal_itself.tres" id="7_7ekxn"]
+
+[resource]
+script = ExtResource("2_xpt3g")
+mantras = Array[ExtResource("1_kvplp")]([ExtResource("2_l1l5q"), ExtResource("3_8b4hh"), ExtResource("4_pwvqp"), ExtResource("5_qffpm"), ExtResource("6_ecu4k"), ExtResource("7_7ekxn")])
+metadata/_custom_type_script = "uid://dnor8tnkvlpmt"

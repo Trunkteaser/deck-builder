@@ -1,0 +1,43 @@
+[gd_scene load_steps=4 format=3 uid="uid://dfl47xlfbwaad"]
+
+[ext_resource type="Script" uid="uid://kewh4p1c24u" path="res://scenes/shop/shop_mantra.gd" id="1_fths0"]
+[ext_resource type="PackedScene" uid="uid://pachqhgau2gn" path="res://scenes/mantras/mantra_ui.tscn" id="1_laejm"]
+[ext_resource type="Texture2D" uid="uid://bpfavoc513j3m" path="res://assets/sprites/brain.png" id="3_yssbc"]
+
+[node name="ShopMantra" type="VBoxContainer"]
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 0
+theme_override_constants/separation = 0
+script = ExtResource("1_fths0")
+
+[node name="MantraContainer" type="CenterContainer" parent="."]
+layout_mode = 2
+
+[node name="MantraUI" parent="MantraContainer" instance=ExtResource("1_laejm")]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 1
+
+[node name="Price" type="HBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = -5
+alignment = 1
+
+[node name="PriceLabel" type="RichTextLabel" parent="Price"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+bbcode_enabled = true
+text = "123"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="InspirationIcon" type="TextureRect" parent="Price"]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+texture = ExtResource("3_yssbc")
+expand_mode = 1
+stretch_mode = 5
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]

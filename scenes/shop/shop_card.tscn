@@ -1,12 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://c1ispaqt2eqkv"]
+[gd_scene load_steps=4 format=3 uid="uid://c1ispaqt2eqkv"]
 
 [ext_resource type="PackedScene" uid="uid://c8aw4ikafti1e" path="res://scenes/ui/card_display.tscn" id="1_30ct3"]
+[ext_resource type="Script" uid="uid://dj3plcn0hxwxe" path="res://scenes/shop/shop_card.gd" id="1_q5376"]
 [ext_resource type="Texture2D" uid="uid://bpfavoc513j3m" path="res://assets/sprites/brain.png" id="2_a0rxg"]
 
 [node name="ShopCard" type="VBoxContainer"]
 offset_right = 40.0
 offset_bottom = 40.0
 theme_override_constants/separation = 0
+script = ExtResource("1_q5376")
 
 [node name="CardContainer" type="CenterContainer" parent="."]
 unique_name_in_owner = true
