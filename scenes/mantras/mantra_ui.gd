@@ -11,6 +11,7 @@ func set_mantra(new_mantra: Mantra) -> void:
 		await ready
 	mantra = new_mantra
 	icon.texture = mantra.icon
+	tooltip_text = mantra.get_tooltip()
 
 func flash() -> void:
 	animation_player.play("flash")
