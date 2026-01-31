@@ -3,13 +3,13 @@
 [ext_resource type="Script" uid="uid://c1kqqjuyifh7f" path="res://scenes/shop/shop.gd" id="1_qaxay"]
 [ext_resource type="Theme" uid="uid://dh870meh4j8a1" path="res://assets/other/main_theme.tres" id="2_7lxhl"]
 [ext_resource type="Texture2D" uid="uid://daretiqh3ntre" path="res://assets/sprites/vortex.png" id="2_jp048"]
-[ext_resource type="PackedScene" uid="uid://c8aw4ikafti1e" path="res://scenes/ui/card_display.tscn" id="4_ctpgp"]
+[ext_resource type="PackedScene" uid="uid://c1ispaqt2eqkv" path="res://scenes/shop/shop_card.tscn" id="4_ctpgp"]
 [ext_resource type="PackedScene" uid="uid://pachqhgau2gn" path="res://scenes/mantras/mantra_ui.tscn" id="5_ptf86"]
 
 [sub_resource type="Gradient" id="Gradient_qaxay"]
 interpolation_mode = 2
-offsets = PackedFloat32Array(0, 0.56198347, 1)
-colors = PackedColorArray(2.2862106e-07, 4.813075e-08, 0.18412226, 1, 0.21176471, 0.44705883, 0.8, 1, 0.042354852, 0.58910316, 0.6761964, 1)
+offsets = PackedFloat32Array(0, 0.3181818, 0.76859504)
+colors = PackedColorArray(2.2862106e-07, 4.813075e-08, 0.18412226, 1, 0.080085926, 0.22695547, 0.44466662, 1, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_7lxhl"]
 gradient = SubResource("Gradient_qaxay")
@@ -178,6 +178,7 @@ theme = ExtResource("2_7lxhl")
 text = "Back"
 
 [node name="Cards" type="Control" parent="UILayer"]
+unique_name_in_owner = true
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -186,63 +187,64 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="CardDisplay" parent="UILayer/Cards" instance=ExtResource("4_ctpgp")]
+[node name="ShopCard" parent="UILayer/Cards" instance=ExtResource("4_ctpgp")]
 layout_mode = 0
-offset_left = 44.0
-offset_top = 59.0
-offset_right = 119.0
-offset_bottom = 165.0
+offset_left = 115.0
+offset_top = 69.0
+offset_right = 190.0
+offset_bottom = 200.0
 
-[node name="CardDisplay8" parent="UILayer/Cards" instance=ExtResource("4_ctpgp")]
+[node name="ShopCard2" parent="UILayer/Cards" instance=ExtResource("4_ctpgp")]
 layout_mode = 0
-offset_left = 140.0
-offset_top = 66.0
-offset_right = 215.0
-offset_bottom = 172.0
+offset_left = 21.0
+offset_top = 89.0
+offset_right = 96.0
+offset_bottom = 220.0
 
-[node name="CardDisplay2" parent="UILayer/Cards" instance=ExtResource("4_ctpgp")]
+[node name="ShopCard3" parent="UILayer/Cards" instance=ExtResource("4_ctpgp")]
 layout_mode = 0
-offset_left = 146.0
-offset_top = 203.0
-offset_right = 221.0
-offset_bottom = 309.0
+offset_left = 125.0
+offset_top = 211.0
+offset_right = 200.0
+offset_bottom = 342.0
 
-[node name="CardDisplay6" parent="UILayer/Cards" instance=ExtResource("4_ctpgp")]
+[node name="ShopCard4" parent="UILayer/Cards" instance=ExtResource("4_ctpgp")]
 layout_mode = 0
-offset_left = 48.0
-offset_top = 178.0
-offset_right = 123.0
-offset_bottom = 284.0
+offset_left = 32.0
+offset_top = 221.0
+offset_right = 107.0
+offset_bottom = 352.0
 
-[node name="CardDisplay7" parent="UILayer/Cards" instance=ExtResource("4_ctpgp")]
+[node name="ShopCard5" parent="UILayer/Cards" instance=ExtResource("4_ctpgp")]
 layout_mode = 0
-offset_left = 433.0
-offset_top = 54.0
-offset_right = 508.0
-offset_bottom = 160.0
+offset_left = 436.0
+offset_top = 77.0
+offset_right = 511.0
+offset_bottom = 208.0
 
-[node name="CardDisplay3" parent="UILayer/Cards" instance=ExtResource("4_ctpgp")]
+[node name="ShopCard6" parent="UILayer/Cards" instance=ExtResource("4_ctpgp")]
 layout_mode = 0
-offset_left = 430.0
-offset_top = 201.0
-offset_right = 505.0
-offset_bottom = 307.0
+offset_left = 534.0
+offset_top = 50.0
+offset_right = 609.0
+offset_bottom = 181.0
 
-[node name="CardDisplay4" parent="UILayer/Cards" instance=ExtResource("4_ctpgp")]
+[node name="ShopCard7" parent="UILayer/Cards" instance=ExtResource("4_ctpgp")]
 layout_mode = 0
-offset_left = 530.0
-offset_top = 47.0
-offset_right = 605.0
-offset_bottom = 153.0
+offset_left = 432.0
+offset_top = 228.0
+offset_right = 507.0
+offset_bottom = 359.0
 
-[node name="CardDisplay5" parent="UILayer/Cards" instance=ExtResource("4_ctpgp")]
+[node name="ShopCard8" parent="UILayer/Cards" instance=ExtResource("4_ctpgp")]
 layout_mode = 0
-offset_left = 528.0
-offset_top = 184.0
-offset_right = 603.0
-offset_bottom = 290.0
+offset_left = 535.0
+offset_top = 195.0
+offset_right = 610.0
+offset_bottom = 326.0
 
 [node name="Mantras" type="Control" parent="UILayer"]
+unique_name_in_owner = true
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -253,23 +255,23 @@ mouse_filter = 2
 
 [node name="MantraUI" parent="UILayer/Mantras" instance=ExtResource("5_ptf86")]
 layout_mode = 0
-offset_left = 243.0
-offset_top = 53.0
-offset_right = 283.0
-offset_bottom = 93.0
+offset_left = 223.0
+offset_top = 50.0
+offset_right = 263.0
+offset_bottom = 90.0
 
 [node name="MantraUI2" parent="UILayer/Mantras" instance=ExtResource("5_ptf86")]
 layout_mode = 0
-offset_left = 302.0
-offset_top = 39.0
-offset_right = 342.0
-offset_bottom = 79.0
+offset_left = 294.0
+offset_top = 31.0
+offset_right = 334.0
+offset_bottom = 71.0
 
 [node name="MantraUI3" parent="UILayer/Mantras" instance=ExtResource("5_ptf86")]
 layout_mode = 0
-offset_left = 358.0
-offset_top = 58.0
-offset_right = 398.0
-offset_bottom = 98.0
+offset_left = 363.0
+offset_top = 53.0
+offset_right = 403.0
+offset_bottom = 93.0
 
 [connection signal="pressed" from="UILayer/VBoxContainer/Button" to="." method="_on_button_pressed"]

@@ -1,0 +1,37 @@
+[gd_scene load_steps=3 format=3 uid="uid://c1ispaqt2eqkv"]
+
+[ext_resource type="PackedScene" uid="uid://c8aw4ikafti1e" path="res://scenes/ui/card_display.tscn" id="1_30ct3"]
+[ext_resource type="Texture2D" uid="uid://bpfavoc513j3m" path="res://assets/sprites/brain.png" id="2_a0rxg"]
+
+[node name="ShopCard" type="VBoxContainer"]
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/separation = 0
+
+[node name="CardContainer" type="CenterContainer" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="CardDisplay" parent="CardContainer" instance=ExtResource("1_30ct3")]
+layout_mode = 2
+
+[node name="Price" type="HBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = -5
+alignment = 1
+
+[node name="PriceLabel" type="RichTextLabel" parent="Price"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+bbcode_enabled = true
+text = "123"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="InspirationIcon" type="TextureRect" parent="Price"]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+texture = ExtResource("2_a0rxg")
+expand_mode = 1
+stretch_mode = 5
