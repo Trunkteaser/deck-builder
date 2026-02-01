@@ -1,0 +1,8 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://d2l8p58n8t58d"]
+
+[ext_resource type="Script" uid="uid://d15rcpp8eyu2k" path="res://resources/moods/i_give_love_freely.gd" id="1_5rs2x"]
+
+[resource]
+script = ExtResource("1_5rs2x")
+trigger_type = 2
+tooltip = "Double dmg taken and received"
