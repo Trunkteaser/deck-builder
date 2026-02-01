@@ -12,6 +12,10 @@ func empty() -> bool:
 func draw_card() -> CardData:
 	var card = cards.pop_front()
 	card_pile_size_changed.emit(cards.size())
+	#if not Events.card_drawn.is_connected(card._on_card_drawn):
+		#Events.card_drawn.connect(card._on_card_drawn)
+	#Events.card_drawn.emit(card)
+	#card.when_drawn()
 	return card
 
 func add_card(card: CardData) -> void:

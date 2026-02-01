@@ -18,3 +18,12 @@ func get_updated_description(hero_modifiers: ModifierHandler, enemy_modifiers: M
 	if enemy_modifiers:
 		modified_damage = enemy_modifiers.get_modified_value(modified_damage, Modifier.Type.DMG_TAKEN)
 	return description % modified_damage
+
+func when_drawn() -> void:
+	await wait(1)
+	Apply.discard(self)
+	pass
+
+func when_discarded() -> void:
+	Apply.damage(enemies, 2)
+	SFXPlayer.play(sfx)

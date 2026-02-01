@@ -45,8 +45,11 @@ func end_turn() -> void:
 
 func draw_card() -> void:
 	reshuffle_deck_from_discard()
-	hand.add_card(hero.draw_pile.draw_card())
+	var card_data := hero.draw_pile.draw_card()
+	hand.add_card(card_data)
 	SFXPlayer.play(DRAW_SFX)
+	card_data.setup_node_access(self)
+	card_data.when_drawn()
 	#reshuffle_deck_from_discard() # I don't necessarily mind hand being empty after draw?
 
 func draw_cards(amount: int) -> void:
@@ -55,6 +58,12 @@ func draw_cards(amount: int) -> void:
 		tween.tween_callback(draw_card) # Tween calling a function.
 		tween.tween_interval(HAND_DRAW_INTERVAL) # With this frequency.
 	tween.finished.connect(func(): Events.player_hand_drawn.emit())
+
+#func discard_card(card: Card) -> void:
+	#if hand.get_child_count() == 0:
+		#return
+	#hero.discard_pile.add_card(card.card_data) # Adding to discard pile.
+	#hand.discard_card()
 
 func discard_cards() -> void:
 	if hand.get_child_count() == 0:
@@ -65,6 +74,7 @@ func discard_cards() -> void:
 		tween.tween_callback(hero.discard_pile.add_card.bind(card.card_data)) # Adding to discard pile.
 		tween.tween_callback(hand.discard_card.bind(card)) # Discarding the card.
 		tween.tween_interval(HAND_DISCARD_INTERVAL)
+	#tween.tween_interval(HAND_DISCARD_INTERVAL*5)
 	tween.finished.connect(func(): Events.player_hand_discarded.emit())
 
 func reshuffle_deck_from_discard() -> void:

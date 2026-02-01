@@ -7,6 +7,9 @@ signal card_aim_started(card: Card)
 signal card_aim_ended(card: Card)
 signal card_played(card_data: CardData)
 signal update_card_descriptions() # Emitted when ModifierValues altered.
+signal card_drawn(card_data: CardData)
+signal request_random_discard(amount: int)
+signal request_specific_discard(card_data: CardData)
 
 # Player.
 signal player_hand_drawn # To be emitted after having finished drawing.
@@ -23,7 +26,7 @@ signal enemy_died(enemy: Enemy)
 
 # Effect.
 signal request_card_draw(amount: int)
-signal request_discard(amount: int)
+signal request_discard(amount: int) # Not hooked up to anything.
 
 # Battle.
 signal battle_won

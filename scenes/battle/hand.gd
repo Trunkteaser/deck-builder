@@ -40,14 +40,24 @@ func add_card(card_data: CardData) -> void:
 	#print(hero_modifier_handler)
 	new_card.hero_modifiers = hero.modifier_handler
 	#print(new_card.hero_modifiers)
-	
+	#new_card.card_data.when_drawn()
 	update_card_fanning()
 	for child: Card in get_children():
 		child.check_playability()
 
 func discard_card(card: Card) -> void:
+	card.card_data.when_discarded()
 	card.queue_free()
 	SFXPlayer.play(DISCARD_SFX)
+
+func _on_request_random_discard(amount: int) -> void:
+	for i in amount:
+		if get_child_count() == 0:
+			break
+		var card: Card = get_children().pick_random()
+		# needs to do the things hero handler does too, like adding to pile
+		discard_card(card)
+		#make the other func and connect them to the signals too
 
 func disable_hand() -> void: # Stops interaction with cards being discarded.
 	for card: Card in get_children():
