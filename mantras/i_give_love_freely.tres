@@ -10,4 +10,4 @@ type = 1
 innate_mantra = true
 icon = ExtResource("1_d5cne")
 tooltip = "I Give Love Freely, And I Receive Love Openly 
-Deal twice damage, take twice damage"
+Double damage dealt and received."
