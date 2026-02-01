@@ -22,6 +22,9 @@ var hero_modifier_handler: ModifierHandler
 func _ready() -> void:
 	#Events.request_card_draw.connect(draw) # Experimental.
 	#hero_modifier_handler = hero.modifier_handler
+	Events.request_random_discard.connect(_on_request_random_discard)
+	Events.request_specific_discard.connect(_on_request_specific_discard)
+	Events.request_type_discard.connect(_on_request_type_discard)
 	Events.update_card_descriptions.connect(_on_update_card_descriptions)
 	update_card_fanning()
 
@@ -55,9 +58,24 @@ func _on_request_random_discard(amount: int) -> void:
 		if get_child_count() == 0:
 			break
 		var card: Card = get_children().pick_random()
-		# needs to do the things hero handler does too, like adding to pile
+		hero_stats.discard_pile.add_card(card.card_data)
 		discard_card(card)
-		#make the other func and connect them to the signals too
+		await get_tree().process_frame # So card can be freed.
+
+func _on_request_specific_discard(card_data: CardData) -> void:
+	var card_parent: Card
+	for card: Card in get_children():
+		if card.card_data == card_data:
+			card_parent = card
+			break
+	hero_stats.discard_pile.add_card(card_data)
+	discard_card(card_parent)
+
+func _on_request_type_discard(type: CardData.Type) -> void:
+	for card: Card in get_children():
+		if card.card_data.type == type:
+			hero_stats.discard_pile.add_card(card.card_data)
+			discard_card(card)
 
 func disable_hand() -> void: # Stops interaction with cards being discarded.
 	for card: Card in get_children():
