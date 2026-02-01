@@ -36,11 +36,11 @@ func mood(targets: Array[Node], moood: Mood, stacks: int = 0) -> void:
 func draw(amount: int) -> void:
 	Events.request_card_draw.emit(amount)
 
-func discard(card_data: CardData, random: bool = false, amount: int = 1) -> void:
-	if not random:
-		Events.request_specific_discard.emit(card_data)
-	elif random:
-		Events.request_random_discard.emit(amount)
+func discard_random(amount: int = 1) -> void:
+	Events.request_random_discard.emit(amount)
+
+func discard_specific(card_data: CardData) -> void:
+	Events.request_specific_discard.emit(card_data)
 
 func heal(targets: Array[Node], amount: int) -> void:
 	for target in targets:

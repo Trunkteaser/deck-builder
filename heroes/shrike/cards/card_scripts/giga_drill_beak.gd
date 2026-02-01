@@ -21,9 +21,8 @@ func get_updated_description(hero_modifiers: ModifierHandler, enemy_modifiers: M
 
 func when_drawn() -> void:
 	await wait(1)
-	Apply.discard(self)
-	pass
+	Apply.discard_specific(self)
 
 func when_discarded() -> void:
-	Apply.damage(enemies, 2)
-	SFXPlayer.play(sfx)
+	await wait(1)
+	Apply.discard_random(2)
