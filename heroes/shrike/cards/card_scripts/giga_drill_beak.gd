@@ -20,8 +20,15 @@ func get_updated_description(hero_modifiers: ModifierHandler, enemy_modifiers: M
 	return description % modified_damage
 
 func when_drawn() -> void:
-	await wait(1)
-	#Apply.discard_type(CardData.Type.VIOLENCE)
+	await wait(3)
+	
+	var violence_count: int = 0
+	for card in hand.get_children():
+		if card.card_data.type == CardData.Type.VIOLENCE:
+			violence_count += 1
+			
+	Apply.discard_type(CardData.Type.VIOLENCE)
+	Apply.damage(enemies, violence_count)
 
 #func when_discarded() -> void:
 	#await wait(1)

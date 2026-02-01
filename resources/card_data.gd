@@ -24,14 +24,17 @@ const RARITY_COLORS := {
 @export var target: Target
 @export var forget: bool = false
 
-var hero: Array[Node] # For secondary self-targeting purposes.
 var tree: SceneTree
+var hero: Array[Node] # For secondary self-targeting purposes.
 var enemies: Array[Node]
+var hand: Hand
 
 func setup_node_access(node: Node) -> void:
 	tree = node.get_tree()
 	hero = tree.get_nodes_in_group("hero")
 	enemies = tree.get_nodes_in_group("enemies")
+	hand = tree.get_first_node_in_group("hand")
+
 
 func is_single_targeted() -> bool:
 	return target == Target.SINGLE_ENEMY
