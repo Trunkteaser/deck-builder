@@ -1,0 +1,13 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://c7ni1blrqoyl8"]
+
+[ext_resource type="Texture2D" uid="uid://065b0qad2odh" path="res://assets/sprites/i give myself freely.png" id="1_d5cne"]
+[ext_resource type="Script" uid="uid://ctm6ss4sshh72" path="res://mantras/i_give_love_freely.gd" id="2_fhhma"]
+
+[resource]
+script = ExtResource("2_fhhma")
+name = "I Give Love Freely, And I Receive Love Openly"
+type = 1
+innate_mantra = true
+icon = ExtResource("1_d5cne")
+tooltip = "I Give Love Freely, And I Receive Love Openly 
+Deal twice damage, take twice damage"
