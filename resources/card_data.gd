@@ -24,6 +24,9 @@ const RARITY_COLORS := {
 @export var target: Target
 @export var forget: bool = false
 
+# Injected or set up by HeroHandler.
+var draw_pile: CardPile
+var discard_pile: CardPile
 var tree: SceneTree
 var hero: Array[Node] # For secondary self-targeting purposes.
 var enemies: Array[Node]

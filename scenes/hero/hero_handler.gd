@@ -48,6 +48,8 @@ func draw_card() -> void:
 	var card_data := hero.draw_pile.draw_card()
 	hand.add_card(card_data)
 	SFXPlayer.play(DRAW_SFX)
+	card_data.draw_pile = hero.draw_pile
+	card_data.discard_pile = hero.discard_pile
 	card_data.setup_node_access(self)
 	card_data.when_drawn()
 	#reshuffle_deck_from_discard() # I don't necessarily mind hand being empty after draw?
