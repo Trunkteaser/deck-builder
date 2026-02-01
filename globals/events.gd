@@ -10,6 +10,7 @@ signal update_card_descriptions() # Emitted when ModifierValues altered.
 signal card_drawn(card_data: CardData)
 signal request_random_discard(amount: int)
 signal request_specific_discard(card_data: CardData)
+signal request_type_discard(type: CardData.Type)
 
 # Player.
 signal player_hand_drawn # To be emitted after having finished drawing.

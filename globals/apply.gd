@@ -42,6 +42,9 @@ func discard_random(amount: int = 1) -> void:
 func discard_specific(card_data: CardData) -> void:
 	Events.request_specific_discard.emit(card_data)
 
+func discard_type(type: CardData.Type) -> void:
+	Events.request_type_discard.emit(type)
+
 func heal(targets: Array[Node], amount: int) -> void:
 	for target in targets:
 		if not target:

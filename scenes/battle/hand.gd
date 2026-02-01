@@ -24,6 +24,7 @@ func _ready() -> void:
 	#hero_modifier_handler = hero.modifier_handler
 	Events.request_random_discard.connect(_on_request_random_discard)
 	Events.request_specific_discard.connect(_on_request_specific_discard)
+	Events.request_type_discard.connect(_on_request_type_discard)
 	Events.update_card_descriptions.connect(_on_update_card_descriptions)
 	update_card_fanning()
 
@@ -69,7 +70,12 @@ func _on_request_specific_discard(card_data: CardData) -> void:
 			break
 	hero_stats.discard_pile.add_card(card_data)
 	discard_card(card_parent)
-		
+
+func _on_request_type_discard(type: CardData.Type) -> void:
+	for card: Card in get_children():
+		if card.card_data.type == type:
+			hero_stats.discard_pile.add_card(card.card_data)
+			discard_card(card)
 
 func disable_hand() -> void: # Stops interaction with cards being discarded.
 	for card: Card in get_children():
