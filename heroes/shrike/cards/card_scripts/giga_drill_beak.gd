@@ -21,7 +21,7 @@ func get_updated_description(hero_modifiers: ModifierHandler, enemy_modifiers: M
 
 func when_drawn() -> void:
 	await wait(1)
-	Apply.discard_type(CardData.Type.VIOLENCE)
+	#Apply.discard_type(CardData.Type.VIOLENCE)
 
 #func when_discarded() -> void:
 	#await wait(1)

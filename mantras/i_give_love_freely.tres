@@ -9,4 +9,5 @@ name = "I Give Love Freely, And I Receive Love Openly"
 type = 1
 innate_mantra = true
 icon = ExtResource("1_d5cne")
-tooltip = "Deal twice damage, take twice damage"
+tooltip = "I Give Love Freely, And I Receive Love Openly 
+Deal twice damage, take twice damage"
