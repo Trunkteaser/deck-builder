@@ -14,6 +14,7 @@ const WHITE_SPRITE_MATERIAL = preload("uid://ceemqhtjalmbl")
 @onready var intent_ui: IntentUI = $IntentUI
 @onready var mood_handler: MoodHandler = $MoodHandler
 @onready var modifier_handler: ModifierHandler = $ModifierHandler
+@onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
 
 var enemy_ai: EnemyAI
 var current_action: EnemyAction : set = set_current_action
@@ -65,6 +66,7 @@ func update_enemy() -> void:
 		await ready
 	sprite_2d.texture = stats.art
 	arrow.position = Vector2.RIGHT * (sprite_2d.get_rect().size.x/2 + ARROW_OFFSET)
+	collision_shape_2d.shape.size = sprite_2d.texture.get_size()
 	setup_ai()
 	update_stats()
 

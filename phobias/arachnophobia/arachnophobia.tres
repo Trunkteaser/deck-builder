@@ -14,12 +14,5 @@ script = ExtResource("1_jlt5a")
 name = "Arachnophobia"
 battle_stats_pool = ExtResource("2_47vve")
 line_sprite = ExtResource("3_diyac")
-map_node_icons = {
-0: null,
-1: ExtResource("4_gvnml"),
-2: ExtResource("5_cvj47"),
-3: ExtResource("6_gvnml"),
-7: ExtResource("8_ncg6a")
-}
 battle_background = ExtResource("1_47vve")
 metadata/_custom_type_script = "uid://c3t3e2sq4bx3k"
