@@ -7,7 +7,6 @@
 script = ExtResource("2_fhhma")
 name = "I Give Love Freely, And I Receive Love Openly"
 type = 1
-innate_mantra = true
 icon = ExtResource("1_d5cne")
 tooltip = "I Give Love Freely, And I Receive Love Openly 
 Double damage dealt and received."

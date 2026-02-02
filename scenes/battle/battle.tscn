@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://0qyqwumjfu4w"]
+[gd_scene load_steps=29 format=3 uid="uid://0qyqwumjfu4w"]
 
 [ext_resource type="Script" uid="uid://djb2fi8pii4a6" path="res://scenes/battle/battle.gd" id="1_agsc7"]
 [ext_resource type="Resource" uid="uid://d0o466qgbput5" path="res://heroes/shrike/shrike.tres" id="2_kd6yx"]
@@ -24,6 +24,7 @@
 [ext_resource type="PackedScene" uid="uid://dp8473jexowur" path="res://scenes/ui/card_pile_opener.tscn" id="19_fe4ja"]
 [ext_resource type="Texture2D" uid="uid://cx8p46bnd1p0y" path="res://assets/sprites/discard.png" id="20_sgdsx"]
 [ext_resource type="PackedScene" uid="uid://bc5sy7kmyvlpa" path="res://scenes/ui/card_pile_view.tscn" id="22_5moxy"]
+[ext_resource type="Texture2D" uid="uid://dhjrfcmkukxv3" path="res://assets/sprites/nebula thought.png" id="23_8eh2s"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_py4tk"]
 size = Vector2(640, 253)
@@ -232,8 +233,34 @@ offset_bottom = 36.333336
 text = "9"
 horizontal_alignment = 2
 
+[node name="TextureRect" type="TextureRect" parent="BattleUI"]
+custom_minimum_size = Vector2(10, 0)
+offset_left = 44.0
+offset_top = 284.0
+offset_right = 67.0
+offset_bottom = 306.0
+texture = ExtResource("23_8eh2s")
+expand_mode = 1
+
+[node name="TextureRect2" type="TextureRect" parent="BattleUI"]
+offset_left = 72.0
+offset_top = 284.0
+offset_right = 94.0
+offset_bottom = 305.0
+texture = ExtResource("23_8eh2s")
+expand_mode = 1
+
+[node name="TextureRect3" type="TextureRect" parent="BattleUI"]
+offset_left = 100.0
+offset_top = 284.0
+offset_right = 122.0
+offset_bottom = 304.0
+texture = ExtResource("23_8eh2s")
+expand_mode = 1
+
 [node name="RedFlash" type="CanvasLayer" parent="."]
 layer = 2
+visible = false
 script = ExtResource("17_6ofp8")
 
 [node name="ColorRect" type="ColorRect" parent="RedFlash"]
