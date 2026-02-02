@@ -4,7 +4,7 @@ class_name BattleUI
 @export var hero_stats: HeroStats : set = _set_hero_stats
 
 @onready var hand: Hand = %Hand
-@onready var mana_ui: ManaUI = %ManaUI
+@onready var mana_ui: ManaUI = $ManaUI
 @onready var end_turn_button: Button = %EndTurnButton
 @onready var draw_pile_button: CardPileOpener = %DrawPileButton
 @onready var discard_pile_button: CardPileOpener = %DiscardPileButton

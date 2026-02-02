@@ -2,8 +2,6 @@
 extends UnitStats
 class_name HeroStats
 
-signal mana_changed
-
 @export var name: String
 @export var starting_deck: CardPile
 @export var draftable_cards: CardPile
@@ -19,7 +17,6 @@ var draw_pile: CardPile
 func set_mana(value: int) -> void:
 	mana = value
 	stats_changed.emit()
-	mana_changed.emit()
 
 func reset_mana() -> void:
 	mana = max_mana

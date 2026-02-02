@@ -1,8 +1,4 @@
-<<<<<<< Updated upstream
 [gd_scene load_steps=63 format=3 uid="uid://0qyqwumjfu4w"]
-=======
-[gd_scene load_steps=28 format=3 uid="uid://0qyqwumjfu4w"]
->>>>>>> Stashed changes
 
 [ext_resource type="Script" uid="uid://djb2fi8pii4a6" path="res://scenes/battle/battle.gd" id="1_agsc7"]
 [ext_resource type="Resource" uid="uid://d0o466qgbput5" path="res://heroes/shrike/shrike.tres" id="2_kd6yx"]
@@ -28,13 +24,10 @@
 [ext_resource type="PackedScene" uid="uid://dp8473jexowur" path="res://scenes/ui/card_pile_opener.tscn" id="19_fe4ja"]
 [ext_resource type="Texture2D" uid="uid://cx8p46bnd1p0y" path="res://assets/sprites/discard.png" id="20_sgdsx"]
 [ext_resource type="PackedScene" uid="uid://bc5sy7kmyvlpa" path="res://scenes/ui/card_pile_view.tscn" id="22_5moxy"]
-<<<<<<< Updated upstream
 [ext_resource type="Texture2D" uid="uid://qelom54kfj4q" path="res://assets/sprites/nebula thought.png" id="23_8eh2s"]
 [ext_resource type="Script" uid="uid://t6we46118o4k" path="res://scenes/battle/texture_rect_3.gd" id="24_ueicy"]
 [ext_resource type="Texture2D" uid="uid://bbsoi8p0l666i" path="res://assets/sprites/nebula thought spritesheet.png" id="25_n5ix6"]
 [ext_resource type="Script" uid="uid://bmqojsnitjejq" path="res://scenes/battle/animated_mana.gd" id="26_n5ix6"]
-=======
->>>>>>> Stashed changes
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_py4tk"]
 size = Vector2(640, 253)
@@ -395,6 +388,11 @@ hero_stats = ExtResource("5_oiw7q")
 hand_curve = SubResource("Curve_agsc7")
 rotation_curve = SubResource("Curve_oiw7q")
 
+[node name="ManaUI" parent="BattleUI" instance=ExtResource("12_mxe8n")]
+offset_top = -86.0
+offset_bottom = -54.0
+hero_stats = ExtResource("5_oiw7q")
+
 [node name="EndTurnButton" type="Button" parent="BattleUI"]
 unique_name_in_owner = true
 anchors_preset = 3
@@ -456,7 +454,6 @@ offset_bottom = 36.333336
 text = "9"
 horizontal_alignment = 2
 
-<<<<<<< Updated upstream
 [node name="TextureRect" type="TextureRect" parent="BattleUI"]
 custom_minimum_size = Vector2(10, 0)
 offset_left = 44.0
@@ -489,14 +486,6 @@ sprite_frames = SubResource("SpriteFrames_ikd0n")
 animation = &"idle"
 frame_progress = 0.59606785
 script = ExtResource("26_n5ix6")
-=======
-[node name="ManaUI" parent="BattleUI" instance=ExtResource("12_mxe8n")]
-unique_name_in_owner = true
-offset_left = 11.0
-offset_top = -358.0
-offset_right = 43.0
-offset_bottom = -45.0
->>>>>>> Stashed changes
 
 [node name="RedFlash" type="CanvasLayer" parent="."]
 layer = 2
