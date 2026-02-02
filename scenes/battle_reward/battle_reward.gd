@@ -9,8 +9,9 @@ const CARD_ICON := preload("uid://dblwri7jh6k0v")
 const CARD_TEXT := "add new card"
 # TODO Relics here as well later.
 
-@export var run_stats: RunStats # Provided by Run.
-@export var hero_stats: HeroStats # Provided by Run.
+@export var run_stats: RunStats # Provided by Run. To change gold.
+@export var hero_stats: HeroStats # Provided by Run. To change deck.
+@export var mantra_handler: MantraHandler # Provided by Run. To give mantras.
 
 @onready var rewards: VBoxContainer = %Rewards
 
@@ -40,6 +41,14 @@ func add_card_reward() -> void:
 	card_reward.pressed.connect(_show_card_rewards)
 	if rewards: # Idk bro got crashes.
 		rewards.add_child.call_deferred(card_reward)
+
+func add_mantra_reward(mantra: Mantra) -> void:
+	var mantra_reward: RewardButton = REWARD_BUTTON.instantiate()
+	mantra_reward.reward_icon = mantra.icon
+	mantra_reward.reward_text = mantra.name
+	mantra_reward.tooltip_text = mantra.get_tooltip()
+	mantra_reward.pressed.connect(_on_mantra_reward_taken.bind(mantra))
+	rewards.add_child.call_deferred(mantra_reward)
 
 func _show_card_rewards() -> void:
 	if not run_stats or not hero_stats:
@@ -89,6 +98,11 @@ func _on_inspiration_reward_taken(amount: int) -> void:
 	if not run_stats:
 		return
 	run_stats.inspiration += amount
+
+func _on_mantra_reward_taken(mantra: Mantra) -> void:
+	if not mantra or not mantra_handler:
+		return
+	mantra_handler.add_mantra(mantra)
 
 func _on_button_pressed() -> void:
 	Events.battle_reward_exited.emit()

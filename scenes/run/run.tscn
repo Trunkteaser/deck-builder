@@ -1,10 +1,11 @@
-[gd_scene load_steps=12 format=3 uid="uid://c1bl06amugvjo"]
+[gd_scene load_steps=13 format=3 uid="uid://c1bl06amugvjo"]
 
 [ext_resource type="PackedScene" uid="uid://bm215cpa3pkhe" path="res://scenes/map/map.tscn" id="1_8rlou"]
 [ext_resource type="Script" uid="uid://cfqoy5tjx0ooc" path="res://scenes/run/run.gd" id="1_wdonh"]
 [ext_resource type="Resource" uid="uid://bysipgdtnrcl2" path="res://scenes/run/run_startup.tres" id="2_o4jfg"]
 [ext_resource type="Resource" uid="uid://cxqvlwe5vhtrk" path="res://phobias/arachnophobia/arachnophobia.tres" id="3_g42ja"]
 [ext_resource type="Theme" uid="uid://dh870meh4j8a1" path="res://assets/other/main_theme.tres" id="3_o4jfg"]
+[ext_resource type="Resource" uid="uid://y4vtns8bid66" path="res://mantras/all_mantras.tres" id="4_cnkn7"]
 [ext_resource type="PackedScene" uid="uid://dp8473jexowur" path="res://scenes/ui/card_pile_opener.tscn" id="5_gqbdr"]
 [ext_resource type="PackedScene" uid="uid://dqtd2egq6hyr7" path="res://scenes/ui/health_ui.tscn" id="5_ux63y"]
 [ext_resource type="PackedScene" uid="uid://bj7yjpf32b6qg" path="res://scenes/ui/inspiration_ui.tscn" id="5_wo0nw"]
@@ -16,6 +17,7 @@
 script = ExtResource("1_wdonh")
 run_startup = ExtResource("2_o4jfg")
 phobia = ExtResource("3_g42ja")
+all_mantras = ExtResource("4_cnkn7")
 
 [node name="MapLayer" type="CanvasLayer" parent="."]
 layer = 3

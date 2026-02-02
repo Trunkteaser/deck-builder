@@ -10,6 +10,7 @@ const TREASURE_SCENE := preload("uid://djbb0v375o0fq")
 
 @export var run_startup: RunStartup
 @export var phobia: Phobia
+@export var all_mantras: MantraPile
 
 @onready var current_view: Node = $CurrentView
 @onready var map: Map = %Map
@@ -27,6 +28,7 @@ const TREASURE_SCENE := preload("uid://djbb0v375o0fq")
 
 var hero: HeroStats
 var stats: RunStats
+var current_battle: Room
 
 func _ready() -> void:
 	if not run_startup:
@@ -92,6 +94,7 @@ func _setup_top_bar() -> void:
 
 func _on_battle_room_entered(room: Room) -> void:
 	var battle_scene: Battle = _change_view(BATTLE_SCENE)
+	current_battle = room
 	battle_scene.hero_stats = hero
 	battle_scene.battle_stats = room.battle_stats
 	battle_scene.mantras = mantra_handler
@@ -102,9 +105,12 @@ func _on_battle_won() -> void:
 	var reward_scene: BattleRewards = _change_view(BATTLE_REWARD_SCENE)
 	reward_scene.run_stats = stats
 	reward_scene.hero_stats = hero
+	reward_scene.mantra_handler = mantra_handler
 	
 	reward_scene.add_inspiration_reward(map.last_room.battle_stats.roll_inspiration_reward())
 	reward_scene.add_card_reward()
+	if current_battle.type == Room.Type.ELITE:
+		reward_scene.add_mantra_reward(_generate_mantra_reward())
 	
 func _on_shop_entered() -> void:
 	var shop: Shop = _change_view(SHOP_SCENE)
@@ -132,3 +138,11 @@ func _on_map_button_pressed() -> void: # Testing?
 	else:
 		map.hide()
 		$MapLayer/Dimmer.hide()
+
+func _generate_mantra_reward() -> Mantra:
+	var possible_mantras := all_mantras.mantras.filter(
+		func(mantra: Mantra):
+			var can_appear := mantra.can_appear_as_reward(hero)
+			var already_have_it := mantra_handler.has_mantra(mantra.name)
+			return can_appear and not already_have_it)
+	return possible_mantras.pick_random()
