@@ -1,5 +1,9 @@
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 [gd_scene load_steps=63 format=3 uid="uid://0qyqwumjfu4w"]
+=======
+[gd_scene load_steps=28 format=3 uid="uid://0qyqwumjfu4w"]
+>>>>>>> Stashed changes
 =======
 [gd_scene load_steps=28 format=3 uid="uid://0qyqwumjfu4w"]
 >>>>>>> Stashed changes
@@ -29,10 +33,13 @@
 [ext_resource type="Texture2D" uid="uid://cx8p46bnd1p0y" path="res://assets/sprites/discard.png" id="20_sgdsx"]
 [ext_resource type="PackedScene" uid="uid://bc5sy7kmyvlpa" path="res://scenes/ui/card_pile_view.tscn" id="22_5moxy"]
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 [ext_resource type="Texture2D" uid="uid://qelom54kfj4q" path="res://assets/sprites/nebula thought.png" id="23_8eh2s"]
 [ext_resource type="Script" uid="uid://t6we46118o4k" path="res://scenes/battle/texture_rect_3.gd" id="24_ueicy"]
 [ext_resource type="Texture2D" uid="uid://bbsoi8p0l666i" path="res://assets/sprites/nebula thought spritesheet.png" id="25_n5ix6"]
 [ext_resource type="Script" uid="uid://bmqojsnitjejq" path="res://scenes/battle/animated_mana.gd" id="26_n5ix6"]
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 
@@ -457,6 +464,7 @@ text = "9"
 horizontal_alignment = 2
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 [node name="TextureRect" type="TextureRect" parent="BattleUI"]
 custom_minimum_size = Vector2(10, 0)
 offset_left = 44.0
@@ -490,12 +498,17 @@ animation = &"idle"
 frame_progress = 0.59606785
 script = ExtResource("26_n5ix6")
 =======
+=======
+>>>>>>> Stashed changes
 [node name="ManaUI" parent="BattleUI" instance=ExtResource("12_mxe8n")]
 unique_name_in_owner = true
 offset_left = 11.0
 offset_top = -358.0
 offset_right = 43.0
 offset_bottom = -45.0
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 
 [node name="RedFlash" type="CanvasLayer" parent="."]
