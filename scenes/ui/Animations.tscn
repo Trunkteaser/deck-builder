@@ -1,0 +1,100 @@
+[gd_scene load_steps=20 format=3 uid="uid://bfvceg3pgdddu"]
+
+[ext_resource type="Texture2D" uid="uid://bhbp4xpeoj66f" path="res://assets/sprites/Boom/boom_00.png" id="1_2yhmt"]
+[ext_resource type="Texture2D" uid="uid://regusxadtxbq" path="res://assets/sprites/Boom/boom_01.png" id="2_obwkb"]
+[ext_resource type="Texture2D" uid="uid://bjiolcd7862s" path="res://assets/sprites/Boom/boom_02.png" id="3_pbghn"]
+[ext_resource type="Texture2D" uid="uid://c660okqqjs5ua" path="res://assets/sprites/Boom/boom_03.png" id="4_5boqv"]
+[ext_resource type="Texture2D" uid="uid://dvy6eu1a5fim0" path="res://assets/sprites/Boom/boom_04.png" id="5_vfdyb"]
+[ext_resource type="Texture2D" uid="uid://c3u34q1d52axl" path="res://assets/sprites/Boom/boom_05.png" id="6_lsht5"]
+[ext_resource type="Texture2D" uid="uid://cq0kb7c3rcx35" path="res://assets/sprites/Boom/boom_06.png" id="7_f7fwc"]
+[ext_resource type="Texture2D" uid="uid://cdmjpvsae6aon" path="res://assets/sprites/Boom/boom_07.png" id="8_spwk7"]
+[ext_resource type="Texture2D" uid="uid://cych15wxx0atv" path="res://assets/sprites/Boom/boom_08.png" id="9_7nxvc"]
+[ext_resource type="Texture2D" uid="uid://b3sah5ts2m2yg" path="res://assets/sprites/Boom/boom_09.png" id="10_ca6dh"]
+[ext_resource type="Texture2D" uid="uid://dse5bhfou2y8p" path="res://assets/sprites/Boom/boom_10.png" id="11_8w6hw"]
+[ext_resource type="Texture2D" uid="uid://cy0j7el8oikfq" path="res://assets/sprites/Boom/boom_11.png" id="12_83uct"]
+[ext_resource type="Texture2D" uid="uid://djq7ddjkk63rl" path="res://assets/sprites/Boom/boom_12.png" id="13_cul6h"]
+[ext_resource type="Texture2D" uid="uid://bmrhp3j0jargf" path="res://assets/sprites/Boom/boom_13.png" id="14_qrklh"]
+[ext_resource type="Texture2D" uid="uid://bqmi8dko303rg" path="res://assets/sprites/Boom/boom_14.png" id="15_idaoo"]
+[ext_resource type="Texture2D" uid="uid://c8qev72c6r31a" path="res://assets/sprites/Boom/boom_15.png" id="16_eddjy"]
+
+[sub_resource type="Animation" id="Animation_sr4yc"]
+resource_name = "apocalypse"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_r8su5"]
+_data = {
+&"apocalypse": SubResource("Animation_sr4yc")
+}
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_88lyi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_2yhmt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_obwkb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_pbghn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_5boqv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_vfdyb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_lsht5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_f7fwc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_spwk7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_7nxvc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_ca6dh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_8w6hw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_83uct")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_cul6h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_qrklh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_idaoo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_eddjy")
+}],
+"loop": true,
+"name": &"apocalypse",
+"speed": 12.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}]
+
+[node name="Animations" type="Node2D"]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_r8su5")
+}
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Node2D"]
+sprite_frames = SubResource("SpriteFrames_88lyi")
+animation = &"apocalypse"
