@@ -3,19 +3,35 @@
 [ext_resource type="Theme" uid="uid://dh870meh4j8a1" path="res://assets/other/main_theme.tres" id="1_rpnp3"]
 [ext_resource type="Script" uid="uid://dtgoj48d6i2mm" path="res://scenes/ui/mana_ui.gd" id="2_jwxui"]
 
-[node name="ManaUI" type="Panel"]
-anchors_preset = 2
+[node name="ManaUI" type="VBoxContainer"]
+anchors_preset = 7
+anchor_left = 0.5
 anchor_top = 1.0
+anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = 8.0
-offset_top = -48.0
-offset_right = 40.0
-offset_bottom = -16.0
+offset_left = -16.0
+offset_top = -140.0
+offset_right = 16.0
+grow_horizontal = 2
 grow_vertical = 0
-theme = ExtResource("1_rpnp3")
+alignment = 2
 script = ExtResource("2_jwxui")
 
-[node name="ManaLabel" type="Label" parent="."]
+[node name="ExtraIconContainer" type="VBoxContainer" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="IconContainer" type="VBoxContainer" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="LabelPanel" type="Panel" parent="."]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+theme = ExtResource("1_rpnp3")
+
+[node name="ManaLabel" type="Label" parent="LabelPanel"]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
