@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Deck Builder"
-run/main_scene="uid://0qyqwumjfu4w"
+run/main_scene="uid://c1bl06amugvjo"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="uid://dblwri7jh6k0v"
 
@@ -43,13 +43,16 @@ window/stretch/mode="canvas_items"
 
 folder_colors={
 "res://assets/": "yellow",
-"res://cards/": "orange",
+"res://cards/": "green",
 "res://enemies/": "red",
 "res://globals/": "purple",
 "res://heroes/": "green",
-"res://resources/": "pink",
+"res://mantras/": "blue",
+"res://phobias/": "red",
+"res://resources/": "blue",
+"res://resources/moods/": "teal",
 "res://scenes/": "blue",
-"res://script_templates/": "teal",
+"res://script_templates/": "blue",
 "res://zzz/": "gray"
 }
 

@@ -1,0 +1,34 @@
+[gd_scene load_steps=10 format=3 uid="uid://b1c435tcq0q5k"]
+
+[ext_resource type="Script" uid="uid://rk0knfs7teh6" path="res://scenes/enemy/ai.gd" id="1_wpyrq"]
+[ext_resource type="Script" uid="uid://jqe12ljkarfu" path="res://enemies/octopus/octo_slap.gd" id="2_4g2ss"]
+[ext_resource type="Texture2D" uid="uid://dw0wtiicqn6gw" path="res://assets/sprites/dagger.png" id="3_4c8rv"]
+[ext_resource type="Script" uid="uid://dw3bracpphktf" path="res://resources/intent.gd" id="4_uc4tw"]
+[ext_resource type="AudioStream" uid="uid://dfvubbgdlab6n" path="res://assets/sound/slap-2-237623.mp3" id="5_35ph4"]
+[ext_resource type="Script" uid="uid://dcwhioewk7y5q" path="res://enemies/octopus/octo_block.gd" id="6_35ph4"]
+[ext_resource type="Texture2D" uid="uid://byka3vp1hlkvu" path="res://assets/sprites/shield_2.png" id="7_yr6xt"]
+
+[sub_resource type="Resource" id="Resource_35ph4"]
+script = ExtResource("4_uc4tw")
+base_text = "8x%s"
+icon = ExtResource("3_4c8rv")
+metadata/_custom_type_script = "uid://dw3bracpphktf"
+
+[sub_resource type="Resource" id="Resource_cf40m"]
+script = ExtResource("4_uc4tw")
+icon = ExtResource("7_yr6xt")
+metadata/_custom_type_script = "uid://dw3bracpphktf"
+
+[node name="OctopusAI" type="Node"]
+script = ExtResource("1_wpyrq")
+
+[node name="OctoSlap" type="Node" parent="."]
+script = ExtResource("2_4g2ss")
+chance_weight = 1.0
+intent = SubResource("Resource_35ph4")
+sfx = ExtResource("5_35ph4")
+
+[node name="OctoBlock" type="Node" parent="."]
+script = ExtResource("6_35ph4")
+chance_weight = 1.0
+intent = SubResource("Resource_cf40m")

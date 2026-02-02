@@ -1,15 +1,17 @@
 extends Node
 class_name MapGenerator
 
-const X_DIST := 30 # Gap between nodes on x-axis.
-const Y_DIST := 25 # Gap between nodes on y-axis (between floors).
-const PLACEMENT_RANDOMNESS := 5
-const FLOORS := 15
+const X_DIST := 50 # 50 is good with 10 floors.
+const Y_DIST := 35 # 
+const PLACEMENT_RANDOMNESS := 8
+const FLOORS := 10
 const MAP_WIDTH := 7
 const PATHS := 6
 const MONSTER_ROOM_WEIGHT := 10.0
 const SHOP_ROOM_WEIGHT := 2.0
 const ELITE_ROOM_WEIGHT := 2.0
+
+@export var battle_stats_pool: BattleStatsPool
 
 # TODO Add in other rooms here.
 var random_room_type_weights := {
@@ -26,6 +28,7 @@ func generate_map() -> Array[Array]:
 		var current_j := j
 		for i in FLOORS - 1: # ...build a path to the top.
 			current_j = _setup_connection(i, current_j)
+	battle_stats_pool.setup()
 	_setup_boss_room()
 	_setup_random_room_weights()
 	_setup_room_types()
@@ -48,14 +51,14 @@ func _generate_initial_grid() -> Array[Array]:
 		for j in MAP_WIDTH: # By default 7.
 			var room := Room.new()
 			var offset := Vector2(randf(), randf()) * PLACEMENT_RANDOMNESS
-			# TODO Simply swap X_DIST and -Y_DIST here for horizontal map.
-			room.position = Vector2(j * X_DIST, i * -Y_DIST) + offset
+			# Original is (j * X_DIST, i * -Y_DIST).
+			room.position = Vector2(i * X_DIST, j * Y_DIST) + offset
 			room.row = i
 			room.column = j
 			room.next_rooms = []
 			# Boss room.
 			if i == FLOORS - 1:
-				room.position.y = (i + 1) * -Y_DIST # TODO This as well. +1 is extra big gap.
+				room.position.x = (i + 1) * X_DIST # +1 is extra big gap.
 			flooor.append(room)
 		grid.append(flooor)
 	return grid
@@ -63,7 +66,7 @@ func _generate_initial_grid() -> Array[Array]:
 func _get_random_starting_points() -> Array[int]:
 	var y_coordinates: Array[int] # Why is this called y_coordinates??
 	var unique_points: int = 0
-	while unique_points < 2:
+	while unique_points < 3:
 		unique_points = 0
 		y_coordinates = []
 		for i in PATHS:
@@ -110,6 +113,7 @@ func _setup_boss_room() -> void:
 			before_boss.next_rooms = []
 			before_boss.next_rooms.append(boss_room)
 	boss_room.type = Room.Type.BOSS
+	boss_room.battle_stats = battle_stats_pool.get_random_battle_for_tier(BattleStats.Tier.BOSS)
 
 func _setup_random_room_weights() -> void:
 	random_room_type_weights[Room.Type.MONSTER] = MONSTER_ROOM_WEIGHT
@@ -123,6 +127,7 @@ func _setup_room_types() -> void:
 	for room: Room in map_data[0]:
 		if room.next_rooms.size() > 0:
 			room.type = Room.Type.MONSTER
+			room.battle_stats = battle_stats_pool.get_random_battle_for_tier(BattleStats.Tier.EASY)
 	# Can add other guaranteed floors here, like above.
 	for flooor in map_data:
 		for room: Room in flooor:
@@ -139,13 +144,21 @@ func _set_room_randomly(room: Room) -> void:
 	while elite_below_4 or consecutive_elite or consecutive_shop:
 		type_candidate = _get_random_room_type_by_weight()
 		var is_elite := type_candidate == Room.Type.ELITE
-		var has_elite_parent := _room_has_parent_of_type(room, Room.Type.CAMPFIRE)
+		var has_elite_parent := _room_has_parent_of_type(room, Room.Type.ELITE)
 		var is_shop := type_candidate == Room.Type.SHOP
 		var has_shop_parent := _room_has_parent_of_type(room, Room.Type.SHOP)
 		elite_below_4 = is_elite and room.row < 3
 		consecutive_elite = is_elite and has_elite_parent
 		consecutive_shop = is_shop and has_shop_parent
 	room.type = type_candidate
+	
+	if type_candidate == Room.Type.MONSTER:
+		var tier_for_monster_rooms := BattleStats.Tier.EASY
+		if room.row > 1:
+			tier_for_monster_rooms = BattleStats.Tier.NORMAL
+		room.battle_stats = battle_stats_pool.get_random_battle_for_tier(tier_for_monster_rooms)
+	elif type_candidate == Room.Type.ELITE:
+		room.battle_stats = battle_stats_pool.get_random_battle_for_tier(BattleStats.Tier.ELITE)
 
 func _room_has_parent_of_type(room: Room, type: Room.Type) -> bool:
 	var parents: Array[Room] = []

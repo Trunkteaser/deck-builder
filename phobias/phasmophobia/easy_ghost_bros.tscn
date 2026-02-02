@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://bqy51k17c27td"]
+
+[ext_resource type="PackedScene" uid="uid://boxd06bs072ot" path="res://scenes/enemy/enemy.tscn" id="1_o46x3"]
+[ext_resource type="Resource" uid="uid://bn85h5f88kxqa" path="res://enemies/ghost/ghost.tres" id="2_qg1mk"]
+
+[node name="EasyGhostBros" type="Node2D"]
+
+[node name="Enemy" parent="." instance=ExtResource("1_o46x3")]
+position = Vector2(438, 178)
+stats = ExtResource("2_qg1mk")
+
+[node name="Enemy2" parent="." instance=ExtResource("1_o46x3")]
+position = Vector2(541, 208)
+stats = ExtResource("2_qg1mk")

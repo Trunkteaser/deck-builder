@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="Phobia" load_steps=9 format=3 uid="uid://cxqvlwe5vhtrk"]
+
+[ext_resource type="Texture2D" uid="uid://tja2y227uuv2" path="res://assets/sprites/background/Space-Background-Images.jpg" id="1_47vve"]
+[ext_resource type="Script" uid="uid://c3t3e2sq4bx3k" path="res://resources/phobia.gd" id="1_jlt5a"]
+[ext_resource type="Resource" uid="uid://e88lrgwfgen0" path="res://phobias/arachnophobia/battles/arachnophobia_monster_pool.tres" id="2_47vve"]
+[ext_resource type="Texture2D" uid="uid://2qpp5f13uowg" path="res://assets/sprites/webline.png" id="3_diyac"]
+[ext_resource type="Texture2D" uid="uid://0ugwlkehhsvv" path="res://assets/sprites/skull.png" id="4_gvnml"]
+[ext_resource type="Texture2D" uid="uid://brbvmboehsopp" path="res://assets/sprites/flaming skull.png" id="5_cvj47"]
+[ext_resource type="Texture2D" uid="uid://caqikhe70mcjw" path="res://assets/sprites/small vortex.png" id="6_gvnml"]
+[ext_resource type="Texture2D" uid="uid://d3hxorv3utoot" path="res://assets/sprites/evil smile.png" id="8_ncg6a"]
+
+[resource]
+script = ExtResource("1_jlt5a")
+name = "Arachnophobia"
+battle_stats_pool = ExtResource("2_47vve")
+line_sprite = ExtResource("3_diyac")
+battle_background = ExtResource("1_47vve")
+metadata/_custom_type_script = "uid://c3t3e2sq4bx3k"

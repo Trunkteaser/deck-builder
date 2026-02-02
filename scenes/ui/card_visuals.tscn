@@ -1,10 +1,20 @@
+<<<<<<< HEAD
 [gd_scene load_steps=25 format=3 uid="uid://gp5v1kbe3lnj"]
 
 [ext_resource type="Script" uid="uid://d3vdw2umlku23" path="res://scenes/ui/card_visuals.gd" id="1_jxbv6"]
 [ext_resource type="StyleBox" uid="uid://1ca5n2amt2on" path="res://assets/other/card_base_stylebox.tres" id="1_x0ouv"]
 [ext_resource type="Resource" uid="uid://b7cc7kot4umhl" path="res://cards/swinger.tres" id="2_0c3ob"]
+=======
+[gd_scene load_steps=13 format=3 uid="uid://gp5v1kbe3lnj"]
+
+[ext_resource type="Script" uid="uid://d3vdw2umlku23" path="res://scenes/ui/card_visuals.gd" id="1_jxbv6"]
+[ext_resource type="StyleBox" uid="uid://1ca5n2amt2on" path="res://assets/other/card_base_stylebox.tres" id="1_x0ouv"]
+>>>>>>> yesterday
 [ext_resource type="FontFile" uid="uid://c1hiyfel7mr0l" path="res://assets/other/Jersey15-Regular.ttf" id="2_jxbv6"]
+[ext_resource type="Resource" uid="uid://df3v2bogmodbi" path="res://heroes/shrike/cards/rend.tres" id="2_njcf5"]
+[ext_resource type="Texture2D" uid="uid://cpway0y8y3ola" path="res://assets/sprites/card art background v1.png" id="4_bp74k"]
 [ext_resource type="FontFile" uid="uid://xloy1dm05a8w" path="res://assets/other/Jersey10-Regular.ttf" id="4_m3e03"]
+<<<<<<< HEAD
 [ext_resource type="Texture2D" uid="uid://bhbp4xpeoj66f" path="res://assets/sprites/Boom/boom_00.png" id="5_jxqcx"]
 [ext_resource type="Texture2D" uid="uid://regusxadtxbq" path="res://assets/sprites/Boom/boom_01.png" id="6_ee1gm"]
 [ext_resource type="Texture2D" uid="uid://dse5bhfou2y8p" path="res://assets/sprites/Boom/boom_10.png" id="7_xe1ap"]
@@ -21,6 +31,14 @@
 [ext_resource type="Texture2D" uid="uid://cdmjpvsae6aon" path="res://assets/sprites/Boom/boom_07.png" id="18_4b3th"]
 [ext_resource type="Texture2D" uid="uid://cych15wxx0atv" path="res://assets/sprites/Boom/boom_08.png" id="19_twp6r"]
 [ext_resource type="Texture2D" uid="uid://b3sah5ts2m2yg" path="res://assets/sprites/Boom/boom_09.png" id="20_ejl1m"]
+=======
+[ext_resource type="Texture2D" uid="uid://c56m356imfa1q" path="res://assets/sprites/card frame v1.png" id="4_njcf5"]
+[ext_resource type="Texture2D" uid="uid://djhncihuufa3l" path="res://assets/sprites/bloody blade.png" id="6_b8ve4"]
+[ext_resource type="Texture2D" uid="uid://dhrmsrn6y0ot8" path="res://assets/sprites/mana circle.png" id="7_njcf5"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_b8ve4"]
+font_size = 14
+>>>>>>> yesterday
 
 [sub_resource type="LabelSettings" id="LabelSettings_i43yy"]
 font_size = 9
@@ -68,7 +86,11 @@ custom_minimum_size = Vector2(75, 106)
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_jxbv6")
+<<<<<<< HEAD
 card_data = ExtResource("2_0c3ob")
+=======
+card_data = ExtResource("2_njcf5")
+>>>>>>> yesterday
 
 [node name="Panel" type="Panel" parent="."]
 unique_name_in_owner = true
@@ -78,16 +100,56 @@ offset_bottom = 106.0
 mouse_filter = 2
 theme_override_styles/panel = ExtResource("1_x0ouv")
 
+[node name="Frame" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 74.0
+offset_bottom = 105.0
+texture = ExtResource("4_njcf5")
+
+[node name="ArtBackground" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 17.0
+offset_right = 70.0
+offset_bottom = 60.0
+texture = ExtResource("4_bp74k")
+
+[node name="Art" type="TextureRect" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 6.0
+offset_top = 18.0
+offset_right = 69.0
+offset_bottom = 59.0
+mouse_filter = 2
+texture = ExtResource("6_b8ve4")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="CostCircle" type="TextureRect" parent="."]
+modulate = Color(0.14901961, 0.5254902, 1, 1)
+layout_mode = 0
+offset_left = 1.0
+offset_top = 2.0
+offset_right = 15.0
+offset_bottom = 16.0
+texture = ExtResource("7_njcf5")
+stretch_mode = 5
+
 [node name="Cost" type="Label" parent="."]
 unique_name_in_owner = true
 layout_mode = 1
-offset_left = 4.0
-offset_top = 1.0
-offset_right = 14.0
-offset_bottom = 16.3125
+offset_left = 5.0
+offset_top = 2.0
+offset_right = 12.0
+offset_bottom = 16.291668
 theme_override_fonts/font = ExtResource("2_jxbv6")
 theme_override_font_sizes/font_size = 15
 text = "1"
+label_settings = SubResource("LabelSettings_b8ve4")
+horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Name" type="Label" parent="."]
@@ -96,45 +158,63 @@ layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -64.0
-offset_top = 3.0
-offset_right = -4.0
-offset_bottom = 14.0
+offset_left = -63.0
+offset_top = 6.0
+offset_right = -3.0
+offset_bottom = 15.1875
 grow_horizontal = 0
 theme_override_fonts/font = ExtResource("2_jxbv6")
 theme_override_font_sizes/font_size = 9
+<<<<<<< HEAD
 text = "Apocalypse"
+=======
+text = "Rend"
+>>>>>>> yesterday
 label_settings = SubResource("LabelSettings_i43yy")
-horizontal_alignment = 2
+horizontal_alignment = 1
 
-[node name="Art" type="TextureRect" parent="."]
-unique_name_in_owner = true
+[node name="DescriptionBackground" type="ColorRect" parent="."]
 layout_mode = 0
-offset_left = 5.0
-offset_top = 17.0
-offset_right = 70.0
-offset_bottom = 60.0
+offset_left = 4.0
+offset_top = 67.0
+offset_right = 71.0
+offset_bottom = 102.0
 mouse_filter = 2
+<<<<<<< HEAD
 texture = SubResource("AnimatedTexture_tvk44")
 expand_mode = 1
 stretch_mode = 5
+=======
+color = Color(0, 0, 0, 0.34901962)
+>>>>>>> yesterday
 
 [node name="Description" type="RichTextLabel" parent="."]
 unique_name_in_owner = true
 layout_mode = 0
 offset_left = 4.0
 offset_top = 67.0
-offset_right = 72.0
+offset_right = 71.0
 offset_bottom = 103.0
 mouse_filter = 2
 theme_override_fonts/normal_font = ExtResource("4_m3e03")
 theme_override_font_sizes/normal_font_size = 8
 bbcode_enabled = true
+<<<<<<< HEAD
 text = "[center][/center]"
 
 [node name="Rarity" type="Label" parent="."]
 unique_name_in_owner = true
 modulate = Color(1, 0.84313726, 0, 1)
+=======
+text = "Deal %s damage.
+Apply 2 Raw."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Rarity" type="Label" parent="."]
+unique_name_in_owner = true
+modulate = Color(0.74509805, 0.74509805, 0.74509805, 1)
+>>>>>>> yesterday
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -147,7 +227,11 @@ offset_right = 7.5
 offset_bottom = 13.104164
 grow_horizontal = 2
 grow_vertical = 2
+<<<<<<< HEAD
 text = "Visionary"
+=======
+text = "Ordinary"
+>>>>>>> yesterday
 label_settings = SubResource("LabelSettings_lj463")
 horizontal_alignment = 1
 vertical_alignment = 1

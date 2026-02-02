@@ -13,6 +13,7 @@ const DRAG_STYLE := preload("uid://c336ntkuwrp1m")
 @onready var targets: Array[Node] = []
 @onready var visuals: CardVisuals = $Visuals
 
+@export var hero_modifiers: ModifierHandler
 @export var card_data: CardData : set = _set_card_data
 @export var hero_stats: HeroStats : set = _set_hero_stats
 
@@ -28,7 +29,9 @@ func _ready() -> void:
 	Events.card_drag_started.connect(_on_card_drag_or_aiming_started)
 	Events.card_aim_ended.connect(_on_card_drag_or_aiming_ended)
 	Events.card_drag_ended.connect(_on_card_drag_or_aiming_ended)
+	#Events.update_card_descriptions.connect(update_description)
 	card_state_machine.init(self) # Initializes, and gives reference to self.
+	#print(hero_modifiers)
 
 #region Passing all input and mouse events to the state machine.
 func _input(event: InputEvent) -> void:
@@ -59,10 +62,10 @@ func _set_playable(value: bool) -> void:
 	playable = value
 	if not playable:
 		visuals.cost.add_theme_color_override("font_color", Color.RED)
-		visuals.panel.modulate.a = 0.5
+		visuals.modulate.a = 0.3
 	else:
 		visuals.cost.remove_theme_color_override("font_color")
-		visuals.panel.modulate.a = 1
+		visuals.modulate.a = 1
 
 func animate_to_position(new_position: Vector2, duration: float) -> void:
 	tween = create_tween().set_trans(Tween.TRANS_CIRC).set_ease(Tween.EASE_OUT)
@@ -71,8 +74,19 @@ func animate_to_position(new_position: Vector2, duration: float) -> void:
 func play() -> void:
 	if not card_data:
 		return
-	card_data.play(targets, hero_stats)
+	card_data.play(targets, hero_stats, hero_modifiers)
 	queue_free()
+
+func get_active_enemy_modifiers() -> ModifierHandler:
+	if targets.is_empty() or targets.size() > 1 or not targets[0] is Enemy:
+		return null
+	return targets[0].modifier_handler
+
+func update_description() -> void:
+	var enemy_modifiers := get_active_enemy_modifiers()
+	var updated_description := card_data.get_updated_description(hero_modifiers, enemy_modifiers)
+	# Why the fuck was hero_modifiers null when signal was connected to this function?
+	visuals.description.text = updated_description
 
 func _on_drop_point_detector_area_entered(area: Area2D) -> void:
 	if not targets.has(area):

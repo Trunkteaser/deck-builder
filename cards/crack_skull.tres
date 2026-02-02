@@ -1,0 +1,36 @@
+[gd_resource type="Resource" load_steps=4 format=3 uid="uid://dpclolhq7gfgk"]
+
+[ext_resource type="Texture2D" uid="uid://bijo34sdw7f58" path="res://assets/sprites/club.png" id="1_v550t"]
+[ext_resource type="AudioStream" uid="uid://dnknwy741q2l0" path="res://assets/sound/slash.ogg" id="2_t3rri"]
+
+[sub_resource type="GDScript" id="GDScript_lhnv0"]
+script/source = "extends CardData
+
+const FRAGILITY = preload(\"uid://dqaxhwdb7ob7g\")
+
+@export var damage := 5
+
+func apply_effects(targets: Array[Node], modifiers: ModifierHandler) -> void:
+	var modified_damage := modifiers.get_modified_value(damage, Modifier.Type.DMG_DEALT)
+	Apply.damage(targets, modified_damage)
+	Apply.mood(targets, FRAGILITY, 2)
+	SFXPlayer.play(sfx)
+
+func get_default_description() -> String:
+	return description % damage
+
+func get_updated_description(hero_modifiers: ModifierHandler, enemy_modifiers: ModifierHandler) -> String:
+	var modified_damage := hero_modifiers.get_modified_value(damage, Modifier.Type.DMG_DEALT)
+	if enemy_modifiers:
+		modified_damage = enemy_modifiers.get_modified_value(modified_damage, Modifier.Type.DMG_TAKEN)
+	return description % modified_damage
+"
+
+[resource]
+script = SubResource("GDScript_lhnv0")
+name = "Crack Skull"
+rarity = 1
+art = ExtResource("1_v550t")
+description = "Deal %s damage.
+Apply 2 Fragility."
+sfx = ExtResource("2_t3rri")

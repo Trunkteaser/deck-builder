@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bmtw8tkdap16j"]
+
+[ext_resource type="Script" uid="uid://crh2po0vpobwg" path="res://scenes/modifiers/modifier.gd" id="1_qh4yo"]
+
+[node name="Modifier" type="Node"]
+script = ExtResource("1_qh4yo")

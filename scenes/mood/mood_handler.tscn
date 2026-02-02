@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://bby8cdua61fei"]
+
+[ext_resource type="Script" uid="uid://dyya5s1qtqaf" path="res://scenes/mood/mood_handler.gd" id="1_khybi"]
+
+[node name="MoodHandler" type="GridContainer"]
+theme_override_constants/h_separation = 0
+theme_override_constants/v_separation = 0
+columns = 6
+script = ExtResource("1_khybi")

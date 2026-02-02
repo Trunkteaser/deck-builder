@@ -7,6 +7,8 @@ class_name EnemyAI
 
 @onready var total_weight := 0.0
 
+var targets: Array[Node]
+
 func _ready() -> void:
 	target = get_tree().get_first_node_in_group("hero")
 	setup_chances()
@@ -58,3 +60,4 @@ func _set_target(new_target: Node2D) -> void:
 	target = new_target
 	for action: EnemyAction in get_children():
 		action.target = target
+		action.targets = [target]

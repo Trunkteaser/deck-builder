@@ -9,16 +9,23 @@ script/source = "extends CardData
 @export var damage := 10
 @export var block := 10
 
-func apply_effects(targets: Array[Node]) -> void:
-	#var damage_effect := DamageEffect.new()
-	#damage_effect.sfx = sfx
-	#damage_effect.apply(targets, 10)
-	#var block_effect := BlockEffect.new()
-	#block_effect.apply(hero, 10)
-	Apply.damage(targets, damage)
+func apply_effects(targets: Array[Node], modifiers: ModifierHandler) -> void:
+	var modified_damage := modifiers.get_modified_value(damage, Modifier.Type.DMG_DEALT)
+	var modified_block := modifiers.get_modified_value(block, Modifier.Type.BLOCK_GAINED)
+	Apply.damage(targets, modified_damage)
 	SFXPlayer.play(sfx)
-	Apply.block(hero, block)
+	await wait(0.2)
+	Apply.block(hero, modified_block)
 	
+func get_default_description() -> String:
+	return description % [damage, block]
+
+func get_updated_description(hero_modifiers: ModifierHandler, enemy_modifiers: ModifierHandler) -> String:
+	var modified_damage := hero_modifiers.get_modified_value(damage, Modifier.Type.DMG_DEALT)
+	if enemy_modifiers:
+		modified_damage = enemy_modifiers.get_modified_value(modified_damage, Modifier.Type.DMG_TAKEN)
+	var modified_block := hero_modifiers.get_modified_value(block, Modifier.Type.BLOCK_GAINED)
+	return description % [modified_damage, modified_block]
 "
 
 [resource]
@@ -26,7 +33,7 @@ script = SubResource("GDScript_nmtgx")
 name = "Hit and Block"
 rarity = 1
 art = ExtResource("1_a6y4x")
-description = "Deal 10 damage.
-Gain 10 block."
+description = "Deal %s damage.
+Gain %s block."
 sfx = ExtResource("2_a6y4x")
 cost = 2

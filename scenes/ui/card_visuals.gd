@@ -11,11 +11,14 @@ class_name CardVisuals
 @onready var description: RichTextLabel = %Description
 @onready var rarity: Label = %Rarity
 
+# TODO Add a dictionary with rarities + heroes as keys, and colors as values.
+
 func set_card_data(new_card: CardData) -> void:
 	if not is_node_ready():
 		await ready
 	card_data = new_card 
 	set_card_visuals()
+	set_card_description()
 
 func set_card_visuals() -> void:
 	if not card_data:
@@ -23,7 +26,6 @@ func set_card_visuals() -> void:
 	art.texture = card_data.art
 	card_name.text = card_data.name
 	cost.text = str(card_data.cost)
-	description.text = "[center]" + card_data.description + "[/center]"
 	match card_data.rarity:
 		CardData.Rarity.ORDINARY:
 			rarity.text = "Ordinary"
@@ -32,3 +34,8 @@ func set_card_visuals() -> void:
 		CardData.Rarity.VISIONARY:
 			rarity.text = "Visionary"
 	rarity.modulate = CardData.RARITY_COLORS[card_data.rarity]
+
+func set_card_description() -> void:
+	if Engine.is_editor_hint():
+		description.text = card_data.description
+	description.text = "[center]" + card_data.get_default_description() + "[/center]"

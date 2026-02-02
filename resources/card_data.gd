@@ -4,7 +4,7 @@ class_name CardData
 
 enum Target {SINGLE_ENEMY, SELF, ALL_ENEMIES, EVERYONE}
 enum Rarity {ORDINARY, REMARKABLE, VISIONARY}
-enum Type {ATTACK, SKILL, POWER}
+enum Type {VIOLENCE, RESTRAINT, OBSESSION}
 
 const RARITY_COLORS := {
 	CardData.Rarity.ORDINARY: Color.GRAY,
@@ -19,10 +19,25 @@ const RARITY_COLORS := {
 @export var sfx: AudioStream
 
 @export_category("Attributes")
+@export var type: Type
 @export var cost: int = 1
 @export var target: Target
+@export var forget: bool = false
 
+# Injected or set up by HeroHandler.
+var draw_pile: CardPile
+var discard_pile: CardPile
+var tree: SceneTree
 var hero: Array[Node] # For secondary self-targeting purposes.
+var enemies: Array[Node]
+var hand: Hand
+
+func setup_node_access(node: Node) -> void:
+	tree = node.get_tree()
+	hero = tree.get_nodes_in_group("hero")
+	enemies = tree.get_nodes_in_group("enemies")
+	hand = tree.get_first_node_in_group("hand")
+
 
 func is_single_targeted() -> bool:
 	return target == Target.SINGLE_ENEMY
@@ -30,9 +45,7 @@ func is_single_targeted() -> bool:
 func _get_targets(targets: Array[Node]) -> Array[Node]:
 	if not targets: # Empty array.
 		return []
-	
-	var tree := targets[0].get_tree()
-	
+	#setup_node_access(targets[0])
 	match target:
 		Target.SELF:
 			return tree.get_nodes_in_group("hero")
@@ -43,23 +56,31 @@ func _get_targets(targets: Array[Node]) -> Array[Node]:
 		_:
 			return []
 
-func play(targets: Array[Node], hero_stats: HeroStats) -> void:
+func play(targets: Array[Node], hero_stats: HeroStats, modifiers: ModifierHandler) -> void:
 	Events.card_played.emit(self)
 	hero_stats.mana -= cost
-	
-	hero = get_self(targets)
-	
+	setup_node_access(targets[0])
 	if is_single_targeted():
-		apply_effects(targets)
+		apply_effects(targets, modifiers)
 	else:
-		apply_effects(_get_targets(targets))
+		apply_effects(_get_targets(targets), modifiers)
 
-func apply_effects(_targets: Array[Node]) -> void:
+func wait(duration: float) -> Signal:
+	return tree.create_timer(duration).timeout
+
+func apply_effects(_targets: Array[Node], _modifiers: ModifierHandler) -> void:
 	pass
 
-func get_self(targets: Array[Node]) -> Array[Node]: # Experimental, so I can hit enemy and then myself.
-	# Could make the play function save self as a variable.
-	# Then I won't have to call this method, but can simply access the hero.
-	# like var hero: Array[Node] = [] <- set by play func.
-	var tree := targets[0].get_tree()
-	return tree.get_nodes_in_group("hero")
+func get_default_description() -> String:
+	return description
+
+func get_updated_description(_hero_modifiers: ModifierHandler, _enemy_modifiers: ModifierHandler) -> String:
+	return description
+
+# Called by HeroHandler.
+func when_drawn() -> void:
+	pass
+
+# Called by Hand.
+func when_discarded() -> void:
+	pass

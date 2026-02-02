@@ -13,5 +13,14 @@ func shake(shakee: Node2D, intensity: float = 32, duration: float = 0.2) -> void
 			target = orig_pos
 		tween.tween_property(shakee, "position", target, duration/float(shake_count))
 		intensity *= 0.75
-	tween.finished.connect(func(): shakee.position = orig_pos)
+	await tween.finished
+	if shakee:
+		shakee.position = orig_pos
+	#if shakee:
+		#tween.finished.connect(func(): shakee.position = orig_pos)
+	# All variations of the above was causing...
+	# Lambda capture at index 0 was freed. Passed "null" instead. ERROR
+	# ...when enemy killed by multihit move.
+	# is_instance_valid did not help.
+	
 	

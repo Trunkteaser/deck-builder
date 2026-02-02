@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://dbw806mdi7k6i"]
+[gd_scene load_steps=8 format=3 uid="uid://dbw806mdi7k6i"]
 
 [ext_resource type="Script" uid="uid://cwx7ko3a41on5" path="res://scenes/battle_reward/battle_reward.gd" id="1_dv6k8"]
 [ext_resource type="PackedScene" uid="uid://yu10wywl2s4m" path="res://scenes/ui/reward_button.tscn" id="2_beus2"]
+[ext_resource type="Texture2D" uid="uid://b7rvi8vesm3ij" path="res://assets/sprites/grass terrain.png" id="2_gdsnt"]
 [ext_resource type="Theme" uid="uid://dh870meh4j8a1" path="res://assets/other/main_theme.tres" id="2_jcbo2"]
 [ext_resource type="Texture2D" uid="uid://bpfavoc513j3m" path="res://assets/sprites/brain.png" id="3_ut71s"]
 [ext_resource type="Texture2D" uid="uid://dblwri7jh6k0v" path="res://assets/sprites/skill class icon.png" id="4_gdsnt"]
@@ -26,6 +27,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+texture = ExtResource("2_gdsnt")
 expand_mode = 1
 stretch_mode = 5
 
@@ -37,7 +39,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-color = Color(0, 0, 0, 1)
+color = Color(0, 0, 0, 0.5568628)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1

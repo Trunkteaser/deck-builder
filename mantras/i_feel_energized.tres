@@ -1,0 +1,13 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://de85tcg14gxi4"]
+
+[ext_resource type="Texture2D" uid="uid://d3hxorv3utoot" path="res://assets/sprites/evil smile.png" id="1_aptjh"]
+[ext_resource type="Script" uid="uid://bw20ryq3h1uk8" path="res://mantras/i_feel_energized.gd" id="2_aptjh"]
+
+[resource]
+script = ExtResource("2_aptjh")
+name = "I Feel Energized"
+type = 1
+icon = ExtResource("1_aptjh")
+tooltip = "I Feel Energized
+At the start of combat, gain 1 mana."
+metadata/_custom_type_script = "uid://b534avfd3a80j"

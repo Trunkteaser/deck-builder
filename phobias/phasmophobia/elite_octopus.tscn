@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://c1y1p66rqlapp"]
+
+[ext_resource type="PackedScene" uid="uid://boxd06bs072ot" path="res://scenes/enemy/enemy.tscn" id="1_ssv1y"]
+[ext_resource type="Resource" uid="uid://c77w3sr48vgw1" path="res://enemies/octopus/octopus.tres" id="2_6i2fx"]
+
+[node name="EliteOctopus" type="Node2D"]
+
+[node name="Enemy" parent="." instance=ExtResource("1_ssv1y")]
+position = Vector2(503, 162)
+stats = ExtResource("2_6i2fx")

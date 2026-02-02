@@ -8,6 +8,7 @@ signal stats_changed
 
 var health: int : set = set_health
 var block: int : set = set_block
+var position: Vector2
 
 func set_health(value: int) -> void:
 	health = clampi(value, 0, max_health)
@@ -25,6 +26,7 @@ func take_damage(damage: int) -> void:
 	damage = clampi(damage - block, 0, damage)
 	block = clampi(block - incoming_damage, 0, block)
 	health -= damage
+	Events.damage_taken.emit(damage, position)
 
 func heal(amount: int) -> void:
 	health += amount

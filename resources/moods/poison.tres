@@ -1,0 +1,12 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://dnb4xyjdtlxqf"]
+
+[ext_resource type="Texture2D" uid="uid://0ugwlkehhsvv" path="res://assets/sprites/skull.png" id="1_0yt8c"]
+[ext_resource type="Script" uid="uid://csacnaebk0l5c" path="res://resources/moods/poison.gd" id="2_b7ljm"]
+
+[resource]
+script = ExtResource("2_b7ljm")
+name = "Poison"
+stack_type = 2
+stacks = 1
+icon = ExtResource("1_0yt8c")
+tooltip = "On start of turn, take damage equal to stacks."

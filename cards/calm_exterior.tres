@@ -1,0 +1,38 @@
+[gd_resource type="Resource" load_steps=4 format=3 uid="uid://byqmnouw5r32e"]
+
+[ext_resource type="Texture2D" uid="uid://bcng3h7dx1ns" path="res://assets/sprites/calm exterior.png" id="1_0dy2l"]
+[ext_resource type="AudioStream" uid="uid://d0cq6s264xrlr" path="res://assets/sound/block.ogg" id="2_82v23"]
+
+[sub_resource type="GDScript" id="GDScript_4c7pg"]
+script/source = "extends CardData
+
+const ANGER = preload(\"uid://bl7yry7rm0qru\")
+
+@export var block := 10
+
+func apply_effects(targets: Array[Node], modifiers: ModifierHandler) -> void:
+	var modified_block := modifiers.get_modified_value(block, Modifier.Type.BLOCK_GAINED)
+	Apply.block(targets, modified_block)
+	Apply.mood(targets, ANGER, 2)
+	SFXPlayer.play(sfx)
+
+func get_default_description() -> String:
+	return description % block
+
+func get_updated_description(hero_modifiers: ModifierHandler, _enemy_modifiers: ModifierHandler) -> String:
+	var modified_block := hero_modifiers.get_modified_value(block, Modifier.Type.BLOCK_GAINED)
+	return description % modified_block
+"
+
+[resource]
+script = SubResource("GDScript_4c7pg")
+name = "Calm Exterior"
+art = ExtResource("1_0dy2l")
+description = "Gain %s block.
+Gain 2 Anger."
+sfx = ExtResource("2_82v23")
+type = 1
+cost = 2
+target = 1
+forget = true
+metadata/_custom_type_script = "uid://cf748lyegyqg3"

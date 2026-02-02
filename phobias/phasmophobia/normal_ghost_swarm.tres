@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="BattleStats" load_steps=3 format=3 uid="uid://f3o1l3t6cr3u"]
+
+[ext_resource type="PackedScene" uid="uid://cqdm0h5qw5lfu" path="res://phobias/phasmophobia/normal_ghost_swarm.tscn" id="1_o66e4"]
+[ext_resource type="Script" uid="uid://tidjs5xpdc83" path="res://resources/battle_stats.gd" id="2_1mjfm"]
+
+[resource]
+script = ExtResource("2_1mjfm")
+tier = 1
+insp_reward_min = 70
+insp_reward_max = 80
+enemies = ExtResource("1_o66e4")
+metadata/_custom_type_script = "uid://tidjs5xpdc83"

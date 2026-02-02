@@ -4,14 +4,15 @@ class_name Run
 const BATTLE_SCENE := preload("uid://0qyqwumjfu4w")
 const BATTLE_REWARD_SCENE := preload("uid://dbw806mdi7k6i")
 const CAMPFIRE_SCENE := preload("uid://b5td37dfj5iau")
-const MAP_SCENE := preload("uid://bm215cpa3pkhe")
+#const MAP_SCENE := preload("uid://bm215cpa3pkhe")
 const SHOP_SCENE := preload("uid://cha87b6ju17jw")
 const TREASURE_SCENE := preload("uid://djbb0v375o0fq")
 
 @export var run_startup: RunStartup
+@export var phobia: Phobia
 
 @onready var current_view: Node = $CurrentView
-@onready var map: Map = $Map
+@onready var map: Map = %Map
 @onready var map_button: Button = %MapButton
 @onready var battle_button: Button = %BattleButton
 @onready var shop_button: Button = %ShopButton
@@ -21,6 +22,8 @@ const TREASURE_SCENE := preload("uid://djbb0v375o0fq")
 @onready var deck_button: CardPileOpener = %DeckButton
 @onready var deck_view: CardPileView = %DeckView
 @onready var inspiration_ui: InspirationUI = %InspirationUI
+@onready var health_ui: HealthUI = %HealthUI
+@onready var mantra_handler: MantraHandler = %MantraHandler
 
 var hero: HeroStats
 var stats: RunStats
@@ -40,7 +43,11 @@ func _start_run() -> void:
 	stats = RunStats.new() # Temp, different post save/load.
 	_setup_event_connections()
 	_setup_top_bar()
-	# TODO Generate map.
+	map.battle_stats_pool = phobia.battle_stats_pool
+	map.map_node_icons = phobia.map_node_icons
+	map.line_sprite = phobia.line_sprite
+	map.generate_new_map()
+	map.unlock_floor(0)
 
 func _change_view(scene: PackedScene) -> Node:
 	if current_view.get_child_count() > 0:
@@ -48,45 +55,80 @@ func _change_view(scene: PackedScene) -> Node:
 	#get_tree().paused = false # In case BattleOver screen or other has paused.
 	var new_view := scene.instantiate()
 	current_view.add_child(new_view)
-	
-	if scene == MAP_SCENE:
-		map.show()
-	else:
-		map.hide()
+	map.hide()
 	
 	return new_view
+
+func _show_map() -> void:
+	if current_view.get_child_count() > 0:
+		current_view.get_child(0).queue_free()
+	map.show()
+	map.unlock_next_rooms()
 
 func _setup_event_connections() -> void:
 	Events.battle_won.connect(_on_battle_won)
 	
-	Events.battle_reward_exited.connect(_change_view.bind(MAP_SCENE))
-	Events.campfire_exited.connect(_change_view.bind(MAP_SCENE))
+	Events.battle_reward_exited.connect(_show_map)
+	Events.campfire_exited.connect(_show_map)
 	Events.map_exited.connect(_on_map_exited)
-	Events.shop_exited.connect(_change_view.bind(MAP_SCENE))
-	Events.treasure_room_exited.connect(_change_view.bind(MAP_SCENE))
+	Events.shop_exited.connect(_show_map)
+	Events.treasure_room_exited.connect(_show_map)
 	# Debug button setup below.
 	battle_button.pressed.connect(_change_view.bind(BATTLE_SCENE))
 	campfire_button.pressed.connect(_change_view.bind(CAMPFIRE_SCENE))
-	map_button.pressed.connect(_change_view.bind(MAP_SCENE)) # Or just show() ?
+	map_button.pressed.connect(_show_map)
 	rewards_button.pressed.connect(_change_view.bind(BATTLE_REWARD_SCENE))
 	shop_button.pressed.connect(_change_view.bind(SHOP_SCENE))
 	treasure_button.pressed.connect(_change_view.bind(TREASURE_SCENE))
 
 func _setup_top_bar() -> void:
+	hero.stats_changed.connect(health_ui.update_stats.bind(hero))
+	health_ui.update_stats(hero)
 	inspiration_ui.run_stats = stats
+	mantra_handler.add_mantra(hero.innate_mantra)
 	deck_button.card_pile = hero.deck
 	deck_view.card_pile = hero.deck
 	deck_button.pressed.connect(deck_view.show_current_view.bind("Deck"))
+
+func _on_battle_room_entered(room: Room) -> void:
+	var battle_scene: Battle = _change_view(BATTLE_SCENE)
+	battle_scene.hero_stats = hero
+	battle_scene.battle_stats = room.battle_stats
+	battle_scene.mantras = mantra_handler
+	battle_scene.background.texture = phobia.battle_background
+	battle_scene.start_battle()
 
 func _on_battle_won() -> void:
 	var reward_scene: BattleRewards = _change_view(BATTLE_REWARD_SCENE)
 	reward_scene.run_stats = stats
 	reward_scene.hero_stats = hero
 	
-	# Temp code, will live in encounter data.
-	reward_scene.add_inspiration_reward(1337)
+	reward_scene.add_inspiration_reward(map.last_room.battle_stats.roll_inspiration_reward())
 	reward_scene.add_card_reward()
+	
+func _on_shop_entered() -> void:
+	var shop: Shop = _change_view(SHOP_SCENE)
+	shop.hero_stats = hero
+	shop.draftable_cards = hero.draftable_cards
+	shop.run_stats = stats
+	shop.mantra_handler = mantra_handler
+	shop.populate_shop()
 
-func _on_map_exited() -> void:
-	# TODO Change view based on room type.
-	pass
+func _on_map_exited(room: Room) -> void:
+	match room.type:
+		Room.Type.MONSTER:
+			_on_battle_room_entered(room)
+		Room.Type.ELITE:
+			_on_battle_room_entered(room)
+		Room.Type.BOSS:
+			_on_battle_room_entered(room)
+		Room.Type.SHOP:
+			_on_shop_entered()
+
+func _on_map_button_pressed() -> void: # Testing?
+	if not map.visible:
+		map.show()
+		$MapLayer/Dimmer.show()
+	else:
+		map.hide()
+		$MapLayer/Dimmer.hide()

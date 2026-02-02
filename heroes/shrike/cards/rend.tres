@@ -1,0 +1,13 @@
+[gd_resource type="Resource" load_steps=4 format=3 uid="uid://df3v2bogmodbi"]
+
+[ext_resource type="Script" uid="uid://bsujw4ebt2umk" path="res://heroes/shrike/cards/card_scripts/rend.gd" id="1_2i5cv"]
+[ext_resource type="Texture2D" uid="uid://djhncihuufa3l" path="res://assets/sprites/bloody blade.png" id="1_qbov6"]
+[ext_resource type="AudioStream" uid="uid://ts423b3gvpso" path="res://assets/sound/axe.ogg" id="3_oe5if"]
+
+[resource]
+script = ExtResource("1_2i5cv")
+name = "Rend"
+art = ExtResource("1_qbov6")
+description = "Deal %s damage.
+Apply 2 Raw."
+sfx = ExtResource("3_oe5if")

@@ -1,0 +1,14 @@
+[gd_resource type="Resource" load_steps=4 format=3 uid="uid://dyw825u2suxc8"]
+
+[ext_resource type="Texture2D" uid="uid://ddgr6jyv7tfy5" path="res://assets/sprites/spiral shell.png" id="1_farpm"]
+[ext_resource type="Script" uid="uid://csbu032ks0p6v" path="res://heroes/shrike/cards/card_scripts/giga_drill_beak.gd" id="2_3545e"]
+[ext_resource type="AudioStream" uid="uid://hnpv6hjd7j5e" path="res://assets/sound/Wood Block1.wav" id="3_mw5s2"]
+
+[resource]
+script = ExtResource("2_3545e")
+name = "Giga Drill Beak"
+rarity = 2
+art = ExtResource("1_farpm")
+description = "Deal %s damage 7 times."
+sfx = ExtResource("3_mw5s2")
+cost = 3

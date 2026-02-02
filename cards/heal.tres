@@ -7,7 +7,7 @@ script/source = "extends CardData
 
 @export var healing := 10
 
-func apply_effects(targets: Array[Node]) -> void:
+func apply_effects(targets: Array[Node], _modifiers: ModifierHandler) -> void:
 	Apply.heal(targets, healing)
 "
 
@@ -16,5 +16,7 @@ script = SubResource("GDScript_a3gd1")
 name = "Heal"
 rarity = 1
 art = ExtResource("1_fokd8")
-description = "Heal 10 health."
+description = "Heal 10 health.
+Forget."
 target = 1
+forget = true

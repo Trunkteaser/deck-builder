@@ -5,6 +5,7 @@ class_name EnemyAction
 @export var sfx: AudioStream
 var enemy: Enemy
 var target: Node2D
+var targets: Array[Node]
 
 func perform_action() -> void:
 	pass
@@ -25,3 +26,9 @@ func attack_tween(damage):
 	tween.set_ease(Tween.EASE_OUT)
 	tween.tween_property(enemy, "global_position", start, 0.1)
 	tween.finished.connect(func(): Events.enemy_action_completed.emit(enemy))
+
+func wait(duration: float) -> Signal:
+	return get_tree().create_timer(duration).timeout
+
+func update_intent_text() -> void:
+	intent.current_text = intent.base_text

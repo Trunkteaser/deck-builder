@@ -1,0 +1,11 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://ckyvrpqsl4g2b"]
+
+[ext_resource type="Texture2D" uid="uid://gqdrmr4rris6" path="res://assets/sprites/mounting rage.png" id="1_ebvaa"]
+[ext_resource type="Script" uid="uid://d3fmu8xaek3r5" path="res://resources/moods/mounting_rage.gd" id="2_ebvaa"]
+
+[resource]
+script = ExtResource("2_ebvaa")
+name = "Mounting Rage"
+icon = ExtResource("1_ebvaa")
+tooltip = "2 Anger on start of turn."
+metadata/_custom_type_script = "uid://cv5d6rh4bndpq"

@@ -1,16 +1,30 @@
-[gd_scene load_steps=26 format=3 uid="uid://0qyqwumjfu4w"]
+<<<<<<< HEAD
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+[gd_scene load_steps=63 format=3 uid="uid://0qyqwumjfu4w"]
+=======
+[gd_scene load_steps=28 format=3 uid="uid://0qyqwumjfu4w"]
+>>>>>>> Stashed changes
+=======
+[gd_scene load_steps=28 format=3 uid="uid://0qyqwumjfu4w"]
+>>>>>>> Stashed changes
+=======
+[gd_scene load_steps=29 format=3 uid="uid://0qyqwumjfu4w"]
+>>>>>>> parent of 071b824 (animation)
 
 [ext_resource type="Script" uid="uid://djb2fi8pii4a6" path="res://scenes/battle/battle.gd" id="1_agsc7"]
 [ext_resource type="Resource" uid="uid://d0o466qgbput5" path="res://heroes/shrike/shrike.tres" id="2_kd6yx"]
 [ext_resource type="PackedScene" uid="uid://de56m233tgjmc" path="res://scenes/card_target_selector/card_target_selector.tscn" id="3_agsc7"]
 [ext_resource type="AudioStream" uid="uid://cdvjxbdnv5np0" path="res://assets/sound/The Redeemer MP3.mp3" id="3_mvulk"]
 [ext_resource type="PackedScene" uid="uid://boxd06bs072ot" path="res://scenes/enemy/enemy.tscn" id="3_oiw7q"]
+[ext_resource type="Resource" uid="uid://b1cc7ll4mg4jv" path="res://phobias/phasmophobia/easy_ghost_bros.tres" id="4_156m4"]
 [ext_resource type="PackedScene" uid="uid://df3oxo87hqvpc" path="res://scenes/hero/hero.tscn" id="4_agsc7"]
 [ext_resource type="Script" uid="uid://dv8inyajhneml" path="res://scenes/enemy/enemy_handler.gd" id="4_n6gaa"]
 [ext_resource type="Script" uid="uid://dlsy0cg3anwyu" path="res://scenes/battle/debug.gd" id="5_h0kxc"]
 [ext_resource type="Resource" uid="uid://c2ohd717m4u8e" path="res://heroes/witch/witch.tres" id="5_oiw7q"]
 [ext_resource type="Resource" uid="uid://dq1dpmrio8kw7" path="res://enemies/banshee/banshee.tres" id="6_n6gaa"]
 [ext_resource type="PackedScene" uid="uid://6yf24kgcbxr7" path="res://scenes/card/card.tscn" id="6_pll4o"]
+[ext_resource type="Texture2D" uid="uid://tja2y227uuv2" path="res://assets/sprites/background/Space-Background-Images.jpg" id="6_pyfix"]
 [ext_resource type="Texture2D" uid="uid://b7rvi8vesm3ij" path="res://assets/sprites/grass terrain.png" id="8_t1kk3"]
 [ext_resource type="Resource" uid="uid://blpmomhimxbc1" path="res://enemies/claw_ghost/claw_ghost.tres" id="8_w40i5"]
 [ext_resource type="Script" uid="uid://c112cpa8gx1r3" path="res://scenes/hero/hero_handler.gd" id="9_mxe8n"]
@@ -22,6 +36,20 @@
 [ext_resource type="PackedScene" uid="uid://dp8473jexowur" path="res://scenes/ui/card_pile_opener.tscn" id="19_fe4ja"]
 [ext_resource type="Texture2D" uid="uid://cx8p46bnd1p0y" path="res://assets/sprites/discard.png" id="20_sgdsx"]
 [ext_resource type="PackedScene" uid="uid://bc5sy7kmyvlpa" path="res://scenes/ui/card_pile_view.tscn" id="22_5moxy"]
+<<<<<<< HEAD
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+[ext_resource type="Texture2D" uid="uid://qelom54kfj4q" path="res://assets/sprites/nebula thought.png" id="23_8eh2s"]
+[ext_resource type="Script" uid="uid://t6we46118o4k" path="res://scenes/battle/texture_rect_3.gd" id="24_ueicy"]
+[ext_resource type="Texture2D" uid="uid://bbsoi8p0l666i" path="res://assets/sprites/nebula thought spritesheet.png" id="25_n5ix6"]
+[ext_resource type="Script" uid="uid://bmqojsnitjejq" path="res://scenes/battle/animated_mana.gd" id="26_n5ix6"]
+=======
+>>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
+=======
+[ext_resource type="Texture2D" uid="uid://dhjrfcmkukxv3" path="res://assets/sprites/nebula thought.png" id="23_8eh2s"]
+>>>>>>> parent of 071b824 (animation)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_py4tk"]
 size = Vector2(640, 253)
@@ -39,11 +67,13 @@ point_count = 3
 script = ExtResource("1_agsc7")
 hero_stats = ExtResource("2_kd6yx")
 music = ExtResource("3_mvulk")
+battle_stats = ExtResource("4_156m4")
 metadata/_edit_lock_ = true
 
 [node name="Visuals" type="Node2D" parent="."]
 
 [node name="TempBackground" type="ColorRect" parent="Visuals"]
+visible = false
 z_index = -2
 offset_right = 640.0
 offset_bottom = 360.0
@@ -52,9 +82,21 @@ color = Color(0, 0, 0, 1)
 metadata/_edit_lock_ = true
 
 [node name="Terrain" type="Sprite2D" parent="Visuals"]
+visible = false
 z_index = -1
 texture = ExtResource("8_t1kk3")
 offset = Vector2(320, 180)
+
+[node name="Background" type="TextureRect" parent="Visuals"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 640.0
+offset_bottom = 360.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_pyfix")
+expand_mode = 1
 
 [node name="CardTargetSelector" parent="." instance=ExtResource("3_agsc7")]
 
@@ -66,6 +108,10 @@ position = Vector2(320, 126.5)
 shape = SubResource("RectangleShape2D_py4tk")
 debug_color = Color(0, 0.6, 0.69803923, 0.02745098)
 
+[node name="Hero" parent="." instance=ExtResource("4_agsc7")]
+position = Vector2(91, 129)
+stats = ExtResource("5_oiw7q")
+
 [node name="EnemyHandler" type="Node2D" parent="."]
 script = ExtResource("4_n6gaa")
 
@@ -76,10 +122,6 @@ stats = ExtResource("6_n6gaa")
 [node name="Enemy2" parent="EnemyHandler" instance=ExtResource("3_oiw7q")]
 position = Vector2(544, 198)
 stats = ExtResource("8_w40i5")
-
-[node name="Hero" parent="." instance=ExtResource("4_agsc7")]
-position = Vector2(91, 129)
-stats = ExtResource("5_oiw7q")
 
 [node name="Debug" type="Node" parent="." node_paths=PackedStringArray("card")]
 script = ExtResource("5_h0kxc")
@@ -109,6 +151,7 @@ offset_right = -230.0
 offset_bottom = 19.0
 
 [node name="DrawCardButton" type="Button" parent="Debug"]
+visible = false
 offset_left = 576.0
 offset_top = 40.0
 offset_right = 626.0
@@ -116,20 +159,22 @@ offset_bottom = 71.0
 text = "Draw"
 
 [node name="DiscardCardButton" type="Button" parent="Debug"]
+visible = false
 offset_left = 566.0
 offset_top = 76.0
 offset_right = 633.0
 offset_bottom = 107.0
 text = "Discard"
 
-[node name="HeroHandler" type="Node" parent="." node_paths=PackedStringArray("hand")]
+[node name="HeroHandler" type="Node" parent="." node_paths=PackedStringArray("hero_node", "hand")]
 script = ExtResource("9_mxe8n")
+hero_node = NodePath("../Hero")
 hand = NodePath("../BattleUI/Hand")
 
 [node name="BattleUI" type="CanvasLayer" parent="." groups=["ui_layer"]]
 script = ExtResource("9_t1kk3")
 
-[node name="Hand" type="Container" parent="BattleUI"]
+[node name="Hand" type="Container" parent="BattleUI" node_paths=PackedStringArray("hero") groups=["hand"]]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(400, 80)
 anchors_preset = 12
@@ -142,14 +187,10 @@ offset_right = -64.0
 grow_horizontal = 2
 grow_vertical = 0
 script = ExtResource("9_oiw7q")
+hero = NodePath("../../Hero")
 hero_stats = ExtResource("5_oiw7q")
 hand_curve = SubResource("Curve_agsc7")
 rotation_curve = SubResource("Curve_oiw7q")
-
-[node name="ManaUI" parent="BattleUI" instance=ExtResource("12_mxe8n")]
-offset_top = -86.0
-offset_bottom = -54.0
-hero_stats = ExtResource("5_oiw7q")
 
 [node name="EndTurnButton" type="Button" parent="BattleUI"]
 unique_name_in_owner = true
@@ -212,8 +253,60 @@ offset_bottom = 36.333336
 text = "9"
 horizontal_alignment = 2
 
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+[node name="TextureRect" type="TextureRect" parent="BattleUI"]
+custom_minimum_size = Vector2(10, 0)
+offset_left = 44.0
+offset_top = 284.0
+offset_right = 67.0
+offset_bottom = 306.0
+texture = ExtResource("23_8eh2s")
+expand_mode = 1
+
+[node name="TextureRect2" type="TextureRect" parent="BattleUI"]
+offset_left = 72.0
+offset_top = 284.0
+offset_right = 94.0
+offset_bottom = 305.0
+texture = ExtResource("23_8eh2s")
+expand_mode = 1
+
+[node name="TextureRect3" type="TextureRect" parent="BattleUI"]
+offset_left = 100.0
+offset_top = 284.0
+offset_right = 122.0
+offset_bottom = 304.0
+texture = ExtResource("23_8eh2s")
+expand_mode = 1
+<<<<<<< HEAD
+script = ExtResource("24_ueicy")
+
+[node name="AnimatedMana" type="AnimatedSprite2D" parent="BattleUI"]
+position = Vector2(44, 69)
+sprite_frames = SubResource("SpriteFrames_ikd0n")
+animation = &"idle"
+frame_progress = 0.59606785
+script = ExtResource("26_n5ix6")
+=======
+=======
+>>>>>>> Stashed changes
+[node name="ManaUI" parent="BattleUI" instance=ExtResource("12_mxe8n")]
+unique_name_in_owner = true
+offset_left = 11.0
+offset_top = -358.0
+offset_right = 43.0
+offset_bottom = -45.0
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
+=======
+>>>>>>> parent of 071b824 (animation)
+
 [node name="RedFlash" type="CanvasLayer" parent="."]
 layer = 2
+visible = false
 script = ExtResource("17_6ofp8")
 
 [node name="ColorRect" type="ColorRect" parent="RedFlash"]

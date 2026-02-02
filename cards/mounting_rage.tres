@@ -1,0 +1,22 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://3wn7ro4wb56c"]
+
+[ext_resource type="Texture2D" uid="uid://brbvmboehsopp" path="res://assets/sprites/flaming skull.png" id="1_jhh8x"]
+
+[sub_resource type="GDScript" id="GDScript_o3enw"]
+script/source = "extends CardData
+
+const mounting_rage: Mood = preload(\"uid://ckyvrpqsl4g2b\")
+
+func apply_effects(targets: Array[Node], _modifiers: ModifierHandler) -> void:
+	Apply.mood(targets, mounting_rage)
+"
+
+[resource]
+script = SubResource("GDScript_o3enw")
+name = "Mounting Rage"
+rarity = 2
+art = ExtResource("1_jhh8x")
+description = "At the start of your turn, gain 2 Anger."
+type = 2
+cost = 3
+target = 1

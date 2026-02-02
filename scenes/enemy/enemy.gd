@@ -12,12 +12,21 @@ const WHITE_SPRITE_MATERIAL = preload("uid://ceemqhtjalmbl")
 @onready var arrow: Sprite2D = $Arrow
 @onready var stats_ui: StatsUI = $StatsUI
 @onready var intent_ui: IntentUI = $IntentUI
+@onready var mood_handler: MoodHandler = $MoodHandler
+@onready var modifier_handler: ModifierHandler = $ModifierHandler
+@onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
 
 var enemy_ai: EnemyAI
 var current_action: EnemyAction : set = set_current_action
 
+#func _ready() -> void:
+	#await get_tree().create_timer(3).timeout
+	#var anger = preload("uid://bl7yry7rm0qru")
+	#Apply.mood([self], anger, 2)
+
 func set_enemy_stats(new_enemy_stats: EnemyStats) -> void:
 	stats = new_enemy_stats.create_instance()
+	stats.position = position
 	if not stats.stats_changed.is_connected(update_stats):
 		stats.stats_changed.connect(update_stats)
 		stats.stats_changed.connect(update_action)
@@ -25,8 +34,7 @@ func set_enemy_stats(new_enemy_stats: EnemyStats) -> void:
 
 func set_current_action(new_action: EnemyAction) -> void:
 	current_action = new_action
-	if current_action:
-		intent_ui.update_intent(current_action.intent)
+	update_intent()
 
 func setup_ai() -> void:
 	if enemy_ai:
@@ -58,8 +66,19 @@ func update_enemy() -> void:
 		await ready
 	sprite_2d.texture = stats.art
 	arrow.position = Vector2.RIGHT * (sprite_2d.get_rect().size.x/2 + ARROW_OFFSET)
+	collision_shape_2d.shape.size = sprite_2d.texture.get_size()
 	setup_ai()
 	update_stats()
+
+func update_intent() -> void:
+	if current_action:
+		await get_tree().process_frame
+		await get_tree().process_frame
+		# Avoids bug in update_intent_text with % modified_dmg.
+		# BUG Try call deferred instead?
+		#print(current_action)
+		current_action.update_intent_text()
+		intent_ui.update_intent(current_action.intent)
 
 func take_turn() -> void:
 	stats.block = 0
@@ -67,21 +86,23 @@ func take_turn() -> void:
 		return
 	current_action.perform_action()
 
-func take_damage(damage: int) -> void:
+func take_damage(damage: int, which_modifier: Modifier.Type) -> void:
 	if stats.health <= 0:
 		return
 	
 	sprite_2d.material = WHITE_SPRITE_MATERIAL
+	var modified_damage := modifier_handler.get_modified_value(damage, which_modifier)
 	
 	var tween := create_tween()
 	tween.tween_callback(Shaker.shake.bind(self, 32, 0.15))
-	tween.tween_callback(stats.take_damage.bind(damage))
+	tween.tween_callback(stats.take_damage.bind(modified_damage))
 	tween.tween_interval(0.17)
 	
 	tween.finished.connect(
 		func():
 			sprite_2d.material = null
 			if stats.health <= 0:
+				Events.enemy_died.emit(self)
 				queue_free())
 
 func _on_area_entered(_area: Area2D) -> void:

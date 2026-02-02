@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://cqdm0h5qw5lfu"]
+
+[ext_resource type="PackedScene" uid="uid://boxd06bs072ot" path="res://scenes/enemy/enemy.tscn" id="1_8o7pq"]
+[ext_resource type="Resource" uid="uid://bn85h5f88kxqa" path="res://enemies/ghost/ghost.tres" id="2_2dm4q"]
+
+[node name="NormalGhostSwarm" type="Node2D"]
+
+[node name="Enemy" parent="." instance=ExtResource("1_8o7pq")]
+position = Vector2(411, 128)
+stats = ExtResource("2_2dm4q")
+
+[node name="Enemy2" parent="." instance=ExtResource("1_8o7pq")]
+position = Vector2(520, 149)
+stats = ExtResource("2_2dm4q")
+
+[node name="Enemy3" parent="." instance=ExtResource("1_8o7pq")]
+position = Vector2(447, 235)
+stats = ExtResource("2_2dm4q")
+
+[node name="Enemy4" parent="." instance=ExtResource("1_8o7pq")]
+position = Vector2(542, 264)
+stats = ExtResource("2_2dm4q")

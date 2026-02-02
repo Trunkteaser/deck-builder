@@ -4,7 +4,9 @@ class_name Hand
 const CARD =  preload("res://scenes/card/card.tscn")
 const DISCARD_SFX = preload("uid://bwonltvbchlj")
 
+@export var hero: Hero
 @export var hero_stats: HeroStats
+var hero_modifier_handler: ModifierHandler
 
 
 #region Fanning variables.
@@ -19,8 +21,16 @@ const DISCARD_SFX = preload("uid://bwonltvbchlj")
 
 func _ready() -> void:
 	#Events.request_card_draw.connect(draw) # Experimental.
-	
+	#hero_modifier_handler = hero.modifier_handler
+	Events.request_random_discard.connect(_on_request_random_discard)
+	Events.request_specific_discard.connect(_on_request_specific_discard)
+	Events.request_type_discard.connect(_on_request_type_discard)
+	Events.update_card_descriptions.connect(_on_update_card_descriptions)
 	update_card_fanning()
+
+func _on_update_card_descriptions() -> void:
+	for card: Card in get_children():
+		card.update_description()
 
 func add_card(card_data: CardData) -> void:
 	var new_card := CARD.instantiate()
@@ -30,14 +40,42 @@ func add_card(card_data: CardData) -> void:
 	new_card.parent = self
 	new_card.hero_stats = hero_stats
 	new_card.visuals.set_card_visuals()
-	
+	#print(hero_modifier_handler)
+	new_card.hero_modifiers = hero.modifier_handler
+	#print(new_card.hero_modifiers)
+	#new_card.card_data.when_drawn()
 	update_card_fanning()
 	for child: Card in get_children():
 		child.check_playability()
 
 func discard_card(card: Card) -> void:
+	card.card_data.when_discarded()
 	card.queue_free()
 	SFXPlayer.play(DISCARD_SFX)
+
+func _on_request_random_discard(amount: int) -> void:
+	for i in amount:
+		if get_child_count() == 0:
+			break
+		var card: Card = get_children().pick_random()
+		hero_stats.discard_pile.add_card(card.card_data)
+		discard_card(card)
+		await get_tree().process_frame # So card can be freed.
+
+func _on_request_specific_discard(card_data: CardData) -> void:
+	var card_parent: Card
+	for card: Card in get_children():
+		if card.card_data == card_data:
+			card_parent = card
+			break
+	hero_stats.discard_pile.add_card(card_data)
+	discard_card(card_parent)
+
+func _on_request_type_discard(type: CardData.Type) -> void:
+	for card: Card in get_children():
+		if card.card_data.type == type:
+			hero_stats.discard_pile.add_card(card.card_data)
+			discard_card(card)
 
 func disable_hand() -> void: # Stops interaction with cards being discarded.
 	for card: Card in get_children():

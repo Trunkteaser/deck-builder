@@ -8,9 +8,19 @@ script/source = "extends CardData
 
 @export var damage: int = 25
 
-func apply_effects(targets: Array[Node]) -> void:
-	Apply.damage(targets, damage)
+func apply_effects(targets: Array[Node], modifiers: ModifierHandler) -> void:
+	var modified_damage := modifiers.get_modified_value(damage, Modifier.Type.DMG_DEALT)
+	Apply.damage(targets, modified_damage)
 	SFXPlayer.play(sfx)
+
+func get_default_description() -> String:
+	return description % damage
+
+func get_updated_description(hero_modifiers: ModifierHandler, enemy_modifiers: ModifierHandler) -> String:
+	var modified_damage := hero_modifiers.get_modified_value(damage, Modifier.Type.DMG_DEALT)
+	if enemy_modifiers:
+		modified_damage = enemy_modifiers.get_modified_value(modified_damage, Modifier.Type.DMG_TAKEN)
+	return description % modified_damage
 "
 
 [resource]
@@ -18,6 +28,6 @@ script = SubResource("GDScript_mfk8n")
 name = "Big Chonkin Bonkin"
 rarity = 2
 art = ExtResource("1_gahjk")
-description = "Deal 25 damage."
+description = "Deal %s damage."
 sfx = ExtResource("2_flukm")
 cost = 3
