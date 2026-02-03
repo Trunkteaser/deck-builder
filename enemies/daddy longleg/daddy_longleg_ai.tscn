@@ -24,7 +24,7 @@ metadata/_custom_type_script = "uid://dw3bracpphktf"
 [node name="DaddyLonglegsAI" type="Node"]
 script = ExtResource("1_p5w2u")
 
-[node name="Attack2" type="Node" parent="."]
+[node name="daddyattack" type="Node" parent="."]
 script = ExtResource("2_7a024")
 chance_weight = 1.0
 intent = SubResource("Resource_2hbi2")

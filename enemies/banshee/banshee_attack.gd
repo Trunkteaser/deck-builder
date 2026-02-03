@@ -1,6 +1,6 @@
 extends ChanceBasedAction
 
-@export var damage := 7
+@export var damage := 14
 
 func perform_action() -> void:
 	if not enemy or not target:
