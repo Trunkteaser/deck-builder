@@ -14,6 +14,6 @@ draftable_cards = ExtResource("2_onbfi")
 cards_per_turn = 4
 max_mana = 3
 innate_mantra = ExtResource("3_2cdmq")
-max_health = 30
+max_health = 100
 art = ExtResource("1_onbfi")
 metadata/_custom_type_script = "uid://b3mwvvavgkbgr"

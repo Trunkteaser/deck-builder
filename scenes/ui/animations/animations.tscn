@@ -2,6 +2,10 @@
 
 [ext_resource type="Texture2D" uid="uid://c0b3o4neqqq4s" path="res://assets/sprites/nebula thought spritesheet.png" id="1_vgb68"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_t4jvt"]
+atlas = ExtResource("1_vgb68")
+region = Rect2(0, 96, 32, 32)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_8s0xs"]
 atlas = ExtResource("1_vgb68")
 region = Rect2(0, 0, 32, 32)
@@ -37,10 +41,6 @@ region = Rect2(32, 64, 32, 32)
 [sub_resource type="AtlasTexture" id="AtlasTexture_3bq2e"]
 atlas = ExtResource("1_vgb68")
 region = Rect2(64, 64, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_t4jvt"]
-atlas = ExtResource("1_vgb68")
-region = Rect2(0, 96, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8gb8b"]
 atlas = ExtResource("1_vgb68")
@@ -110,6 +110,14 @@ region = Rect2(32, 0, 32, 32)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_t4jvt")
+}],
+"loop": false,
+"name": &"empty",
+"speed": 24.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_8s0xs")
 }, {
 "duration": 1.0,
@@ -140,7 +148,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_t4jvt")
 }],
 "loop": false,
-"name": &"empty",
+"name": &"empty1",
 "speed": 24.0
 }, {
 "frames": [{
@@ -206,5 +214,4 @@ animations = [{
 
 [node name="ManaAnimation" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_eh47o")
-animation = &"idle"
-frame_progress = 0.26381475
+animation = &"empty1"

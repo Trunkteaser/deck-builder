@@ -40,5 +40,6 @@ func _on_mana_changed() -> void:
 		var base_icons := icon_container.get_children()
 		for i in (hero_stats.max_mana - hero_stats.mana):
 			if base_icons.size() > i:
-				base_icons[i].change_icon(EMPTY_MANA_ICON)
+				base_icons[i].empty()
+				#base_icons[i].change_icon(EMPTY_MANA_ICON)
 			
