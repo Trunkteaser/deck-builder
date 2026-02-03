@@ -6,7 +6,6 @@
 [resource]
 script = ExtResource("1_pvv1g")
 tier = 2
-insp_reward_min = 90
-insp_reward_max = 120
+avg_insp_reward = 90
 enemies = ExtResource("1_yxmjp")
 metadata/_custom_type_script = "uid://tidjs5xpdc83"

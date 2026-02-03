@@ -83,7 +83,7 @@ shape = SubResource("RectangleShape2D_py4tk")
 debug_color = Color(0, 0.6, 0.69803923, 0.02745098)
 
 [node name="Hero" parent="." instance=ExtResource("4_agsc7")]
-position = Vector2(91, 129)
+position = Vector2(110, 169)
 stats = ExtResource("5_oiw7q")
 
 [node name="EnemyHandler" type="Node2D" parent="."]
@@ -102,6 +102,7 @@ script = ExtResource("5_h0kxc")
 card = NodePath("Card")
 
 [node name="TestButton" type="Button" parent="Debug"]
+visible = false
 offset_left = 56.0
 offset_top = 42.0
 offset_right = 170.0
@@ -109,6 +110,7 @@ offset_bottom = 82.0
 text = "Test"
 
 [node name="TestButton2" type="Button" parent="Debug"]
+visible = false
 offset_left = 193.0
 offset_top = 44.0
 offset_right = 307.0

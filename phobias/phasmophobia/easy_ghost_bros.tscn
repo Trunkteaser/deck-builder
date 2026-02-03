@@ -6,9 +6,9 @@
 [node name="EasyGhostBros" type="Node2D"]
 
 [node name="Enemy" parent="." instance=ExtResource("1_o46x3")]
-position = Vector2(438, 178)
+position = Vector2(444, 136)
 stats = ExtResource("2_qg1mk")
 
 [node name="Enemy2" parent="." instance=ExtResource("1_o46x3")]
-position = Vector2(541, 208)
+position = Vector2(539, 189)
 stats = ExtResource("2_qg1mk")
