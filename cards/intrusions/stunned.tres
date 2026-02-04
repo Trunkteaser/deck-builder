@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="CardData" load_steps=4 format=3 uid="uid://bbdj8vx4ayevi"]
+
+[ext_resource type="Script" uid="uid://cf748lyegyqg3" path="res://resources/card_data.gd" id="1_r5xbi"]
+[ext_resource type="Texture2D" uid="uid://xjuuf412tko8" path="res://assets/sprites/anger fist.png" id="1_xg1yn"]
+[ext_resource type="AudioStream" uid="uid://hnpv6hjd7j5e" path="res://assets/sound/Wood Block1.wav" id="3_xqs7e"]
+
+[resource]
+script = ExtResource("1_r5xbi")
+name = "Stunned"
+art = ExtResource("1_xg1yn")
+description = "Forget."
+sfx = ExtResource("3_xqs7e")
+type = 3
+target = 1
+forget = true
+metadata/_custom_type_script = "uid://cf748lyegyqg3"

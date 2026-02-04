@@ -26,14 +26,23 @@ func set_card_visuals() -> void:
 	art.texture = card_data.art
 	card_name.text = card_data.name
 	cost.text = str(card_data.cost)
-	match card_data.rarity:
-		CardData.Rarity.ORDINARY:
-			rarity.text = "Ordinary"
-		CardData.Rarity.REMARKABLE:
-			rarity.text = "Remarkable"
-		CardData.Rarity.VISIONARY:
-			rarity.text = "Visionary"
 	rarity.modulate = CardData.RARITY_COLORS[card_data.rarity]
+	#match card_data.rarity:
+		#CardData.Rarity.ORDINARY:
+			#rarity.text = "Ordinary"
+		#CardData.Rarity.REMARKABLE:
+			#rarity.text = "Remarkable"
+		#CardData.Rarity.VISIONARY:
+			#rarity.text = "Visionary"
+	match card_data.type:
+		CardData.Type.VIOLENCE:
+			rarity.text = "VIOLENCE"
+		CardData.Type.RESTRAINT:
+			rarity.text = "RESTRAINT"
+		CardData.Type.OBSESSION:
+			rarity.text = "OBSESSION"
+		CardData.Type.INTRUSION:
+			rarity.text = "INTRUSION"
 
 func set_card_description() -> void:
 	if Engine.is_editor_hint():
