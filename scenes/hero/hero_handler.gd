@@ -59,7 +59,10 @@ func draw_cards(amount: int) -> void:
 	for i in amount:
 		tween.tween_callback(draw_card) # Tween calling a function.
 		tween.tween_interval(HAND_DRAW_INTERVAL) # With this frequency.
-	tween.finished.connect(func(): Events.player_hand_drawn.emit())
+	tween.finished.connect(func(): 
+		for card: Card in hand.get_children():
+			card.disabled = false
+		Events.player_hand_drawn.emit())
 
 #func discard_card(card: Card) -> void:
 	#if hand.get_child_count() == 0:
@@ -67,14 +70,16 @@ func draw_cards(amount: int) -> void:
 	#hero.discard_pile.add_card(card.card_data) # Adding to discard pile.
 	#hand.discard_card()
 
-func discard_cards() -> void:
+func eot_discard() -> void:
 	if hand.get_child_count() == 0:
 		Events.player_hand_discarded.emit()
 		return
 	var tween := create_tween()
 	for card in hand.get_children():
-		tween.tween_callback(hero.discard_pile.add_card.bind(card.card_data)) # Adding to discard pile.
-		tween.tween_callback(hand.discard_card.bind(card)) # Discarding the card.
+		tween.tween_callback(card.card_data.when_retained)
+		if not card.card_data.retain:
+			tween.tween_callback(hero.discard_pile.add_card.bind(card.card_data)) # Adding to discard pile.
+			tween.tween_callback(hand.discard_card.bind(card)) # Discarding the card.
 		tween.tween_interval(HAND_DISCARD_INTERVAL)
 	#tween.tween_interval(HAND_DISCARD_INTERVAL*5)
 	tween.finished.connect(func(): Events.player_hand_discarded.emit())
@@ -97,7 +102,7 @@ func _on_moods_triggered(trigger_type: Mood.TriggerType) -> void:
 		Mood.TriggerType.START_OF_TURN:
 			draw_cards(hero.cards_per_turn)
 		Mood.TriggerType.END_OF_TURN:
-			discard_cards()
+			eot_discard()
 
 func _on_mantras_activated(type: Mantra.Type) -> void:
 	match type:

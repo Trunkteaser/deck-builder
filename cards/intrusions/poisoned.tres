@@ -1,0 +1,19 @@
+[gd_resource type="Resource" load_steps=4 format=3 uid="uid://dkncnjxcai78x"]
+
+[ext_resource type="Script" uid="uid://en3406i83nqb" path="res://cards/intrusions/poisoned.gd" id="1_uxcx2"]
+[ext_resource type="Texture2D" uid="uid://bxto0mvo5vnju" path="res://assets/sprites/fish bones.png" id="1_vuxnw"]
+[ext_resource type="AudioStream" uid="uid://cmjxae5tcff0" path="res://assets/sound/bubble-pop-06-351337.mp3" id="3_njxqj"]
+
+[resource]
+script = ExtResource("1_uxcx2")
+name = "Poisoned"
+art = ExtResource("1_vuxnw")
+description = "At the end of your turn, take 3 damage.
+Retain.
+Forget."
+sfx = ExtResource("3_njxqj")
+type = 3
+target = 1
+forget = true
+retain = true
+metadata/_custom_type_script = "uid://cf748lyegyqg3"

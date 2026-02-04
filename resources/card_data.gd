@@ -23,6 +23,7 @@ const RARITY_COLORS := {
 @export var cost: int = 1
 @export var target: Target
 @export var forget: bool = false
+@export var retain: bool = false
 
 # Injected or set up by HeroHandler.
 var draw_pile: CardPile
@@ -83,4 +84,9 @@ func when_drawn() -> void:
 
 # Called by Hand.
 func when_discarded() -> void:
+	pass
+
+# Called by HeroHandler on all cards in hand eot.
+# Secretly named when_still_in_hand_at_end_of_turn().
+func when_retained() -> void:
 	pass
