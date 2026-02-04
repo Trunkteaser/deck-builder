@@ -1,13 +1,17 @@
-[gd_scene load_steps=3 format=3 uid="uid://bqy51k17c27td"]
+[gd_scene load_steps=4 format=3 uid="uid://bqy51k17c27td"]
 
 [ext_resource type="PackedScene" uid="uid://boxd06bs072ot" path="res://scenes/enemy/enemy.tscn" id="1_o46x3"]
 [ext_resource type="Resource" uid="uid://bn85h5f88kxqa" path="res://enemies/ghost/ghost.tres" id="2_qg1mk"]
+[ext_resource type="Script" uid="uid://bmpa7eyn4hdra" path="res://enemies/claw_ghost/starting_mood.gd" id="3_syui3"]
 
 [node name="EasyGhostBros" type="Node2D"]
 
 [node name="Enemy" parent="." instance=ExtResource("1_o46x3")]
 position = Vector2(444, 136)
 stats = ExtResource("2_qg1mk")
+
+[node name="StartingMood" type="Node" parent="Enemy"]
+script = ExtResource("3_syui3")
 
 [node name="Enemy2" parent="." instance=ExtResource("1_o46x3")]
 position = Vector2(539, 189)

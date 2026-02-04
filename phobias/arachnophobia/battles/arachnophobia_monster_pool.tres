@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="BattleStatsPool" load_steps=7 format=3 uid="uid://e88lrgwfgen0"]
+[gd_resource type="Resource" script_class="BattleStatsPool" load_steps=8 format=3 uid="uid://e88lrgwfgen0"]
 
 [ext_resource type="Script" uid="uid://tidjs5xpdc83" path="res://resources/battle_stats.gd" id="1_jvntj"]
 [ext_resource type="Script" uid="uid://n4kakjqxfnc4" path="res://resources/battle_stats_pool.gd" id="2_guj60"]
@@ -6,8 +6,9 @@
 [ext_resource type="Resource" uid="uid://f3o1l3t6cr3u" path="res://phobias/phasmophobia/normal_ghost_swarm.tres" id="3_gief6"]
 [ext_resource type="Resource" uid="uid://c665is87owisf" path="res://phobias/phasmophobia/elite_octopus.tres" id="4_fw8bg"]
 [ext_resource type="Resource" uid="uid://b345qd770bx0q" path="res://enemies/daddy longleg/daddy_longleg_stats.tres" id="5_gief6"]
+[ext_resource type="Resource" uid="uid://diimipli4qqmk" path="res://phobias/arachnophobia/battles/easy_spider.tres" id="6_fw8bg"]
 
 [resource]
 script = ExtResource("2_guj60")
-pool = Array[ExtResource("1_jvntj")]([ExtResource("2_siags"), ExtResource("3_gief6"), ExtResource("4_fw8bg"), ExtResource("5_gief6")])
+pool = Array[ExtResource("1_jvntj")]([ExtResource("2_siags"), ExtResource("3_gief6"), ExtResource("4_fw8bg"), ExtResource("5_gief6"), ExtResource("6_fw8bg")])
 metadata/_custom_type_script = "uid://n4kakjqxfnc4"

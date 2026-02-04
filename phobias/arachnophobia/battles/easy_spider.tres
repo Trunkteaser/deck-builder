@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="BattleStats" load_steps=3 format=3 uid="uid://diimipli4qqmk"]
+
+[ext_resource type="Script" uid="uid://tidjs5xpdc83" path="res://resources/battle_stats.gd" id="1_6jw27"]
+[ext_resource type="PackedScene" uid="uid://de1vogcr64yj3" path="res://phobias/arachnophobia/battles/easy_spider.tscn" id="1_lb3u0"]
+
+[resource]
+script = ExtResource("1_6jw27")
+weight = 0.0
+avg_insp_reward = 40
+enemies = ExtResource("1_lb3u0")
+metadata/_custom_type_script = "uid://tidjs5xpdc83"

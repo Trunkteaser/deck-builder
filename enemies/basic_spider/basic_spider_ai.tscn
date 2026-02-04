@@ -1,12 +1,16 @@
-[gd_scene load_steps=6 format=3 uid="uid://detbtbltmrr1m"]
+[gd_scene load_steps=8 format=3 uid="uid://detbtbltmrr1m"]
 
 [ext_resource type="Script" uid="uid://rk0knfs7teh6" path="res://scenes/enemy/ai.gd" id="1_k08ux"]
 [ext_resource type="Script" uid="uid://8fgbf0qdsmj" path="res://enemies/basic_spider/basic_spider_attack.gd" id="2_4pll7"]
 [ext_resource type="Script" uid="uid://dw3bracpphktf" path="res://resources/intent.gd" id="3_k5lor"]
+[ext_resource type="Texture2D" uid="uid://dw0wtiicqn6gw" path="res://assets/sprites/dagger.png" id="3_yf6ng"]
 [ext_resource type="Script" uid="uid://1gkh6e463sdy" path="res://scenes/enemy/chance_based_action.gd" id="4_yf6ng"]
+[ext_resource type="AudioStream" uid="uid://ts423b3gvpso" path="res://assets/sound/axe.ogg" id="5_6eedk"]
 
 [sub_resource type="Resource" id="Resource_6eedk"]
 script = ExtResource("3_k5lor")
+base_text = "2x%s"
+icon = ExtResource("3_yf6ng")
 metadata/_custom_type_script = "uid://dw3bracpphktf"
 
 [node name="BasicSpiderAi" type="Node"]
@@ -17,6 +21,7 @@ metadata/_custom_type_script = "uid://rk0knfs7teh6"
 script = ExtResource("2_4pll7")
 chance_weight = 1.0
 intent = SubResource("Resource_6eedk")
+sfx = ExtResource("5_6eedk")
 metadata/_custom_type_script = "uid://1gkh6e463sdy"
 
 [node name="Web" type="Node" parent="."]
