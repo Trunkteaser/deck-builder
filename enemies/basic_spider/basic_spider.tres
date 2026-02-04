@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="EnemyStats" load_steps=4 format=3 uid="uid://wtoofiu8bu7c"]
+
+[ext_resource type="Script" uid="uid://41i0vfynwjfy" path="res://resources/enemy_stats.gd" id="1_ucrp8"]
+[ext_resource type="PackedScene" uid="uid://detbtbltmrr1m" path="res://enemies/basic_spider/basic_spider_ai.tscn" id="1_xrs0i"]
+[ext_resource type="Texture2D" uid="uid://f4ud6fgmq1vk" path="res://assets/sprites/spider.png" id="2_jdg6q"]
+
+[resource]
+script = ExtResource("1_ucrp8")
+ai = ExtResource("1_xrs0i")
+art = ExtResource("2_jdg6q")
+metadata/_custom_type_script = "uid://41i0vfynwjfy"
