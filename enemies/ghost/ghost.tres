@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="EnemyStats" load_steps=4 format=3 uid="uid://bn85h5f88kxqa"]
 
 [ext_resource type="Script" uid="uid://41i0vfynwjfy" path="res://resources/enemy_stats.gd" id="1_fb7se"]
-[ext_resource type="PackedScene" uid="uid://dlps4k7ukounq" path="res://enemies/claw_ghost/claw_ghost_ai.tscn" id="1_klfs8"]
+[ext_resource type="PackedScene" uid="uid://bg0ubv68mnt78" path="res://enemies/arachnophobia/basic_scorpion/scorpion_ai.tscn" id="1_klfs8"]
 [ext_resource type="Texture2D" uid="uid://daiogp2odo6ac" path="res://assets/sprites/ghost.png" id="2_dyd5o"]
 
 [resource]

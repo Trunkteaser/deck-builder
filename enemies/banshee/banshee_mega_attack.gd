@@ -33,6 +33,6 @@ func perform_action() -> void:
 func update_intent_text() -> void:
 	if not target:
 		return
-	var hero: Hero = target
+	#var hero: Hero = target
 	var modified_dmg := hero.modifier_handler.get_modified_value(damage, Modifier.Type.DMG_TAKEN)
 	intent.current_text = intent.base_text % modified_dmg

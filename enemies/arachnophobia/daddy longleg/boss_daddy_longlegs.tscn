@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bfph2t0t0voin"]
 
 [ext_resource type="PackedScene" uid="uid://boxd06bs072ot" path="res://scenes/enemy/enemy.tscn" id="1_epg58"]
-[ext_resource type="Resource" uid="uid://b6x1niv3phc3f" path="res://enemies/daddy longleg/daddy_longleg.tres" id="2_kpwxe"]
+[ext_resource type="Resource" uid="uid://b6x1niv3phc3f" path="res://enemies/arachnophobia/daddy longleg/daddy_longleg.tres" id="2_kpwxe"]
 
 [node name="Node2D" type="Node2D"]
 

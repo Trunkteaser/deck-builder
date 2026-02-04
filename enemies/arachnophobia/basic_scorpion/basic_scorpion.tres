@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="EnemyStats" load_steps=4 format=3 uid="uid://b61wv6dvyvf7i"]
+
+[ext_resource type="Texture2D" uid="uid://b3s7utfl5n7tn" path="res://assets/sprites/scorpion.png" id="1_6ipos"]
+[ext_resource type="Script" uid="uid://41i0vfynwjfy" path="res://resources/enemy_stats.gd" id="1_c34w6"]
+[ext_resource type="PackedScene" uid="uid://bg0ubv68mnt78" path="res://enemies/arachnophobia/basic_scorpion/scorpion_ai.tscn" id="1_ga7ab"]
+
+[resource]
+script = ExtResource("1_c34w6")
+ai = ExtResource("1_ga7ab")
+art = ExtResource("1_6ipos")
+metadata/_custom_type_script = "uid://41i0vfynwjfy"

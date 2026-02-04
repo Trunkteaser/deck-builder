@@ -1,0 +1,49 @@
+[gd_scene load_steps=14 format=3 uid="uid://bg0ubv68mnt78"]
+
+[ext_resource type="Script" uid="uid://rk0knfs7teh6" path="res://scenes/enemy/ai.gd" id="1_js15r"]
+[ext_resource type="Script" uid="uid://bi4hkxh173vci" path="res://enemies/arachnophobia/basic_scorpion/attack.gd" id="2_hr8io"]
+[ext_resource type="Texture2D" uid="uid://dw0wtiicqn6gw" path="res://assets/sprites/dagger.png" id="3_58wrf"]
+[ext_resource type="Script" uid="uid://dw3bracpphktf" path="res://resources/intent.gd" id="4_71yds"]
+[ext_resource type="AudioStream" uid="uid://dnknwy741q2l0" path="res://assets/sound/slash.ogg" id="5_mk6nm"]
+[ext_resource type="Script" uid="uid://toxsk111xqtx" path="res://enemies/arachnophobia/basic_scorpion/poison.gd" id="6_xxrt4"]
+[ext_resource type="Texture2D" uid="uid://bxto0mvo5vnju" path="res://assets/sprites/fish bones.png" id="7_5c8dp"]
+[ext_resource type="AudioStream" uid="uid://dfvubbgdlab6n" path="res://assets/sound/slap-2-237623.mp3" id="8_i0qe3"]
+[ext_resource type="Script" uid="uid://dxhnrf7bjs62x" path="res://enemies/arachnophobia/basic_scorpion/block.gd" id="9_5c8dp"]
+[ext_resource type="Texture2D" uid="uid://bvxgooanycqn0" path="res://assets/sprites/shield.png" id="10_i0qe3"]
+
+[sub_resource type="Resource" id="Resource_xxrt4"]
+script = ExtResource("4_71yds")
+base_text = "%s"
+icon = ExtResource("3_58wrf")
+metadata/_custom_type_script = "uid://dw3bracpphktf"
+
+[sub_resource type="Resource" id="Resource_rippp"]
+script = ExtResource("4_71yds")
+base_text = "%s"
+icon = ExtResource("7_5c8dp")
+metadata/_custom_type_script = "uid://dw3bracpphktf"
+
+[sub_resource type="Resource" id="Resource_ltsa1"]
+script = ExtResource("4_71yds")
+icon = ExtResource("10_i0qe3")
+metadata/_custom_type_script = "uid://dw3bracpphktf"
+
+[node name="AI" type="Node"]
+script = ExtResource("1_js15r")
+
+[node name="Attack" type="Node" parent="."]
+script = ExtResource("2_hr8io")
+chance_weight = 1.0
+intent = SubResource("Resource_xxrt4")
+sfx = ExtResource("5_mk6nm")
+
+[node name="Poison" type="Node" parent="."]
+script = ExtResource("6_xxrt4")
+chance_weight = 1.0
+intent = SubResource("Resource_rippp")
+sfx = ExtResource("8_i0qe3")
+
+[node name="Block" type="Node" parent="."]
+script = ExtResource("9_5c8dp")
+chance_weight = 1.0
+intent = SubResource("Resource_ltsa1")

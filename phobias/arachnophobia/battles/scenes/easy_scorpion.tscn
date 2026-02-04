@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://cwmi2djcv80qq"]
+
+[ext_resource type="PackedScene" uid="uid://boxd06bs072ot" path="res://scenes/enemy/enemy.tscn" id="1_w4e82"]
+[ext_resource type="Resource" uid="uid://b61wv6dvyvf7i" path="res://enemies/arachnophobia/basic_scorpion/basic_scorpion.tres" id="2_q8hov"]
+
+[node name="EasyScorpion" type="Node2D"]
+
+[node name="Enemy" parent="." instance=ExtResource("1_w4e82")]
+position = Vector2(504, 186)
+stats = ExtResource("2_q8hov")

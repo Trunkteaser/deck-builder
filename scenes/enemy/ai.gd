@@ -60,4 +60,5 @@ func _set_target(new_target: Node2D) -> void:
 	target = new_target
 	for action: EnemyAction in get_children():
 		action.target = target
+		action.hero = target
 		action.targets = [target]

@@ -13,7 +13,7 @@ func perform_action() -> void:
 	Events.enemy_action_completed.emit(enemy)
 
 func update_intent_text() -> void:
-	var hero: Hero = target
+	#var hero: Hero = target
 	if not hero:
 		return
 	var modified_dmg := hero.modifier_handler.get_modified_value(damage, Modifier.Type.DMG_TAKEN)

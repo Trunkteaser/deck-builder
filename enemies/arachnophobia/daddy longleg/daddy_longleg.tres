@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://41i0vfynwjfy" path="res://resources/enemy_stats.gd" id="1_7ji15"]
 [ext_resource type="Texture2D" uid="uid://bieljwb6bncix" path="res://assets/sprites/arachnophobia/daddy.png" id="1_cijc8"]
-[ext_resource type="PackedScene" uid="uid://dqx0rm1vpccyh" path="res://enemies/daddy longleg/daddy_longleg_ai.tscn" id="1_tkhxw"]
+[ext_resource type="PackedScene" uid="uid://dqx0rm1vpccyh" path="res://enemies/arachnophobia/daddy longleg/daddy_longleg_ai.tscn" id="1_tkhxw"]
 
 [resource]
 script = ExtResource("1_7ji15")
