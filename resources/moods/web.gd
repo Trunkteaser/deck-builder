@@ -1,5 +1,7 @@
 extends Mood
 
+@export var sfx: AudioStream
+
 const MODIFIER := -0.0999
 
 func initialize_mood(target: Node) -> void:
@@ -15,12 +17,15 @@ func _on_mood_changed(target: Node) -> void:
 	web_modifier_value.percent_value = MODIFIER*stacks
 	dmg_dealt_modifier.add_new_value(web_modifier_value)
 	
+	SFXPlayer.play(sfx)
+	
 	if stacks <= 0:
 		dmg_dealt_modifier.remove_value("web")
 
 func _on_card_played(_card_data: CardData, target: Node) -> void:
 	await target.get_tree().process_frame
 	stacks -= 1
+	
 
 func get_tooltip() -> String:
 	return tooltip % (str(int(0.1*stacks*100)) + "%")

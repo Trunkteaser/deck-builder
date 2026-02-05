@@ -1,10 +1,12 @@
-[gd_resource type="Resource" load_steps=3 format=3 uid="uid://l0uu4as0yjo0"]
+[gd_resource type="Resource" load_steps=4 format=3 uid="uid://l0uu4as0yjo0"]
 
 [ext_resource type="Script" uid="uid://bpiqt6ej3iep7" path="res://resources/moods/web.gd" id="1_rc8gb"]
-[ext_resource type="Texture2D" uid="uid://f4ud6fgmq1vk" path="res://assets/sprites/spider.png" id="1_sr06b"]
+[ext_resource type="Texture2D" uid="uid://cicrtqlu7uf3a" path="res://assets/sprites/web.png" id="1_sr06b"]
+[ext_resource type="AudioStream" uid="uid://dodahfs7ua4ev" path="res://assets/sound/floraphonic-gross-slimy-goo-foley-2-164290.mp3" id="3_qi3r6"]
 
 [resource]
 script = ExtResource("1_rc8gb")
+sfx = ExtResource("3_qi3r6")
 name = "Web"
 trigger_type = 2
 stack_type = 1
