@@ -13,9 +13,12 @@ const WHITE_SPRITE_MATERIAL := preload("uid://ceemqhtjalmbl")
 
 # Does it need to assign itself as the owner of MoodHandler in ready?
 
-#func _ready() -> void:
-	#var anger = preload("uid://bl7yry7rm0qru")
-	#Apply.mood([self], anger, 5)
+func _ready() -> void:
+	var web = preload("uid://l0uu4as0yjo0")
+	await get_tree().create_timer(2).timeout
+	Apply.mood([self], web, 3)
+	await get_tree().create_timer(2).timeout
+	Apply.mood([self], web, 3)
 
 func set_hero_stats(value: HeroStats) -> void:
 	stats = value

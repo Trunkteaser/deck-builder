@@ -1,0 +1,14 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://l0uu4as0yjo0"]
+
+[ext_resource type="Script" uid="uid://bpiqt6ej3iep7" path="res://resources/moods/web.gd" id="1_rc8gb"]
+[ext_resource type="Texture2D" uid="uid://f4ud6fgmq1vk" path="res://assets/sprites/spider.png" id="1_sr06b"]
+
+[resource]
+script = ExtResource("1_rc8gb")
+name = "Web"
+trigger_type = 2
+stack_type = 1
+stacks = 1
+icon = ExtResource("1_sr06b")
+tooltip = "Web: Deal %s less damage. Lose one stack when playing a card."
+metadata/_custom_type_script = "uid://cv5d6rh4bndpq"
