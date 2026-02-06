@@ -5,6 +5,7 @@
 
 [resource]
 script = ExtResource("1_6jw27")
+weight = 10.0
 avg_insp_reward = 40
 enemies = ExtResource("1_lb3u0")
 metadata/_custom_type_script = "uid://tidjs5xpdc83"
