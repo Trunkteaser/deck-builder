@@ -1,0 +1,159 @@
+[gd_scene load_steps=5 format=3 uid="uid://cxojsy3ia1n52"]
+
+[ext_resource type="Texture2D" uid="uid://tja2y227uuv2" path="res://assets/sprites/background/Space-Background-Images.jpg" id="1_biivm"]
+[ext_resource type="Script" uid="uid://dnhhu45y1mrij" path="res://scenes/event/event.gd" id="1_uuxf3"]
+[ext_resource type="Resource" uid="uid://dxxac1ysl0pct" path="res://events/test_event_data.tres" id="2_wfxja"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_uuxf3"]
+font_color = Color(0.6745098, 0.05490196, 1, 1)
+
+[node name="Event" type="Control" node_paths=PackedStringArray("option_1", "label_1", "option_2", "label_2", "option_3", "label_3", "option_4", "label_4")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_uuxf3")
+event_data = ExtResource("2_wfxja")
+option_1 = NodePath("VBoxContainer/Options/Option1")
+label_1 = NodePath("VBoxContainer/Options/Option1/Label1")
+option_2 = NodePath("VBoxContainer/Options/Option2")
+label_2 = NodePath("VBoxContainer/Options/Option2/Label2")
+option_3 = NodePath("VBoxContainer/Options/Option3")
+label_3 = NodePath("VBoxContainer/Options/Option3/Label3")
+option_4 = NodePath("VBoxContainer/Options/Option4")
+label_4 = NodePath("VBoxContainer/Options/Option4/Label4")
+
+[node name="Art" type="TextureRect" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_biivm")
+expand_mode = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 313.0
+offset_top = 46.0
+offset_right = 613.0
+offset_bottom = 344.0
+
+[node name="Title" type="Label" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Spooky Event"
+label_settings = SubResource("LabelSettings_uuxf3")
+horizontal_alignment = 1
+
+[node name="Text" type="RichTextLabel" parent="VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 100)
+layout_mode = 2
+bbcode_enabled = true
+text = "Here we can describe what happens in the event and stuff like that. Maybe you should pick one of the options below? Hmmm?
+Maybe the options are all bad?
+Maybe one of them is really bad?
+Maybe you're fucked, eh?"
+fit_content = true
+
+[node name="Options" type="VBoxContainer" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Option1" type="Button" parent="VBoxContainer/Options"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+
+[node name="Label1" type="RichTextLabel" parent="VBoxContainer/Options/Option1"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 13.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+bbcode_enabled = true
+text = "[color=red]Die[/color] 
+Not a good option."
+fit_content = true
+vertical_alignment = 1
+
+[node name="Option2" type="Button" parent="VBoxContainer/Options"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+
+[node name="Label2" type="RichTextLabel" parent="VBoxContainer/Options/Option2"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 13.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+bbcode_enabled = true
+text = "[color=red]Giga die[/color] 
+A worse option, if possible."
+fit_content = true
+vertical_alignment = 1
+
+[node name="Option3" type="Button" parent="VBoxContainer/Options"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+
+[node name="Label3" type="RichTextLabel" parent="VBoxContainer/Options/Option3"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 13.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+bbcode_enabled = true
+text = "[color=green]Live[/color] 
+Probably should pick this one."
+fit_content = true
+vertical_alignment = 1
+
+[node name="Option4" type="Button" parent="VBoxContainer/Options"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+
+[node name="Label4" type="RichTextLabel" parent="VBoxContainer/Options/Option4"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 13.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+bbcode_enabled = true
+text = "[color=green]???[/color] 
+Idk about this one."
+fit_content = true
+vertical_alignment = 1
+
+[connection signal="pressed" from="VBoxContainer/Options/Option1" to="." method="_on_option_1_pressed"]
+[connection signal="resized" from="VBoxContainer/Options/Option1/Label1" to="." method="_on_label_1_resized"]
+[connection signal="pressed" from="VBoxContainer/Options/Option2" to="." method="_on_option_2_pressed"]
+[connection signal="resized" from="VBoxContainer/Options/Option2/Label2" to="." method="_on_label_2_resized"]
+[connection signal="pressed" from="VBoxContainer/Options/Option3" to="." method="_on_option_3_pressed"]
+[connection signal="resized" from="VBoxContainer/Options/Option3/Label3" to="." method="_on_label_3_resized"]
+[connection signal="pressed" from="VBoxContainer/Options/Option4" to="." method="_on_option_4_pressed"]
+[connection signal="resized" from="VBoxContainer/Options/Option4/Label4" to="." method="_on_label_4_resized"]

@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="EventData" load_steps=3 format=3 uid="uid://dxxac1ysl0pct"]
+
+[ext_resource type="Texture2D" uid="uid://tja2y227uuv2" path="res://assets/sprites/background/Space-Background-Images.jpg" id="1_2gs01"]
+[ext_resource type="Script" uid="uid://q058u8kh3ovv" path="res://resources/event_data.gd" id="1_6qyxp"]
+
+[resource]
+script = ExtResource("1_6qyxp")
+title = "Great Event of Testening"
+text = "The Great Event of Testening has begun.
+Below, you will find a number of different options. You must choose the one most agreeable to you.
+
+Should you abstain, a horrible death will befall you."
+art = ExtResource("1_2gs01")
+option_1 = "[color=gold]Fight[/color]
+Fight a horde of scorpions."
+option_2 = "[color=gold]Loot[/color]
+You discover a new mantra, but lose half of your max health in the process."
+option_3 = "[color=gold]Abstain[/color]
+Die [wave]horribly[/wave]."
+metadata/_custom_type_script = "uid://q058u8kh3ovv"

@@ -47,6 +47,7 @@ folder_colors={
 "res://enemies/": "red",
 "res://enemies/arachnophobia/": "orange",
 "res://enemies/generic_scripts/": "yellow",
+"res://events/": "blue",
 "res://globals/": "purple",
 "res://heroes/": "green",
 "res://mantras/": "blue",
