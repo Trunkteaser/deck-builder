@@ -131,6 +131,7 @@ func _on_event_entered(room: Room) -> void:
 	event.event_data.mantra_handler = mantra_handler
 	event.event_data.mantra_pile = all_mantras
 	event.update_event()
+	event.set_dynamic_descriptions()
 
 func _on_map_exited(room: Room) -> void:
 	match room.type:

@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://tja2y227uuv2" path="res://assets/sprites/background/Space-Background-Images.jpg" id="1_biivm"]
 [ext_resource type="Script" uid="uid://dnhhu45y1mrij" path="res://scenes/event/event.gd" id="1_uuxf3"]
-[ext_resource type="Resource" uid="uid://dxxac1ysl0pct" path="res://events/test_event_data.tres" id="2_wfxja"]
+[ext_resource type="Resource" uid="uid://cmors4rvg4tay" path="res://events/random_card_removed.tres" id="2_lry0m"]
 [ext_resource type="Texture2D" uid="uid://dgeu6t11scpeq" path="res://assets/sprites/chomposaurus.png" id="4_lry0m"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_uuxf3"]
@@ -16,7 +16,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_uuxf3")
-event_data = ExtResource("2_wfxja")
+event_data = ExtResource("2_lry0m")
 option_1 = NodePath("VBoxContainer/Options/Option1")
 label_1 = NodePath("VBoxContainer/Options/Option1/Label1")
 option_2 = NodePath("VBoxContainer/Options/Option2")

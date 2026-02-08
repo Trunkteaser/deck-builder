@@ -18,18 +18,28 @@ class_name Event
 @export var option_4: Button
 @export var label_4: RichTextLabel 
 
+func _ready() -> void:
+	if not event_data.hero_stats: # F6 was pressed.
+		update_event()
+
 func update_event() -> void: # Called by Run.
 	background.texture = event_data.background
 	art.texture = event_data.art
 	title.text = event_data.title 
 	text.text = event_data.text
-	label_1.text = event_data.get_option_1_description()
+	label_1.text = event_data.option_1
 	label_2.text = event_data.option_2
 	label_3.text = event_data.option_3
 	label_4.text = event_data.option_4
 	for option in options.get_children():
 		if option.get_index() >= event_data.option_count:
 			option.hide()
+
+func set_dynamic_descriptions() -> void: # Called by Run.
+	label_1.text = event_data.get_option_1_description()
+	label_2.text = event_data.get_option_2_description()
+	label_3.text = event_data.get_option_3_description()
+	label_4.text = event_data.get_option_4_description()
 
 func _on_option_1_pressed() -> void:
 	event_data.option_1_chosen()
