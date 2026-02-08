@@ -11,6 +11,7 @@ const MAP_LINE = preload("uid://d0mxwcdup8hlw")
 
 # Set by Run, from Phobia resource.
 var battle_stats_pool: BattleStatsPool
+var event_pool: EventPool
 var line_sprite: Texture2D
 var map_node_icons: Dictionary
 
@@ -21,6 +22,7 @@ var last_room: Room
 func generate_new_map() -> void:
 	floors_climbed = 0
 	map_generator.battle_stats_pool = battle_stats_pool
+	map_generator.event_pool = event_pool
 	map_data = map_generator.generate_map()
 	create_map_visuals()
 

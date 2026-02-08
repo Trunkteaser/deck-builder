@@ -3,9 +3,8 @@ class_name Event
 
 # Injected by Run.
 @export var event_data: EventData : set = set_event_data
-@export var hero_stats: HeroStats
 
-
+@onready var background: TextureRect = %Background
 @onready var art: TextureRect = %Art
 @onready var title: Label = %Title
 @onready var text: RichTextLabel = %Text
@@ -26,6 +25,7 @@ func set_event_data(new_event: EventData) -> void:
 	update_event()
 
 func update_event() -> void:
+	background.texture = event_data.background
 	art.texture = event_data.art
 	title.text = event_data.title 
 	text.text = event_data.text
@@ -48,7 +48,6 @@ func _on_option_3_pressed() -> void:
 
 func _on_option_4_pressed() -> void:
 	event_data.option_4_chosen()
-
 
 func _on_label_1_resized() -> void:
 	if option_1.custom_minimum_size.y < label_1.size.y:

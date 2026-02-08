@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://cxojsy3ia1n52"]
+[gd_scene load_steps=6 format=3 uid="uid://cxojsy3ia1n52"]
 
 [ext_resource type="Texture2D" uid="uid://tja2y227uuv2" path="res://assets/sprites/background/Space-Background-Images.jpg" id="1_biivm"]
 [ext_resource type="Script" uid="uid://dnhhu45y1mrij" path="res://scenes/event/event.gd" id="1_uuxf3"]
 [ext_resource type="Resource" uid="uid://dxxac1ysl0pct" path="res://events/test_event_data.tres" id="2_wfxja"]
+[ext_resource type="Texture2D" uid="uid://dgeu6t11scpeq" path="res://assets/sprites/chomposaurus.png" id="4_lry0m"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_uuxf3"]
 font_color = Color(0.6745098, 0.05490196, 1, 1)
@@ -25,7 +26,7 @@ label_3 = NodePath("VBoxContainer/Options/Option3/Label3")
 option_4 = NodePath("VBoxContainer/Options/Option4")
 label_4 = NodePath("VBoxContainer/Options/Option4/Label4")
 
-[node name="Art" type="TextureRect" parent="."]
+[node name="Background" type="TextureRect" parent="."]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 15
@@ -35,6 +36,16 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_biivm")
 expand_mode = 1
+
+[node name="Art" type="TextureRect" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 40.0
+offset_top = 70.0
+offset_right = 290.0
+offset_bottom = 319.0
+texture = ExtResource("4_lry0m")
+stretch_mode = 3
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 0
@@ -60,6 +71,9 @@ Maybe the options are all bad?
 Maybe one of them is really bad?
 Maybe you're fucked, eh?"
 fit_content = true
+
+[node name="Spacer" type="Control" parent="VBoxContainer"]
+layout_mode = 2
 
 [node name="Options" type="VBoxContainer" parent="VBoxContainer"]
 unique_name_in_owner = true

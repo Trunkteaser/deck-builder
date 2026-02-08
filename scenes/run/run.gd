@@ -7,6 +7,7 @@ const CAMPFIRE_SCENE := preload("uid://b5td37dfj5iau")
 #const MAP_SCENE := preload("uid://bm215cpa3pkhe")
 const SHOP_SCENE := preload("uid://cha87b6ju17jw")
 const TREASURE_SCENE := preload("uid://djbb0v375o0fq")
+const EVENT_SCENE := preload("uid://cxojsy3ia1n52")
 
 @export var run_startup: RunStartup
 @export var phobia: Phobia
@@ -46,6 +47,7 @@ func _start_run() -> void:
 	_setup_event_connections()
 	_setup_top_bar()
 	map.battle_stats_pool = phobia.battle_stats_pool
+	map.event_pool = phobia.event_pool
 	map.map_node_icons = phobia.map_node_icons
 	map.line_sprite = phobia.line_sprite
 	map.generate_new_map()
@@ -75,6 +77,7 @@ func _setup_event_connections() -> void:
 	Events.map_exited.connect(_on_map_exited)
 	Events.shop_exited.connect(_show_map)
 	Events.treasure_room_exited.connect(_show_map)
+	Events.event_exited.connect(_show_map)
 	# Debug button setup below.
 	battle_button.pressed.connect(_change_view.bind(BATTLE_SCENE))
 	campfire_button.pressed.connect(_change_view.bind(CAMPFIRE_SCENE))
@@ -120,6 +123,14 @@ func _on_shop_entered() -> void:
 	shop.mantra_handler = mantra_handler
 	shop.populate_shop()
 
+func _on_event_entered() -> void:
+	var event: Event = _change_view(EVENT_SCENE)
+	event.event_data.hero_stats = hero
+	event.event_data.run_stats = stats
+	event.event_data.mantra_handler = mantra_handler
+	event.event_data.mantra_pile = all_mantras
+	event.update_event()
+
 func _on_map_exited(room: Room) -> void:
 	match room.type:
 		Room.Type.MONSTER:
@@ -130,6 +141,8 @@ func _on_map_exited(room: Room) -> void:
 			_on_battle_room_entered(room)
 		Room.Type.SHOP:
 			_on_shop_entered()
+		Room.Type.EVENT:
+			_on_event_entered()
 
 func _on_map_button_pressed() -> void: # Testing?
 	if not map.visible:

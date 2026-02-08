@@ -9,15 +9,18 @@ const MAP_WIDTH := 7
 const PATHS := 6
 const MONSTER_ROOM_WEIGHT := 10.0
 const SHOP_ROOM_WEIGHT := 2.0
+const EVENT_ROOM_WEIGHT := 4.0
 const ELITE_ROOM_WEIGHT := 2.0
 
 @export var battle_stats_pool: BattleStatsPool
+@export var event_pool: EventPool
 
 # TODO Add in other rooms here.
 var random_room_type_weights := {
 	Room.Type.MONSTER: 0.0,
 	Room.Type.ELITE: 0.0,
-	Room.Type.SHOP: 0.0,}
+	Room.Type.SHOP: 0.0,
+	Room.Type.EVENT: 0.0,}
 var random_room_type_total_weight := 0
 var map_data: Array[Array] # Outer is floors, inner is rooms on floors.
 
@@ -32,15 +35,6 @@ func generate_map() -> Array[Array]:
 	_setup_boss_room()
 	_setup_random_room_weights()
 	_setup_room_types()
-	
-	#var i := 0
-	#for flooor in map_data:
-		#print("floor %s" % i)
-		#var used_rooms = flooor.filter(
-			#func(room: Room): return room.next_rooms.size() > 0
-		#)
-		#print(used_rooms)
-		#i += 1
 	
 	return map_data
 
@@ -119,8 +113,9 @@ func _setup_random_room_weights() -> void:
 	random_room_type_weights[Room.Type.MONSTER] = MONSTER_ROOM_WEIGHT
 	random_room_type_weights[Room.Type.ELITE] = MONSTER_ROOM_WEIGHT + ELITE_ROOM_WEIGHT
 	random_room_type_weights[Room.Type.SHOP] = MONSTER_ROOM_WEIGHT + ELITE_ROOM_WEIGHT + SHOP_ROOM_WEIGHT
+	random_room_type_weights[Room.Type.EVENT] = MONSTER_ROOM_WEIGHT + ELITE_ROOM_WEIGHT + SHOP_ROOM_WEIGHT + EVENT_ROOM_WEIGHT
 	# Total is equal to the last one in the list above.
-	random_room_type_total_weight = random_room_type_weights[Room.Type.SHOP]
+	random_room_type_total_weight = random_room_type_weights[Room.Type.EVENT]
 
 func _setup_room_types() -> void:
 	# First floor is always a battle.
@@ -159,6 +154,11 @@ func _set_room_randomly(room: Room) -> void:
 		room.battle_stats = battle_stats_pool.get_random_battle_for_tier(tier_for_monster_rooms)
 	elif type_candidate == Room.Type.ELITE:
 		room.battle_stats = battle_stats_pool.get_random_battle_for_tier(BattleStats.Tier.ELITE)
+	elif type_candidate == Room.Type.EVENT:
+		var event: EventData = event_pool.events.pick_random()
+		room.event_data = event
+		# TODO Remove event duplicates.
+		#event_pool.events.erase(event)
 
 func _room_has_parent_of_type(room: Room, type: Room.Type) -> bool:
 	var parents: Array[Room] = []
