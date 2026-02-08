@@ -1,0 +1,12 @@
+[gd_resource type="Resource" load_steps=4 format=3 uid="uid://bnonti3oxxigg"]
+
+[ext_resource type="Texture2D" uid="uid://dw0wtiicqn6gw" path="res://assets/sprites/dagger.png" id="1_rh5jv"]
+[ext_resource type="Script" uid="uid://cloj7m7r1uvq6" path="res://heroes/shrike/cards/card_scripts/peck_peck.gd" id="2_p6qhi"]
+[ext_resource type="AudioStream" uid="uid://hnpv6hjd7j5e" path="res://assets/sound/Wood Block1.wav" id="3_r5uef"]
+
+[resource]
+script = ExtResource("2_p6qhi")
+name = "Peck Peck"
+art = ExtResource("1_rh5jv")
+description = "Deal %s damage twice."
+sfx = ExtResource("3_r5uef")

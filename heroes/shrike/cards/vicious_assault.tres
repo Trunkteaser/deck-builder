@@ -1,0 +1,14 @@
+[gd_resource type="Resource" load_steps=4 format=3 uid="uid://cbwdl5ymv6tqv"]
+
+[ext_resource type="Texture2D" uid="uid://dgeu6t11scpeq" path="res://assets/sprites/chomposaurus.png" id="1_1k2ph"]
+[ext_resource type="Script" uid="uid://cvq0o8fn8dxn5" path="res://heroes/shrike/cards/card_scripts/vicious_assault.gd" id="2_vm2el"]
+[ext_resource type="AudioStream" uid="uid://hnpv6hjd7j5e" path="res://assets/sound/Wood Block1.wav" id="3_k2dlm"]
+
+[resource]
+script = ExtResource("2_vm2el")
+name = "Vicious Assault"
+rarity = 1
+art = ExtResource("1_1k2ph")
+description = "Deal %s damage 4 times."
+sfx = ExtResource("3_k2dlm")
+cost = 2
