@@ -1,0 +1,16 @@
+[gd_resource type="Resource" load_steps=4 format=3 uid="uid://cmors4rvg4tay"]
+
+[ext_resource type="Texture2D" uid="uid://bcng3h7dx1ns" path="res://assets/sprites/calm exterior.png" id="1_qhb5w"]
+[ext_resource type="Texture2D" uid="uid://tja2y227uuv2" path="res://assets/sprites/background/Space-Background-Images.jpg" id="2_loq47"]
+[ext_resource type="Script" uid="uid://b3d0cfwsfq6g3" path="res://events/random_card_removed.gd" id="3_ljtec"]
+
+[resource]
+script = ExtResource("3_ljtec")
+title = "Random Card Removed"
+text = "A random card is removed. Live with it."
+background = ExtResource("2_loq47")
+art = ExtResource("1_qhb5w")
+option_count = 1
+option_1 = "[color=gold]Deal With It[/color]
+Lose [color=green]%s[/color]."
+metadata/_custom_type_script = "uid://q058u8kh3ovv"

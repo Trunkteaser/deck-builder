@@ -2,7 +2,7 @@ extends Control
 class_name Event
 
 # Injected by Run.
-@export var event_data: EventData : set = set_event_data
+@export var event_data: EventData
 
 @onready var background: TextureRect = %Background
 @onready var art: TextureRect = %Art
@@ -18,18 +18,12 @@ class_name Event
 @export var option_4: Button
 @export var label_4: RichTextLabel 
 
-func set_event_data(new_event: EventData) -> void:
-	if not is_node_ready():
-		await ready
-	event_data = new_event
-	update_event()
-
-func update_event() -> void:
+func update_event() -> void: # Called by Run.
 	background.texture = event_data.background
 	art.texture = event_data.art
 	title.text = event_data.title 
 	text.text = event_data.text
-	label_1.text = event_data.option_1
+	label_1.text = event_data.get_option_1_description()
 	label_2.text = event_data.option_2
 	label_3.text = event_data.option_3
 	label_4.text = event_data.option_4

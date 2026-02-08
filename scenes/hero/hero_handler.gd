@@ -45,6 +45,8 @@ func end_turn() -> void:
 
 func draw_card() -> void:
 	reshuffle_deck_from_discard()
+	if hero.draw_pile.cards.is_empty():
+		return
 	var card_data := hero.draw_pile.draw_card()
 	hand.add_card(card_data)
 	SFXPlayer.play(DRAW_SFX)
