@@ -1,0 +1,18 @@
+[gd_resource type="Resource" load_steps=4 format=3 uid="uid://dqdcyacvecki3"]
+
+[ext_resource type="Texture2D" uid="uid://bpfavoc513j3m" path="res://assets/sprites/brain.png" id="1_a62o4"]
+[ext_resource type="Texture2D" uid="uid://tja2y227uuv2" path="res://assets/sprites/background/Space-Background-Images.jpg" id="2_jxvgy"]
+[ext_resource type="Script" uid="uid://x1rimkv6pacj" path="res://events/free_inspiration.gd" id="3_5he3g"]
+
+[resource]
+script = ExtResource("3_5he3g")
+title = "Free Inspiration"
+text = "Hey, have some free inspiration."
+background = ExtResource("2_jxvgy")
+art = ExtResource("1_a62o4")
+option_count = 2
+option_1 = "[color=gold]Accept[/color]
+Gain 100 inspiration."
+option_2 = "[color=gold]Decline[/color]
+Gain nothing."
+metadata/_custom_type_script = "uid://q058u8kh3ovv"

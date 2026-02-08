@@ -157,6 +157,7 @@ func _set_room_randomly(room: Room) -> void:
 	elif type_candidate == Room.Type.EVENT:
 		var event: EventData = event_pool.events.pick_random()
 		room.event_data = event
+		#print(event.title)
 		# TODO Remove event duplicates.
 		#event_pool.events.erase(event)
 

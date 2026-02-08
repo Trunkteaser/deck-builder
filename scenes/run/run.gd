@@ -123,8 +123,9 @@ func _on_shop_entered() -> void:
 	shop.mantra_handler = mantra_handler
 	shop.populate_shop()
 
-func _on_event_entered() -> void:
+func _on_event_entered(room: Room) -> void:
 	var event: Event = _change_view(EVENT_SCENE)
+	event.event_data = room.event_data
 	event.event_data.hero_stats = hero
 	event.event_data.run_stats = stats
 	event.event_data.mantra_handler = mantra_handler
@@ -142,7 +143,7 @@ func _on_map_exited(room: Room) -> void:
 		Room.Type.SHOP:
 			_on_shop_entered()
 		Room.Type.EVENT:
-			_on_event_entered()
+			_on_event_entered(room)
 
 func _on_map_button_pressed() -> void: # Testing?
 	if not map.visible:
