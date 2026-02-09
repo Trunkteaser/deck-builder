@@ -9,7 +9,7 @@ func perform_action() -> void:
 			break
 		Apply.damage([target], damage)
 		SFXPlayer.play(sfx)
-
+	await wait (0.5)
 	Events.enemy_action_completed.emit(enemy)
 
 func update_intent_text() -> void:

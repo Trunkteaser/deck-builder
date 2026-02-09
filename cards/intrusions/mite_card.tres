@@ -6,8 +6,10 @@
 
 [resource]
 script = ExtResource("2_87t6p")
+name = "Mite"
 art = ExtResource("1_n4mn5")
-description = "When drawn, take 10 damage"
+description = "When drawn, take 10 damage.
+Forget"
 sfx = ExtResource("3_drwdy")
 type = 3
 cost = 2

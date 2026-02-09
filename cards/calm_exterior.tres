@@ -34,5 +34,4 @@ sfx = ExtResource("2_82v23")
 type = 1
 cost = 2
 target = 1
-forget = true
 metadata/_custom_type_script = "uid://cf748lyegyqg3"
