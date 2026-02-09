@@ -3,6 +3,7 @@ extends Node
 const BLOCK_SFX: AudioStream = preload("uid://d0cq6s264xrlr")
 const HEAL_SFX: AudioStream = preload("uid://bshhf0d1gfjiu")
 const MANA_SFX: AudioStream = preload("uid://dudqlp1mly8lt")
+const TEMP_DEATH_SFX: AudioStream = preload("uid://dnknwy741q2l0")
 
 # TODO Decide if giving block and taking dmg have sound effects.
 
@@ -60,3 +61,17 @@ func mana(targets: Array[Node], amount: int) -> void:
 		if target is Hero:
 			target.stats.mana += amount
 			SFXPlayer.play(MANA_SFX)
+
+func death(target: Node) -> void: 
+	if target is Hero:
+		target.stats.health = 0
+	elif target is Enemy:
+		var tween := create_tween()
+		tween.tween_callback(Shaker.shake.bind(target, 64, 0.3))
+		tween.tween_callback(SFXPlayer.play.bind(TEMP_DEATH_SFX))
+		tween.tween_property(target.stats, "health", 0, 0)
+		tween.tween_interval(0.32)
+		tween.finished.connect(
+			func():
+				Events.enemy_died.emit(target)
+				target.queue_free())

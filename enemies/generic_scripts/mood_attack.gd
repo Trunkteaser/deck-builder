@@ -18,6 +18,7 @@ func perform_action() -> void:
 	tween.tween_interval(0.05)
 	tween.set_ease(Tween.EASE_OUT)
 	tween.tween_property(enemy, "global_position", start, 0.1)
+	tween.tween_interval(0.3)
 	tween.finished.connect(func(): Events.enemy_action_completed.emit(enemy))
 
 func update_intent_text() -> void:

@@ -10,10 +10,10 @@
 position = Vector2(541, 92)
 stats = ExtResource("2_e3b1h")
 
-[node name="Enemy3" parent="." instance=ExtResource("1_m2nk2")]
-position = Vector2(561, 253)
-stats = ExtResource("2_e3b1h")
-
 [node name="Enemy2" parent="." instance=ExtResource("1_m2nk2")]
-position = Vector2(479, 179)
+position = Vector2(464, 186)
 stats = ExtResource("3_pmtf7")
+
+[node name="Enemy3" parent="." instance=ExtResource("1_m2nk2")]
+position = Vector2(553, 271)
+stats = ExtResource("2_e3b1h")
