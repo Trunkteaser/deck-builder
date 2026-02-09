@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="EnemyStats" load_steps=4 format=3 uid="uid://brkdvxy3cm34c"]
+
+[ext_resource type="PackedScene" uid="uid://q0p3lgm28nd6" path="res://enemies/arachnophobia/mite/mite_ai.tscn" id="1_cew7j"]
+[ext_resource type="Script" uid="uid://41i0vfynwjfy" path="res://resources/enemy_stats.gd" id="1_xk364"]
+[ext_resource type="Texture2D" uid="uid://b5e1yo5y87qh0" path="res://assets/sprites/mite.png" id="2_01diw"]
+
+[resource]
+resource_name = "Mite"
+script = ExtResource("1_xk364")
+ai = ExtResource("1_cew7j")
+art = ExtResource("2_01diw")
+metadata/_custom_type_script = "uid://41i0vfynwjfy"

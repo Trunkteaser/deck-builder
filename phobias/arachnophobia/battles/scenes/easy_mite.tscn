@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://ix4vs5tj06ar"]
+
+[ext_resource type="PackedScene" uid="uid://boxd06bs072ot" path="res://scenes/enemy/enemy.tscn" id="1_m2nk2"]
+[ext_resource type="Resource" uid="uid://brkdvxy3cm34c" path="res://enemies/arachnophobia/mite/mite.tres" id="2_e3b1h"]
+[ext_resource type="Resource" uid="uid://wtoofiu8bu7c" path="res://enemies/arachnophobia/basic_spider/basic_spider.tres" id="3_pmtf7"]
+
+[node name="EasyMite" type="Node2D"]
+
+[node name="Enemy" parent="." instance=ExtResource("1_m2nk2")]
+position = Vector2(541, 92)
+stats = ExtResource("2_e3b1h")
+
+[node name="Enemy3" parent="." instance=ExtResource("1_m2nk2")]
+position = Vector2(561, 253)
+stats = ExtResource("2_e3b1h")
+
+[node name="Enemy2" parent="." instance=ExtResource("1_m2nk2")]
+position = Vector2(479, 179)
+stats = ExtResource("3_pmtf7")

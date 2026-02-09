@@ -7,6 +7,7 @@
 script = ExtResource("2_kcbwd")
 name = "I Am Sturdy"
 type = 2
+innate_mantra = true
 icon = ExtResource("1_kcbwd")
 tooltip = "I Am Sturdy
 At the end of your turn, gain 3 block."

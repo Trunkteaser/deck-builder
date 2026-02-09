@@ -6,6 +6,7 @@
 [resource]
 script = ExtResource("2_pik2b")
 name = "Han Shot First"
+innate_mantra = true
 icon = ExtResource("1_pik2b")
 tooltip = "Han Shot First
 At the start of your turn, deal 2 damage to all enemies."

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="BattleStats" load_steps=3 format=3 uid="uid://ch1ny5wo7r54h"]
+
+[ext_resource type="PackedScene" uid="uid://ix4vs5tj06ar" path="res://phobias/arachnophobia/battles/scenes/easy_mite.tscn" id="1_c3cjd"]
+[ext_resource type="Script" uid="uid://tidjs5xpdc83" path="res://resources/battle_stats.gd" id="1_t1cqn"]
+
+[resource]
+script = ExtResource("1_t1cqn")
+weight = 10.0
+enemies = ExtResource("1_c3cjd")
+metadata/_custom_type_script = "uid://tidjs5xpdc83"
