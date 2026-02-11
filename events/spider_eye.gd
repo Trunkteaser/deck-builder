@@ -1,6 +1,6 @@
 extends EventData
 
-const ALL_MUST_FEAR_ME = preload("uid://ci6mgf0ys0du4")
+const ALL_MUST_FEAR_ME = preload("uid://srs6jykdcjt5")
 const MITE_CARD = preload("uid://eynjiijuxrvr")
 const MITE_SFX = preload("uid://dodahfs7ua4ev")
 

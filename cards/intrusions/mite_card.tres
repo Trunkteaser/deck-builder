@@ -1,6 +1,6 @@
 [gd_resource type="Resource" load_steps=4 format=3 uid="uid://eynjiijuxrvr"]
 
-[ext_resource type="Texture2D" uid="uid://b5e1yo5y87qh0" path="res://assets/sprites/mite.png" id="1_n4mn5"]
+[ext_resource type="Texture2D" uid="uid://bj2la1l2dsp6d" path="res://assets/sprites/mite.png" id="1_n4mn5"]
 [ext_resource type="Script" uid="uid://c1ubdormy7s4m" path="res://cards/intrusions/mite_card.gd" id="2_87t6p"]
 [ext_resource type="AudioStream" uid="uid://dodahfs7ua4ev" path="res://assets/sound/floraphonic-gross-slimy-goo-foley-2-164290.mp3" id="3_drwdy"]
 
