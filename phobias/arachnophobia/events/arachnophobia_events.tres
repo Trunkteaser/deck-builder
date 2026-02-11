@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="EventPool" load_steps=4 format=3 uid="uid://bxmgylhjnps5n"]
 
 [ext_resource type="Script" uid="uid://q058u8kh3ovv" path="res://resources/event_data.gd" id="1_7gn5v"]
-[ext_resource type="Resource" uid="uid://cmors4rvg4tay" path="res://events/random_card_removed.tres" id="2_atvtv"]
+[ext_resource type="Resource" uid="uid://cpgg3uut1ifqv" path="res://events/spider_eye.tres" id="2_atvtv"]
 [ext_resource type="Script" uid="uid://c35ofu7cqe0tw" path="res://resources/event_pool.gd" id="2_p4ees"]
 
 [resource]
