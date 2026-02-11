@@ -1,0 +1,12 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://srs6jykdcjt5"]
+
+[ext_resource type="Texture2D" uid="uid://dggvgav3t6ddu" path="res://assets/sprites/pumpkin.png" id="1_7oluk"]
+[ext_resource type="Script" uid="uid://cwd3e6i53bcc0" path="res://mantras/all_should_fear_me.gd" id="2_sqsx7"]
+
+[resource]
+script = ExtResource("2_sqsx7")
+name = "All Should Fear Me"
+type = 1
+innate_mantra = true
+icon = ExtResource("1_7oluk")
+tooltip = "At the beginning of combat, all enemies gain fear."

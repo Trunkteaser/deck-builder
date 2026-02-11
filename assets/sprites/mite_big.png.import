@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bj2la1l2dsp6d"
-path="res://.godot/imported/mite.png-247bd87062281909d0058c5a03b1447e.ctex"
+uid="uid://b1qqqyg3rd1wv"
+path="res://.godot/imported/mite_big.png-55fd788ee02c268d3677da2ca3d94548.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/mite.png"
-dest_files=["res://.godot/imported/mite.png-247bd87062281909d0058c5a03b1447e.ctex"]
+source_file="res://assets/sprites/mite_big.png"
+dest_files=["res://.godot/imported/mite_big.png-55fd788ee02c268d3677da2ca3d94548.ctex"]
 
 [params]
 
