@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://tja2y227uuv2" path="res://assets/sprites/background/Space-Background-Images.jpg" id="1_biivm"]
 [ext_resource type="Script" uid="uid://dnhhu45y1mrij" path="res://scenes/event/event.gd" id="1_uuxf3"]
-[ext_resource type="Resource" uid="uid://dxxac1ysl0pct" path="res://events/test_event_data.tres" id="2_lry0m"]
+[ext_resource type="Resource" uid="uid://cpgg3uut1ifqv" path="res://events/spider_eye.tres" id="2_lry0m"]
 [ext_resource type="Texture2D" uid="uid://dgeu6t11scpeq" path="res://assets/sprites/chomposaurus.png" id="4_lry0m"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_uuxf3"]

@@ -1,0 +1,16 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://cpgg3uut1ifqv"]
+
+[ext_resource type="Texture2D" uid="uid://coevb4pl7y77s" path="res://assets/sprites/spider eye.png" id="1_3j1yy"]
+[ext_resource type="Script" uid="uid://bktw8x21a7jno" path="res://events/spider_eye.gd" id="2_set5b"]
+
+[resource]
+script = ExtResource("2_set5b")
+title = "Spider Eye"
+text = "The Spider Eye, as always, give you a choice. Subscribe to her way of life, or walk your own path?"
+background = ExtResource("1_3j1yy")
+option_1 = "[color=gold]Subscribe[/color]
+Gain [color=red]All Must Fear Me[/color]."
+option_2 = "[color=gold]Walk Your Own Path[/color]
+Gain 200 inspiration. "
+option_3 = "[color=gold]Stab the Eye[/color]
+A poor decision."
