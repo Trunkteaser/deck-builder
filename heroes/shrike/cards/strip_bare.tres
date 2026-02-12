@@ -1,0 +1,16 @@
+[gd_resource type="Resource" load_steps=4 format=3 uid="uid://by1shqakkq7qj"]
+
+[ext_resource type="Texture2D" uid="uid://bb8bnbk565mmb" path="res://assets/sprites/raw meat.png" id="1_k8fjp"]
+[ext_resource type="Script" uid="uid://suypearp0oro" path="res://heroes/shrike/cards/card_scripts/strip_bare.gd" id="2_rytaf"]
+[ext_resource type="AudioStream" uid="uid://b1gx1tosv8f1n" path="res://assets/sound/slap-237622.mp3" id="3_rytaf"]
+
+[resource]
+script = ExtResource("2_rytaf")
+name = "Strip Bare"
+rarity = 2
+art = ExtResource("1_k8fjp")
+description = "Apply 2 Raw to all enemies at the end of your turns."
+sfx = ExtResource("3_rytaf")
+type = 2
+cost = 3
+target = 1

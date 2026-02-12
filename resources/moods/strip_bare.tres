@@ -1,0 +1,11 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://cd3ywftifg6l2"]
+
+[ext_resource type="Texture2D" uid="uid://bhhlyb84sna3p" path="res://assets/sprites/sword_1.png" id="1_4mggq"]
+[ext_resource type="Script" uid="uid://bd8egl564eedf" path="res://resources/moods/strip_bare.gd" id="2_mfdx2"]
+
+[resource]
+script = ExtResource("2_mfdx2")
+name = "Strip Bare"
+trigger_type = 1
+icon = ExtResource("1_4mggq")
+tooltip = "Strip Bare: At the end of your turn, apply 2 Raw to all enemies."

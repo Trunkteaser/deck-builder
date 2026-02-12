@@ -1,0 +1,13 @@
+[gd_resource type="Resource" load_steps=4 format=3 uid="uid://6rhop8w5pw75"]
+
+[ext_resource type="Texture2D" uid="uid://bhhlyb84sna3p" path="res://assets/sprites/sword_1.png" id="1_8a8ar"]
+[ext_resource type="Script" uid="uid://1lr20lpmnnwr" path="res://heroes/shrike/cards/card_scripts/wing_flap.gd" id="1_ke3h8"]
+[ext_resource type="AudioStream" uid="uid://dagb3rku3xreu" path="res://assets/sound/freesound_community-wing-flap-1-6434.mp3" id="3_2qlnv"]
+
+[resource]
+script = ExtResource("1_ke3h8")
+name = "Wing Flap"
+art = ExtResource("1_8a8ar")
+description = "Deal %s damage to ALL enemies twice."
+sfx = ExtResource("3_2qlnv")
+target = 2
