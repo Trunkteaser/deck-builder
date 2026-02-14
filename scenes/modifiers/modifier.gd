@@ -47,4 +47,4 @@ func get_modified_value(base: int) -> int:
 			flat_result += value.flat_value
 		elif value.type == ModifierValue.Type.PERCENT:
 			percent_result += value.percent_value
-	return floori(flat_result * percent_result)
+	return clampi(floori(flat_result * percent_result), 0, 9999)
