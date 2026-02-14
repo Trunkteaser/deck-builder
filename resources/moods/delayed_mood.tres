@@ -1,0 +1,15 @@
+[gd_resource type="Resource" load_steps=4 format=3 uid="uid://dfrpol1cbarq2"]
+
+[ext_resource type="Script" uid="uid://dobo1o7ovy0sf" path="res://resources/moods/delayed_mood.gd" id="1_mgv3e"]
+[ext_resource type="Texture2D" uid="uid://c8m5bkkrrxidd" path="res://assets/sprites/icon.svg" id="1_tdsac"]
+[ext_resource type="Resource" uid="uid://bl7yry7rm0qru" path="res://resources/moods/anger.tres" id="2_67qtb"]
+
+[resource]
+script = ExtResource("1_mgv3e")
+mood_to_delay = ExtResource("2_67qtb")
+mood_to_delay_stacks = -4
+name = "Temp Mood"
+trigger_type = 1
+stack_type = 1
+icon = ExtResource("1_tdsac")
+tooltip = "At the end of turn, apply %s %s."

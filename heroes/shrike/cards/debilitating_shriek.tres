@@ -1,0 +1,15 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://dx62c47kgi23q"]
+
+[ext_resource type="Texture2D" uid="uid://bnoq2pyaoqmyn" path="res://assets/sprites/banshee.png" id="1_27cc2"]
+[ext_resource type="Script" uid="uid://totncctwxycv" path="res://heroes/shrike/cards/card_scripts/debilitating_shriek.gd" id="1_h46xp"]
+
+[resource]
+script = ExtResource("1_h46xp")
+name = "Debilitating Shriek"
+rarity = 1
+art = ExtResource("1_27cc2")
+description = "Apply -4 Anger to ALL enemies, lasting until end of turn.
+[color=cornflower_blue]Forget[/color]."
+type = 1
+target = 2
+forget = true
