@@ -1,0 +1,16 @@
+[gd_resource type="Resource" load_steps=4 format=3 uid="uid://bjdhtms2mk74r"]
+
+[ext_resource type="Texture2D" uid="uid://clko8b81f7gsq" path="res://assets/sprites/daydream.png" id="1_hpyub"]
+[ext_resource type="Script" uid="uid://drcjpy70qrf74" path="res://heroes/shrike/cards/card_scripts/daydream.gd" id="1_qgdx0"]
+[ext_resource type="AudioStream" uid="uid://dxx32ewokui5h" path="res://assets/sound/shuffle_cards.mp3" id="3_wq4f0"]
+
+[resource]
+script = ExtResource("1_qgdx0")
+name = "Daydream"
+art = ExtResource("1_hpyub")
+description = "Add a copy of this card in your draw pile.
+Draw 3 cards."
+sfx = ExtResource("3_wq4f0")
+type = 1
+target = 1
+metadata/_custom_type_script = "uid://cf748lyegyqg3"
