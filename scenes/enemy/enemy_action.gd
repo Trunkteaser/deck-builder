@@ -3,6 +3,7 @@ class_name EnemyAction
 
 @export var intent: Intent
 @export var sfx: AudioStream
+@export var vfx: PackedScene
 var enemy: Enemy
 var target: Node2D
 var hero: Hero
@@ -18,7 +19,9 @@ func attack_tween(damage: int) -> Signal:
 	tween.set_ease(Tween.EASE_IN)
 	tween.tween_property(enemy, "global_position", end, 0.1)
 	tween.tween_callback(Apply.damage.bind(targets, damage))
-	if sfx:
+	if vfx:
+		tween.tween_callback(VFXPlayer.external_vfx.bind(vfx, hero.global_position, sfx))
+	elif sfx:
 		tween.tween_callback(SFXPlayer.play.bind(sfx))
 	tween.tween_interval(0.05)
 	tween.set_ease(Tween.EASE_OUT)

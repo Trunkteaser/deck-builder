@@ -24,6 +24,7 @@ buses/default_bus_layout="res://assets/other/default_bus_layout.tres"
 Events="*res://globals/events.gd"
 Shaker="*res://globals/shaker.gd"
 MusicPlayer="*res://globals/music_player.tscn"
+VFXPlayer="*res://globals/vfx_player.gd"
 SFXPlayer="*res://globals/sfx_player.tscn"
 Apply="*res://globals/apply.gd"
 
@@ -43,6 +44,7 @@ window/stretch/mode="canvas_items"
 
 folder_colors={
 "res://assets/": "yellow",
+"res://assets/animations/vfx/": "purple",
 "res://cards/": "green",
 "res://enemies/": "red",
 "res://enemies/arachnophobia/": "orange",

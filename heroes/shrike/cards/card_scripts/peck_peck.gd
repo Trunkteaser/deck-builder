@@ -5,9 +5,12 @@ extends CardData
 
 func apply_effects(targets: Array[Node], modifiers: ModifierHandler) -> void:
 	var modified_damage := modifiers.get_modified_value(damage, Modifier.Type.DMG_DEALT)
+	var pos: Vector2 = targets[0].global_position
+	
 	for i in hits:
 		Apply.damage(targets, modified_damage)
-		SFXPlayer.play(sfx)
+		VFXPlayer.stab(pos, sfx)
+		#SFXPlayer.play(sfx)
 		await wait(0.15)
 
 func get_default_description() -> String:
