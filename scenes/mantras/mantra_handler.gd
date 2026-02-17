@@ -36,8 +36,8 @@ func add_mantras(mantras_array: Array[Mantra]) -> void:
 func add_mantra(mantra: Mantra) -> void:
 	if not mantra:
 		return
-	if has_mantra(mantra.name):
-		return
+	#if has_mantra(mantra.name):
+		#return
 	var new_mantra_ui: MantraUI = MANTRA_UI.instantiate()
 	add_child(new_mantra_ui)
 	new_mantra_ui.mantra = mantra
