@@ -1,5 +1,4 @@
-extends Sprite2D
-class_name StabVFX
+extends VFX
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
