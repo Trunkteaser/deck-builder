@@ -4,6 +4,21 @@
 [ext_resource type="Script" uid="uid://dws3iexql5i1h" path="res://assets/animations/vfx/lightning_bolt/lightning_bolt_vfx.gd" id="2_y76yp"]
 [ext_resource type="AudioStream" uid="uid://cvyh01tlq60td" path="res://assets/animations/vfx/lightning_bolt/dragon-studio-lightning-strike-386161.mp3" id="3_l0tdt"]
 
+[sub_resource type="Animation" id="Animation_ctfsw"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
 [sub_resource type="Animation" id="Animation_vitif"]
 resource_name = "lightning_bolt"
 length = 0.9
@@ -35,21 +50,6 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0)
 }
 tracks/1/use_blend = true
-
-[sub_resource type="Animation" id="Animation_ctfsw"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_kdt2m"]
 _data = {
