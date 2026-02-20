@@ -52,7 +52,7 @@ func heal(targets: Array[Node], amount: int) -> void:
 			continue
 		if target is Hero or target is Enemy:
 			target.stats.heal(amount)
-			SFXPlayer.play(HEAL_SFX)
+			#SFXPlayer.play(HEAL_SFX)
  
 func mana(targets: Array[Node], amount: int) -> void:
 	for target in targets:

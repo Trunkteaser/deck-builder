@@ -1,8 +1,37 @@
-[gd_scene load_steps=7 format=3 uid="uid://bdm1b0bmm0pog"]
+[gd_scene load_steps=8 format=3 uid="uid://bdm1b0bmm0pog"]
 
 [ext_resource type="Texture2D" uid="uid://cn44o52x0wtge" path="res://assets/animations/vfx/green_ring/green rings.png" id="1_0mw1l"]
-[ext_resource type="Script" uid="uid://d4koiro1hec0r" path="res://resources/vfx.gd" id="1_pdplq"]
+[ext_resource type="Script" uid="uid://d3eb2lnu1r0jt" path="res://assets/animations/vfx/green_ring/green_rings.gd" id="2_0mw1l"]
 [ext_resource type="AudioStream" uid="uid://m84bkss5ugw1" path="res://assets/animations/vfx/green_ring/heal.mp3" id="3_0132x"]
+
+[sub_resource type="Animation" id="Animation_rxmx6"]
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [5, 0, 1, 2, 3, 4, 3, 2, 1, 0]
+}
+tracks/1/type = "audio"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SFX")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("3_0132x")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/1/use_blend = true
 
 [sub_resource type="Animation" id="Animation_x1bnr"]
 resource_name = "green_rings"
@@ -34,34 +63,21 @@ tracks/1/keys = {
 }
 tracks/1/use_blend = true
 
-[sub_resource type="Animation" id="Animation_rxmx6"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [4]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ffc1m"]
 _data = {
 &"RESET": SubResource("Animation_rxmx6"),
 &"green_rings": SubResource("Animation_x1bnr")
 }
 
+[sub_resource type="AudioStreamPolyphonic" id="AudioStreamPolyphonic_0mw1l"]
+
 [node name="GreenRingVfx" type="Sprite2D"]
 z_index = 2
 texture = ExtResource("1_0mw1l")
 hframes = 2
 vframes = 3
-frame = 4
-script = ExtResource("1_pdplq")
+frame = 5
+script = ExtResource("2_0mw1l")
 metadata/_custom_type_script = "uid://d4koiro1hec0r"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -70,3 +86,4 @@ libraries = {
 }
 
 [node name="SFX" type="AudioStreamPlayer2D" parent="."]
+stream = SubResource("AudioStreamPolyphonic_0mw1l")
