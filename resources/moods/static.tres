@@ -1,0 +1,11 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://cyjiq1cs2ewea"]
+
+[ext_resource type="Script" uid="uid://di8hd2f8gekgl" path="res://resources/moods/static.gd" id="1_e5gwh"]
+
+[resource]
+script = ExtResource("1_e5gwh")
+name = "Static"
+trigger_type = 1
+stack_type = 1
+stacks = 1
+metadata/_custom_type_script = "uid://cv5d6rh4bndpq"
