@@ -11,11 +11,11 @@ const WHITE_SPRITE_MATERIAL := preload("uid://ceemqhtjalmbl")
 @onready var modifier_handler: ModifierHandler = $ModifierHandler
 
 # Does it need to assign itself as the owner of MoodHandler in ready?
-
-func _ready() -> void:
-	var thorns = preload("uid://dlh1obm06l3am")
-	await get_tree().create_timer(0.1).timeout
-	Apply.mood([self], thorns, 5)
+#
+#func _ready() -> void:
+	#var thorns = preload("uid://dlh1obm06l3am")
+	#await get_tree().create_timer(0.1).timeout
+	#Apply.mood([self], thorns, 5)
 	#await get_tree().create_timer(2).timeout
 	#Apply.mood([self], thorns, 3)
 
