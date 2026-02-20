@@ -1,0 +1,11 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://cn1fgnd1at7jl"]
+
+[ext_resource type="Texture2D" uid="uid://dwdnovv3b7h15" path="res://assets/sprites/thorns.png" id="1_qs424"]
+[ext_resource type="Script" uid="uid://bcb486j1amu2j" path="res://mantras/eye_for_an_eye.gd" id="2_4udui"]
+
+[resource]
+script = ExtResource("2_4udui")
+type = 1
+icon = ExtResource("1_qs424")
+tooltip = "At the beginning of combat, gain 5 thorns."
+metadata/_custom_type_script = "uid://b534avfd3a80j"
