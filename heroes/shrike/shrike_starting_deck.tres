@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="CardPile" load_steps=11 format=3 uid="uid://yv8otwwh3bat"]
+[gd_resource type="Resource" script_class="CardPile" load_steps=12 format=3 uid="uid://yv8otwwh3bat"]
 
 [ext_resource type="Script" uid="uid://cf748lyegyqg3" path="res://resources/card_data.gd" id="1_88d05"]
 [ext_resource type="Resource" uid="uid://byqmnouw5r32e" path="res://cards/calm_exterior.tres" id="2_1ha1f"]
@@ -9,9 +9,10 @@
 [ext_resource type="Resource" uid="uid://dg4yrlb0jkdpu" path="res://heroes/shrike/cards/pursue.tres" id="8_ylg3e"]
 [ext_resource type="Resource" uid="uid://bf8yplq60tgaw" path="res://heroes/shrike/cards/protected_by_nature.tres" id="9_05lsk"]
 [ext_resource type="Resource" uid="uid://6rhop8w5pw75" path="res://heroes/shrike/cards/wing_flap.tres" id="9_hihqi"]
+[ext_resource type="Resource" uid="uid://cwa8ql40534jq" path="res://heroes/shrike/cards/static_defense.tres" id="9_joali"]
 [ext_resource type="Resource" uid="uid://df48prjxgqto1" path="res://heroes/shrike/cards/impale.tres" id="10_05lsk"]
 
 [resource]
 script = ExtResource("6_05lsk")
-cards = Array[ExtResource("1_88d05")]([ExtResource("2_1ha1f"), ExtResource("3_hihqi"), ExtResource("10_05lsk"), ExtResource("6_cwxse"), ExtResource("8_ylg3e"), ExtResource("9_hihqi"), ExtResource("8_hihqi"), ExtResource("8_hihqi"), ExtResource("8_hihqi"), ExtResource("9_05lsk")])
+cards = Array[ExtResource("1_88d05")]([ExtResource("2_1ha1f"), ExtResource("3_hihqi"), ExtResource("10_05lsk"), ExtResource("6_cwxse"), ExtResource("8_ylg3e"), ExtResource("9_hihqi"), ExtResource("8_hihqi"), ExtResource("9_joali"), ExtResource("9_05lsk")])
 metadata/_custom_type_script = "uid://d24n6gxynx1ny"
