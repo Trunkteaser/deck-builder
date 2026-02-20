@@ -34,6 +34,7 @@ func _on_discard_card_button_pressed() -> void:
 	hand.discard()
 
 func _on_enemy_turn_ended() -> void:
+	Apply.acting_enemy = null
 	hero_handler.start_turn()
 	enemy_handler.reset_enemy_actions()
 

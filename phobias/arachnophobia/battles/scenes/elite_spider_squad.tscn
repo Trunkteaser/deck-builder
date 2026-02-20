@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://cjcjw5c7xa84h"]
+
+[ext_resource type="PackedScene" uid="uid://boxd06bs072ot" path="res://scenes/enemy/enemy.tscn" id="1_wmrao"]
+[ext_resource type="Resource" uid="uid://wtoofiu8bu7c" path="res://enemies/arachnophobia/basic_spider/basic_spider.tres" id="2_i5jgw"]
+
+[node name="EliteSpiderSquad" type="Node2D"]
+
+[node name="Enemy" parent="." instance=ExtResource("1_wmrao")]
+position = Vector2(396, 106)
+stats = ExtResource("2_i5jgw")
+
+[node name="Enemy2" parent="." instance=ExtResource("1_wmrao")]
+position = Vector2(532, 117)
+stats = ExtResource("2_i5jgw")
+
+[node name="Enemy3" parent="." instance=ExtResource("1_wmrao")]
+position = Vector2(339, 192)
+stats = ExtResource("2_i5jgw")

@@ -51,10 +51,10 @@ func _on_enemy_moods_triggered(trigger_type: Mood.TriggerType, enemy: Enemy) -> 
 func _on_enemy_died(enemy: Enemy) -> void:
 	var is_enemy_turn := acting_enemies.size() > 0
 	acting_enemies.erase(enemy)
-	var enemy_is_acting_enemy := enemy == Apply.acting_enemy
-	#print(enemy)
-	#print(Apply.acting_enemy)
-	if is_enemy_turn and not enemy_is_acting_enemy:
+	#var enemy_is_acting_enemy := enemy == Apply.acting_enemy
+	#if is_enemy_turn and not enemy_is_acting_enemy:
+		#_start_next_enemy_turn()
+	if is_enemy_turn:
 		_start_next_enemy_turn()
 	# This function stops funny business from happening if an enemy dies on their turn.
 

@@ -10,15 +10,14 @@ const WHITE_SPRITE_MATERIAL := preload("uid://ceemqhtjalmbl")
 @onready var mood_handler: MoodHandler = $MoodHandler
 @onready var modifier_handler: ModifierHandler = $ModifierHandler
 
-
 # Does it need to assign itself as the owner of MoodHandler in ready?
 
-#func _ready() -> void:
-	#var web = preload("uid://dfrpol1cbarq2")
+func _ready() -> void:
+	var thorns = preload("uid://dlh1obm06l3am")
+	await get_tree().create_timer(0.1).timeout
+	Apply.mood([self], thorns, 5)
 	#await get_tree().create_timer(2).timeout
-	#Apply.mood([self], web, 3)
-	#await get_tree().create_timer(2).timeout
-	#Apply.mood([self], web, 3)
+	#Apply.mood([self], thorns, 3)
 
 func set_hero_stats(value: HeroStats) -> void:
 	stats = value
@@ -42,7 +41,7 @@ func update_hero() -> void:
 func update_stats() -> void:
 	stats_ui.update_stats(stats)
 
-func take_damage(damage: int, which_modifier: Modifier.Type) -> void:
+func take_damage(damage: int, which_modifier: Modifier.Type, shake: bool) -> void:
 	if stats.health <= 0:
 		return
 	
@@ -50,7 +49,8 @@ func take_damage(damage: int, which_modifier: Modifier.Type) -> void:
 	var modified_damage := modifier_handler.get_modified_value(damage, which_modifier)
 	
 	var tween := create_tween()
-	tween.tween_callback(Shaker.shake.bind(self, 32, 0.15))
+	if shake:
+		tween.tween_callback(Shaker.shake.bind(self, 32, 0.15))
 	tween.tween_callback(stats.take_damage.bind(modified_damage))
 	tween.tween_interval(0.17)
 	

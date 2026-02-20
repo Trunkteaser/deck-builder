@@ -14,6 +14,12 @@ func perform_action() -> void:
 	await wait (0.5)
 	Events.enemy_action_completed.emit(enemy)
 
+# OM FIENDEN DÖR PÅ SIN TUR VIA DÖDA SIG SJÄLV -> emit death, emit action completed
+# Då: måste blocka death -> next turn
+# OM FIENDEN DÖR PÅ SIN TUR VIA THORNS -> emit death, men ingen emit action completed
+# Då: Vill inte blocka death!!!
+# Lösning? Death -> alltid next turn, och mite ingen action completed.
+
 func update_intent_text() -> void:
 	#var hero: Hero = target
 	#if not hero:

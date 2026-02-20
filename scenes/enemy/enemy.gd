@@ -85,12 +85,12 @@ func take_turn() -> void:
 	if not current_action:
 		return
 		
-	await get_tree().process_frame
+	await get_tree().create_timer(0.2).timeout
 	Apply.acting_enemy = self
 	current_action.perform_action()
 	
 	
-func take_damage(damage: int, which_modifier: Modifier.Type) -> void:
+func take_damage(damage: int, which_modifier: Modifier.Type, shake: bool) -> void:
 	if stats.health <= 0:
 		return
 	
@@ -98,17 +98,19 @@ func take_damage(damage: int, which_modifier: Modifier.Type) -> void:
 	var modified_damage := modifier_handler.get_modified_value(damage, which_modifier)
 	
 	var tween := create_tween()
-	tween.tween_callback(Shaker.shake.bind(self, 32, 0.15))
+	if shake:
+		tween.tween_callback(Shaker.shake.bind(self, 32, 0.15))
 	tween.tween_callback(stats.take_damage.bind(modified_damage))
-	if stats.health <= 0:
-				tween.tween_callback(Events.enemy_died.emit.bind(self))
+	#print(stats.health)
+	#if stats.health <= 0:
+				#tween.tween_callback(Events.enemy_died.emit.bind(self))
 	tween.tween_interval(0.17)
 	
 	tween.finished.connect(
 		func():
 			sprite_2d.material = null
 			if stats.health <= 0:
-				#Events.enemy_died.emit(self)
+				Events.enemy_died.emit(self)
 				queue_free())
 
 func _on_area_entered(_area: Area2D) -> void:

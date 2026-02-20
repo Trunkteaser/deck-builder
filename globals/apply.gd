@@ -8,15 +8,17 @@ const TEMP_DEATH_SFX: AudioStream = preload("uid://dnknwy741q2l0")
 # TODO Decide if giving block and taking dmg have sound effects.
 
 var fatality_candidates := []
-var acting_enemy: Enemy
+var acting_enemy: Node
 
-func damage(targets: Array[Node], amount: int, receiver_mod_type := Modifier.Type.DMG_TAKEN) -> void:
+func damage(targets: Array[Node], amount: int, receiver_mod_type := Modifier.Type.DMG_TAKEN, shake: bool = true) -> void:
 	fatality_candidates.clear()
 	for target in targets:
 		if not target:
 			continue
 		if target is Hero or target is Enemy:
-			target.take_damage(amount, receiver_mod_type)
+			target.take_damage(amount, receiver_mod_type, shake)
+
+
 
 func block(targets: Array[Node], amount: int) -> void:
 	for target in targets:

@@ -16,6 +16,9 @@ func shake(shakee: Node2D, intensity: float = 32, duration: float = 0.2) -> void
 	await tween.finished
 	if shakee:
 		shakee.position = orig_pos
+		
+	pass
+		
 	#if shakee:
 		#tween.finished.connect(func(): shakee.position = orig_pos)
 	# All variations of the above was causing...

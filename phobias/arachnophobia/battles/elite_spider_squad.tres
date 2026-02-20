@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="BattleStats" load_steps=3 format=3 uid="uid://b2ennye4i4k2o"]
+
+[ext_resource type="PackedScene" uid="uid://cjcjw5c7xa84h" path="res://phobias/arachnophobia/battles/scenes/elite_spider_squad.tscn" id="1_a55kq"]
+[ext_resource type="Script" uid="uid://tidjs5xpdc83" path="res://resources/battle_stats.gd" id="1_xsqck"]
+
+[resource]
+script = ExtResource("1_xsqck")
+avg_insp_reward = 150
+enemies = ExtResource("1_a55kq")
+metadata/_custom_type_script = "uid://tidjs5xpdc83"
