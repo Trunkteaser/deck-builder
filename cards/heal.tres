@@ -9,6 +9,7 @@ script/source = "extends CardData
 
 func apply_effects(targets: Array[Node], _modifiers: ModifierHandler) -> void:
 	Apply.heal(targets, healing)
+	VFXPlayer.green_ring(hero[0].global_position)
 "
 
 [resource]

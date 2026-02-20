@@ -6,7 +6,17 @@ const STAB_SFX = preload("uid://ueoneelwrxii")
 
 const LIGHTNING_BOLT_VFX = preload("uid://b7wk66mo71cuu")
 const LIGHTNING_BOLT_SFX = preload("uid://cvyh01tlq60td")
+
+const GREEN_RING_VFX = preload("uid://bdm1b0bmm0pog")
+const GREEN_RING_SFX = preload("uid://m84bkss5ugw1")
+
 #endregion
+
+func green_ring(pos:Vector2, sfx: AudioStream = GREEN_RING_SFX) -> void:
+	var green_ring_vfx: VFX = GREEN_RING_VFX.instantiate()
+	add_child(green_ring_vfx)
+	green_ring_vfx.global_position = pos
+	green_ring_vfx.start(sfx)
 
 func lightning_bolt(pos: Vector2, sfx: AudioStream = LIGHTNING_BOLT_SFX) -> void:
 	var lightning_bolt_vfx: VFX = LIGHTNING_BOLT_VFX.instantiate()
