@@ -6,8 +6,8 @@
 
 [node name="EasyMite" type="Node2D"]
 
-[node name="Enemy" parent="." instance=ExtResource("1_m2nk2")]
-position = Vector2(541, 92)
+[node name="Enemy1" parent="." instance=ExtResource("1_m2nk2")]
+position = Vector2(542, 83)
 stats = ExtResource("2_e3b1h")
 
 [node name="Enemy2" parent="." instance=ExtResource("1_m2nk2")]

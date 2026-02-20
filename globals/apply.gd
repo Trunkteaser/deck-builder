@@ -8,6 +8,7 @@ const TEMP_DEATH_SFX: AudioStream = preload("uid://dnknwy741q2l0")
 # TODO Decide if giving block and taking dmg have sound effects.
 
 var fatality_candidates := []
+var acting_enemy: Enemy
 
 func damage(targets: Array[Node], amount: int, receiver_mod_type := Modifier.Type.DMG_TAKEN) -> void:
 	fatality_candidates.clear()
@@ -67,11 +68,12 @@ func death(target: Node) -> void:
 		target.stats.health = 0
 	elif target is Enemy:
 		var tween := create_tween()
-		tween.tween_callback(Shaker.shake.bind(target, 64, 0.3))
+		tween.tween_callback(Shaker.shake.bind(target, 64, 0.15))
 		tween.tween_callback(SFXPlayer.play.bind(TEMP_DEATH_SFX))
 		tween.tween_property(target.stats, "health", 0, 0)
-		tween.tween_interval(0.32)
+		Events.enemy_died.emit(target)
+		tween.tween_interval(0.17)
 		tween.finished.connect(
 			func():
-				Events.enemy_died.emit(target)
+				#Events.enemy_died.emit(target)
 				target.queue_free())
