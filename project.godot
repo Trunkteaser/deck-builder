@@ -44,6 +44,7 @@ window/stretch/mode="canvas_items"
 
 folder_colors={
 "res://assets/": "yellow",
+"res://assets/animations/particles/": "blue",
 "res://assets/animations/vfx/": "purple",
 "res://cards/": "green",
 "res://enemies/": "red",

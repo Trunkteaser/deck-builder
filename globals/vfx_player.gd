@@ -1,6 +1,8 @@
 extends Node
 
 #region Preloads.
+const PARTICLE_SCENE = preload("uid://dniyxwrrtnae1")
+
 const STAB_VFX = preload("uid://c5fewocyppil3")
 const STAB_SFX = preload("uid://ueoneelwrxii")
 
@@ -11,6 +13,12 @@ const GREEN_RING_VFX = preload("uid://bdm1b0bmm0pog")
 const GREEN_RING_SFX = preload("uid://m84bkss5ugw1")
 
 #endregion
+
+func particles(pos: Vector2, dir: Vector2, settings: ParticleSettings) -> void:
+	var new_particles: Particles = PARTICLE_SCENE.instantiate()
+	add_child(new_particles)
+	new_particles.global_position = pos
+	new_particles.start(dir, settings)
 
 func green_ring(pos:Vector2, sfx: AudioStream = GREEN_RING_SFX) -> void:
 	var green_ring_vfx: VFX = GREEN_RING_VFX.instantiate()
