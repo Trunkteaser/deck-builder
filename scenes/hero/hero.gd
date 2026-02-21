@@ -14,10 +14,12 @@ const WHITE_SPRITE_MATERIAL := preload("uid://ceemqhtjalmbl")
 #
 #func _ready() -> void:
 	#var static_mood = preload("uid://cyjiq1cs2ewea")
+	#var dark_clouds_mood = preload("uid://bqdslvml6u12r")
 	#await get_tree().create_timer(0.1).timeout
 	#Apply.mood([self], static_mood, 1)
 	#await get_tree().create_timer(2).timeout
 	#Apply.mood([self], static_mood, 3)
+	#Apply.mood([self], dark_clouds_mood, 1)
 
 func set_hero_stats(value: HeroStats) -> void:
 	stats = value

@@ -1,0 +1,14 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://bqdslvml6u12r"]
+
+[ext_resource type="Texture2D" uid="uid://clko8b81f7gsq" path="res://assets/sprites/daydream.png" id="1_3tr1r"]
+[ext_resource type="Script" uid="uid://crn2fl8auimdj" path="res://resources/moods/dark_clouds.gd" id="2_qxo5k"]
+
+[resource]
+script = ExtResource("2_qxo5k")
+name = "Dark Clouds"
+trigger_type = 1
+stack_type = 1
+icon = ExtResource("1_3tr1r")
+tooltip = "At the end of each turn, deal 5 damage to each enemy.
+Threshold 4: 15 damage"
+metadata/_custom_type_script = "uid://cv5d6rh4bndpq"

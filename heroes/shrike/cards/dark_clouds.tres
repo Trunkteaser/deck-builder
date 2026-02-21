@@ -1,0 +1,20 @@
+[gd_resource type="Resource" load_steps=4 format=3 uid="uid://c0e15ofu3c7x2"]
+
+[ext_resource type="Script" uid="uid://o0de4842xmad" path="res://heroes/shrike/cards/card_scripts/dark_clouds.gd" id="1_7b0u7"]
+[ext_resource type="Texture2D" uid="uid://daretiqh3ntre" path="res://assets/sprites/vortex.png" id="1_pf73p"]
+[ext_resource type="AudioStream" uid="uid://cdqsdxa6oh2yw" path="res://assets/sound/thunder_rumble.mp3" id="3_2btui"]
+
+[resource]
+script = ExtResource("1_7b0u7")
+name = "Dark Clouds"
+rarity = 1
+art = ExtResource("1_pf73p")
+description = "Gain 1 Static.
+At the end of each turn, deal 5 damage to each enemy.
+Threshold 4: Deal 15 damage instead."
+sfx = ExtResource("3_2btui")
+type = 2
+cost = 2
+target = 1
+retain = null
+metadata/_custom_type_script = "uid://cf748lyegyqg3"
