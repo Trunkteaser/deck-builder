@@ -10,7 +10,7 @@ name = "Dark Clouds"
 rarity = 1
 art = ExtResource("1_pf73p")
 description = "Gain 1 Static.
-At the end of each turn, deal 5 damage to each enemy.
+End of turn: Deal 5 damage to all enemies.
 Threshold 4: Deal 15 damage instead."
 sfx = ExtResource("3_2btui")
 type = 2

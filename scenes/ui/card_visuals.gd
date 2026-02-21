@@ -48,3 +48,10 @@ func set_card_description() -> void:
 	if Engine.is_editor_hint():
 		description.text = card_data.description
 	description.text = "[center]" + card_data.get_default_description() + "[/center]"
+	description.add_theme_font_size_override("normal_font_size", 8)
+	if description.get_content_height() > 36:
+		description.add_theme_font_size_override("normal_font_size", 7)
+	if description.get_content_height() > 36:
+		description.add_theme_font_size_override("normal_font_size", 6)
+	if description.get_content_height() > 36:
+		description.add_theme_font_size_override("normal_font_size", 5)
