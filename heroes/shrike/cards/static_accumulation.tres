@@ -1,0 +1,11 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://blomkngv5omqt"]
+
+[ext_resource type="Script" uid="uid://5q0apad802aj" path="res://heroes/shrike/cards/card_scripts/static_accumulation.gd" id="1_uqc17"]
+
+[resource]
+script = ExtResource("1_uqc17")
+name = "Static Accumulation"
+description = "Gain 3 Static."
+type = 1
+target = 1
+metadata/_custom_type_script = "uid://cf748lyegyqg3"

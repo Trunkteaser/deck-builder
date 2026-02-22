@@ -1,0 +1,12 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://nsyipi0iwwpv"]
+
+[ext_resource type="Script" uid="uid://dtx6rle1c5rfe" path="res://heroes/shrike/cards/card_scripts/crackdown.gd" id="1_ajty2"]
+
+[resource]
+script = ExtResource("1_ajty2")
+name = "Crackdown"
+description = "Gain 1 Static.
+Deal 30 damage to an enemy.
+Threshold 4: 60 damage."
+cost = 3
+metadata/_custom_type_script = "uid://cf748lyegyqg3"

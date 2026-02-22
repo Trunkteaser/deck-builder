@@ -19,7 +19,7 @@ const WHITE_SPRITE_MATERIAL := preload("uid://ceemqhtjalmbl")
 	#Apply.mood([self], static_mood, 1)
 	#await get_tree().create_timer(2).timeout
 	#Apply.mood([self], static_mood, 3)
-	#Apply.mood([self], dark_clouds_mood, 1)
+
 
 func set_hero_stats(value: HeroStats) -> void:
 	stats = value

@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="CardPile" load_steps=14 format=3 uid="uid://xqqb35uy3ei0"]
+[gd_resource type="Resource" script_class="CardPile" load_steps=16 format=3 uid="uid://xqqb35uy3ei0"]
 
 [ext_resource type="Script" uid="uid://cf748lyegyqg3" path="res://resources/card_data.gd" id="1_kh75b"]
 [ext_resource type="Script" uid="uid://d24n6gxynx1ny" path="res://resources/card_pile.gd" id="2_f2glr"]
@@ -13,8 +13,10 @@
 [ext_resource type="Resource" uid="uid://df48prjxgqto1" path="res://heroes/shrike/cards/impale.tres" id="10_brn5f"]
 [ext_resource type="Resource" uid="uid://df3v2bogmodbi" path="res://heroes/shrike/cards/rend.tres" id="11_1a6fl"]
 [ext_resource type="Resource" uid="uid://bjdhtms2mk74r" path="res://heroes/shrike/cards/daydream.tres" id="12_brn5f"]
+[ext_resource type="Resource" uid="uid://nsyipi0iwwpv" path="res://heroes/shrike/cards/crackdown.tres" id="13_pbe8a"]
+[ext_resource type="Resource" uid="uid://blomkngv5omqt" path="res://heroes/shrike/cards/static_accumulation.tres" id="14_nd5vs"]
 
 [resource]
 script = ExtResource("2_f2glr")
-cards = Array[ExtResource("1_kh75b")]([ExtResource("2_samn4"), ExtResource("4_ltfuh"), ExtResource("5_pw8sg"), ExtResource("6_brn5f"), ExtResource("7_1a6fl"), ExtResource("7_23mgy"), ExtResource("8_pbe8a"), ExtResource("9_pw8sg"), ExtResource("10_brn5f"), ExtResource("11_1a6fl"), ExtResource("12_brn5f")])
+cards = Array[ExtResource("1_kh75b")]([ExtResource("2_samn4"), ExtResource("4_ltfuh"), ExtResource("5_pw8sg"), ExtResource("6_brn5f"), ExtResource("7_1a6fl"), ExtResource("7_23mgy"), ExtResource("8_pbe8a"), ExtResource("9_pw8sg"), ExtResource("10_brn5f"), ExtResource("11_1a6fl"), ExtResource("12_brn5f"), ExtResource("13_pbe8a"), ExtResource("14_nd5vs")])
 metadata/_custom_type_script = "uid://d24n6gxynx1ny"
