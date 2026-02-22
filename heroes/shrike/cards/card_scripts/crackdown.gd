@@ -19,10 +19,10 @@ func apply_effects(targets: Array[Node], modifiers: ModifierHandler) -> void:
 		SFXPlayer.play(STATIC_SFX)
 
 func get_default_description() -> String:
-	return description % damage
+	return description % [damage, 2*damage]
 
 func get_updated_description(hero_modifiers: ModifierHandler, enemy_modifiers: ModifierHandler) -> String:
 	var modified_damage := hero_modifiers.get_modified_value(damage, Modifier.Type.NO_MODIFIER)
 	if enemy_modifiers:
 		modified_damage = enemy_modifiers.get_modified_value(modified_damage, Modifier.Type.NO_MODIFIER)
-	return description % modified_damage
+	return description % [modified_damage, 2*modified_damage]

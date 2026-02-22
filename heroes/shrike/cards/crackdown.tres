@@ -6,7 +6,7 @@
 script = ExtResource("1_ajty2")
 name = "Crackdown"
 description = "Gain 1 Static.
-Deal 30 damage to an enemy.
-Threshold 4: 60 damage."
+Deal %s damage to an enemy.
+Threshold 4: %s damage."
 cost = 3
 metadata/_custom_type_script = "uid://cf748lyegyqg3"
