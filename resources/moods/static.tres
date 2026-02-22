@@ -1,7 +1,7 @@
 [gd_resource type="Resource" load_steps=3 format=3 uid="uid://cyjiq1cs2ewea"]
 
 [ext_resource type="Script" uid="uid://di8hd2f8gekgl" path="res://resources/moods/static.gd" id="1_e5gwh"]
-[ext_resource type="Texture2D" uid="uid://chufh2uw7m012" path="res://assets/sprites/lightning bolts.png" id="1_qdiy5"]
+[ext_resource type="Texture2D" uid="uid://dx70l3p3dio7r" path="res://assets/sprites/static.png" id="1_qdiy5"]
 
 [resource]
 script = ExtResource("1_e5gwh")
