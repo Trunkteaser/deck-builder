@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="CardPile" load_steps=9 format=3 uid="uid://yv8otwwh3bat"]
+[gd_resource type="Resource" script_class="CardPile" load_steps=11 format=3 uid="uid://yv8otwwh3bat"]
 
 [ext_resource type="Script" uid="uid://cf748lyegyqg3" path="res://resources/card_data.gd" id="1_88d05"]
 [ext_resource type="Resource" uid="uid://c0e15ofu3c7x2" path="res://heroes/shrike/cards/dark_clouds.tres" id="4_ob3k2"]
@@ -6,10 +6,12 @@
 [ext_resource type="Resource" uid="uid://blomkngv5omqt" path="res://heroes/shrike/cards/static_accumulation.tres" id="6_1ha1f"]
 [ext_resource type="Script" uid="uid://d24n6gxynx1ny" path="res://resources/card_pile.gd" id="6_05lsk"]
 [ext_resource type="Resource" uid="uid://c44p1lruerfs5" path="res://heroes/shrike/cards/sparks.tres" id="7_cwxse"]
+[ext_resource type="Resource" uid="uid://j2nho2arsoql" path="res://heroes/shrike/cards/zap.tres" id="8_ylg3e"]
 [ext_resource type="Resource" uid="uid://bf8yplq60tgaw" path="res://heroes/shrike/cards/protected_by_nature.tres" id="9_05lsk"]
+[ext_resource type="Resource" uid="uid://038gp1yqb6tr" path="res://heroes/shrike/cards/discharge_draw.tres" id="9_hihqi"]
 [ext_resource type="Resource" uid="uid://cwa8ql40534jq" path="res://heroes/shrike/cards/static_defense.tres" id="9_joali"]
 
 [resource]
 script = ExtResource("6_05lsk")
-cards = Array[ExtResource("1_88d05")]([ExtResource("9_joali"), ExtResource("9_05lsk"), ExtResource("4_ob3k2"), ExtResource("5_88d05"), ExtResource("6_1ha1f"), ExtResource("7_cwxse")])
+cards = Array[ExtResource("1_88d05")]([ExtResource("9_joali"), ExtResource("9_05lsk"), ExtResource("4_ob3k2"), ExtResource("5_88d05"), ExtResource("6_1ha1f"), ExtResource("7_cwxse"), ExtResource("8_ylg3e"), ExtResource("9_hihqi")])
 metadata/_custom_type_script = "uid://d24n6gxynx1ny"

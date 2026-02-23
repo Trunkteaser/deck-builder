@@ -1,0 +1,14 @@
+[gd_resource type="Resource" load_steps=4 format=3 uid="uid://j2nho2arsoql"]
+
+[ext_resource type="Texture2D" uid="uid://chufh2uw7m012" path="res://assets/sprites/lightning bolts.png" id="1_j1lt1"]
+[ext_resource type="Script" uid="uid://cs7v0mcxw6m15" path="res://heroes/shrike/cards/card_scripts/zap.gd" id="2_qv7aw"]
+[ext_resource type="AudioStream" uid="uid://cba4h3ma7w31v" path="res://assets/animations/vfx/lightning_bolt/dragon-studio-lightning-spell-386163.mp3" id="3_7ff7a"]
+
+[resource]
+script = ExtResource("2_qv7aw")
+damage = 8
+name = "Zap"
+art = ExtResource("1_j1lt1")
+description = "Deal %s damage.
+Gain 1 Static."
+sfx = ExtResource("3_7ff7a")
