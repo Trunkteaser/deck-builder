@@ -1,0 +1,17 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://cmcfrkyl4p85d"]
+
+[ext_resource type="Texture2D" uid="uid://chufh2uw7m012" path="res://assets/sprites/lightning bolts.png" id="1_dtus1"]
+[ext_resource type="Script" uid="uid://c2ihrqti4ehmg" path="res://heroes/shrike/cards/card_scripts/thunderstorm.gd" id="2_dwn85"]
+
+[resource]
+script = ExtResource("2_dwn85")
+damage = 2
+name = "Thunderstorm"
+rarity = 2
+art = ExtResource("1_dtus1")
+description = "Deal %sx%s damage to all enemies.
+Lose all static"
+cost = 3
+target = 2
+forget = true
+metadata/_custom_type_script = "uid://cf748lyegyqg3"
