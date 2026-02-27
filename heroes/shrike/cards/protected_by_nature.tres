@@ -1,6 +1,6 @@
 [gd_resource type="Resource" load_steps=3 format=3 uid="uid://bf8yplq60tgaw"]
 
-[ext_resource type="Texture2D" uid="uid://dwdnovv3b7h15" path="res://assets/sprites/thorns.png" id="1_0ujcf"]
+[ext_resource type="Texture2D" uid="uid://cff05nlb3o8pl" path="res://assets/sprites/protected_by_nature.png" id="1_0ujcf"]
 [ext_resource type="Script" uid="uid://deans7m354b34" path="res://heroes/shrike/cards/card_scripts/protected_by_nature.gd" id="2_0qdmn"]
 
 [resource]
