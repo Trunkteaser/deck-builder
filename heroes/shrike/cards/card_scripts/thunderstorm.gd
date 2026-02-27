@@ -13,8 +13,8 @@ func apply_effects(targets: Array[Node], modifiers: ModifierHandler) -> void:
 		Apply.damage(targets, modified_damage)
 		SFXPlayer.play(STATIC_SFX)
 		await wait(0.05)
-	hero[0].mood_handler._get_mood("Static").stacks = 0
-
+	if hero[0].is_inside_tree():
+		hero[0].mood_handler._get_mood("Static").stacks = 0
 
 func get_default_description() -> String:
 	return description % ["Static stacks", damage]

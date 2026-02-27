@@ -1,0 +1,11 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://cmgto428lblbb"]
+
+[ext_resource type="Texture2D" uid="uid://c8m5bkkrrxidd" path="res://assets/sprites/icon.svg" id="1_xak43"]
+[ext_resource type="Script" uid="uid://4gw0p5tgbyfn" path="res://resources/moods/delayed_moods_sot.gd" id="2_t25fs"]
+
+[resource]
+script = ExtResource("2_t25fs")
+name = "Temp Mood SoT"
+stack_type = 1
+icon = ExtResource("1_xak43")
+tooltip = "At the start of turn, apply %s %s."
