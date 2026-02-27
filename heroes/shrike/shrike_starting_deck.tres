@@ -1,15 +1,13 @@
-[gd_resource type="Resource" script_class="CardPile" load_steps=9 format=3 uid="uid://yv8otwwh3bat"]
+[gd_resource type="Resource" script_class="CardPile" load_steps=7 format=3 uid="uid://yv8otwwh3bat"]
 
 [ext_resource type="Script" uid="uid://cf748lyegyqg3" path="res://resources/card_data.gd" id="1_88d05"]
-[ext_resource type="Resource" uid="uid://det3vwix4ajwv" path="res://heroes/shrike/cards/cover_among_the_thorns.tres" id="3_pwtqd"]
-[ext_resource type="Resource" uid="uid://cbwdl5ymv6tqv" path="res://heroes/shrike/cards/vicious_assault.tres" id="5_cwxse"]
+[ext_resource type="Resource" uid="uid://df3v2bogmodbi" path="res://heroes/shrike/cards/rend.tres" id="3_88d05"]
+[ext_resource type="Resource" uid="uid://bnonti3oxxigg" path="res://heroes/shrike/cards/peck_peck.tres" id="4_1ha1f"]
+[ext_resource type="Resource" uid="uid://bk83l6pek06t6" path="res://heroes/shrike/cards/angry_bird.tres" id="5_cwxse"]
 [ext_resource type="Script" uid="uid://d24n6gxynx1ny" path="res://resources/card_pile.gd" id="6_05lsk"]
-[ext_resource type="Resource" uid="uid://blomkngv5omqt" path="res://heroes/shrike/cards/static_accumulation.tres" id="6_ylg3e"]
-[ext_resource type="Resource" uid="uid://dyxybmf5s83qd" path="res://heroes/shrike/cards/temporary_shelter.tres" id="8_hihqi"]
 [ext_resource type="Resource" uid="uid://j2nho2arsoql" path="res://heroes/shrike/cards/zap.tres" id="8_ylg3e"]
-[ext_resource type="Resource" uid="uid://cxe6kimiwqnfc" path="res://heroes/shrike/cards/return_to_sender.tres" id="11_joali"]
 
 [resource]
 script = ExtResource("6_05lsk")
-cards = Array[ExtResource("1_88d05")]([ExtResource("8_ylg3e"), ExtResource("3_pwtqd"), ExtResource("8_hihqi"), ExtResource("5_cwxse"), ExtResource("6_ylg3e"), ExtResource("11_joali")])
+cards = Array[ExtResource("1_88d05")]([ExtResource("8_ylg3e"), ExtResource("3_88d05"), ExtResource("4_1ha1f"), ExtResource("5_cwxse")])
 metadata/_custom_type_script = "uid://d24n6gxynx1ny"

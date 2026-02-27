@@ -1,0 +1,12 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://dews4v0053pgs"]
+
+[ext_resource type="Script" uid="uid://des7e86soxqo6" path="res://mantras/violence_begets_violence.gd" id="1_b4k6d"]
+[ext_resource type="Texture2D" uid="uid://xjuuf412tko8" path="res://assets/sprites/anger fist.png" id="1_fkmft"]
+
+[resource]
+script = ExtResource("1_b4k6d")
+name = "Violence Begets Violence"
+type = 4
+icon = ExtResource("1_fkmft")
+tooltip = "Violence Begets Violence
+Gain 1 Anger after playing 3 Violence cards in a single turn."

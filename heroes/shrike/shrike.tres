@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://b3mwvvavgkbgr" path="res://resources/hero_stats.gd" id="1_1jis4"]
 [ext_resource type="Texture2D" uid="uid://bcpbib68n0040" path="res://assets/sprites/portraits/shrike.png" id="1_onbfi"]
 [ext_resource type="Resource" uid="uid://xqqb35uy3ei0" path="res://heroes/shrike/shrike_draftable.tres" id="2_onbfi"]
-[ext_resource type="Resource" uid="uid://cf6vslkqrguf0" path="res://mantras/i_am_electrifying.tres" id="3_2cdmq"]
+[ext_resource type="Resource" uid="uid://dews4v0053pgs" path="res://mantras/violence_begets_violence.tres" id="3_2cdmq"]
 [ext_resource type="Resource" uid="uid://yv8otwwh3bat" path="res://heroes/shrike/shrike_starting_deck.tres" id="5_2cdmq"]
 
 [resource]
