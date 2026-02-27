@@ -1,14 +1,17 @@
-[gd_resource type="Resource" script_class="CardPile" load_steps=8 format=3 uid="uid://yv8otwwh3bat"]
+[gd_resource type="Resource" script_class="CardPile" load_steps=11 format=3 uid="uid://yv8otwwh3bat"]
 
 [ext_resource type="Script" uid="uid://cf748lyegyqg3" path="res://resources/card_data.gd" id="1_88d05"]
 [ext_resource type="Script" uid="uid://d24n6gxynx1ny" path="res://resources/card_pile.gd" id="6_05lsk"]
+[ext_resource type="Resource" uid="uid://bk83l6pek06t6" path="res://heroes/shrike/cards/angry_bird.tres" id="7_cwxse"]
+[ext_resource type="Resource" uid="uid://dyxybmf5s83qd" path="res://heroes/shrike/cards/temporary_shelter.tres" id="8_hihqi"]
 [ext_resource type="Resource" uid="uid://j2nho2arsoql" path="res://heroes/shrike/cards/zap.tres" id="8_ylg3e"]
 [ext_resource type="Resource" uid="uid://bf8yplq60tgaw" path="res://heroes/shrike/cards/protected_by_nature.tres" id="9_05lsk"]
 [ext_resource type="Resource" uid="uid://038gp1yqb6tr" path="res://heroes/shrike/cards/discharge_draw.tres" id="9_hihqi"]
+[ext_resource type="Resource" uid="uid://c5x4hjlvq1gvh" path="res://heroes/shrike/cards/overexertion.tres" id="9_joali"]
 [ext_resource type="Resource" uid="uid://cmcfrkyl4p85d" path="res://heroes/shrike/cards/thunderstorm.tres" id="10_05lsk"]
 [ext_resource type="Resource" uid="uid://cxe6kimiwqnfc" path="res://heroes/shrike/cards/return_to_sender.tres" id="11_joali"]
 
 [resource]
 script = ExtResource("6_05lsk")
-cards = Array[ExtResource("1_88d05")]([ExtResource("9_05lsk"), ExtResource("8_ylg3e"), ExtResource("9_hihqi"), ExtResource("10_05lsk"), ExtResource("11_joali")])
+cards = Array[ExtResource("1_88d05")]([ExtResource("9_05lsk"), ExtResource("8_ylg3e"), ExtResource("9_hihqi"), ExtResource("10_05lsk"), ExtResource("11_joali"), ExtResource("7_cwxse"), ExtResource("8_hihqi"), ExtResource("9_joali")])
 metadata/_custom_type_script = "uid://d24n6gxynx1ny"

@@ -1,0 +1,14 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://dyxybmf5s83qd"]
+
+[ext_resource type="Script" uid="uid://b2qbw344vpf00" path="res://heroes/shrike/cards/card_scripts/temporary_shelter.gd" id="1_61nap"]
+
+[resource]
+script = ExtResource("1_61nap")
+name = "Temporary Shelter"
+rarity = 1
+description = "Gain %s block.
+Forget."
+type = 1
+cost = 2
+target = 1
+forget = true

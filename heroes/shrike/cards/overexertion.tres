@@ -1,0 +1,15 @@
+[gd_resource type="Resource" load_steps=4 format=3 uid="uid://c5x4hjlvq1gvh"]
+
+[ext_resource type="Texture2D" uid="uid://xjuuf412tko8" path="res://assets/sprites/anger fist.png" id="1_b1cvq"]
+[ext_resource type="Script" uid="uid://dafk6jwb8hc6v" path="res://heroes/shrike/cards/card_scripts/overexertion.gd" id="2_d0517"]
+[ext_resource type="AudioStream" uid="uid://bvw3gan04kfqa" path="res://assets/sound/enemy_attack.ogg" id="3_p7bc6"]
+
+[resource]
+script = ExtResource("2_d0517")
+name = "Overexertion"
+rarity = 2
+art = ExtResource("1_b1cvq")
+description = "Deal %s damage.
+Add 2 Stunned to your discard pile."
+sfx = ExtResource("3_p7bc6")
+cost = 2

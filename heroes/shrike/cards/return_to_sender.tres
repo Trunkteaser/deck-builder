@@ -1,7 +1,7 @@
 [gd_resource type="Resource" load_steps=3 format=3 uid="uid://cxe6kimiwqnfc"]
 
 [ext_resource type="Texture2D" uid="uid://dwdnovv3b7h15" path="res://assets/sprites/thorns.png" id="1_itw2f"]
-[ext_resource type="Script" uid="uid://cn5l28e3wpesj" path="res://heroes/shrike/cards/card_scripts/return_to_sender.gd" id="1_l4smy"]
+[ext_resource type="Script" path="res://heroes/shrike/cards/card_scripts/return_to_sender.gd" id="1_l4smy"]
 
 [resource]
 script = ExtResource("1_l4smy")

@@ -1,0 +1,15 @@
+[gd_resource type="Resource" load_steps=4 format=3 uid="uid://bk83l6pek06t6"]
+
+[ext_resource type="Script" uid="uid://q7lacthaj7gv" path="res://heroes/shrike/cards/card_scripts/angry_bird.gd" id="1_c3xp6"]
+[ext_resource type="Texture2D" uid="uid://bnoq2pyaoqmyn" path="res://assets/sprites/banshee.png" id="1_qwrxa"]
+[ext_resource type="AudioStream" uid="uid://dfvubbgdlab6n" path="res://assets/sound/slap-2-237623.mp3" id="3_biqj5"]
+
+[resource]
+script = ExtResource("1_c3xp6")
+name = "Angry Bird"
+art = ExtResource("1_qwrxa")
+description = "Gain 3 Anger until the end of turn."
+sfx = ExtResource("3_biqj5")
+type = 1
+cost = 0
+target = 1
