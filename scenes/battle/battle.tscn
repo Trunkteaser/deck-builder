@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://0qyqwumjfu4w"]
+[gd_scene load_steps=27 format=3 uid="uid://0qyqwumjfu4w"]
 
 [ext_resource type="Script" uid="uid://djb2fi8pii4a6" path="res://scenes/battle/battle.gd" id="1_agsc7"]
 [ext_resource type="Resource" uid="uid://d0o466qgbput5" path="res://heroes/shrike/shrike.tres" id="2_kd6yx"]
@@ -11,7 +11,6 @@
 [ext_resource type="Script" uid="uid://dlsy0cg3anwyu" path="res://scenes/battle/debug.gd" id="5_h0kxc"]
 [ext_resource type="Resource" uid="uid://c2ohd717m4u8e" path="res://heroes/witch/witch.tres" id="5_oiw7q"]
 [ext_resource type="Resource" uid="uid://dq1dpmrio8kw7" path="res://enemies/banshee/banshee.tres" id="6_n6gaa"]
-[ext_resource type="PackedScene" uid="uid://6yf24kgcbxr7" path="res://scenes/card/card.tscn" id="6_pll4o"]
 [ext_resource type="Texture2D" uid="uid://tja2y227uuv2" path="res://assets/sprites/background/Space-Background-Images.jpg" id="6_pyfix"]
 [ext_resource type="Texture2D" uid="uid://b7rvi8vesm3ij" path="res://assets/sprites/grass terrain.png" id="8_t1kk3"]
 [ext_resource type="Resource" uid="uid://blpmomhimxbc1" path="res://enemies/claw_ghost/claw_ghost.tres" id="8_w40i5"]
@@ -99,7 +98,7 @@ stats = ExtResource("8_w40i5")
 
 [node name="Debug" type="Node" parent="." node_paths=PackedStringArray("card")]
 script = ExtResource("5_h0kxc")
-card = NodePath("Card")
+card = NodePath("")
 
 [node name="TestButton" type="Button" parent="Debug"]
 visible = false
@@ -116,13 +115,6 @@ offset_top = 44.0
 offset_right = 307.0
 offset_bottom = 84.0
 text = "Test2"
-
-[node name="Card" parent="Debug" instance=ExtResource("6_pll4o")]
-visible = false
-offset_left = -305.0
-offset_top = -87.0
-offset_right = -230.0
-offset_bottom = 19.0
 
 [node name="DrawCardButton" type="Button" parent="Debug"]
 visible = false

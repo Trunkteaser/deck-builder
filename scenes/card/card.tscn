@@ -1,7 +1,6 @@
-[gd_scene load_steps=12 format=3 uid="uid://6yf24kgcbxr7"]
+[gd_scene load_steps=11 format=3 uid="uid://6yf24kgcbxr7"]
 
 [ext_resource type="Script" uid="uid://i7emb1l3o4n2" path="res://scenes/card/card.gd" id="1_imta7"]
-[ext_resource type="Resource" uid="uid://ucoipe7k8gjl" path="res://cards/big_chonkin_bonkin.tres" id="2_esy5w"]
 [ext_resource type="Resource" uid="uid://c2ohd717m4u8e" path="res://heroes/witch/witch.tres" id="3_esy5w"]
 [ext_resource type="PackedScene" uid="uid://gp5v1kbe3lnj" path="res://scenes/ui/card_visuals.tscn" id="4_v07qs"]
 [ext_resource type="Script" uid="uid://dlgrx45ya8pyj" path="res://scenes/card/card_states/card_state_machine.gd" id="6_kaf1t"]
@@ -30,7 +29,6 @@ grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(37, 53)
 script = ExtResource("1_imta7")
-card_data = ExtResource("2_esy5w")
 hero_stats = ExtResource("3_esy5w")
 
 [node name="Visuals" parent="." instance=ExtResource("4_v07qs")]

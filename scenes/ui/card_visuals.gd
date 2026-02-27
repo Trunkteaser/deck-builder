@@ -24,7 +24,7 @@ func set_card_visuals() -> void:
 	if not card_data:
 		return
 	art.texture = card_data.art
-	card_name.text = card_data.name
+	set_card_title()
 	cost.text = str(card_data.cost)
 	rarity.modulate = CardData.RARITY_COLORS[card_data.rarity]
 	#match card_data.rarity:
@@ -55,3 +55,16 @@ func set_card_description() -> void:
 		description.add_theme_font_size_override("normal_font_size", 6)
 	if description.get_content_height() > 36:
 		description.add_theme_font_size_override("normal_font_size", 5)
+
+func set_card_title() -> void:
+	card_name.text = card_data.name
+	card_name.add_theme_font_size_override("font_size", 9)
+	#await get_tree().process_frame
+	if card_name.size.x > 58:
+		card_name.add_theme_font_size_override("font_size", 8)
+	if card_name.size.x > 58:
+		card_name.add_theme_font_size_override("font_size", 7)
+	if card_name.size.x > 58:
+		card_name.add_theme_font_size_override("font_size", 6)
+	
+	
