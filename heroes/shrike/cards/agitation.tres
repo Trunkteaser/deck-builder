@@ -1,0 +1,13 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://c4vrfc6h4e4r4"]
+
+[ext_resource type="Texture2D" uid="uid://xjuuf412tko8" path="res://assets/sprites/anger fist.png" id="1_11te3"]
+[ext_resource type="Script" uid="uid://c1wxorg46xk1c" path="res://heroes/shrike/cards/card_scripts/agitation.gd" id="2_yoba1"]
+
+[resource]
+script = ExtResource("2_yoba1")
+name = "Agitation"
+art = ExtResource("1_11te3")
+description = "Until your next turn, gain 1 Anger each time you take damage."
+type = 1
+target = 1
+metadata/_custom_type_script = "uid://cf748lyegyqg3"

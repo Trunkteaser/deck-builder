@@ -1,0 +1,13 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://dyw0lf0gro5sd"]
+
+[ext_resource type="Script" uid="uid://drvimvdw188b5" path="res://resources/moods/agitation.gd" id="1_6elbv"]
+[ext_resource type="Texture2D" uid="uid://bcng3h7dx1ns" path="res://assets/sprites/calm exterior.png" id="1_a3k1t"]
+
+[resource]
+script = ExtResource("1_6elbv")
+name = "Agitation"
+trigger_type = 2
+stack_type = 1
+icon = ExtResource("1_a3k1t")
+tooltip = "Agitation: gain %s Anger each time you're damaged."
+metadata/_custom_type_script = "uid://cv5d6rh4bndpq"

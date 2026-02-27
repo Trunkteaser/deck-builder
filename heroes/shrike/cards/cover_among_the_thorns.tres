@@ -1,0 +1,14 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://det3vwix4ajwv"]
+
+[ext_resource type="Script" uid="uid://bjcp62cv0y1nd" path="res://heroes/shrike/cards/card_scripts/cover_among_the_thorns.gd" id="1_amvfq"]
+[ext_resource type="Texture2D" uid="uid://dwdnovv3b7h15" path="res://assets/sprites/thorns.png" id="1_s5j4k"]
+
+[resource]
+script = ExtResource("1_amvfq")
+name = "Cover Among The Thorns"
+art = ExtResource("1_s5j4k")
+description = "Gain 3 Thorns.
+Gain Block equal to thorns."
+type = 1
+target = 1
+metadata/_custom_type_script = "uid://cf748lyegyqg3"
