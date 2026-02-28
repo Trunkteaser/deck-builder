@@ -95,7 +95,7 @@ offset_right = -3.0
 offset_bottom = 15.1875
 grow_horizontal = 0
 theme_override_fonts/font = ExtResource("2_jxbv6")
-theme_override_font_sizes/font_size = 7
+theme_override_font_sizes/font_size = 9
 text = "Protected By Nature"
 horizontal_alignment = 1
 
