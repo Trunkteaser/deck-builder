@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cpway0y8y3ola" path="res://assets/sprites/card art background v1.png" id="4_bp74k"]
 [ext_resource type="FontFile" uid="uid://xloy1dm05a8w" path="res://assets/other/Jersey10-Regular.ttf" id="4_m3e03"]
 [ext_resource type="Texture2D" uid="uid://c56m356imfa1q" path="res://assets/sprites/card frame v1.png" id="4_njcf5"]
-[ext_resource type="Texture2D" uid="uid://dwdnovv3b7h15" path="res://assets/sprites/thorns.png" id="6_b8ve4"]
+[ext_resource type="Texture2D" uid="uid://cff05nlb3o8pl" path="res://assets/sprites/protected_by_nature.png" id="6_njcf5"]
 [ext_resource type="Texture2D" uid="uid://dhrmsrn6y0ot8" path="res://assets/sprites/mana circle.png" id="7_njcf5"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_b8ve4"]
@@ -55,7 +55,7 @@ offset_top = 18.0
 offset_right = 69.0
 offset_bottom = 59.0
 mouse_filter = 2
-texture = ExtResource("6_b8ve4")
+texture = ExtResource("6_njcf5")
 expand_mode = 1
 stretch_mode = 5
 
@@ -95,7 +95,7 @@ offset_right = -3.0
 offset_bottom = 15.1875
 grow_horizontal = 0
 theme_override_fonts/font = ExtResource("2_jxbv6")
-theme_override_font_sizes/font_size = 9
+theme_override_font_sizes/font_size = 7
 text = "Protected By Nature"
 horizontal_alignment = 1
 
