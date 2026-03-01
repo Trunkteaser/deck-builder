@@ -13,7 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://bc5sy7kmyvlpa" path="res://scenes/ui/card_pile_view.tscn" id="7_0tt4g"]
 [ext_resource type="PackedScene" uid="uid://cco15uvdcdbyy" path="res://scenes/mantras/mantra_handler.tscn" id="7_yeia0"]
 
-[node name="Run" type="Node"]
+[node name="Run" type="Node" groups=["run"]]
 script = ExtResource("1_wdonh")
 run_startup = ExtResource("2_o4jfg")
 phobia = ExtResource("3_g42ja")
