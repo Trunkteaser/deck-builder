@@ -1,0 +1,17 @@
+[gd_resource type="Resource" load_steps=4 format=3 uid="uid://dhrhpypnvk0dk"]
+
+[ext_resource type="Texture2D" uid="uid://bhhlyb84sna3p" path="res://assets/sprites/sword_1.png" id="1_mwyhx"]
+[ext_resource type="Script" uid="uid://c38ryrllaf62u" path="res://cards/wicked_sting.gd" id="2_tpamp"]
+[ext_resource type="AudioStream" uid="uid://ueoneelwrxii" path="res://assets/sound/stab.mp3" id="3_vta8c"]
+
+[resource]
+script = ExtResource("2_tpamp")
+damage = 25
+name = "Wicked Sting"
+rarity = 2
+art = ExtResource("1_mwyhx")
+description = "Remove all block from target.
+Deal %s damage.
+Add Poisoned to your draw pile."
+sfx = ExtResource("3_vta8c")
+cost = 2

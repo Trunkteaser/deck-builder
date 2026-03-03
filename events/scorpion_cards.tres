@@ -1,0 +1,14 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://cnu6afk6oq7y2"]
+
+[ext_resource type="Script" uid="uid://ckqcptrs3sbup" path="res://events/scorpion_cards.gd" id="1_kt8l3"]
+
+[resource]
+script = ExtResource("1_kt8l3")
+title = "Scorpion Statue"
+text = "In the middle of a dark room sits a statue of a large scorpion. In front of the statue lies a pool filled to the brim with scorpion venom."
+option_1 = "[color=gold]Break off the Barb[/color]
+Add Sting to your deck."
+option_2 = "[color=gold]Dip the Barb into the Venom[/color]
+Add Wicked Sting to your deck."
+option_3 = "[color=gold]Leave[/color]
+Some things are better left alone."
